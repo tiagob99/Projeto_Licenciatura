@@ -22,7 +22,7 @@ const Home = () => {
                         <div className="logo"></div>                    
                         <Nav context="home"/>
                         <div className="home__caption" onClick={() => scrollToLanding('landing')}>
-                            EXPLORE NEW ALBUM
+                            WHAT WE DO
                         </div>           
                         <div className="home__scroll-down"></div>                    
                     </div>
