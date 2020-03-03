@@ -6,7 +6,7 @@ import { Fade } from 'react-reveal';
 
 const Home = () => {
 
-    const scrollToLanding = elem => {
+    const scrollToLanding = elem => { // quando clicar no explore new album a velocidade que aparece a info
         scroller.scrollTo(elem, {
             duration: 800,
             delay: 100,
