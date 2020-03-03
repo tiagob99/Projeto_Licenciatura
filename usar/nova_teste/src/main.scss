@@ -269,9 +269,11 @@ input[type=text], select {
     }
 
     &__copy {
-        font-size: 15px;
+        font-size: 20px;
         font-family: $arial;
-        color: $footer-font-col;       
+        color: $footer-font-col; 
+        padding:50px;
+              
     }
 
     &__subscribe {
@@ -309,6 +311,7 @@ input[type=text], select {
         color:$footer-caption-col;
         margin-bottom: 18px;
         line-height: 24px;
+        text-align: center;
     }
 
     
@@ -394,19 +397,23 @@ input[type=text], select {
     &__facebook {
         @extend .social-icon;
         background: url('/img/facebook.svg') center no-repeat;
+        width: 50%;
     }
     &__instagram {
         @extend .social-icon;
         background: url('/img/instagram.svg') center no-repeat;
+        width: 50%;
     }
     &__twitter {
         @extend .social-icon;
         background: url('/img/twitter.svg') center no-repeat;
+        width: 50%;
     }
     &__youtube {
         @extend .social-icon;
         width: 47px;
         background: url('/img/youtube.svg') center no-repeat;
+        width: 50%;
     }
 
     &--album {

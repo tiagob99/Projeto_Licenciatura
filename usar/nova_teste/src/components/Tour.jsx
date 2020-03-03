@@ -18,7 +18,7 @@ const Tour = () => {
                                 </div>
                                 <div className="tour__details">
                                     <div className="tour__location">{location}</div>
-                                    <Button text="BUY TICKETS"/>
+                                    <Button text="Customise"/>
                                 </div>
                             </div>
                         </Flip>      
