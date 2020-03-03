@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Sizes from '../ui/Sizes';
-import Amount from '../ui/Amount';
-import Button from '../ui/Button';
-import { Fade } from 'react-reveal';
+// import React, { Component } from 'react';
+// import Sizes from '../ui/Sizes';
+// import Amount from '../ui/Amount';
+// import Button from '../ui/Button';
+// import { Fade } from 'react-reveal';
 
 // class ShopItem extends Component {
 //     state = {
