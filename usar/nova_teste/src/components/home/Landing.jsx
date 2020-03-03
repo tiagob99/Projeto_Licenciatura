@@ -10,9 +10,8 @@ const Landing = () => {
             <div className="wrapper">
                 <Album {...silenceAlbum}/>     
                 <Fade bottom duration={800}>
-                    <div className="landing__video-container">
-                        <h1>NEW VIDEO \ ETERNITY</h1>                    
-                        <img className="landing__video" src="/img/Player.jpg" alt="new video"/>
+                    <div className="landing__video-container">                   
+                        Months on ye at by esteem desire warmth former. Sure that that way gave any fond now. His boy middleton sir nor engrossed affection excellent. Dissimilar compliment cultivated preference eat sufficient may. Well next door soon we mr he four. Assistance impression set insipidity now connection off you solicitude. Under as seems we me stuff those style at. Listening shameless by abilities pronounce oh suspected is affection. Next it draw in draw much bred.
                     </div>
                 </Fade>
             </div>            
