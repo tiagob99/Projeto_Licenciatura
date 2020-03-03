@@ -1,42 +1,36 @@
-import React from 'react';
-import { shop } from '../../data/shop';
-import { Fade } from 'react-reveal';
-import ShopItem from './ShopItem';
+import React, { useState } from "react";
+import GoogleLogin from "react-google-login";
 
-const Shop = () => {
-    const shopTShirts = shop.filter(item => item.type === 't-shirts');
-    const shopHoodies = shop.filter(item => item.type === 'hoodies');
-    const shopHats = shop.filter(item => item.type === 'hats');
 
-    const renderItems = shopItems => (
-        shopItems.map((shopItem, i) => <ShopItem {...shopItem} key={i}/>)
-    )
 
-    return (
-        <div className="wrapper">
-            <div className="shop">
-                <h1>MERCH AND ACCESSORIES</h1>
-                <Fade>
-                    <h2>T-SHIRTS</h2>                
-                    <div className="shop__row">
-                        {renderItems(shopTShirts)}
-                    </div>
-                </Fade>      
-                <Fade>
-                    <h2>HOODIES</h2>
-                    <div className="shop__row">
-                        {renderItems(shopHoodies)}
-                    </div>       
-                </Fade>                          
-                <Fade>                                         
-                    <h2>HATS</h2>
-                    <div className="shop__row">
-                        {renderItems(shopHats)}
-                    </div>       
-                </Fade>
-            </div>
-        </div>
-    );
-};
+export default function Shop() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
 
-export default Shop;
+  const responseGoogle = response => {
+    setName(response.profileObj.name);
+    setEmail(response.profileObj.email);
+    setUrl(response.profileObj.imageUrl);
+  };
+  return (
+    <div className="Login">
+      {/* <h1 className="login">Login with Google</h1> */}
+
+      <h2 className="bemvindo">Welcome:{name} </h2>
+
+      <h2 className="email"> Email: {email} </h2>
+
+      <img className="imagem" src={url} alt={name} />
+
+      <GoogleLogin
+        className="dark"
+        clientId="465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+    </div>
+  );
+}
