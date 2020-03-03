@@ -7,7 +7,7 @@ $link-hover-col: #448E9D;
 $bright-blue: #448E9D;
 $caption-size: 49px;
 $header-back: #E5E4DF;
-$main-pic: $header-back url('/img/back2.jpg') 0 bottom no-repeat;
+$main-pic: $header-back url('/img/logo.jpeg') 0 top no-repeat;
 $footer-font-col: #535353;
 $footer-caption-col: #44423C;
 $arial: Arial, Helvetica, sans-serif;
@@ -144,7 +144,7 @@ input[type=text], select {
         height: 70px;
         background: url('/img/scroll.png') no-repeat;
         margin-top: 65px;
-        animation: hovering 1s ease-in-out infinite;        
+        animation: hovering 3s ease-in-out infinite;        
     }
 }
 
@@ -246,7 +246,7 @@ input[type=text], select {
 .footer {
     width: 100%;
     min-height: 356px;
-    background: $main-pic;
+    background: $header-back;
     padding: 45px 0 40px;        
     box-sizing: border-box;   
     background-position: top;
