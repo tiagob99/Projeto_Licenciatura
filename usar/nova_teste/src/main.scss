@@ -148,6 +148,14 @@ input[type=text], select {
     }
 }
 
+
+.Login{
+    
+    padding:50px;
+    width: 500000px;
+    
+    
+}
 .wrapper {
     margin: 0 auto;
     max-width: 1364px;
@@ -247,7 +255,7 @@ input[type=text], select {
     width: 100%;
     min-height: 356px;
     background: $header-back;
-    padding: 45px 0 40px;        
+    padding: 199px 0 40px;        
     box-sizing: border-box;   
     background-position: top;
 
@@ -828,3 +836,4 @@ input[type=text], select {
         color: #000;
     }
 }
+
