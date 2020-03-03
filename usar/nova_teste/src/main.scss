@@ -621,6 +621,10 @@ input[type=text], select {
 
     &__video {
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 20px;
     }
 }
 
