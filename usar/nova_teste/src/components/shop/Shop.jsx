@@ -25,7 +25,7 @@ export default function Shop() {
 
       <GoogleLogin
         className="dark"
-        clientId="465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
+        clientId="465234973180-0758f7i8l8t7kbr3nu48us2amsnqhqbq.apps.googleusercontent.com"
         buttonText="Login with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
