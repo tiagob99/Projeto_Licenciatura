@@ -1,13 +1,16 @@
 import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
+import './Garden';
+import './jscolor';
+import { Component } from 'react';
 
 
 
 const Gardens = () => {
     return (
 
-      <div>
+      <div> 
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
       <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
       <script src="jscolor.js"></script>
@@ -18,7 +21,7 @@ const Gardens = () => {
         <div id="toggle-btn" onclick="togglemenu()">
           <span></span>
           <span></span>
-          <span></span>
+          {/* <span></span> */}
         </div>
         <div id="sidebar" >
           <ul>
