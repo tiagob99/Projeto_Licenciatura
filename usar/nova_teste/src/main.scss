@@ -922,6 +922,211 @@ input[type=text], select {
   }
   
   
+// Garden
+
+.big_div{
+    width: 100%;
+    height: 100%;
+    background-image: url('/image/backgroundwatch.jpg');
+  }
+  
+  /*toggle btn*/
+  #toggle-btn{
+    position: absolute;
+    left: 35px;
+    top: 35px;
+  }
+  #toggle-btn span {
+    display: block;
+    background-color: black;
+    width: 30px;
+    height: 5px;
+    margin:3px;
+  }
+  #toggle-btn.active{
+    left:26%;
+    transition: linear all 0.3s;
+  }
+  /*toggle btn*/
+  
+  /*sidebar*/
+//   #sidebar{
+//     position: absolute;
+//     width: 25%;
+//     height: 100%;
+//     background-color: #191919;
+//     color: white;
+//     left: -25%;
+//   }
+//   #sidebar.active{
+//     left:0;
+//     overflow: auto;
+//     transition: linear all 0.3s;
+//   }
+//   .elementos_menu_direito{
+//     list-style: none;
+//     text-align: center;
+//     line-height: 50px;
+//     margin: 5px;
+//     font-size: 20px;
+//   }
+//   .elementos_menu_direito:hover{
+//     background-color: #70D7FF;
+//   }
+  /*sidebar*/
+  
+//   /*sidebar interior menus*/
+//   #first_menu_hidden{
+//     position: absolute;
+//     left:-100%;
+//     width: 90%;
+//   }
+//   #first_menu_hidden.active{
+//     height:250px;
+//     left: auto;
+//     margin: 10px;
+//   }
+//   #remaining_01.active{
+//     margin-top: 250px;
+//   }
+//   #second_menu_hidden{
+//     position: absolute;
+//     left:-100%;
+//   }
+//   #second_menu_hidden p {
+//     margin-top:30px;
+//   }
+//   #second_menu_hidden.active{
+//     left:0;
+//     margin: 10px;
+//   }
+  /*sidebar interior menus*/
+  
+  /*watvh background*/
+  .watch{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url('/image/motorola.png');
+    background-repeat:no-repeat;
+    background-position: center;
+  }
+  /*watvh background*/
+  
+  /*circle*/
+  .center_circule{
+    top: 50%;
+    left: 50%;
+    margin-left: -265px;
+    margin-top: -265px;
+    width: 530px;
+    height: 530px;
+    border-radius: 100%;
+    background-color: #000;
+    position:absolute;
+  }
+  #rect{
+    width: 100%;
+    height: 100%;
+  }
+  /*circle*/
+  
+  
+  /*Relogio Digital*/
+  #hour,#minute,#second{
+    size: 20px;
+  }
+  /*Relogio Digital*/
+  
+  /*Relogio analogico*/
+  #clock {
+    stroke-linecap: round;
+  }
+  #hour_pointer {
+    stroke-width: 2px;
+    stroke: white;
+  }
+  #second_pointer {
+    stroke-width: 1px;
+    stroke: #ff0000;
+  }
+  #minute_pointer {
+    stroke-width: 1px;
+    stroke: white;
+  }
+  /*Relogio analogico*/
+  
+  
+  /*drag and drop */
+  .ui-drop-hover{
+    border:2px solid #bbb;
+  }
+  #dragdiv,#dropdiv{
+    width:100%;
+    height:100%;
+  }
+  #dropdiv{
+    left:50%;
+    top: 50%;
+    height:200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    position: absolute;
+  }
+  .ui-draggable{
+    color: white;
+  }
+  .elementos{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+  }
+  #node1{
+    font-size: 40px;
+  }
+  /*drag and drop */
+  
+  /*barra*/
+  .circle-chart{
+    border-radius: 100%;
+  }
+  
+  .animation{
+      animation: circle-chart-fill 2s reverse;
+  }
+  
+  .circle-chart__circle {
+    animation: circle-chart-fill 2s reverse;
+    transform: rotate(-90deg) ;
+    transform-origin: center;
+  }
+  @keyframes circle-chart-fill {
+    to { stroke-dasharray: 0 100; }
+  }
+  /*transform: scaleX(-1);
+  animation:  dash 3s linear;
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 50;
+    }
+  }*/
+  /*barra*/
+  
+  .text{
+    padding-left: 24%;
+    padding-top: 370px;
+    color: white;
+    position: absolute;
+    z-index: 1;
+  }
+  #texto{
+    font-size: 10px;
+  }
+  
+
+
+
 
 // //mikro
 .big_div{
