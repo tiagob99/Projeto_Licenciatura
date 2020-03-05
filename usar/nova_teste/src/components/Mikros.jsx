@@ -1,18 +1,16 @@
 import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
-
-
+import './mikrosjs';
+import $ from 'jquery'
 
 const Mikros = () => {
+       
     return (
         
         <div>
             
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="jscolor.js"></script>
-        <script src="mikrosjs.js"></script>
+        
         <body onload='timerTick()'>
         <div class="big_div">
         <div id="toggle-btn" onclick="togglemenu()">
@@ -31,7 +29,8 @@ const Mikros = () => {
                       <line id='hour_pointer' x1='50' y1='50' x2='50' y2='27' />
                       <line id='minute_pointer' x1='50' y1='50' x2='50' y2='17' />
                       <line id='second_pointer' x1='50' y1='50' x2='50' y2='13' />
-                      {/* <circle id="center_dot" style="{stroke:white; stroke-width:3px;} "cx="50" cy="50" r="1"/> */}
+                      <circle id="center_dot"  cx="50" cy="50" r="1"/>
+                      {/* style="{stroke:white; stroke-width:3px;} */}
                     </g>
                   </svg>
                 </div>
@@ -86,11 +85,11 @@ const Mikros = () => {
           <div class="center_circule">
             <p id="rect" class="center_circule" ></p>
             <div class="circule">
-              {/* <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="90%" height="90%" style="position:absolute; left:50%; top: 50%; margin-left: -45%; margin-top:-45%;">
+              <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="90%" height="90%">
                 <circle class="circle-chart__circle" id="bar1" stroke="#FF0000" stroke-width="2" stroke-dasharray="65,100"  fill="none"  cx="16.91549431" cy="16.91549431" r="16" />
                 <circle class="circle-chart__circle" id="bar2" stroke="#00acc1" stroke-width="2" stroke-dasharray="30,100"  fill="none"  cx="16.91549431" cy="16.91549431" r="14" />
   
-              </svg> */}
+              </svg>
             </div>
             <div id="dropdiv" >
               <div class="child elementos "id="node1" >

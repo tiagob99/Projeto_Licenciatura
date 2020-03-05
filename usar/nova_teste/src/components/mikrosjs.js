@@ -1,3 +1,7 @@
+import $ from 'jquery'
+import urlCallback from 'jquery'
+
+
 /*Menu*/
 function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -89,8 +93,8 @@ function clock(){
   if (minutes < 10){
     minutes = "0" + minutes
   }
-  document.getElementById('hour').innerHTML = hours;
-  document.getElementById('minute').innerHTML = ": " + minutes;
+//   document.getElementById('hour').innerHTML = hours;
+//   document.getElementById('minute').innerHTML = ": " + minutes;
 }
 setInterval(clock,100);
 /*Relogio Digital*/
@@ -98,17 +102,17 @@ setInterval(clock,100);
 
 
 /*Relogio analogico*/
-function timerTick() {
-  with (new Date()) {
-    var h = 30 * ((getHours() % 12) + getMinutes() / 60);
-    var m = 6 * getMinutes();
-    var s = 6 * getSeconds();
-    document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-    document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-    document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-    setTimeout(timerTick, 100);
-  }
-}
+// function timerTick() {
+//   with (new Date()) {
+//     var h = 30 * ((getHours() % 12) + getMinutes() / 60);
+//     var m = 6 * getMinutes();
+//     var s = 6 * getSeconds();
+//     document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+//     document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+//     document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+//     setTimeout(timerTick, 100);
+//   }
+// }
 /*Relogio analogico*/
 
 
