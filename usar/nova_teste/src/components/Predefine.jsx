@@ -2,6 +2,8 @@ import React from 'react';
 import { tour } from '../data/tour';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Route ,Link} from 'react-router-dom';
 
 
 
@@ -33,10 +35,11 @@ const predefine = () => {
     <div class="geral_prefefine">
       <div class="margem">
         <div class="first">
-          <a href="./makeYourOwn"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
+          <a href="./"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
         <div class="second">
-          <a href="customise/Mikro.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
+          
+          <a href="./Mikros"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
         <div class="third">
           <a href="customise/Self_compete.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
