@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import './main.scss';
 import makeYourOwn from './components/MakeYourOwn';
 import predefine from './components/Predefine';
+import Gardens from './components/Gardens';    
 import Mikros from './components/Mikros';
 import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
@@ -18,6 +19,7 @@ const Routes = () => (
             <Route exact path="/MakeYourOwn" component={makeYourOwn}/>
             <Route exact path="/Predefine" component={predefine}/>
             <Route exact path="/Login" component={Login}/>
+            <Route exact path="/Gardens" component={Gardens}/>
             <Route exact path="/Mikros" component={Mikros}/>
             <Footer/>            
         </div>

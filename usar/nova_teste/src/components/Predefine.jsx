@@ -35,7 +35,7 @@ const predefine = () => {
     <div class="geral_prefefine">
       <div class="margem">
         <div class="first">
-          <a href="./"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
+          <a href="./Gardens"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
         <div class="second">
           

@@ -39,7 +39,7 @@ const Mikros = () => {
             <div id="remaining_01">
               <li class="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
               <div id="second_menu_hidden">
-                <p>Background Colors <input class="jscolor {onFineChange:'background_color(this)'}" value="000"> </input> </p>
+                <p>Background Colors <input class="jscolor {onFineChange:'background_color(this)'}" value="000"/> </p>
                 <p>Digital <input class="jscolor {onFineChange:'digital_color(this)'}" value="fff"></input> </p>
                 <p>Analog Hours <input class="jscolor {onFineChange:'analog_hours(this)'}" value="fff"></input> </p>
                 <p>Analog Minuts <input class="jscolor {onFineChange:'analog_minutes(this)'}" value="fff"></input> </p>
