@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 
 
 
-export default function Shop() {
+export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");

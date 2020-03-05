@@ -3,7 +3,7 @@ import { tour } from '../data/tour';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 
-const Tour = () => {
+const predefine = () => {
     return (
         <div className="wrapper">
             <div className="tour">
@@ -29,4 +29,4 @@ const Tour = () => {
     );
 };
 
-export default Tour;
+export default predefine;

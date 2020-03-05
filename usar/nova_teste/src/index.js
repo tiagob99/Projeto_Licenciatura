@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './components/home/Home';
 import './main.scss';
-import Discography from './components/Discography';
-import Tour from './components/Tour';
-import Shop from './components/shop/Shop';
+import makeYourOwn from './components/MakeYourOwn';
+import predefine from './components/Predefine';
+import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
 
@@ -14,9 +14,9 @@ const Routes = () => (
         <div>            
             <Route path="/" render={ props => (props.location.pathname !== '/') && <Header/> }/>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/discography" component={Discography}/>
-            <Route exact path="/tour" component={Tour}/>
-            <Route exact path="/shop" component={Shop}/>
+            <Route exact path="/MakeYourOwn" component={makeYourOwn}/>
+            <Route exact path="/Predefine" component={predefine}/>
+            <Route exact path="/Login" component={Login}/>
             <Footer/>            
         </div>
     </BrowserRouter>

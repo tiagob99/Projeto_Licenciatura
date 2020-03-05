@@ -10,9 +10,9 @@ const Nav = props => {
     return (
         <div className={`main-nav main-nav--${context}`}>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}
-            <NavLink className={getClassName("/discography")} exact to="/discography">Make your own</NavLink>            
-            <NavLink className={getClassName("/tour")} exact to="/tour">Predefine</NavLink>            
-            <NavLink className={getClassName("/shop")} exact to="/shop">Login</NavLink>            
+            <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn">Make your own</NavLink>            
+            <NavLink className={getClassName("/Predefine")} exact to="/predefine">Predefine</NavLink>            
+            <NavLink className={getClassName("/Login")} exact to="/Login">Login</NavLink>            
         </div>
     );
 };
