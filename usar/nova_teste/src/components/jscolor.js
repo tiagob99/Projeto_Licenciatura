@@ -11,8 +11,8 @@
  */
 
 
-"use strict";
 
+import 'jquery-ui-dist/jquery-ui';
 
 if (!window.jscolor) { window.jscolor = (function () {
 

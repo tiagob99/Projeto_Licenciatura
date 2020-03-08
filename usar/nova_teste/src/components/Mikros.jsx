@@ -1,79 +1,80 @@
 import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
+import 'jquery-ui-dist/jquery-ui';
 import './mikrosjs';
-import $ from 'jquery'
+import './jscolor';
+
 
 const Mikros = () => {
        
     return (
         
-        <div>
-            
-        
-        <body onload='timerTick()'>
-        <div class="big_div">
+      <div>
+      <meta charSet="utf-8" />
+      <title>Mikro</title>
+      <link rel="stylesheet" type="text/css" href="Mikro.css" />
+      <div className="big_div">
         <div id="toggle-btn" onclick="togglemenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </div>
-        <div id="sidebar" >
+        <div id="sidebar">
           <ul>
-            <li class="elementos_menu_direito" onclick="togglemenu1()" >Watch Types</li>
-            <div id="first_menu_hidden" >
+            <li className="elementos_menu_direito" onclick="togglemenu1()">Watch Types</li>
+            <div id="first_menu_hidden">
               <div id="dragdiv">
-                <div class="child elementos" id="node2">
-                  <svg id='clock' viewBox='0 0 100 100' width='200' height='200'>
-                    <g id='pointers'>
-                      <line id='hour_pointer' x1='50' y1='50' x2='50' y2='27' />
-                      <line id='minute_pointer' x1='50' y1='50' x2='50' y2='17' />
-                      <line id='second_pointer' x1='50' y1='50' x2='50' y2='13' />
-                      <circle id="center_dot"  cx="50" cy="50" r="1"/>
-                      {/* style="{stroke:white; stroke-width:3px;} */}
+                <div className="child elementos" id="node2">
+                  <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
+                    <g id="pointers">
+                      <line id="hour_pointer" x1={50} y1={50} x2={50} y2={27} />
+                      <line id="minute_pointer" x1={50} y1={50} x2={50} y2={17} />
+                      <line id="second_pointer" x1={50} y1={50} x2={50} y2={13} />
+                      <circle id="center_dot" style={{stroke: 'white', strokeWidth: '3px'}} cx={50} cy={50} r={1} />
                     </g>
                   </svg>
                 </div>
-             </div>
+              </div>
             </div>
             <div id="remaining_01">
-              <li class="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
+              <li className="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
               <div id="second_menu_hidden">
-                <p>Background Colors <input class="jscolor {onFineChange:'background_color(this)'}" value="000"/> </p>
-                <p>Digital <input class="jscolor {onFineChange:'digital_color(this)'}" value="fff"/></p>
-                <p>Analog Hours <input class="jscolor {onFineChange:'analog_hours(this)'}" value="fff"/></p>
-                <p>Analog Minuts <input class="jscolor {onFineChange:'analog_minutes(this)'}" value="fff"/></p>
-                <p>Analog Seconds <input class="jscolor {onFineChange:'analog_seconds(this)'}" value="FF0000"/></p>
-                <p>Center Dot <input class="jscolor {onFineChange:'center_circule(this)'}" value="fff"/></p>
+                <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
+                <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
+                <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
+                <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
+                <p>Analog Seconds <input className="jscolor {onFineChange:'analog_seconds(this)'}" defaultValue="FF0000" /> </p>
+                <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
               </div>
               <div id="remaining_02">
-                <li class="elementos_menu_direito"  onclick="togglemenu3()">Line</li>
+                <li className="elementos_menu_direito" onclick="togglemenu3()">Line</li>
                 <div id="third_menu_hidden">
-                  <p>Circle Bar 1</p> <br/> <input class="jscolor {onFineChange:'bar_color1(this)'}" name="b1_color" value="FF0000" />
-                  <p>Circle Bar 2</p> <br/> <input class="jscolor {onFineChange:'bar_color2(this)'}" name="b2_color" value="00acc1" />
-                  <p>Circle Bar 1 Size </p> <br/> <input id="bar_size1"  value="100" max="89" onchange="bar_thickness_1()" type="range" name="b_size" />
-                  <p>Circle Bar 2 Size </p> <br/> <input id="bar_size2" value="100" max="89" onchange="bar_thickness_2()" type="range" name="b_size" />
-                  <p>Circle Bar Radius </p> <br/> <input id="bar_radius" min="59" onchange="bars_radius()" type="range" name="b_radius" value="100"/>
-                  <p>Circle Bar Start </p><br/> 
-                  <select name="bar_star" id="bar_type" onchange="bar_type()" >
+                  <p>Circle Bar 1</p> <br /> <input className="jscolor {onFineChange:'bar_color1(this)'}" name="b1_color" defaultValue="FF0000" /><br /><br />
+                  <p>Circle Bar 2</p> <br /> <input className="jscolor {onFineChange:'bar_color2(this)'}" name="b2_color" defaultValue="00acc1" /><br /><br />
+                  <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onchange="bar_thickness_1()" type="range" name="b_size" /><br /><br />
+                  <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onchange="bar_thickness_2()" type="range" name="b_size" /><br /><br />
+                  <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onchange="bars_radius()" type="range" name="b_radius" defaultValue={100} /><br /><br />
+                  <p>Circle Bar Start </p> <br />
+                  <select name="bar_star" id="bar_type" onchange="bar_type()">
                     <option value="full">Full</option>
                     <option value="tophalf">Top Half</option>
                     <option value="bottomhalf">Bottom Half</option>
                   </select>
-                  <br/>
-                  <p>Circle Bar Rotation </p><br/>
-                  <select name="bar_rotation" id="bar_star" onchange="update_rotation()" >
+                  <br /><br />
+                  <p>Circle Bar Rotation </p> <br />
+                  <select name="bar_rotation" id="bar_star" onchange="update_rotation()">
                     <option value="clockwise">Clockwise</option>
                     <option value="counterclockwise">Counterclockwise</option>
                   </select>
-                  <br/>
+                  <br /><br />
                 </div>
                 <div id="remaining_03">
-                  <li class="elementos_menu_direito" onclick="togglemenu4()">Attributes</li>
+                  <li className="elementos_menu_direito" onclick="togglemenu4()">Attributes</li>
                   <div id="fourth_menu_hidden">
-                    <div class="text">
-                      <p>Message</p><br/>
-                      <textarea name="field5" class="tex_box" placeholder="Insert your message" rows="15" cols="45"></textarea>
+                    <div className="text">
+                      <p>Message</p><br />
+                      <textarea name="field5" className="tex_box" placeholder="Insert your message" rows={15} cols={45} defaultValue={""} />
                     </div>
                   </div>
                 </div>
@@ -81,33 +82,30 @@ const Mikros = () => {
             </div>
           </ul>
         </div>
-        <div class="watch">
-          <div class="center_circule">
-            <p id="rect" class="center_circule" ></p>
-            <div class="circule">
-              <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="90%" height="90%">
-                <circle class="circle-chart__circle" id="bar1" stroke="#FF0000" stroke-width="2" stroke-dasharray="65,100"  fill="none"  cx="16.91549431" cy="16.91549431" r="16" />
-                <circle class="circle-chart__circle" id="bar2" stroke="#00acc1" stroke-width="2" stroke-dasharray="30,100"  fill="none"  cx="16.91549431" cy="16.91549431" r="14" />
-  
+        <div className="watch">
+          <div className="center_circule">
+            <p id="rect" className="center_circule" />
+            <div className="circule">
+              <svg className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="90%" height="90%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-45%', marginTop: '-45%'}}>
+                <circle className="circle-chart__circle" id="bar1" stroke="#FF0000" strokeWidth={2} strokeDasharray="65,100" fill="none" cx="16.91549431" cy="16.91549431" r={16} />
+                <circle className="circle-chart__circle" id="bar2" stroke="#00acc1" strokeWidth={2} strokeDasharray="30,100" fill="none" cx="16.91549431" cy="16.91549431" r={14} />
               </svg>
             </div>
-            <div id="dropdiv" >
-              <div class="child elementos "id="node1" >
-                <svg height="70" width="200">
-                  <text x="0" y="15" ></text>
+            <div id="dropdiv">
+              <div className="child elementos " id="node1">
+                <svg height={0} width={200}>
+                  <text x={0} y={15} />
                 </svg>
-                <span id="hour"></span>
-                <span id="minute"></span>
-                <span id="second"></span>
+                <span id="hour" />
+                <span id="minute" />
+                <span id="second" />
               </div>
             </div>
-  
           </div>
         </div>
-        </div>
-        </body>
-        </div> 
-      
+      </div>
+    </div>
+    
     ); 
 }
 export default Mikros;

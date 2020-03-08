@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
-import './Garden';
+//import './Garden';
 import './jscolor';
 import { Component } from 'react';
 
