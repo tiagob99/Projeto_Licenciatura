@@ -127,7 +127,7 @@ $(function clock(){
 export function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
 }
-export function digital_color(jscolor) {
+function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
 }
 export function analog_hours(jscolor) {
@@ -146,7 +146,7 @@ export function bar_color1(jscolor) {
    document.getElementById('bar1').style.stroke = '#' + jscolor
 }
 export function bar_color2(jscolor) {
-//    document.getElementById('bar2').style.stroke = '#' + jscolor
+    document.getElementById('bar2').style.stroke = '#' + jscolor
 }
 /*Cores*/
 
