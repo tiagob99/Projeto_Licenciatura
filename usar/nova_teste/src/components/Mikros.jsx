@@ -1,8 +1,8 @@
 import React from 'react';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
-import './mikrosjs';
-import './jscolor';
+import * as micro from './mikrosjs';
+import * as color from'./jscolor';
 
 
 const Mikros = () => {
@@ -14,14 +14,14 @@ const Mikros = () => {
       <title>Mikro</title>
       <link rel="stylesheet" type="text/css" href="Mikro.css" />
       <div className="big_div">
-        <div id="toggle-btn" onclick="togglemenu()">
+        <div id="toggle-btn" onClick={micro.togglemenu}>
           <span />
           <span />
           <span />
         </div>
         <div id="sidebar">
           <ul>
-            <li className="elementos_menu_direito" onclick="togglemenu1()">Watch Types</li>
+            <li className="elementos_menu_direito" onClick={micro.togglemenu1}>Watch Types</li>
             <div id="first_menu_hidden">
               <div id="dragdiv">
                 <div className="child elementos" id="node2">
@@ -37,7 +37,7 @@ const Mikros = () => {
               </div>
             </div>
             <div id="remaining_01">
-              <li className="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
+              <li className="elementos_menu_direito" onClick={micro.togglemenu2}>Colors</li>
               <div id="second_menu_hidden">
                 <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
                 <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
@@ -47,29 +47,29 @@ const Mikros = () => {
                 <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
               </div>
               <div id="remaining_02">
-                <li className="elementos_menu_direito" onclick="togglemenu3()">Line</li>
+                <li className="elementos_menu_direito" onClick={micro.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
-                  <p>Circle Bar 1</p> <br /> <input className="jscolor {onFineChange:'bar_color1(this)'}" name="b1_color" defaultValue="FF0000" /><br /><br />
+                  <p>Circle Bar 1</p> <br /> <input className="jscolor {color.onFineChange:{color.bar_color1(this)}}" name="b1_color" defaultValue="FF0000" /><br /><br />
                   <p>Circle Bar 2</p> <br /> <input className="jscolor {onFineChange:'bar_color2(this)'}" name="b2_color" defaultValue="00acc1" /><br /><br />
-                  <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onchange="bar_thickness_1()" type="range" name="b_size" /><br /><br />
-                  <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onchange="bar_thickness_2()" type="range" name="b_size" /><br /><br />
-                  <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onchange="bars_radius()" type="range" name="b_radius" defaultValue={100} /><br /><br />
+                  <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onChange={micro.bar_thickness_1} type="range" name="b_size" /><br /><br />
+                  <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onChange={micro.bar_thickness_2} type="range" name="b_size" /><br /><br />
+                  <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onChange={micro.bars_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
                   <p>Circle Bar Start </p> <br />
-                  <select name="bar_star" id="bar_type" onchange="bar_type()">
+                  <select name="bar_star" id="bar_type" onChange={micro.bar_type}>
                     <option value="full">Full</option>
                     <option value="tophalf">Top Half</option>
                     <option value="bottomhalf">Bottom Half</option>
                   </select>
                   <br /><br />
                   <p>Circle Bar Rotation </p> <br />
-                  <select name="bar_rotation" id="bar_star" onchange="update_rotation()">
+                  <select name="bar_rotation" id="bar_star" onChange={micro.update_rotation}>
                     <option value="clockwise">Clockwise</option>
                     <option value="counterclockwise">Counterclockwise</option>
                   </select>
                   <br /><br />
                 </div>
                 <div id="remaining_03">
-                  <li className="elementos_menu_direito" onclick="togglemenu4()">Attributes</li>
+                  <li className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
                     <div className="text">
                       <p>Message</p><br />

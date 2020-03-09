@@ -4,8 +4,7 @@ import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import './Garden';
 import './jscolor';
-// import { Component } from 'react';
-
+  
 
 
 const Gardens = () => {
@@ -39,7 +38,7 @@ const Gardens = () => {
         <div id="remaining_01">
           <li className="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
           <div id="second_menu_hidden">
-            <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={000} /> </p>
+            <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
             <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
             <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
             <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
