@@ -63,7 +63,7 @@ $(function() {
 });
 
 
-function readropzone() {
+$(function readropzone() {
   if (drop == "Li1") {
     console.log("none");
   }
@@ -73,13 +73,13 @@ function readropzone() {
   else {
     console.log("Analogico");
   }
-}
+})
 /*drag and drop*/
 
 
 
 /*Relogio Digital*/
-function clock(){
+$(function clock(){
   const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -91,45 +91,45 @@ function clock(){
   }
   document.getElementById('hour').innerHTML = hours;
   document.getElementById('minute').innerHTML = ": " + minutes;
-}
-setInterval(clock,100);
+  setInterval(clock,100);
+})
 /*Relogio Digital*/
 
 
 
 /*Relogio analogico*/
-// function timerTick() {
-//   with (new Date()) {
-//     var h = 30 * ((getHours() % 12) + getMinutes() / 60);
-//     var m = 6 * getMinutes();
-//     var s = 6 * getSeconds();
-//     document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-//     document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-//     document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-//     setTimeout(timerTick, 100);
-//   }
-// }
+$(function timerTick() {
+  with (new Date()) {
+    var h = 30 * ((getHours() % 12) + getMinutes() / 60);
+    var m = 6 * getMinutes();
+    var s = 6 * getSeconds();
+    document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+    document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+    document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    setTimeout(timerTick, 100);
+  }
+})
 /*Relogio analogico*/
 
 
 
 /*Cores*/
-function background_color(jscolor) {
+$(function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}
-function digital_color(jscolor) {
+})
+$(function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
-}
-function analog_hours(jscolor) {
+})
+$(function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
-}
-function analog_minutes(jscolor) {
+})
+$(function analog_minutes(jscolor) {
     document.getElementById('minute_pointer').style.stroke = '#' + jscolor
-}
-function analog_seconds(jscolor) {
+})
+$(function analog_seconds(jscolor) {
     document.getElementById('second_pointer').style.stroke = '#' + jscolor
-}
-function center_circule(jscolor) {
+})
+$(function center_circule(jscolor) {
     document.getElementById('center_dot').style.stroke = '#' + jscolor
-}
+})
 /*Cores*/
