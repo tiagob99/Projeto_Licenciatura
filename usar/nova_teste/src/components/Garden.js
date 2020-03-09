@@ -8,13 +8,13 @@ import 'jquery-ui-dist/jquery-ui';
 //  document.getElementById('sidebar').classList.toggle('active');
 //  document.getElementById('toggle-btn').classList.toggle('active');
 // }
-function togglemenu1(){
+$(function togglemenu1(){
  document.getElementById('first_menu_hidden').classList.toggle('active');
  document.getElementById('remaining_01').classList.toggle('active');
-}
-function togglemenu2(){
+})
+$(function togglemenu2(){
  document.getElementById('second_menu_hidden').classList.toggle('active');
-}
+})
 /*Menu*/
 
 
