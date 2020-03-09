@@ -19,7 +19,7 @@ const Gardens = () => {
   <title>Garden</title>
   <link rel="stylesheet" type="text/css" href="Garden.css" />
   <div className="big_div">
-    <div id="toggle-btn" onClick="togglemenu()">
+    <div id="toggle-btn" onClick={garden.togglemenu}>
       <span />
       <span />
       <span />
