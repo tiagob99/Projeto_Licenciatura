@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import './mikrosjs';

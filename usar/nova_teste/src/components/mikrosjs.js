@@ -4,25 +4,25 @@ import 'jquery-ui-dist/jquery-ui';
 
 
 /*Menu*/
-function togglemenu(){
- document.getElementById('sidebar').classList.toggle('active');
- document.getElementById('toggle-btn').classList.toggle('active');
-}
-function togglemenu1(){
- document.getElementById('first_menu_hidden').classList.toggle('active');
- document.getElementById('remaining_01').classList.toggle('active');
-}
-function togglemenu2(){
+// $(function togglemenu(){
+//  document.getElementById('sidebar').classList.toggle('active');
+//  document.getElementById('toggle-btn').classList.toggle('active');
+// })
+$(function togglemenu1(){
+  document.getElementById('first_menu_hidden').classList.toggle('active');
+  document.getElementById('remaining_01').classList.toggle('active');
+ })
+$(function togglemenu2(){
  document.getElementById('second_menu_hidden').classList.toggle('active');
  document.getElementById('remaining_02').classList.toggle('active');
-}
-function togglemenu3(){
+})
+$(function togglemenu3(){
  document.getElementById('third_menu_hidden').classList.toggle('active');
  document.getElementById('remaining_03').classList.toggle('active');
-}
-function togglemenu4(){
+})
+$(function togglemenu4(){
  document.getElementById('fourth_menu_hidden').classList.toggle('active');
-}
+})
 /*Menu*/
 
 /*drag and drop*/
@@ -71,20 +71,20 @@ $(function() {
 });
 
 
-function readropzone() {
+$(function readropzone() {
   if (drop == "node1") {
     console.log("Digital");
   }
   else {
     console.log("Analogico");
   }
-}
+})
 /*drag and drop*/
 
 
 
 /*Relogio Digital*/
-function clock(){
+$(function clock(){
   const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -96,14 +96,15 @@ function clock(){
   }
    document.getElementById('hour').innerHTML = hours;
    document.getElementById('minute').innerHTML = ": " + minutes;
-}
-setInterval(clock,100);
+   setInterval(clock,100);
+
+})
 /*Relogio Digital*/
 
 
 
 /*Relogio analogico*/
-  function timerTick() {
+  $(function timerTick() {
       const fulld = new Date();
       var h = 30 * ((fulld.getHours() % 12) + fulld.getMinutes() / 60);
       var m = 6 * fulld.getMinutes();
@@ -112,37 +113,41 @@ setInterval(clock,100);
       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
       document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
       setTimeout(timerTick, 100);
+      setInterval(timerTick,100);
+
+
     }
+    )
   
 /*Relogio analogico*/
 
 
 
 /*Cores*/
-function background_color(jscolor) {
+$(function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}
-function digital_color(jscolor) {
+})
+$(function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
-}
-function analog_hours(jscolor) {
+})
+$(function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
-}
-function analog_minutes(jscolor) {
+})
+$(function analog_minutes(jscolor) {
     document.getElementById('minute_pointer').style.stroke = '#' + jscolor
-}
-function analog_seconds(jscolor) {
+})
+$(function analog_seconds(jscolor) {
     document.getElementById('second_pointer').style.stroke = '#' + jscolor
-}
-function center_circule(jscolor) {
+})
+$(function center_circule(jscolor) {
     document.getElementById('center_dot').style.stroke = '#' + jscolor
-}
-function bar_color1(jscolor) {
+})
+$(function bar_color1(jscolor) {
     document.getElementById('bar1').style.stroke = '#' + jscolor
-}
-function bar_color2(jscolor) {
+})
+$(function bar_color2(jscolor) {
     document.getElementById('bar2').style.stroke = '#' + jscolor
-}
+})
 /*Cores*/
 
 
