@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
-//import './Garden';
+import 'jquery-ui-dist/jquery-ui';
+import './Garden';
 import './jscolor';
-import { Component } from 'react';
+// import { Component } from 'react';
 
 
 
@@ -11,12 +12,15 @@ const Gardens = () => {
     return (
 
       <div> 
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+      {/* <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
       <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
       <script src="jscolor.js"></script>
-      <script src="Garden.js"></script>
+      <script src="Garden.js"></script> */}
+      <meta charset="utf-8" />
+      <title>Garden</title>
+      <link rel="stylesheet" type= "text/css" href="Garden.css"/>
     
-    <body  onload='timerTick()'>
+    {/* <body  onload='timerTick()'> */}
       <div class="big_div">
         <div id="toggle-btn" onclick="togglemenu()">
           <span></span>
@@ -65,7 +69,8 @@ const Gardens = () => {
                     <line id='hour_pointer' x1='50' y1='50' x2='50' y2='27' />
                     <line id='minute_pointer' x1='50' y1='50' x2='50' y2='17' />
                     <line id='second_pointer' x1='50' y1='50' x2='50' y2='13' />
-                    {/* <circle id="center_dot" style="stroke:white; stroke-width:3px; "cx="50" cy="50" r="1"/> */}
+                    <circle id="center_dot" style={{stroke: 'white', strokewidth:'3px'}} cx={50} cy={50} r={1}/> 
+                    {/* aqui alterei  mas onde viste esta alteração?                 */}
                   </g>
                 </svg>
               </div>
@@ -75,7 +80,7 @@ const Gardens = () => {
         </div>
   
       </div>
-    </body>
+    {/* </body> */}
     </div>
 
   ); 

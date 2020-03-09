@@ -1,8 +1,13 @@
+import $ from'jquery';
+import 'jquery-ui-dist/jquery-ui';
+
+
+
 /*Menu*/
-function togglemenu(){
- document.getElementById('sidebar').classList.toggle('active');
- document.getElementById('toggle-btn').classList.toggle('active');
-}
+// function togglemenu(){
+//  document.getElementById('sidebar').classList.toggle('active');
+//  document.getElementById('toggle-btn').classList.toggle('active');
+// }
 function togglemenu1(){
  document.getElementById('first_menu_hidden').classList.toggle('active');
  document.getElementById('remaining_01').classList.toggle('active');
