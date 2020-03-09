@@ -4,25 +4,25 @@ import 'jquery-ui-dist/jquery-ui';
 
 
 /*Menu*/
-// $(function togglemenu(){
-//  document.getElementById('sidebar').classList.toggle('active');
-//  document.getElementById('toggle-btn').classList.toggle('active');
-// })
-$(function togglemenu1(){
+export function togglemenu(){
+ document.getElementById('sidebar').classList.toggle('active');
+ document.getElementById('toggle-btn').classList.toggle('active');
+}
+export function togglemenu1(){
   document.getElementById('first_menu_hidden').classList.toggle('active');
   document.getElementById('remaining_01').classList.toggle('active');
- })
-$(function togglemenu2(){
+ }
+export function togglemenu2(){
  document.getElementById('second_menu_hidden').classList.toggle('active');
- document.getElementById('remaining_02').classList.toggle('active');
-})
-$(function togglemenu3(){
- document.getElementById('third_menu_hidden').classList.toggle('active');
- document.getElementById('remaining_03').classList.toggle('active');
-})
-$(function togglemenu4(){
+document.getElementById('remaining_02').classList.toggle('active');
+}
+export function togglemenu3(){
+document.getElementById('third_menu_hidden').classList.toggle('active');
+document.getElementById('remaining_03').classList.toggle('active');
+}
+export function togglemenu4(){
  document.getElementById('fourth_menu_hidden').classList.toggle('active');
-})
+}
 /*Menu*/
 
 /*drag and drop*/
@@ -124,30 +124,30 @@ $(function clock(){
 
 
 /*Cores*/
-$(function background_color(jscolor) {
+export function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
-})
-$(function digital_color(jscolor) {
+}
+export function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
-})
-$(function analog_hours(jscolor) {
+}
+export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
-})
-$(function analog_minutes(jscolor) {
+}
+export function analog_minutes(jscolor) {
     document.getElementById('minute_pointer').style.stroke = '#' + jscolor
-})
-$(function analog_seconds(jscolor) {
+}
+export function analog_seconds(jscolor) {
     document.getElementById('second_pointer').style.stroke = '#' + jscolor
-})
-$(function center_circule(jscolor) {
+}
+export function center_circule(jscolor) {
     document.getElementById('center_dot').style.stroke = '#' + jscolor
-})
-$(function bar_color1(jscolor) {
-    document.getElementById('bar1').style.stroke = '#' + jscolor
-})
-$(function bar_color2(jscolor) {
-    document.getElementById('bar2').style.stroke = '#' + jscolor
-})
+}
+export function bar_color1(jscolor) {
+   document.getElementById('bar1').style.stroke = '#' + jscolor
+}
+export function bar_color2(jscolor) {
+//    document.getElementById('bar2').style.stroke = '#' + jscolor
+}
 /*Cores*/
 
 
@@ -162,7 +162,7 @@ var degrees= -90;
 var position = "full"
 
 
-function bars_radius() {
+export function bars_radius() {
     var novo = document.getElementById('bar_radius').value;
     novo = (novo/100)*15+1;
     raio1 = novo;
@@ -174,21 +174,21 @@ function bars_radius() {
 }
 
 
-function bar_thickness_1() {
+export function bar_thickness_1() {
     var novo = document.getElementById('bar_size1').value;
     novo = (novo/100)*2+0.2;
     document.getElementById('bar1').style.strokeWidth =  novo;
 }
 
 
-function bar_thickness_2() {
+export function bar_thickness_2() {
     var novo = document.getElementById('bar_size2').value;
     novo = (novo/100)*2+0.2;
     document.getElementById('bar2').style.strokeWidth =  novo;
 }
 
 
-function bar_type(){
+export function bar_type(){
   var novo = document.getElementById('bar_type').value;
   if (novo == "full"){
     document.getElementById('bar2').style.strokeDasharray  = "30,100"
@@ -226,7 +226,7 @@ function bar_type(){
 }
 
 
-function update_rotation(){
+export function update_rotation(){
   if (right){
     if(position == "full"){
       var novo = degrees -180
