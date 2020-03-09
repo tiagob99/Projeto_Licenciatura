@@ -2,8 +2,11 @@ import React from 'react';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
-import './Garden';
-import './jscolor';
+import * as garden from './Garden';
+import * as colors from './jscolor';
+
+// import './Garden';
+// import './jscolor';
 // import { Component } from 'react';
 
 
@@ -16,14 +19,14 @@ const Gardens = () => {
   <title>Garden</title>
   <link rel="stylesheet" type="text/css" href="Garden.css" />
   <div className="big_div">
-    <div id="toggle-btn" onclick="togglemenu()">
+    <div id="toggle-btn" onClick="togglemenu()">
       <span />
       <span />
       <span />
     </div>
     <div id="sidebar">
       <ul>
-        <li className="elementos_menu_direito" onclick="togglemenu1()">Watch Types</li>
+        <li className="elementos_menu_direito" onClick={garden.togglemenu1}>Watch Types</li>
         <div id="first_menu_hidden">
           <div id="dragdiv">
             <div className="child elementos " id="node1">
@@ -37,9 +40,9 @@ const Gardens = () => {
           </div>
         </div>
         <div id="remaining_01">
-          <li className="elementos_menu_direito" onclick="togglemenu2()">Colors</li>
+          <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden">
-            <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={000} /> </p>
+            <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
             <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
             <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
             <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>

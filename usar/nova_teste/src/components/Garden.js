@@ -89,7 +89,7 @@ $(function clock(){
   if (minutes < 10){
     minutes = "0" + minutes
   }
-  document.getElementById('hour').innerHTML = hours;
+  document.getElementById('hour').innerHTML = hours; // aqui ''
   document.getElementById('minute').innerHTML = ": " + minutes;
   setInterval(clock,100);
 })
@@ -97,39 +97,40 @@ $(function clock(){
 
 
 
-/*Relogio analogico*/
+/*Relogio analogico -- foi preciso colocar o new date numa variável certo??*/ 
 $(function timerTick() {
-  with (new Date()) {
-    var h = 30 * ((getHours() % 12) + getMinutes() / 60);
-    var m = 6 * getMinutes();
-    var s = 6 * getSeconds();
+  const aqui =new Date();
+    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+    var m = 6 * aqui.getMinutes();
+    var s = 6 * aqui.getSeconds();
     document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
     document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
     document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
     setTimeout(timerTick, 100);
+    setInterval(timerTick,100);
   }
-})
+)
 /*Relogio analogico*/
 
 
 
 /*Cores*/
-$(function background_color(jscolor) {
+export function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
-})
-$(function digital_color(jscolor) {
+}
+export function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
-})
-$(function analog_hours(jscolor) {
+}
+export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
-})
-$(function analog_minutes(jscolor) {
+}
+export function analog_minutes(jscolor) {
     document.getElementById('minute_pointer').style.stroke = '#' + jscolor
-})
-$(function analog_seconds(jscolor) {
+}
+export function analog_seconds(jscolor) {
     document.getElementById('second_pointer').style.stroke = '#' + jscolor
-})
-$(function center_circule(jscolor) {
+}
+export function center_circule(jscolor) {
     document.getElementById('center_dot').style.stroke = '#' + jscolor
-})
+}
 /*Cores*/
