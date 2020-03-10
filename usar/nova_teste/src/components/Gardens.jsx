@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from'jquery';
 import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
@@ -9,15 +10,13 @@ import * as colors from './jscolor';
 // import './jscolor';
 // import { Component } from 'react';
 
-
-
 const Gardens = () => {
     return (
-
       <div>
   <meta charSet="utf-8" />
   <title>Garden</title>
-  <link rel="stylesheet" type="text/css" href="Garden.css" />
+  <link rel="stylesheet" type="text/css" href="main.scss" />  
+  {/* aqui */}
   <div className="big_div">
     <div id="toggle-btn" onClick={garden.togglemenu}>
       <span />
@@ -33,9 +32,9 @@ const Gardens = () => {
               <svg height={70} width={200}>
                 <text x={0} y={15} />
               </svg>
-              <span id="hour" />
-              <span id="minute" />
-              <span id="second" />
+              <span/>
+              <span/>
+              <span/>
             </div>
           </div>
         </div>

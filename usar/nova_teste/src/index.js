@@ -1,17 +1,19 @@
-import React, { lazy } from 'react';
+// import React from 'react';
+import React, {lazy} from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './components/home/Home';
 import './main.scss';
 import makeYourOwn from './components/MakeYourOwn';
 import predefine from './components/Predefine';
-import Gardens from './components/Gardens';    
-// import Mikros from './components/Mikros';
+// import Gardens from './components/Gardens';    
+import Mikros from './components/Mikros';
 import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
 
-const teste = lazy(() => import('./components/Mikros'));
+
+const home = lazy(() => import ('./components/Gardens')); 
 
 const Routes = () => (
     <BrowserRouter>
