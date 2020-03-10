@@ -4,12 +4,12 @@ import 'jquery-ui-dist/jquery-ui';
 import * as micro from './mikrosjs';
 import * as color from'./jscolor';
 
-
 const Mikros = () => {
        
     return (
         
       <div>
+        
       <meta charSet="utf-8" />
       <title>Mikro</title>
       <link rel="stylesheet" type="text/css" href="Mikro.css" />
@@ -39,18 +39,18 @@ const Mikros = () => {
             <div id="remaining_01">
               <li className="elementos_menu_direito" onClick={micro.togglemenu2}>Colors</li>
               <div id="second_menu_hidden">
-                <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
-                <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
-                <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
-                <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
-                <p>Analog Seconds <input className="jscolor {onFineChange:'analog_seconds(this)'}" defaultValue="FF0000" /> </p>
-                <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
+                <p>Background Colors <input className="jscolor {onFineChange:{micro.background_color(this)}}" defaultValue="000" /> </p>
+                <p>Digital <input className="jscolor {onFineChange:'this.micro.digital_color(this)'}" defaultValue="fff" /> </p>
+                <p>Analog Hours <input className="jscolor {color.onFineChange:{color.analog_hours(this)}}" defaultValue="fff" /> </p>
+                <p>Analog Minuts <input className="jscolor {micro.onFineChange:{color.analog_minutes(this}}" defaultValue="fff" /> </p>
+                <p>Analog Seconds <input className="jscolor {color.onFineChange:{color.analog_seconds(this}}" defaultValue="FF0000" /> </p>
+                <p>Center Dot <input className="jscolor {color.onFineChange:{color.center_circule(this)}}" defaultValue="fff" /> </p>
               </div>
               <div id="remaining_02">
                 <li className="elementos_menu_direito" onClick={micro.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
                   <p>Circle Bar 1</p> <br /> <input className="jscolor {color.onFineChange:{color.bar_color1(this)}}" name="b1_color" defaultValue="FF0000" /><br /><br />
-                  <p>Circle Bar 2</p> <br /> <input className="jscolor {onFineChange:'bar_color2(this)'}" name="b2_color" defaultValue="00acc1" /><br /><br />
+                  <p>Circle Bar 2</p> <br /> <input className="jscolor {color.onFineChange:{color.bar_color2(this)}}"name="b2_color" defaultValue="00acc1" /><br /><br />
                   <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onChange={micro.bar_thickness_1} type="range" name="b_size" /><br /><br />
                   <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onChange={micro.bar_thickness_2} type="range" name="b_size" /><br /><br />
                   <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onChange={micro.bars_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
