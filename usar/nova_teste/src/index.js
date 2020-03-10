@@ -11,7 +11,7 @@ import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
 
-const m = lazy(() => import('./components/Mikros'));
+const teste = lazy(() => import('./components/Mikros'));
 
 const Routes = () => (
     <BrowserRouter>
@@ -22,7 +22,7 @@ const Routes = () => (
             <Route exact path="/Predefine" component={predefine}/>
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Gardens" component={Gardens}/>
-            <Route exact path="/Mikros" component={m}/>
+            <Route exact path="/Mikros" component={teste}/>
             <Footer/>            
         </div>
     </BrowserRouter>
