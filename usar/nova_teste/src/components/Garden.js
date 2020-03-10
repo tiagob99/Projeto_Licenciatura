@@ -4,6 +4,7 @@ import 'jquery-ui-dist/jquery-ui';
 
 
 
+
 /*Menu*/
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -80,8 +81,7 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$( function clock(){
-setInterval( () => {
+$(function clock(){
 const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -94,14 +94,13 @@ const fullDate = new Date();
 
   document.getElementById('hour').innerHTML = hours;
   document.getElementById('minute').innerHTML = ": " + minutes;
-  }, 100);
-
+  setInterval(clock,100);
 })
 /*Relogio Digital*/
 
 
 /*Relogio analogico -- foi preciso colocar o new date numa variável certo??*/ 
-export function timerTick() {
+$(function timerTick() {
   const aqui =new Date();
     var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
     var m = 6 * aqui.getMinutes();
@@ -110,19 +109,19 @@ export function timerTick() {
     document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
     document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
     setTimeout(timerTick, 100);
-    setInterval(timerTick,100);
-  }
+  })
+
 /*Relogio analogico*/
 
 
 
 /*Cores*/
-export function background_color(jscolor) {
+$( function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}
-export function digital_color(jscolor) {
+})
+$( function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
-}
+})
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
 }

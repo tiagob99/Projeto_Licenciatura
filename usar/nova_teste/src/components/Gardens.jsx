@@ -1,22 +1,18 @@
 import React from 'react';
-import $ from'jquery';
-import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
 import * as colors from './jscolor';
 
-// import './Garden';
-// import './jscolor';
-// import { Component } from 'react';
+
+
 
 const Gardens = () => {
     return (
+
       <div>
   <meta charSet="utf-8" />
   <title>Garden</title>
-  <link rel="stylesheet" type="text/css" href="main.scss" />  
-  {/* aqui */}
   <div className="big_div">
     <div id="toggle-btn" onClick={garden.togglemenu}>
       <span />
@@ -32,21 +28,21 @@ const Gardens = () => {
               <svg height={70} width={200}>
                 <text x={0} y={15} />
               </svg>
-              <span/>
-              <span/>
-              <span/>
+              <span id="hour" />
+              <span id="minute" />
+              <span id="second" />
             </div>
           </div>
         </div>
         <div id="remaining_01">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden">
-            <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue={'000'} /> </p>
-            <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
-            <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
-            <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
-            <p>Analog Seconds <input className="jscolor {onFineChange:'analog_seconds(this)'}" defaultValue="ff0000" /> </p>
-            <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
+            <p>Background Colors <input className="jscolor {onChange:{garden.background_color(this)}}" defaultValue={'000'} /> </p>
+            <p>Digital <input className="jscolor {onFineChange:{garden.digital_color(this)}}" defaultValue="fff" /> </p>
+            <p>Analog Hours <input className="jscolor {onFineChange:{garden.analog_hours(this)}}" defaultValue="fff" /> </p>
+            <p>Analog Minuts <input className="jscolor {onFineChange:{garden.analog_minutes(this)}}" defaultValue="fff" /> </p>
+            <p>Analog Seconds <input className="jscolor {onFineChange:{garden.analog_seconds(this)}}" defaultValue="ff0000" /> </p>
+            <p>Center Dot <input className="jscolor {onFineChange:{garden.center_circule(this)}}" defaultValue="fff" /> </p>
           </div>
         </div>
       </ul>
