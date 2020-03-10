@@ -80,7 +80,7 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$(function clock(){
+export function clock(){
   const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -93,12 +93,12 @@ $(function clock(){
  document.getElementById('hour').innerHTML = hours;
  document.getElementById('minute').innerHTML = ": " + minutes;
   setInterval(clock,100);
-})
+}
 /*Relogio Digital*/
 
 
 /*Relogio analogico -- foi preciso colocar o new date numa variável certo??*/ 
-$(function timerTick() {
+export function timerTick() {
   const aqui =new Date();
     var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
     var m = 6 * aqui.getMinutes();
@@ -109,7 +109,7 @@ $(function timerTick() {
     setTimeout(timerTick, 100);
     setInterval(timerTick,100);
   }
-)
+
 /*Relogio analogico*/
 
 

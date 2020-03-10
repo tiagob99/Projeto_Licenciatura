@@ -84,7 +84,8 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$(function clock(){
+$( function clock(){
+  setInterval( () => {
   const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -96,7 +97,7 @@ $(function clock(){
   }
    document.getElementById('hour').innerHTML = hours;
    document.getElementById('minute').innerHTML = ": " + minutes;
-   setInterval(clock,100);
+},100);
 
 })
 /*Relogio Digital*/
@@ -116,8 +117,8 @@ $(function clock(){
       setInterval(timerTick,100);
 
 
-    }
-    )
+    }) 
+    
   
 /*Relogio analogico*/
 
@@ -127,7 +128,7 @@ $(function clock(){
 export function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
 }
-function digital_color(jscolor) {
+export function digital_color(jscolor) {
     document.getElementById('node1').style.color = '#' + jscolor
 }
 export function analog_hours(jscolor) {
