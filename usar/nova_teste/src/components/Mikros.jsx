@@ -12,7 +12,6 @@ const Mikros = () => {
         
       <meta charSet="utf-8" />
       <title>Mikro</title>
-      <link rel="stylesheet" type="text/css" href="Mikro.css" />
       <div className="big_div">
         <div id="toggle-btn" onClick={micro.togglemenu}>
           <span />
