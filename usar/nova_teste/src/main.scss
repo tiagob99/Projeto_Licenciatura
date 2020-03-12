@@ -38,13 +38,16 @@ $small: "only screen and (max-width : 430px)";
     }
 }
 
-html, body, #root {
+html, body,#root{
     padding: 0;
     margin: 0;
     border: none;    
     font-family: $oswald;
     color: $main-font-col;
+    
+    
 }
+
 
 a {
     text-decoration: none;
@@ -74,6 +77,7 @@ a {
 
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 h1, h2, h3 {
@@ -207,6 +211,7 @@ input[type=text], select {
 }
 
 .main-nav {
+    position: relative;
     display: flex;
     width: 65%;
     justify-content: space-between;
@@ -260,10 +265,10 @@ input[type=text], select {
 
 .footer {
     width: 100%;
-    min-height: 200px;
+    min-height: 356px;
     background: $header-back;
-    padding: 50px 0 10px;        
-    box-sizing: border-box; 
+    padding: 199px 0 40px;        
+    box-sizing: border-box;   
     background-position: top;
 
     @media #{$medium} {
@@ -272,11 +277,9 @@ input[type=text], select {
     
     &__logos {
         width:40%;
-        // margin-top: 1%;
         display: flex;
         flex-direction: column;
-        min-width: 240px;
-        
+        min-width: 340px;
 
         @media #{$large} {
             margin-bottom: 40px;
@@ -293,15 +296,15 @@ input[type=text], select {
               
     }
 
-    // &__subscribe {
-    //     width: 40%;
-    //     min-width: 340px;                
+    &__subscribe {
+        width: 40%;
+        min-width: 340px;                
 
-    //     @media #{$large} {
-    //         margin-bottom: 40px;
-    //         order: 1
-    //     }        
-    // }
+        @media #{$large} {
+            margin-bottom: 40px;
+            order: 1
+        }        
+    }
 
     &__social {
         width: 20%;
@@ -320,13 +323,13 @@ input[type=text], select {
        height: -50px;
     }
 
-    // .universal-logo {
-    //     width: 279px;
-    //     height: 65px;
-    //     background: url('/img/universal.svg') center center no-repeat;
-    //     margin-top: 45px;
-    //     margin-bottom: 42px;
-    // }
+    .universal-logo {
+        width: 279px;
+        height: 65px;
+        background: url('/img/universal.svg') center center no-repeat;
+        margin-top: 45px;
+        margin-bottom: 42px;
+    }
 
     h3 {
         color:$footer-caption-col;
@@ -945,6 +948,7 @@ input[type=text], select {
 //     width: 100%;
 //   }
   .big_div{
+    position: fixed;
     width: 100%;
     height: 100%;
     background-image: url('/image/backgroundwatch.jpg');
@@ -1183,7 +1187,7 @@ input[type=text], select {
   width: 25%;
   height: 100%;
   background-color: #191919;
-  color: white;
+  color: rgb(255, 254, 254);
   left: -25%;
 }
 #sidebar.active{

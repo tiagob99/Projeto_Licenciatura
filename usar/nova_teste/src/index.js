@@ -33,11 +33,13 @@ const Routes = () => (
             <Route exact path="/Predefine" component={predefine}/>
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Gardens" component={garden}/>
-            <Route exact path="/Mikros" component={mikros}/>
-            <Footer/>          
+            <Route exact path="/Mikros" component={mikros}/>  
+            <Footer/>
+    
             </Suspense>  
         </div>
     </BrowserRouter>
+    
 )
 
 ReactDOM.render(<Routes/>, document.getElementById('root'));
