@@ -22,7 +22,7 @@ class Header extends Component {
                 <header className="header">
                     <div className="wrapper wrapper--header">
                         <Link className="header__logo-link" to="/">
-                            <div className="logo">DIY SmartWatch</div>
+                            <div className="logo"></div>
                         </Link>                
                         <Nav context="header"/>
                         <div className="header__menu" onClick={this.showSideBar}></div>

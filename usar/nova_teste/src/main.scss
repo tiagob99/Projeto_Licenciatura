@@ -197,9 +197,9 @@ input[type=text], select {
 }
 
 .logo {
-    width: 279px;
-    height: 102px;
-    background: url('/img/logo.svg') no-repeat;    
+    width: 300px;
+    height: 140px;
+    background: url('/img/Logotipo.png') no-repeat;    
 }
 
 .main-nav {
@@ -256,10 +256,10 @@ input[type=text], select {
 
 .footer {
     width: 100%;
-    min-height: 356px;
+    min-height: 200px;
     background: $header-back;
-    padding: 199px 0 40px;        
-    box-sizing: border-box;   
+    padding: 50px 0 10px;        
+    box-sizing: border-box; 
     background-position: top;
 
     @media #{$medium} {
@@ -268,9 +268,11 @@ input[type=text], select {
     
     &__logos {
         width:40%;
+        // margin-top: 1%;
         display: flex;
         flex-direction: column;
-        min-width: 340px;
+        min-width: 240px;
+        
 
         @media #{$large} {
             margin-bottom: 40px;
@@ -287,15 +289,15 @@ input[type=text], select {
               
     }
 
-    &__subscribe {
-        width: 40%;
-        min-width: 340px;                
+    // &__subscribe {
+    //     width: 40%;
+    //     min-width: 340px;                
 
-        @media #{$large} {
-            margin-bottom: 40px;
-            order: 1
-        }        
-    }
+    //     @media #{$large} {
+    //         margin-bottom: 40px;
+    //         order: 1
+    //     }        
+    // }
 
     &__social {
         width: 20%;
@@ -308,15 +310,17 @@ input[type=text], select {
 
     .logo{
        margin-top: 0; 
+       background-size: 70%; 
+       width: 210px;
     }
 
-    .universal-logo {
-        width: 279px;
-        height: 65px;
-        background: url('/img/universal.svg') center center no-repeat;
-        margin-top: 45px;
-        margin-bottom: 42px;
-    }
+    // .universal-logo {
+    //     width: 279px;
+    //     height: 65px;
+    //     background: url('/img/universal.svg') center center no-repeat;
+    //     margin-top: 45px;
+    //     margin-bottom: 42px;
+    // }
 
     h3 {
         color:$footer-caption-col;
@@ -584,9 +588,9 @@ input[type=text], select {
     z-index: 5;
 
     .logo {
-        margin-top: 15px;
+        margin-top: 3px;
         width: 138px;
-        background-size: 100%;
+        background-size: 60%;
         margin-right: 85px;
     }
 
