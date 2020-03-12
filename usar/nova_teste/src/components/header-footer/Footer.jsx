@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="logo"></div>
                     {/* <div className="universal-logo"></div> */}
                     <div className="footer__copy">
-                        © Projeto Licenciatura Luís, Tiago e Diogo 2020
+                        © Projeto Licenciatura Luís, Tiago 2020
                     </div>
                 </div>
                 {/* <div className="footer__subscribe">

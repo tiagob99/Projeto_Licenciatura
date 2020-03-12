@@ -127,16 +127,14 @@ input[type=text], select {
         font-size: $caption-size;
         color: rgba(255,255,255,0.8);
         margin-top: 50px;
-        transition: all .3s ease;
-        cursor: pointer;
+        
+       
 
         @media #{$small} {
             font-size: $second-header-size; 
         }
-
-        &:hover {
-            color:#fff;
-        }
+       
+       
     }
     
     &__scroll-down {
@@ -144,9 +142,14 @@ input[type=text], select {
         height: 70px;
         background: url('/img/scroll.png') no-repeat;
         margin-top: 65px;
-        animation: hovering 3s ease-in-out infinite;        
-    }
-}
+        animation: hovering 3s ease-in-out infinite;
+        cursor: pointer;    
+        transition: all .3s ease;   
+         
+      }
+      
+  }
+
 
 
 .Login{

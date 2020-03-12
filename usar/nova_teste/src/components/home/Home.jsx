@@ -21,10 +21,10 @@ const Home = () => {
                     <div className="wrapper">                    
                         <div className="logo"></div>                    
                         <Nav context="home"/>
-                        <div className="home__caption" onClick={() => scrollToLanding('landing')}>
+                        <div className="home__caption" >
                             WHAT WE DO
                         </div>           
-                        <div className="home__scroll-down"></div>                    
+                        <div className="home__scroll-down" onClick={() => scrollToLanding('landing')}></div>                    
                     </div>
                 </div>
             </Fade>
