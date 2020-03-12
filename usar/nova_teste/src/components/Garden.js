@@ -82,8 +82,8 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$(function clock(){
-const fullDate = new Date();
+$(function clock(){setInterval(() => {
+  const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
   if (hours<10){
@@ -93,9 +93,10 @@ const fullDate = new Date();
     minutes = "0" + minutes
   }
 
-  document.getElementById('hour').innerHTML = hours;
-  document.getElementById('minute').innerHTML = ": " + minutes;
-  setInterval(clock,100);
+  if(window.location.pathname == '/Gardens'){
+    document.getElementById('hour').innerHTML = hours;
+    document.getElementById('minute').innerHTML = ": " + minutes;}},
+  100);
 })
 /*Relogio Digital*/
 
@@ -106,9 +107,10 @@ $(function timerTick() {
     var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
     var m = 6 * aqui.getMinutes();
     var s = 6 * aqui.getSeconds();
-    document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-    document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-    document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    if(window.location.pathname === '/Gardens'){
+      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');}
     setTimeout(timerTick, 100);
   })
 

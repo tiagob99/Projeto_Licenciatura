@@ -84,7 +84,7 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$( function clock(){
+$(function clock(){
   setInterval( () => {
   const fullDate = new Date();
   var hours = fullDate.getHours();
@@ -95,29 +95,35 @@ $( function clock(){
   if (minutes < 10){
     minutes = "0" + minutes
   }
+  if(window.location.pathname == '/Mikros'){
    document.getElementById('hour').innerHTML = hours;
-   document.getElementById('minute').innerHTML = ": " + minutes;
-},100);
+   document.getElementById('minute').innerHTML = ": " + minutes;}
+   
+},100);}
 
-})
+
+
+)
 /*Relogio Digital*/
 
 
 
 /*Relogio analogico*/
   $(function timerTick() {
+    
       const fulld = new Date();
       var h = 30 * ((fulld.getHours() % 12) + fulld.getMinutes() / 60);
       var m = 6 * fulld.getMinutes();
       var s = 6 * fulld.getSeconds();
+      if(window.location.pathname === '/Mikros'){
       document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');}
       setTimeout(timerTick, 100);
-      setInterval(timerTick,100);
 
 
-    }) 
+    }
+    ) 
     
   
 /*Relogio analogico*/

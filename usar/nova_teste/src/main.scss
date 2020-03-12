@@ -143,10 +143,14 @@ input[type=text], select {
         background: url('/img/scroll.png') no-repeat;
         margin-top: 65px;
         animation: hovering 3s ease-in-out infinite;
-        cursor: pointer;    
+        cursor: pointer;   
         transition: all .3s ease;   
-         
+        transition: transform .5s ease;
+        &:hover{
+          transform: scale(1.5);
+        }
       }
+      
       
   }
 
