@@ -19,7 +19,7 @@ const Home = () => {
             <Fade>
                 <div className="home__header">
                     <div className="wrapper">                    
-                        <div className="logo"></div>                    
+                        {/* <div className="logo"></div>                     */}
                         <Nav context="home"/>
                         <div className="home__caption" >
                             WHAT WE DO

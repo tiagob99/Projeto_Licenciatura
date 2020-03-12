@@ -31,16 +31,44 @@ const predefine = () => {
         //     </div>            
         // </div>
 
+          
 
     <div class="geral_prefefine">
       <div class="margem">
-        <div class="first">
-          <a href="./Gardens"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
-        </div>
+        <a href="./Gardens">
+          <div class="first">
+            <div className="cards-list">
+              <div className="card 4">
+                <div className="card_image">
+                  <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
+                </div>
+                <div className="card_title title-black">
+                  <p>Customise</p>
+                </div>
+              </div>
+            </div>
+          </div>
+       </a>
+
+
+        <a href="./Mikros">
         <div class="second">
-          
-          <a href="./Mikros"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
-        </div>
+          <div className="cards-list">
+              <div className="card 4">
+                <div className="card_image">
+                  <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
+                </div>
+                <div className="card_title title-black">
+                  <p>Customise</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+
+
         <div class="third">
           <a href="customise/Self_compete.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
@@ -51,6 +79,8 @@ const predefine = () => {
           <a href="customise/Thirty.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
       </div>
+
+          
     </div>
     );
 };
