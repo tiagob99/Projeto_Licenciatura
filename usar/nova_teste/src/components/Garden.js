@@ -5,6 +5,7 @@ import 'jquery-ui-dist/jquery-ui';
 
 
 
+
 /*Menu*/
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -120,7 +121,7 @@ $( function background_color(jscolor) {
     document.getElementById('rect').style.backgroundColor = '#' + jscolor
 })
 $( function digital_color(jscolor) {
-    document.getElementById('node1').style.color = '#' + jscolor
+    document.getElementById('node1').style.stroke = '#' + jscolor
 })
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
