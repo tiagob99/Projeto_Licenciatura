@@ -11,10 +11,12 @@ import './main.scss';
 import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
+// import SelfComplete from './components/SelfComplete';
 
 
 const garden = lazy(() => import ('./components/Gardens')); 
 const mikros = lazy(() => import ('./components/Mikros'));
+const selfcomplete = lazy(() => import ('./components/SelfComplete'));
 const home = lazy(() => import ('./components/home/Home')); 
 const myo = lazy(() => import ('./components/MakeYourOwn')); 
 const predefine = lazy(() => import ('./components/Predefine')); 
@@ -33,9 +35,9 @@ const Routes = () => (
             <Route exact path="/Predefine" component={predefine}/>
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Gardens" component={garden}/>
-            <Route exact path="/Mikros" component={mikros}/>  
+            <Route exact path="/Mikros" component={mikros}/>
+            <Route exact path="/SelfComplete" component={selfcomplete}/>
             <Footer/>
-    
             </Suspense>  
         </div>
     </BrowserRouter>
