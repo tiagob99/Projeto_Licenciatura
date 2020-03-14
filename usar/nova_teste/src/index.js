@@ -11,6 +11,7 @@ import './main.scss';
 import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
+// import SelfComplete from './components/SelfComplete';
 
 
 const garden = lazy(() => import ('./components/Gardens')); 
@@ -38,7 +39,6 @@ const Routes = () => (
             <Route exact path="/Simple_goals" component={simple}/>  
  
             <Footer/>
-    
             </Suspense>  
         </div>
     </BrowserRouter>

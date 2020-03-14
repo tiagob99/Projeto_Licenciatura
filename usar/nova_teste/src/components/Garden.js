@@ -82,7 +82,8 @@ $(function readropzone() {
 
 
 /*Relogio Digital*/
-$(function clock(){setInterval(() => {
+$(function clock(){
+  setInterval(() => {
   const fullDate = new Date();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
@@ -119,9 +120,11 @@ $(function timerTick() {
 
 
 /*Cores*/
+
 $( function background_color(jscolor) {
-    document.getElementById('rect').style.backgroundColor = '#' + jscolor
-})
+  if(window.location.pathname === '/Gardens'){
+  document.getElementById('rect').style.backgroundColor = '#' + jscolor
+}})
 $( function digital_color(jscolor) {
     document.getElementById('node1').style.stroke = '#' + jscolor
 })
