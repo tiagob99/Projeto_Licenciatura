@@ -15,6 +15,7 @@ import Header from './components/header-footer/Header';
 
 const garden = lazy(() => import ('./components/Gardens')); 
 const mikros = lazy(() => import ('./components/Mikros'));
+const simple = lazy(() => import ('./components/Simple_goals'));
 const home = lazy(() => import ('./components/home/Home')); 
 const myo = lazy(() => import ('./components/MakeYourOwn')); 
 const predefine = lazy(() => import ('./components/Predefine')); 
@@ -33,7 +34,9 @@ const Routes = () => (
             <Route exact path="/Predefine" component={predefine}/>
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Gardens" component={garden}/>
-            <Route exact path="/Mikros" component={mikros}/>  
+            <Route exact path="/Mikros" component={mikros}/> 
+            <Route exact path="/Simple_goals" component={simple}/>  
+ 
             <Footer/>
     
             </Suspense>  

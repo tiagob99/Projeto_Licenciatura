@@ -73,7 +73,7 @@ const predefine = () => {
           <a href="customise/Self_compete.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>
         </div>
         <div class="fourth">
-          <a href="customise/Simple_goal.html"><img class="download" width= "200px" height="50px"src="image/download.png" alt=""></img></a>
+          <a href="./Simple_goals"><img class="download" width= "200px" height="50px"src="image/download.png" alt=""></img></a>
         </div>
         <div class="fifth">
           <a href="customise/Thirty.html"><img class="download" width= "200px" height="50px" src="image/download.png" alt=""></img></a>

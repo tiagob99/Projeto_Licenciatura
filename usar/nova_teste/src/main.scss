@@ -317,19 +317,18 @@ input[type=text], select {
 
     .logo{
        margin-top: 0;
+       display: flex;
        background-size: 30%; 
        width: 210px;
        position: relative;
        height: -50px;
+       @media #{$large} {
+        margin-bottom: 40px;
+        align-items: center;
+        order: 2;
+    } 
     }
 
-    .universal-logo {
-        width: 279px;
-        height: 65px;
-        background: url('/img/universal.svg') center center no-repeat;
-        margin-top: 45px;
-        margin-bottom: 42px;
-    }
 
     h3 {
         color:$footer-caption-col;
@@ -948,9 +947,9 @@ input[type=text], select {
 //     width: 100%;
 //   }
   .big_div{
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 50%;
+    height: 50%;
     background-image: url('/image/backgroundwatch.jpg');
   }
   
@@ -1034,6 +1033,7 @@ input[type=text], select {
     background-image: url('/image/motorola.png');
     background-repeat:no-repeat;
     background-position: center;
+    background-size: 50%;
   }
   /*watvh background*/
   
@@ -1043,22 +1043,22 @@ input[type=text], select {
     left: 50%;
     margin-left: -265px;
     margin-top: -265px;
-    width: 530px;
-    height: 530px;
-    border-radius: 100%;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
     background-color: #000;
-    position:absolute;
+    // position:absolute;
   }
   #rect{
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    height: 10%;
   }
   /*circle*/
   
   
   /*Relogio Digital*/
   #hour,#minute,#second{
-    size: 20px;
+    size: 10px;
   }
   /*Relogio Digital*/
   
@@ -1067,11 +1067,11 @@ input[type=text], select {
     stroke-linecap: round;
   }
   #hour_pointer {
-    stroke-width: 2px;
+    stroke-width: 20px;
     stroke: white;
   }
   #second_pointer {
-    stroke-width: 1px;
+    stroke-width: 10px;
     stroke: #ff0000;
   }
   #minute_pointer {
