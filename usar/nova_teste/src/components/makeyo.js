@@ -9,9 +9,10 @@ export function togglemenu(){
   document.getElementById('toggle-btn').classList.toggle('active');
 }
 export function togglemenu1(){
-  document.getElementById('export first_menu_hidden').classList.toggle('active');
-  document.getElementById('remaining_01').classList.toggle('active');
-}
+  
+  document.getElementById('first_menu_hidden').classList.toggle('active');
+  document.getElementById('remaining_01').classList.toggle('active');}
+
 export function togglemenu2(){
   document.getElementById('second_menu_hidden').classList.toggle('active');
   document.getElementById('remaining_02').classList.toggle('active');
@@ -36,49 +37,54 @@ export function togglemenu4(){
 
 
 /*Relogio Digital*/
-// function clock(){
-//   const fullDate = new Date();
-//   var hours = fullDate.getHours();
-//   var minutes = fullDate.getMinutes();
-//   if (hours<10){
-//     hours = "0" + hours;
-//   }
-//   if (minutes < 10){
-//     minutes = "0" + minutes;
-//   }
-//   document.getElementById('hour').innerHTML = hours;
-//   document.getElementById('minute').innerHTML = ": " + minutes;
-//   document.getElementById('hour_1').innerHTML = hours;
-//   document.getElementById('minute_1').innerHTML = ": " + minutes;
-// }
-// setInterval(clock,100);
-// /*Relogio Digital*/
+$(function clock(){
+  setInterval( () => {
+  const fullDate = new Date();
+  var hours = fullDate.getHours();
+  var minutes = fullDate.getMinutes();
+  if (hours<10){
+    hours = "0" + hours;
+  }
+  if (minutes < 10){
+    minutes = "0" + minutes;
+  }
+  if(window.location.pathname === '/makeYourOwn'){
+    document.getElementById('hour').innerHTML = hours;
+    document.getElementById('minute').innerHTML = ": " + minutes;
+    document.getElementById('hour_1').innerHTML = hours;
+    document.getElementById('minute_1').innerHTML = ": " + minutes;
+  }
+},100);})
+
 
 
 
 // /*Relogio analogico*/
-// function timerTick() {
-//   with (new Date()) {
-//     var h = 30 * ((getHours() % 12) + getMinutes() / 60);
-//     var m = 6 * getMinutes();
-//     var s = 6 * getSeconds();
-//     document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-//     document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-//     document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-//     document.getElementById('hour_pointer_1').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-//     document.getElementById('minute_pointer_1').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-//     document.getElementById('second_pointer_1').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-//     setTimeout(timerTick, 100);
-//   }
-// }
+$(function timerTick() {
+  const fullDate = new Date();
+    var h = 30 * ((fullDate.getHours() % 12) + fullDate.getMinutes() / 60);
+    var m = 6 * fullDate.getMinutes();
+    var s = 6 * fullDate.getSeconds();
+    if(window.location.pathname === '/makeYourOwn'){
+      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+      document.getElementById('hour_pointer_1').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+      document.getElementById('minute_pointer_1').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+      document.getElementById('second_pointer_1').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    }
+    setTimeout(timerTick, 100);
+  }
+
+)
 /*Relogio analogico*/
 
 
 
 /* Change center watch type*/
 var watchtype = "digital"
-function updatewhatch() {
-  if ( watchtype == "digital"){
+export function updatewhatch() {
+  if ( watchtype === "digital"){
     document.getElementById('node2_1').style.display = "initial";
     document.getElementById('node1_1').style.display = "none";
     watchtype = "analog";
@@ -180,26 +186,26 @@ var elemento = false;
 
 $(document).ready(function() {
 
-  var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '170px', height: '450px'});
+  var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
 
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if (Linha <= 6) {
-      $(container).append('<div style="height:350px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select onchange="bartype(' + (Linha) + ')" id=bar_type' + Linha + ' ' +
+      
+      $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
+      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select onChange=bartype('+ (Linha  )+' )}} id=bar_type' + (Linha +1)  + ' ' +
       '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      '</p><br><p>Circle Bar ' + (Linha+1) + ' Size </p><br> <input id=barsize' + Linha + '  value="100" max="89" onchange="barsize(' + Linha + ')" type="range" name="b_size">'+
-      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange="barradius(' + Linha + ')" type="range" name="b_size">'+
-      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onchange="barstar(' + Linha + ')" ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onchange="updaterotation(' + Linha + ')" ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
+      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
+      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
+      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
 
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
 
       $('#main').after(container);
       $("body").append('<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -265px;  margin-left: -265px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+      ' style=" width:350px; height: 530px;  top:50%; left: 50%; border-radius: 30%; position:absolute;  margin-top: -265px;  margin-left: -265px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
       '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="18,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.91549431" cy="16.91549431" r="14.35" />'+
       '</svg>')
       Linha = Linha + 1;
@@ -224,7 +230,7 @@ $(document).ready(function() {
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
     if(novo=="temporaria"){
-      $('<select id="mesage_time" onchange="funct()" style="margin-left:10px;">'+
+      $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
         '<option value="timeframe">Timeframe</option>'+
         '<option value="percentagem">Percentagem</option>'+
       '</select>'+
@@ -421,8 +427,10 @@ $(document).ready(function() {
 
 });
 
-function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
-  var novo = document.getElementById("mesage_time").value;
+export function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
+      var novo = document.getElementById("mesage_time").value;
+    
+  
   if(novo=="percentagem"){
     $("#timeframe").remove();
     $('<select id="percentagem" style="margin-left:10px;">'+
@@ -455,12 +463,14 @@ function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
 
 
 /*Personalização dos elementos*/
-function barsize (barnumber){
-  var tamanho = document.getElementById('barsize'+barnumber).value;
+export function barsize (barnumber){
+      var tamanho = document.getElementById('barsize'+barnumber).value;
+  
   tamanho = (tamanho/100)*2+0.1;
   matrix[barnumber][6]=tamanho;
   document.getElementById('bar'+barnumber).style.strokeWidth =  tamanho;
 }
+
 
 
 function barradius(barnumber) {
@@ -487,60 +497,64 @@ function barradius(barnumber) {
 }
 
 
-function barstar (barnumber){
-  if(matrix[barnumber][7]!="pasthouractivaty"){
-    var novo = document.getElementById('bar_star'+barnumber).value;
-    if (novo == "full"){
-      document.getElementById('bar'+barnumber).style.strokeDasharray  = "101,100";
-      matrix[barnumber][5]="full";
-    }
-    else if (novo == "tophalf") {
-      document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg)";
-      document.getElementById('bar'+barnumber).style.strokeDasharray  = matrix[barnumber][2] +",100";
-      matrix[barnumber][5]="tophalf";
-      matrix[barnumber][3]=-180;
-      barradius(barnumber);
-    }
-    else {
-      document.getElementById('bar'+barnumber).style.transform = "rotate(" + 0 + "deg)";
-      document.getElementById('bar'+barnumber).style.strokeDasharray  =  matrix[barnumber][2] +",100";
-      matrix[barnumber][5]="bottomhalf";
-      matrix[barnumber][3]=0;
-      barradius(barnumber);
-    }
-  }
-}
-
-
-function updaterotation(barnumber){
-  if(matrix[barnumber][7]!="pasthouractivaty"){
-    if (matrix[barnumber][4]){
-      if(matrix[barnumber][5] == "full"){
-        var novo = matrix[barnumber][3] -180;
-        document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        matrix[barnumber][4] = false;
+export function barstar (barnumber){
+    if(matrix[barnumber][7]!="pasthouractivaty"){
+      var novo = document.getElementById('bar_star'+barnumber).value;
+      if (novo == "full"){
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = "101,100";
+        matrix[barnumber][5]="full";
+      }
+      else if (novo == "tophalf") {
+        document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg)";
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = matrix[barnumber][2] +",100";
+        matrix[barnumber][5]="tophalf";
+        matrix[barnumber][3]=-180;
+        barradius(barnumber);
       }
       else {
-        var novo = matrix[barnumber][3]
-        document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        matrix[barnumber][4] = false;
+        document.getElementById('bar'+barnumber).style.transform = "rotate(" + 0 + "deg)";
+        document.getElementById('bar'+barnumber).style.strokeDasharray  =  matrix[barnumber][2] +",100";
+        matrix[barnumber][5]="bottomhalf";
+        matrix[barnumber][3]=0;
+        barradius(barnumber);
       }
     }
-    else {
-      document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
-      document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
-      matrix[barnumber][4] = true;
-    }
-  }
 }
 
 
-function bartype(barnumber){
+
+export function updaterotation(barnumber){
+  
+    if(matrix[barnumber][7]!="pasthouractivaty"){
+      if (matrix[barnumber][4]){
+        if(matrix[barnumber][5] == "full"){
+          var novo = matrix[barnumber][3] -180;
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+          matrix[barnumber][4] = false;
+        }
+        else {
+          var novo = matrix[barnumber][3]
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+          matrix[barnumber][4] = false;
+        }
+      }
+      else {
+        document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
+        document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
+        matrix[barnumber][4] = true;
+      }
+    }
+  
+}
+
+
+export function bartype(barnumber){
   var novo = document.getElementById('bar_type'+barnumber).value;
   matrix[barnumber][7] = novo;
   switch(novo) {
+    
     case "currentsteps":
         document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
@@ -568,8 +582,8 @@ function bartype(barnumber){
     default:
         console.log("erro");
         break;
-  }
-}
+  }}
+
 /*Personalização dos elementos*/
 
 
@@ -601,10 +615,10 @@ $(function() {
 
                 trocaposicao(linew1.attr('id'),linew2.attr('id'))
                 trocaposicaoocupada(linew1.attr('id') , linew1.text() , linew2.attr('id') ,linew2.text() )
-                //console.log(linew1.text())
-                //console.log(linew1.attr('id'))
-                //console.log(linew2.text())
-                //console.log(linew2.attr('id'))
+                console.log(linew1.text())
+                console.log(linew1.attr('id'))
+                console.log(linew2.text())
+                console.log(linew2.attr('id'))
 
                 $(ui.draggable).remove();
                 $(this).remove();

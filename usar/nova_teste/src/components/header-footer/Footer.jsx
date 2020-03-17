@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="wrapper wrapper--footer">
                 <div className="footer__logos">
-                    <div className="logo"></div>
+                    {/* <div className="logo"></div> */}
                     {/* <div className="universal-logo"></div> */}
                     <div className="footer__copy">
                         © Projeto Licenciatura Luís, Tiago 2020
