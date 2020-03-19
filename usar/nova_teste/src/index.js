@@ -16,10 +16,13 @@ import Header from './components/header-footer/Header';
 
 const garden = lazy(() => import ('./components/Gardens')); 
 const mikros = lazy(() => import ('./components/Mikros'));
+const self   = lazy(()  => import('./components/SelfComplete'))
 const simple = lazy(() => import ('./components/Simple_goals'));
+const terceiro =lazy(() => import ('./components/Thirtys'));
 const home = lazy(() => import ('./components/home/Home')); 
 const myo = lazy(() => import ('./components/MakeYourOwn')); 
 const predefine = lazy(() => import ('./components/Predefine')); 
+
 
 
 
@@ -36,8 +39,9 @@ const Routes = () => (
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Gardens" component={garden}/>
             <Route exact path="/Mikros" component={mikros}/> 
+            <Route exact path="/SelfComplete" component ={self}/>
             <Route exact path="/Simple_goals" component={simple}/>  
- 
+            <Route exact path="/Thirtys" component={terceiro}/>
             <Footer/>
             </Suspense>  
         </div>
