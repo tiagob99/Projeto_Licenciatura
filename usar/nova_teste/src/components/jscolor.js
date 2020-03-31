@@ -13,7 +13,7 @@
 
 
 import 'jquery-ui-dist/jquery-ui';
-import './mikrosjs';
+import * as micro from './mikrosjs';
 
 
 if (!window.jscolor) { window.jscolor = (function () {

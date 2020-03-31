@@ -1,5 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import './jscolor';
 
 
 
@@ -116,9 +117,10 @@ $(function clock(){
       var m = 6 * fulld.getMinutes();
       var s = 6 * fulld.getSeconds();
       if(window.location.pathname === '/Mikros'){
-      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');}
+        document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+        document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+        document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    }
       setTimeout(timerTick, 100);
 
 
@@ -129,13 +131,17 @@ $(function clock(){
 /*Relogio analogico*/
 
 
-
 /*Cores*/
-export function background_color(jscolor) {
-    document.getElementById('rect').style.backgroundColor = '#' + jscolor
+export function background_color() {
+    var x = document.getElementById("myColor");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('rect').style.backgroundColor =  currentVal;
+    
 }
+
 export function digital_color(jscolor) {
-    document.getElementById('node1').style.color = '#' + jscolor
+  document.getElementById('node1').style.color = '#' + jscolor
 }
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
