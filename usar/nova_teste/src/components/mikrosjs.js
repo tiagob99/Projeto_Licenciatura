@@ -140,8 +140,11 @@ export function background_color() {
     
 }
 
-export function digital_color(jscolor) {
-  document.getElementById('node1').style.color = '#' + jscolor
+export function digital_color() {
+  var x = document.getElementById("myColor1");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('node1').style.color =  currentVal;
 }
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
