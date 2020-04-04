@@ -41,15 +41,15 @@ const Mikros = () => {
                 <p>Background Colors  <input type="color" id="myColor" defaultValue="#ff0080" onChange={micro.background_color}/> </p>
                 <p>Digital <input type="color" id="myColor1" defaultValue="#ff0080" onChange={micro.digital_color}/> </p>
                 <p>Analog Hours  <input type="color" id="myColor2" defaultValue="#ff0080" onChange={micro.analog_hours}/> </p>
-                <p>Analog Minuts <input className="jscolor {micro.onFineChange:{color.analog_minutes(this}}" defaultValue="fff" /> </p>
-                <p>Analog Seconds <input className="jscolor {color.onFineChange:{color.analog_seconds(this}}" defaultValue="FF0000" /> </p>
-                <p>Center Dot <input className="jscolor {color.onFineChange:{color.center_circule(this)}}" defaultValue="fff" /> </p>
+                <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={micro.analog_minutes}/> </p>
+                <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={micro.analog_seconds}/> </p>
+                <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={micro.center_circule}/></p>
                 </div>
               <div id="remaining_02">
                 <li className="elementos_menu_direito" onClick={micro.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
-                  <p>Circle Bar 1</p> <br /> <input className="jscolor {color.onFineChange:{color.bar_color1(this)}}" name="b1_color" defaultValue="FF0000" /><br /><br />
-                  <p>Circle Bar 2</p> <br /> <input className="jscolor {color.onFineChange:{color.bar_color2(this)}}"name="b2_color" defaultValue="00acc1" /><br /><br />
+                  <p>Circle Bar 1</p> <br /> <input type="color" id="myColor6" defaultValue="#ff0080" onChange={micro.bar_color1}/> <br /><br />
+                  <p>Circle Bar 2</p> <br /> <input type="color" id="myColor7" defaultValue="#ff0080" onChange={micro.bar_color2}/> <br /><br />
                   <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onChange={micro.bar_thickness_1} type="range" name="b_size" /><br /><br />
                   <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onChange={micro.bar_thickness_2} type="range" name="b_size" /><br /><br />
                   <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onChange={micro.bars_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />

@@ -1,5 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import './jscolor';
 
 
 
@@ -127,39 +128,65 @@ export function togglemenu4(){
    
    
    /*Cores*/
-   export function background_color(jscolor) {
-       document.getElementById('rect').style.backgroundColor = '#' + jscolor
+   export function background_color() {
+    var x = document.getElementById("myColor");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('rect').style.backgroundColor =  currentVal;
    }
 
-   export function digital_color(jscolor) {
-       document.getElementById('node1').style.color = '#' + jscolor
+   export function digital_color() {
+    var x = document.getElementById("myColor1");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('node1').style.color =  currentVal;
    }
 
-    export function analog_hours(jscolor) {
-       document.getElementById('hour_pointer').style.stroke = '#' + jscolor
+    export function analog_hours() {
+      var x = document.getElementById("myColor2");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('hour_pointer').style.stroke =  currentVal;
     }
 
-    export function analog_minutes(jscolor) {
-       document.getElementById('minute_pointer').style.stroke = '#' + jscolor
+    export function analog_minutes() {
+      var x = document.getElementById("myColor3");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('minute_pointer').style.stroke =  currentVal;   }
+
+    export function analog_seconds() {
+      var x = document.getElementById("myColor4");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('second_pointer').style.stroke =  currentVal;
    }
 
-    export function analog_seconds(jscolor) {
-       document.getElementById('second_pointer').style.stroke = '#' + jscolor
-   }
-
-    export function center_circule(jscolor) {
-       document.getElementById('center_dot').style.stroke = '#' + jscolor
+    export function center_circule() {
+      var x = document.getElementById("myColor5");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('center_dot').style.stroke =  currentVal;
    }
    
-    function text_color(jscolor) {
-       document.getElementById('texto').style.color = '#' + jscolor
+    export function text_color() {
+      var x = document.getElementById("myColor8");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('texto').style.color =  currentVal;
    }
   
-    function line_color_today(jscolor) {
-       document.getElementById('today_bar').style.stroke = '#' + jscolor
+    export function line_color_today() {
+      var x = document.getElementById("myColor6");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('today_bar').style.stroke =  currentVal;
    }
-    function line_color_yesterday(jscolor) {
-       document.getElementById('yesterday_bar').style.stroke = '#' + jscolor
+    export function line_color_yesterday() {
+      var x = document.getElementById("myColor7");
+      var currentVal = x.value;
+      x.value = currentVal;
+      document.getElementById('yesterday_bar').style.stroke =  currentVal;
    }
    /*Cores*/
    

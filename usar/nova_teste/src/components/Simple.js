@@ -1,5 +1,7 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import './jscolor';
+
 /*Menu*/
 export function togglemenu(){
     document.getElementById('sidebar').classList.toggle('active');
@@ -120,29 +122,60 @@ $(function clock(){setInterval(() => {
    
    
    /*Cores*/
-   export function background_color(jscolor) {
-       document.getElementById('rect').style.backgroundColor = '#' + jscolor
+   export function background_color() {
+    var x = document.getElementById("myColor");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('rect').style.backgroundColor =  currentVal;
    }
-   export function digital_color(jscolor) {
-       document.getElementById('node1').style.color = '#' + jscolor
+
+   export function digital_color() {
+      var x = document.getElementById("myColor1");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('node1').style.color =  currentVal;
    }
-   export function analog_hours(jscolor) {
-       document.getElementById('hour_pointer').style.stroke = '#' + jscolor
+
+   export function analog_hours() {
+    var x = document.getElementById("myColor2");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('hour_pointer').style.stroke =  currentVal;
    }
-   export function analog_minutes(jscolor) {
-       document.getElementById('minute_pointer').style.stroke = '#' + jscolor
+
+   export function analog_minutes() {
+       var x = document.getElementById("myColor3");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('minute_pointer').style.stroke =  currentVal;
    }
-   export function analog_seconds(jscolor) {
-       document.getElementById('second_pointer').style.stroke = '#' + jscolor
+
+   export function analog_seconds() {
+       var x = document.getElementById("myColor4");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('second_pointer').style.stroke =  currentVal;
    }
-   export function bar_color(jscolor) {
-       document.getElementById('bar').style.stroke = '#' + jscolor
+
+   export function bar_color() {
+    var x = document.getElementById("myColor6");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('bar').style.stroke =  currentVal;
    }
-   export function center_circule(jscolor) {
-       document.getElementById('center_dot').style.stroke = '#' + jscolor
+
+   export function center_circule() {
+    var x = document.getElementById("myColor5");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('center_dot').style.stroke =  currentVal;
    }
-   export function text_color(jscolor) {
-       document.getElementById('texto').style.color = '#' + jscolor
+   
+   export function text_color() {
+    var x = document.getElementById("myColor7");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('texto').style.color =  currentVal;
    }
    /*Cores*/
    
