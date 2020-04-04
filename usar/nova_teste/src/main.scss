@@ -2232,3 +2232,36 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 /*barra*/
 
 // thirty-------------------------------------------------------------
+
+
+//makeyourown
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 95px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+
+
+.botão_direita{
+  height: 100px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  left: 80%;
+  top: 80%;
+}
