@@ -10,7 +10,7 @@ export default function Login() {
 
   const responseGoogle = response => {
     setName(response.profileObj.name);
-    setEmail(response.profileObj.email);
+    // setEmail(response.profileObj.email);
     setUrl(response.profileObj.imageUrl);
   };
   return (
@@ -19,9 +19,9 @@ export default function Login() {
 
       <h2 className="bemvindo">Welcome:{name} </h2>
 
-      <h2 className="email"> Email: {email} </h2>
+      {/* <h2 className="email"> Email: {email} </h2> */}
 
-      <img className="imagem" src={url} alt={name} />
+      {/* <img className="imagem" src={url} alt={name} /> */}
 
       <GoogleLogin
         className="dark"
