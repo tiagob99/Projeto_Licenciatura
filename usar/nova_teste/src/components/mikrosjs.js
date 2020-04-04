@@ -146,7 +146,6 @@ export function digital_color() {
     x.value = currentVal;
     document.getElementById('node1').style.color = currentVal;
 }
-
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor;
 }
