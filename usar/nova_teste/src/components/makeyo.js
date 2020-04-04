@@ -205,8 +205,8 @@ $(document).ready(function() {
 
       $('#main').after(container);
       $("body").append('<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:55%; height: 75%;  top:45%; left: 67%; border-radius: 100%; position:absolute;  margin-top: -15%;  margin-left: -45%; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.56" cy="17.1" r="14.9" />'+
+      ' style=" width:34.8867825%; height: 580px;  top:55%; left: 80%; border-radius: 100%; position:absolute;  margin-top: -265px;  margin-left: -725px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
       }
