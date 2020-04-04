@@ -35,17 +35,17 @@ const SelfComplete =() =>{
                 <div id="remaining_01">
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
-                    <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue="000" /> </p>
-                    <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
-                    <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
-                    <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
-                    <p>Analog Seconds <input className="jscolor {onFineChange:'analog_seconds(this)'}" defaultValue="ff0000" /> </p>
-                    <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
+                    <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={selfcomplete.background_color}/> </p>
+                    <p>Digital <input type="color" id="myColor1" defaultValue="#ff0080" onChange={selfcomplete.digital_color}/> </p>
+                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#ff0080" onChange={selfcomplete.analog_hours}/> </p>
+                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={selfcomplete.analog_minutes}/> </p>
+                    <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={selfcomplete.analog_seconds}/> </p>
+                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={selfcomplete.center_circule}/> </p>
                 </div>
                 <div id="remaining_02">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu3}>Line</li>
                     <div id="third_menu_hidden">
-                    <p>Your Circle Bar </p> <br /> <input className="jscolor {onFineChange:'line_color_today(this)'}" name="b_color" defaultValue="00acc1" /><br /><br />
+                    <p>Your Circle Bar </p> <br /> <input type="color" id="myColor6" defaultValue="#ff0080" onChange={selfcomplete.line_color_today}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_today" onChange={selfcomplete.bar_thickness_today} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius_today" onChange={selfcomplete.bar_radius_today} type="range" name="b_radius" defaultValue={100} /><br /><br />
                     <p>Second Circle Bar</p><br />
@@ -54,7 +54,7 @@ const SelfComplete =() =>{
                         <option value="another_ser">Another User</option>
                     </select>
                     <br /><br />
-                    <p>Second Circle Color </p> <br /> <input className="jscolor {onFineChange:'line_color_yesterday(this)'}" name="b_color" defaultValue="FF0000" /><br /><br />
+                    <p>Second Circle Color </p> <br /> <input type="color" id="myColor7" defaultValue="#ff0080" onChange={selfcomplete.line_color_yesterday}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_yesterday" onChange={selfcomplete.bar_thickness_yesterday} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius_yesterday" onChange={selfcomplete.bar_radius_yesterday} type="range" name="b_radius" defaultValue={100} /><br /><br />
                     <p>Circle Bar Start </p> <br />
@@ -74,7 +74,7 @@ const SelfComplete =() =>{
                     <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
-                        <p>Text Color <input name="text_color" className="jscolor {onFineChange:'text_color(this)'}" defaultValue="fff" /> </p>  <br /><br />
+                        <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br />
                         <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br />
                         <button type="button" onclick="readropzone()" name="button">Le Relogio</button>
                     </div>

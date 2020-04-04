@@ -44,7 +44,7 @@ const predefine = () => {
                   <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
                 </div>
                 <div className="card_title title-black">
-                  <p>Customise</p>
+                  <p>Gardens</p>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ const predefine = () => {
                   <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
                 </div>
                 <div className="card_title title-black">
-                  <p>Customise</p>
+                  <p>Mikros</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ const predefine = () => {
                   <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
                 </div>
                 <div className="card_title title-black">
-                  <p>Customise</p>
+                  <p>Self-Complete</p>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ const predefine = () => {
                   <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
                 </div>
                 <div className="card_title title-black">
-                  <p>Customise</p>
+                  <p>Simple-Goals</p>
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@ const predefine = () => {
                   <img src="https://img2.bgxcdn.com/thumb/large/oaupload/banggood/images/B5/4C/768f5cf6-7d17-4b85-8244-580e06e059dd.gif" />
                 </div>
                 <div className="card_title title-black">
-                  <p>Customise</p>
+                  <p>Thirtys</p>
                 </div>
               </div>
             </div>

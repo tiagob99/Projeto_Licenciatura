@@ -6,6 +6,7 @@ import * as simple from './Simple';
 
 
 
+
 const Simple_goals = () => {
     return(
         <div>
@@ -34,17 +35,17 @@ const Simple_goals = () => {
               <div id="remaining_01">
                 <li className="elementos_menu_direito" onClick={simple.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
-                  <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue="000" /> </p>
-                  <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
-                  <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
-                  <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>
-                  <p>Analog Seconds <input className="jscolor {onFineChange:'analog_seconds(this)'}" defaultValue="ff0000" /> </p>
-                  <p>Center Dot <input className="jscolor {onFineChange:'center_circule(this)'}" defaultValue="fff" /> </p>
+                  <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={simple.background_color}/> </p>
+                  <p>Digital<input type="color" id="myColor1" defaultValue="#ff0080" onChange={simple.digital_color}/></p>
+                  <p>Analog Hours <input type="color" id="myColor2" defaultValue="#ff0080" onChange={simple.analog_hours}/> </p>
+                  <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={simple.analog_minutes}/> </p>
+                  <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={simple.analog_seconds}/></p>
+                  <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={simple.center_circule}/> </p>
                 </div>
                 <div id="remaining_02">
                   <li className="elementos_menu_direito" onClick={simple.togglemenu3}>Line</li>
                   <div id="third_menu_hidden">
-                    <p>Circle Bar</p> <br /> <input className="jscolor {onFineChange:'bar_color(this)'}" name="b_color" defaultValue="00acc1" /><br /><br />
+                    <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#ff0080" onChange={simple.bar_color}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness" onChange={simple.bar_thickness} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Start </p> <br />
                     <select name="bar_star" id="bar_type" onChange={simple.bar_type}>
@@ -64,14 +65,15 @@ const Simple_goals = () => {
                   <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={simple.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
-                      <p>Text Color <input name="text_color" className="jscolor {onFineChange:'text_color(this)'}" defaultValue="fff" /> </p>  <br /><br />
-                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br />
+                      <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
+                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br />
                     </div>
                   </div>
                 </div>
               </div>
             </ul>
           </div>
+          
           <div className="watch">
             <div className="text">
               <p id="texto">teste</p>

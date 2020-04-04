@@ -1,6 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
-
+import './jscolor';
 
 
 
@@ -121,23 +121,46 @@ $(function timerTick() {
 
 /*Cores*/
 
-$( function background_color(jscolor) {
-  if(window.location.pathname === '/Gardens'){
-  document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}})
-$( function digital_color(jscolor) {
-    document.getElementById('node1').style.stroke = '#' + jscolor
-})
-export function analog_hours(jscolor) {
-    document.getElementById('hour_pointer').style.stroke = '#' + jscolor
+export function background_color() {
+  var x = document.getElementById("myColor");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('rect').style.backgroundColor =  currentVal;
+
 }
-export function analog_minutes(jscolor) {
-    document.getElementById('minute_pointer').style.stroke = '#' + jscolor
+
+export function digital_color() {
+  var x = document.getElementById("myColor1");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('node1').style.color =  currentVal;
 }
-export function analog_seconds(jscolor) {
-    document.getElementById('second_pointer').style.stroke = '#' + jscolor
+
+export function analog_hours() {
+  var x = document.getElementById("myColor2");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('hour_pointer').style.stroke =  currentVal;
 }
-export function center_circule(jscolor) {
-    document.getElementById('center_dot').style.stroke = '#' + jscolor
+
+export function analog_minutes() {
+  var x = document.getElementById("myColor3");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('minute_pointer').style.stroke =  currentVal;
+}
+
+export function analog_seconds() {
+  var x = document.getElementById("myColor4");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('second_pointer').style.stroke =  currentVal;
+}
+
+export function center_circule() {
+  var x = document.getElementById("myColor5");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('center_dot').style.stroke =  currentVal;
 }
 /*Cores*/
