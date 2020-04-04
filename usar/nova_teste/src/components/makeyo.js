@@ -183,6 +183,45 @@ var url = false //ainda nai foi adicionado
 var image = false;
 var posiçoesocupadas_antigo;
 var elemento = false;
+function bartype(barnumber){
+  alert('bar_type'+barnumber)
+  var novo = document.getElementById('bar_type'+barnumber).value;
+  alert('bar_type'+barnumber);
+  matrix[barnumber][7] = novo;
+  
+  switch(novo) {
+    
+    case "currentsteps":
+        
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
+        matrix[barnumber][2]=20;
+        barradius(barnumber);
+        break;
+    case "yesterdaysteps":
+        alert(barnumber);
+        document.getElementById('bar1').style.strokeDasharray  = "40,100";
+        matrix[barnumber][2]=40;
+        barradius(barnumber);
+        break;
+    case "companionsteps":
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
+        matrix[barnumber][2]=50;
+        barradius(barnumber);
+        break;
+    case "pasthouractivaty":
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = "1.35,0.3";
+        matrix[barnumber][2]="1.35,0.3";
+        break;
+    case "goalactivaty":
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
+        matrix[barnumber][2]=50;
+        barradius(barnumber);
+        break;
+    default:
+        console.log("erro");
+        break;
+  }}
+
 
 $(document).ready(function() {
 
@@ -192,20 +231,19 @@ $(document).ready(function() {
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if (Linha <= 6) {
-      
       $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select onChange=bartype('+ (Linha  )+' )}} id=bar_type' + (Linha +1)  + ' ' +
+      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
       '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
       '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
       '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
       '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-
+      
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
 
       $('#main').after(container);
       $("body").append('<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:34.8867825%; height: 580px;  top:55%; left: 80%; border-radius: 100%; position:absolute;  margin-top: -265px;  margin-left: -725px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+      ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
       '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
@@ -550,39 +588,6 @@ export function updaterotation(barnumber){
 }
 
 
-export function bartype(barnumber){
-  var novo = document.getElementById('bar_type'+barnumber).value;
-  matrix[barnumber][7] = novo;
-  switch(novo) {
-    
-    case "currentsteps":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
-        matrix[barnumber][2]=20;
-        barradius(barnumber);
-        break;
-    case "yesterdaysteps":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "40,100";
-        matrix[barnumber][2]=40;
-        barradius(barnumber);
-        break;
-    case "companionsteps":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
-        matrix[barnumber][2]=50;
-        barradius(barnumber);
-        break;
-    case "pasthouractivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "1.35,0.3";
-        matrix[barnumber][2]="1.35,0.3";
-        break;
-    case "goalactivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
-        matrix[barnumber][2]=50;
-        barradius(barnumber);
-        break;
-    default:
-        console.log("erro");
-        break;
-  }}
 
 /*Personalização dos elementos*/
 

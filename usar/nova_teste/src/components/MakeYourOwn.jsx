@@ -71,6 +71,7 @@ const MakeYourOwn = () => {
                         <option value={6}>7</option>
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
                   </div>
+                  
                 </div>
                 <div id="remaining_03">
                   <li id="lastelemente" className="elementos_menu_direito" onClick={make.togglemenu4}>Attributes</li>
@@ -144,7 +145,7 @@ const MakeYourOwn = () => {
                 <li id="oitavo" />
               </ul>
             </div>
-            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="90%" height="90%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-45%', marginTop: '-45%'}}>
+            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
             </svg>
             <div className="child elementos dropdiv" id="node1_1">
               <svg height={70} width={200}>

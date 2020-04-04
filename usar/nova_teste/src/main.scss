@@ -2236,24 +2236,67 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 //makeyourown
 
-/*toggle btn*/
-#toggle-btn{
+
+
+
+
+
+/*drag and drop
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
   position: absolute;
-  left: 35px;
-  top: 95px;
+  z-index: 10;
 }
-#toggle-btn span {
-  display: block;
-  background-color: black;
-  width: 30px;
-  height: 5px;
-  margin:3px;
+.ui-draggable{
+  color: white;
 }
-#toggle-btn.active{
-  left:26%;
-  transition: linear all 0.3s;
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
 }
-/*toggle btn*/
+#node1{
+  font-size: 40px;
+}
+/*drag and drop */
+
+/*Center whatch*/
+.labl {
+    display : block;
+}
+.labl > input{
+    visibility: hidden;
+    position: absolute;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    border:2px solid #bbb;
+}
+
+
+
+#quarto{
+  margin-top:100px;
+}
+
+#oitavo{
+  margin-left: 125px;
+}
+
+#dragdiv li:hover, #dropdiv li:hover{
+ border:2px solid #bbb;
+}
 
 
 
