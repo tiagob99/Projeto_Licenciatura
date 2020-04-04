@@ -1,6 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
-import './jscolor';
+
 
 /*Menu*/
  export function togglemenu(){
@@ -121,12 +121,8 @@ import './jscolor';
    
    
    /*Cores*/
-  export function background_color() {
-    var x = document.getElementById("myColor");
-    var currentVal = x.value;
-    x.value = currentVal;
-    document.getElementById('rect').style.backgroundColor =  currentVal;
-    
+  export function background_color(jscolor) {
+       document.getElementById('rect').style.backgroundColor = '#' + jscolor
    }
 
   export function digital_color(jscolor) {
