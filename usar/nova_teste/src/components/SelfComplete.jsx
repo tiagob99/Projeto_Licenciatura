@@ -35,7 +35,7 @@ const SelfComplete =() =>{
                 <div id="remaining_01">
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
-                    <p>Background Colors <input className="jscolor {onFineChange:'background_color(this)'}" defaultValue="000" /> </p>
+                    <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={selfcomplete.background_color}/></p>
                     <p>Digital <input className="jscolor {onFineChange:'digital_color(this)'}" defaultValue="fff" /> </p>
                     <p>Analog Hours <input className="jscolor {onFineChange:'analog_hours(this)'}" defaultValue="fff" /> </p>
                     <p>Analog Minuts <input className="jscolor {onFineChange:'analog_minutes(this)'}" defaultValue="fff" /> </p>

@@ -1,5 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import './jscolor';
 
 
 
@@ -121,13 +122,17 @@ $(function timerTick() {
 
 /*Cores*/
 
-$( function background_color(jscolor) {
-  if(window.location.pathname === '/Gardens'){
-  document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}})
-$( function digital_color(jscolor) {
+export function background_color() {
+  var x = document.getElementById("myColor");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('rect').style.backgroundColor =  currentVal;
+}
+
+export function digital_color(jscolor) {
     document.getElementById('node1').style.stroke = '#' + jscolor
-})
+}
+
 export function analog_hours(jscolor) {
     document.getElementById('hour_pointer').style.stroke = '#' + jscolor
 }

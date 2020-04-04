@@ -1,5 +1,7 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import './jscolor'; 
+
 /*Menu*/
 export function togglemenu(){
     document.getElementById('sidebar').classList.toggle('active');
@@ -120,9 +122,14 @@ $(function clock(){setInterval(() => {
    
    
    /*Cores*/
-   export function background_color(jscolor) {
-       document.getElementById('rect').style.backgroundColor = '#' + jscolor
+   export function background_color() {
+    var x = document.getElementById("myColor");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('rect').style.backgroundColor =  currentVal;
    }
+
+
    export function digital_color(jscolor) {
        document.getElementById('node1').style.color = '#' + jscolor
    }
