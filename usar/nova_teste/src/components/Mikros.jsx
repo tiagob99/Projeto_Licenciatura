@@ -40,7 +40,7 @@ const Mikros = () => {
               <div id="second_menu_hidden">
                 <p>Background Colors  <input type="color" id="myColor" defaultValue="#ff0080" onChange={micro.background_color}/> </p>
                 <p>Digital <input type="color" id="myColor1" defaultValue="#ff0080" onChange={micro.digital_color}/> </p>
-                <p>Analog Hours <input className="jscolor {color.onFineChange:{color.analog_hours(this)}}" defaultValue="fff" /> </p>
+                <p>Analog Hours  <input type="color" id="myColor2" defaultValue="#ff0080" onChange={micro.analog_hours}/> </p>
                 <p>Analog Minuts <input className="jscolor {micro.onFineChange:{color.analog_minutes(this}}" defaultValue="fff" /> </p>
                 <p>Analog Seconds <input className="jscolor {color.onFineChange:{color.analog_seconds(this}}" defaultValue="FF0000" /> </p>
                 <p>Center Dot <input className="jscolor {color.onFineChange:{color.center_circule(this)}}" defaultValue="fff" /> </p>

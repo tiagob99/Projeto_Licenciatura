@@ -146,9 +146,14 @@ export function digital_color() {
   x.value = currentVal;
   document.getElementById('node1').style.color =  currentVal;
 }
-export function analog_hours(jscolor) {
-    document.getElementById('hour_pointer').style.stroke = '#' + jscolor
+
+export function analog_hours() {
+  var x = document.getElementById("myColor2");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('hour_pointer').style.color =  currentVal;
 }
+
 export function analog_minutes(jscolor) {
     document.getElementById('minute_pointer').style.stroke = '#' + jscolor
 }
