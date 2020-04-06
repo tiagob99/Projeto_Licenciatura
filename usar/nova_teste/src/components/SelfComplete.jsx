@@ -35,17 +35,17 @@ const SelfComplete =() =>{
                 <div id="remaining_01">
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
-                    <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={selfcomplete.background_color}/> </p>
-                    <p>Digital <input type="color" id="myColor1" defaultValue="#ff0080" onChange={selfcomplete.digital_color}/> </p>
-                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#ff0080" onChange={selfcomplete.analog_hours}/> </p>
-                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={selfcomplete.analog_minutes}/> </p>
-                    <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={selfcomplete.analog_seconds}/> </p>
-                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={selfcomplete.center_circule}/> </p>
+                    <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={selfcomplete.background_color}/> </p>
+                    <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={selfcomplete.digital_color}/> </p>
+                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={selfcomplete.analog_hours}/> </p>
+                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={selfcomplete.analog_minutes}/> </p>
+                    <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={selfcomplete.analog_seconds}/> </p>
+                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={selfcomplete.center_circule}/> </p>
                 </div>
                 <div id="remaining_02">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu3}>Line</li>
                     <div id="third_menu_hidden">
-                    <p>Your Circle Bar </p> <br /> <input type="color" id="myColor6" defaultValue="#ff0080" onChange={selfcomplete.line_color_today}/><br /><br />
+                    <p>Your Circle Bar </p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={selfcomplete.line_color_today}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_today" onChange={selfcomplete.bar_thickness_today} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius_today" onChange={selfcomplete.bar_radius_today} type="range" name="b_radius" defaultValue={100} /><br /><br />
                     <p>Second Circle Bar</p><br />
@@ -54,7 +54,7 @@ const SelfComplete =() =>{
                         <option value="another_ser">Another User</option>
                     </select>
                     <br /><br />
-                    <p>Second Circle Color </p> <br /> <input type="color" id="myColor7" defaultValue="#ff0080" onChange={selfcomplete.line_color_yesterday}/><br /><br />
+                    <p>Second Circle Color </p> <br /> <input type="color" id="myColor7" defaultValue="#FF0000" onChange={selfcomplete.line_color_yesterday}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_yesterday" onChange={selfcomplete.bar_thickness_yesterday} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius_yesterday" onChange={selfcomplete.bar_radius_yesterday} type="range" name="b_radius" defaultValue={100} /><br /><br />
                     <p>Circle Bar Start </p> <br />

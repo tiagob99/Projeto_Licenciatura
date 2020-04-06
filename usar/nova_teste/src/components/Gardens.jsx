@@ -37,12 +37,12 @@ const Gardens = () => {
         <div id="remaining_01">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden">
-            <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={garden.background_color}/> </p>
-            <p>Digital <input type="color" id="myColor1" defaultValue="#ff0080" onChange={garden.digital_color}/> </p>
-            <p>Analog Hours <input type="color" id="myColor2" defaultValue="#ff0080" onChange={garden.analog_hours}/> </p>
-            <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={garden.analog_minutes}/> </p>
-            <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={garden.analog_seconds}/> </p>
-            <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={garden.center_circule}/></p>
+            <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={garden.background_color}/> </p>
+            <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={garden.digital_color}/> </p>
+            <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={garden.analog_hours}/> </p>
+            <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={garden.analog_minutes}/> </p>
+            <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={garden.analog_seconds}/> </p>
+            <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={garden.center_circule}/></p>
           </div>
         </div>
       </ul>

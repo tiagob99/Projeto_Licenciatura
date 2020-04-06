@@ -35,17 +35,17 @@ const Simple_goals = () => {
               <div id="remaining_01">
                 <li className="elementos_menu_direito" onClick={simple.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
-                  <p>Background Colors <input type="color" id="myColor" defaultValue="#ff0080" onChange={simple.background_color}/> </p>
-                  <p>Digital<input type="color" id="myColor1" defaultValue="#ff0080" onChange={simple.digital_color}/></p>
-                  <p>Analog Hours <input type="color" id="myColor2" defaultValue="#ff0080" onChange={simple.analog_hours}/> </p>
-                  <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#ff0080" onChange={simple.analog_minutes}/> </p>
-                  <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#ff0080" onChange={simple.analog_seconds}/></p>
-                  <p>Center Dot <input type="color" id="myColor5" defaultValue="#ff0080" onChange={simple.center_circule}/> </p>
+                  <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={simple.background_color}/> </p>
+                  <p>Digital<input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={simple.digital_color}/></p>
+                  <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={simple.analog_hours}/> </p>
+                  <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={simple.analog_minutes}/> </p>
+                  <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={simple.analog_seconds}/></p>
+                  <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={simple.center_circule}/> </p>
                 </div>
                 <div id="remaining_02">
                   <li className="elementos_menu_direito" onClick={simple.togglemenu3}>Line</li>
                   <div id="third_menu_hidden">
-                    <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#ff0080" onChange={simple.bar_color}/><br /><br />
+                    <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={simple.bar_color}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness" onChange={simple.bar_thickness} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Start </p> <br />
                     <select name="bar_star" id="bar_type" onChange={simple.bar_type}>
