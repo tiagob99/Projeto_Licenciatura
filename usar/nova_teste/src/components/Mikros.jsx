@@ -49,6 +49,19 @@ const Mikros = () => {
               <div id="remaining_02">
                 <li className="elementos_menu_direito" onClick={micro.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
+                <div id="main" style={{height: '70px', width: '100%'}}>
+                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
+                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
+                    <p>Bar <select id="bar_color_change">
+                        <option value={0}>1</option>
+                        <option value={1}>2</option>
+                        <option value={2}>3</option>
+                        <option value={3}>4</option>
+                        <option value={4}>5</option>
+                        <option value={5}>6</option>
+                        <option value={6}>7</option>
+                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
+                  </div>
                   <p>Circle Bar 1</p> <br /> <input type="color" id="myColor6" defaultValue="#FF0000" onChange={micro.bar_color1}/> <br /><br />
                   <p>Circle Bar 2</p> <br /> <input type="color" id="myColor7" defaultValue="#00FFFF" onChange={micro.bar_color2}/> <br /><br />
                   <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onChange={micro.bar_thickness_1} type="range" name="b_size" /><br /><br />
@@ -69,43 +82,39 @@ const Mikros = () => {
                   <br /><br />
                 </div>
                 <div id="remaining_03">
-                  <li className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
-                  <div id="fourth_menu_hidden">
-                    <div className="text">
-                      {/* <textarea name="field5" className="tex_box" placeholder="Insert your message" rows={15} cols={45} defaultValue={""} /> */}
-                          <br /><br /><p>Text</p><br />
-                        <select id="first_variable">
-                          <option value="none">None</option>
-                          <option value="yesterday">Yesterday</option>
-                          <option value="today">Today</option>
-                          <option value="goal">Goal</option>
-                          <option value="other_user">Other User</option>
-                        </select>
-                        <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                        <select id="third_variable">
-                          <option value="none">None</option>
-                          <option value="yesterday">Yesterday</option>
-                          <option value="today">Today</option>
-                          <option value="goal">Goal</option>
-                          <option value="other_user">Other User</option>
-                        </select>
-                        <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                        {/* <select id="fifth_variable">
-                          <option value="none">None</option>
-                          <option value="yesterday">Yesterday</option>
-                          <option value="today">Today</option>
-                          <option value="goal">Daily Goal</option>
-                          <option value="other_user">Other User</option>
-                        </select>  */}
-                        <br /><br />
-                        <select id="mesage_type">
-                          <option value="fixa">Fixa</option>
-                          <option value="temporaria">Temporaria</option>
-                        </select> <br />
-                        <br />
-                        <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
-                        <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
-                    </div>
+                  <li id="lastelemente" className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
+                  <div id="fourth_menu_hidden1">
+                    <br /><br /><p>Text</p><br />
+                    <select id="first_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="third_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="fifth_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Daily Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select> <br /><br />
+                    <select id="mesage_type1">
+                      <option value="fixa">Fixa</option>
+                      <option value="temporaria">Temporaria</option>
+                    </select> <br />
+                    <br />
+                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                   </div>
                 </div>
               </div>
@@ -121,6 +130,24 @@ const Mikros = () => {
                 <circle className="circle-chart__circle" id="bar2" stroke="#00acc1" strokeWidth={2} strokeDasharray="30,100" fill="none" cx="16.91549431" cy="16.91549431" r={14} />
               </svg>
             </div>
+            <div id="dragdiv" style={{zIndex: 2}}>
+              <ul id="allItems1">
+                <li id="primeiro1" />
+                <li id="segundo1" />
+                <li id="terceiro1" />
+                <li id="quarto1" />
+                <li id="quinto1" />
+                <li id="sexto1" />
+              </ul>
+            </div>
+            <div id="dropdiv" style={{zIndex: 2}}>
+              <ul id="Ul1">
+                <li id="setimo1" />
+                <li id="oitavo1" />
+              </ul>
+            </div>
+            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
+            </svg>
             <div id="dropdiv">
               <div className="child elementos " id="node1">
                 <svg height={0} width={200}>
