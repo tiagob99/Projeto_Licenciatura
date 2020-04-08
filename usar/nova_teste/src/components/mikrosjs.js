@@ -23,14 +23,6 @@ document.getElementById('remaining_02').classList.toggle('active');
 export function togglemenu3(){
 document.getElementById('third_menu_hidden').classList.toggle('active');
 document.getElementById('remaining_03').classList.toggle('active');
-if(open){
-  open = false;
-  document.getElementById('lastelemente').style.marginTop = 0 + "px";
-}
-else{
-  open = true;
-  document.getElementById('lastelemente').style.marginTop=tamanho_que_o_menu_desceu+ "px";
-} 
 }
 export function togglemenu4(){
  document.getElementById('fourth_menu_hidden').classList.toggle('active');
@@ -199,6 +191,13 @@ export function bar_color2(jscolor) {
   x.value = currentVal;
   document.getElementById('bar2').style.stroke = currentVal;
 }
+
+export function text_color() {
+  var x = document.getElementById("myColor7");
+  var currentVal = x.value;
+  x.value = currentVal;
+  document.getElementById('texto').style.color =  currentVal;
+ }
 /*Cores*/
 
 
@@ -360,38 +359,7 @@ function bartype(barnumber){
   alert('bar_type'+barnumber);
   matrix[barnumber][7] = novo;
   
-  switch(novo) {
-    
-    case "currentsteps":
-        
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
-        matrix[barnumber][2]=20;
-        barradius(barnumber);
-        break;
-    case "yesterdaysteps":
-        alert(barnumber);
-        document.getElementById('bar1').style.strokeDasharray  = "40,100";
-        matrix[barnumber][2]=40;
-        barradius(barnumber);
-        break;
-    case "companionsteps":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
-        matrix[barnumber][2]=50;
-        barradius(barnumber);
-        break;
-    case "pasthouractivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "1.35,0.3";
-        matrix[barnumber][2]="1.35,0.3";
-        break;
-    case "goalactivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
-        matrix[barnumber][2]=50;
-        barradius(barnumber);
-        break;
-    default:
-        console.log("erro");
-        break;
-  }}
+  }
 
 
 $(document).ready(function() {

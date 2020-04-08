@@ -44,12 +44,66 @@ const Gardens = () => {
             <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={garden.analog_seconds}/> </p>
             <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={garden.center_circule}/></p>
           </div>
+          <div id="remaining_03">
+                    <li className="elementos_menu_direito" onClick={garden.togglemenu4}>Attributes</li>
+                    <div id="fourth_menu_hidden">
+                    <select id="first_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <input type="color" id="myColor9" defaultValue="#ff0080" onChange={garden.text_color}/>
+                    <select id="third_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="fifth_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Daily Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select> <br /><br />
+                    <select id="mesage_type1">
+                      <option value="fixa">Fixa</option>
+                      <option value="temporaria">Temporaria</option>
+                    </select> <br />
+                    <br />
+                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                      {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
+                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
+                    </div>
+                  </div>
         </div>
       </ul>
     </div>
     <div className="watch">
       <div className="center_circule">
         <p id="rect" className="center_circule" />
+        <div id="dragdiv" style={{zIndex: 2}}>
+              <ul id="allItems">
+                <li id="primeiro" />
+                <li id="segundo" />
+                <li id="terceiro" />
+                <li id="quarto" />
+                <li id="quinto" />
+                <li id="sexto" />
+              </ul>
+            </div>
+            <div id="dropdiv" style={{zIndex: 2}}>
+              <ul id="Ul1">
+                <li id="setimo" />
+                <li id="oitavo" />
+              </ul>
+            </div>
         <div id="dropdiv">
           <div className="child elementos" id="node2">
             <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>

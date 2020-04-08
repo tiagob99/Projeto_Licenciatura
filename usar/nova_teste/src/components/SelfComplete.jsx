@@ -70,12 +70,56 @@ const SelfComplete =() =>{
                         <option value="counterclockwise">Counterclockwise</option>
                     </select>
                     <br /><br />
+                    <div id="main" style={{height: '70px', width: '100%'}}>
+                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
+                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
+                    <p>Bar <select id="bar_color_change">
+                        <option value={0}>1</option>
+                        <option value={1}>2</option>
+                        <option value={2}>3</option>
+                        <option value={3}>4</option>
+                        <option value={4}>5</option>
+                        <option value={5}>6</option>
+                        <option value={6}>7</option>
+                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
+                  </div>
                     </div>
                     <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
-                        <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br />
-                        <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br />
+                    <select id="first_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <input type="color" id="myColor9" defaultValue="#ff0080" onChange={selfcomplete.text_color}/>
+                    <select id="third_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="fifth_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Daily Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select> <br /><br />
+                    <select id="mesage_type1">
+                      <option value="fixa">Fixa</option>
+                      <option value="temporaria">Temporaria</option>
+                    </select> <br />
+                    <br />
+                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                        {/* <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br /> */}
+                        {/* <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br /> */}
                         <button type="button" onclick="readropzone()" name="button">Le Relogio</button>
                     </div>
                     </div>
@@ -84,9 +128,9 @@ const SelfComplete =() =>{
             </ul>
             </div>
             <div className="watch">
-            <div className="text">
+            {/* <div className="text">
                 <p id="texto">teste</p>
-            </div>
+            </div> */}
             <div className="center_circule">
                 <p id="rect" className="center_circule" />
                 <div className="circule">
@@ -95,6 +139,22 @@ const SelfComplete =() =>{
                     <circle className="circle-chart__circle" id="today_bar" stroke="#00acc1" strokeWidth={1} strokeDasharray="18,100" strokeLinecap="round" fill="none" cx="16.91549431" cy="16.91549431" r={16} />
                 </svg>
                 </div>
+                <div id="dragdiv" style={{zIndex: 2}}>
+              <ul id="allItems">
+                <li id="primeiro" />
+                <li id="segundo" />
+                <li id="terceiro" />
+                <li id="quarto" />
+                <li id="quinto" />
+                <li id="sexto" />
+              </ul>
+            </div>
+            <div id="dropdiv" style={{zIndex: 2}}>
+              <ul id="Ul1">
+                <li id="setimo" />
+                <li id="oitavo" />
+              </ul>
+            </div>
                 <div id="dropdiv">
                 <div className="child elementos" id="node2">
                     <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>

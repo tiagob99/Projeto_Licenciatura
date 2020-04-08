@@ -61,12 +61,54 @@ const Simple_goals = () => {
                     </select>
                     <br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={simple.bar_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
+                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
+                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
+                    <p>Bar <select id="bar_color_change">
+                        <option value={0}>1</option>
+                        <option value={1}>2</option>
+                        <option value={2}>3</option>
+                        <option value={3}>4</option>
+                        <option value={4}>5</option>
+                        <option value={5}>6</option>
+                        <option value={6}>7</option>
+                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
                   </div>
                   <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={simple.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
-                      <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
-                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br />
+                    <select id="first_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <input type="color" id="myColor9" defaultValue="#ff0080" onChange={simple.text_color}/>
+                    <select id="third_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select>
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="fifth_variable1">
+                      <option value="none">None</option>
+                      <option value="yesterday">Yesterday</option>
+                      <option value="today">Today</option>
+                      <option value="goal">Daily Goal</option>
+                      <option value="other_user">Other User</option>
+                    </select> <br /><br />
+                    <select id="mesage_type1">
+                      <option value="fixa">Fixa</option>
+                      <option value="temporaria">Temporaria</option>
+                    </select> <br />
+                    <br />
+                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                      {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
+                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>
                   </div>
                 </div>
@@ -75,9 +117,9 @@ const Simple_goals = () => {
           </div>
           
           <div className="watch">
-            <div className="text">
+            {/* <div className="text">
               <p id="texto">teste</p>
-            </div>
+            </div> */}
             <div className="center_circule">
               <p id="rect" className="center_circule" />
               <div className="circule">
@@ -85,6 +127,22 @@ const Simple_goals = () => {
                   <circle className="circle-chart__circle" id="bar" stroke="#00acc1" strokeWidth={1} strokeDasharray="101,100" strokeLinecap="round" fill="none" cx="16.91549431" cy="16.91549431" r={16} />
                 </svg>
               </div>
+              <div id="dragdiv" style={{zIndex: 2}}>
+              <ul id="allItems">
+                <li id="primeiro" />
+                <li id="segundo" />
+                <li id="terceiro" />
+                <li id="quarto" />
+                <li id="quinto" />
+                <li id="sexto" />
+              </ul>
+            </div>
+            <div id="dropdiv" style={{zIndex: 2}}>
+              <ul id="Ul1">
+                <li id="setimo" />
+                <li id="oitavo" />
+              </ul>
+            </div>
               <div id="dropdiv">
                 <div className="child elementos" id="node2">
                   <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
