@@ -112,8 +112,8 @@ const Mikros = () => {
                       <option value="temporaria">Temporaria</option>
                     </select> <br />
                     <br />
-                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
-                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                   </div>
                 </div>
               </div>

@@ -116,8 +116,8 @@ const SelfComplete =() =>{
                       <option value="temporaria">Temporaria</option>
                     </select> <br />
                     <br />
-                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
-                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                         {/* <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br /> */}
                         {/* <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br /> */}
                         <button type="button" onclick="readropzone()" name="button">Le Relogio</button>

@@ -105,8 +105,8 @@ const Simple_goals = () => {
                       <option value="temporaria">Temporaria</option>
                     </select> <br />
                     <br />
-                    <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
-                    <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
+                    <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                       {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
                       <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>

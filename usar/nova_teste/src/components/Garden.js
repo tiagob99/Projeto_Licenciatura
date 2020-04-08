@@ -311,7 +311,7 @@ export function text_color() {
     });
   
   
-    $('#btAddText1').click(function() { //Adiciona uma caixa de texto
+    $('#btAddText').click(function() { //Adiciona uma caixa de texto
       var ha_posiçao_livre = false;
       var novo = 0;
       while (posiçoesocupadas[novo]==1 && novo<8) {
@@ -378,7 +378,7 @@ export function text_color() {
     });
   
   
-    $('#btRemoveText1').click(function() { // Remove uma caixa de texto
+    $('#btRemoveText').click(function() { // Remove uma caixa de texto
       if(posiçoesocupadas[Texto-1]==0){  //erro
         Texto = Texto - 1;
         console.log("a11aa")

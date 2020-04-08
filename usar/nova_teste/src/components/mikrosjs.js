@@ -339,7 +339,7 @@ for(var i=0; i<8; i++) {
   matrixtext[i][7]="";
   matrixtext[i][8]="";
 }
-var id = ["primeiro1", "segundo1", "terceiro1", "quarto1", "quinto1", "sexto1",  "setimo1", "oitavo1"]; //posiçoes
+var id = ["primeiro1", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
 var posiçoesocupadas = [0,0,0,0,0,0,0,0];
 for (var i=0; i<8; i++){
   matrixtext[i][8]=id[i];
@@ -428,7 +428,7 @@ $(document).ready(function() {
   });
 
 
-  $('#btAddText1').click(function() { //Adiciona uma caixa de texto
+  $('#btAddText').click(function() { //Adiciona uma caixa de texto
     var ha_posiçao_livre = false;
     var novo = 0;
     while (posiçoesocupadas[novo]==1 && novo<8) {
@@ -495,7 +495,7 @@ $(document).ready(function() {
   });
 
 
-  $('#btRemoveText1').click(function() { // Remove uma caixa de texto
+  $('#btRemoveText').click(function() { // Remove uma caixa de texto
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
