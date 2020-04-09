@@ -95,7 +95,7 @@ const SelfComplete =() =>{
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    <input type="color" id="myColor9" defaultValue="#ff0080" onChange={selfcomplete.text_color}/>
+                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> */}
                     <select id="third_variable1">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>

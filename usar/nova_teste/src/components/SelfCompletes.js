@@ -23,14 +23,6 @@ export function togglemenu2(){
 export function togglemenu3(){
     document.getElementById('third_menu_hidden').classList.toggle('active');
     document.getElementById('remaining_03').classList.toggle('active');
-    if(open){
-      open = false;
-      document.getElementById('lastelemente').style.marginTop = 0 + "px";
-    }
-    else{
-      open = true;
-      document.getElementById('lastelemente').style.marginTop=tamanho_que_o_menu_desceu+ "px";
-    } 
   }
 export function togglemenu4(){
     document.getElementById('fourth_menu_hidden').classList.toggle('active');
