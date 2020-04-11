@@ -3,7 +3,7 @@ import Album from './Album';
 import { albums } from '../data/albums';
 import * as make from'./makeyo';
 import './makeyo';
-
+import { bar_type } from './mikrosjs';
 
 
 const MakeYourOwn = () => {
@@ -56,13 +56,14 @@ const MakeYourOwn = () => {
                 <p>Center Dot <input className="jscolor {onFineChange:'centercricule(this)'}" defaultValue="fff" /> </p><br /><br />
               </div>
               <div id="remaining_02">
+              <div id="linha" defaultValue = "1">
                 <li className="elementos_menu_direito" onClick={make.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
                   <div id="main" style={{height: '70px', width: '100%'}}>
-                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
+                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" onClick={make.conta}/>
                     <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
-                    <p>Bar <select id="bar_color_change">
-                        <option value={0}>1</option>
+                    <p>Bar <select id="bar_color_change" >
+                        <option value={0} >1 </option> 
                         <option value={1}>2</option>
                         <option value={2}>3</option>
                         <option value={3}>4</option>
@@ -70,13 +71,34 @@ const MakeYourOwn = () => {
                         <option value={5}>6</option>
                         <option value={6}>7</option>
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
+                      
+                  
+                  </div>
+                  </div>
+                  <div id="third_menu_hidden_1" > 
+                  {/* <p>Bar_type <select id={"bar_type1"} onChange= {'+ bartype() +'}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select></p><br /><br /> */}
+                  
+                  </div>
                   </div>
                   
+
                 </div>
+               
                 <div id="remaining_03">
+                <script src="https://apis.google.com/js/client.js"></script>
                   <li id="lastelemente" className="elementos_menu_direito" onClick={make.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
-                    <p>Image</p><br /><input type="text" id="url" placeholder="Url" style={{marginRight: '10px'}} />
+                    <p>Image</p><br />
+
+                    <div id="result"></div>
+                    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+                    <input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />
+                    <select id="load_type" style={{marginRight: '10px'}} onChange = {make.escolha} >
+                      <option value="url_load" selected="selected">URL</option>
+                      <option value="pc">Your Computer</option>
+                      <option value="drive">Drive</option>
+                    </select>
+                    
                     <select id="image_type" style={{marginRight: '10px'}}>
                       <option value="top">Top</option>
                       <option value="bakground">Background</option>
@@ -116,7 +138,7 @@ const MakeYourOwn = () => {
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                   </div>
                 </div>
-              </div>
+              
             </div>
           </ul>
         </div>

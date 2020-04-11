@@ -1,7 +1,9 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
-
+import google from "react-google-picker";
+import gapi from 'gapi-client';
 /*Menu*/
+
 var open = false;
 var tamanho_que_o_menu_desceu = 0;
 export function togglemenu(){
@@ -16,6 +18,8 @@ export function togglemenu1(){
 export function togglemenu2(){
   document.getElementById('second_menu_hidden').classList.toggle('active');
   document.getElementById('remaining_02').classList.toggle('active');
+
+
 }
 export function togglemenu3(){
   document.getElementById('third_menu_hidden').classList.toggle('active');
@@ -23,10 +27,13 @@ export function togglemenu3(){
   if(open){
     open = false;
     document.getElementById('lastelemente').style.marginTop = 0 + "px";
+
   }
   else{
+    
     open = true;
     document.getElementById('lastelemente').style.marginTop=tamanho_que_o_menu_desceu+ "px";
+    
   }
 }
 export function togglemenu4(){
@@ -183,10 +190,10 @@ var url = false //ainda nai foi adicionado
 var image = false;
 var posiçoesocupadas_antigo;
 var elemento = false;
-function bartype(barnumber){
-  alert('bar_type'+barnumber)
-  var novo = document.getElementById('bar_type'+barnumber).value;
-  alert('bar_type'+barnumber);
+export function bartype(){
+  alert(Linha);
+  var barnumber = valor_linha();
+  var novo = document.getElementById('bar_type0').value;
   matrix[barnumber][7] = novo;
   
   switch(novo) {
@@ -195,18 +202,18 @@ function bartype(barnumber){
         
         document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
-        barradius(barnumber);
+        //barradius(barnumber);
         break;
     case "yesterdaysteps":
         alert(barnumber);
-        document.getElementById('bar1').style.strokeDasharray  = "40,100";
+        document.getElementById('bar0').style.strokeDasharray  = "40,100";
         matrix[barnumber][2]=40;
-        barradius(barnumber);
+        //barradius(barnumber);
         break;
     case "companionsteps":
         document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
         matrix[barnumber][2]=50;
-        barradius(barnumber);
+        //barradius(barnumber);
         break;
     case "pasthouractivaty":
         document.getElementById('bar'+barnumber).style.strokeDasharray  = "1.35,0.3";
@@ -221,6 +228,135 @@ function bartype(barnumber){
         console.log("erro");
         break;
   }}
+export function conta(){
+  var x = Linha;
+  document.getElementById('linha').value = x;
+}
+export function valor_linha(){
+  // conta();
+  // var y =  document.getElementById('linha').value;
+  // return y;
+  var y = "bar_type1";
+  return y;
+}
+export function escolha(){
+  if(document.getElementById('load_type').value == 'url_load'){
+    $('#filetag').remove();
+    $('#preview').remove();
+    document.getElementById('load_type').insertAdjacentHTML('beforebegin',
+    '<input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />');
+  }
+  
+  if(document.getElementById('load_type').value == 'pc'){
+    $('#url').remove();
+    document.getElementById('load_type').insertAdjacentHTML('beforebegin',
+    '<input type="file" id="filetag"> <img src="" id="preview">')
+
+    var fileTag = document.getElementById("filetag"),
+    preview = document.getElementById("preview");
+    
+fileTag.addEventListener("change", function() {
+  changeImage(this);
+});
+
+function changeImage(input) {
+  var reader;
+
+  if (input.files && input.files[0]) {
+    reader = new FileReader();
+
+    reader.onload = function(e) {
+      preview.setAttribute('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+    
+
+}
+
+  }
+  if(document.getElementById('load_type').value == 'drive'){
+    document.getElementById('load_type').insertAdjacentHTML('beforebegin',
+    '<button onClick={make.showPickerDialog}>Show Picker Dialog</button> <!-- The Google API Loader script. --> <script type="text/javascript" src="https://apis.google.com/js/api.js"></script> <script> </script>')
+    
+    var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
+
+    // The Client ID obtained from the Google API Console. Replace with your own Client ID.
+    var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com";
+
+    // Replace with your own project number from console.developers.google.com.
+    // See "Project number" under "IAM & Admin" > "Settings"
+    var appId = "novo-269521";
+
+    // Scope to use to access user's Drive items.
+    var scope = ['https://www.googleapis.com/auth/drive.file'];
+
+    var pickerApiLoaded = false;
+    var oauthToken;
+
+    // Use the Google API Loader script to load the google.picker script.
+    function loadPicker() {
+      gapi.load('auth', {'callback': onAuthApiLoad});
+      gapi.load('picker', {'callback': onPickerApiLoad});
+    }
+
+    function onAuthApiLoad() {
+      window.gapi.auth.authorize(
+          {
+            'client_id': clientId,
+            'scope': scope,
+            'immediate': false
+          },
+          handleAuthResult);
+    }
+
+    function onPickerApiLoad() {
+      pickerApiLoaded = true;
+      createPicker();
+    }
+
+    function handleAuthResult(authResult) {
+      if (authResult && !authResult.error) {
+        oauthToken = authResult.access_token;
+        createPicker();
+      }
+    }
+
+    // Create and render a Picker object for searching images.
+    function createPicker() {
+      if (pickerApiLoaded && oauthToken) {
+        var view = new google.picker.View(google.picker.ViewId.DOCS);
+        view.setMimeTypes("image/png,image/jpeg,image/jpg");
+        var picker = new google.picker.PickerBuilder()
+            .enableFeature(google.picker.Feature.NAV_HIDDEN)
+            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+            .setAppId(appId)
+            .setOAuthToken(oauthToken)
+            .addView(view)
+            .addView(new google.picker.DocsUploadView())
+            .setDeveloperKey(developerKey)
+            .setCallback(pickerCallback)
+            .build();
+         picker.setVisible(true);
+      }
+    }
+
+    // A simple callback implementation.
+    function pickerCallback(data) {
+      if (data.action == google.picker.Action.PICKED) {
+        var fileId = data.docs[0].id;
+        alert('The user selected: ' + fileId);
+      }
+    }
+
+    
+    }
+   
+    
+  
+
+  }
 
 
 $(document).ready(function() {
@@ -231,22 +367,25 @@ $(document).ready(function() {
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if (Linha <= 6) {
-      $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
+      $(container).append('<div style="height:350px; margin-top:15px;"  id="baroptions"' + Linha + ' ' +
+      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select onchange="bartype(' + (Linha) + ')" id="bar_type"' + Linha + ' ' +
       '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-      
+      '</p><br><p>Circle Bar ' + (Linha+1) + ' Size </p><br> <input id=barsize' + Linha + '  value="100" max="89" onchange="barsize(' + Linha + ')" type="range" name="b_size">'+
+      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange="barradius(' + Linha + ')" type="range" name="b_size">'+
+      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onchange="barstar(' + Linha + ')" ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
+      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onchange="updaterotation(' + Linha + ')" ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
+
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
 
       $('#main').after(container);
-      $("body").append('<svg id=bardraw' + Linha + ' ' +
+      $("body").append(document.getElementById('third_menu_hidden_1').classList.add('active') + 
+         '<svg id=bardraw' + Linha + ' ' +
       ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
       '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
+        
       }
   });
 
@@ -258,9 +397,15 @@ $(document).ready(function() {
       $('#bardraw' + Linha).remove();
       var novo = tamanho_que_o_menu_desceu - 450;
       document.getElementById('lastelemente').style.marginTop = novo + "px";
+      
+      
       if (Linha >= 0) {
         tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
       }
+    }
+    if (Linha == 0){
+      document.getElementById('third_menu_hidden_1').classList.remove('active');
+
     }
   });
 
@@ -354,7 +499,7 @@ $(document).ready(function() {
     console.log(posiçoesocupadas);
     console.log(matrixtext);
   });
-
+  
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
     if(posiçoesocupadas[Texto-1]==0){  //erro
@@ -394,11 +539,21 @@ $(document).ready(function() {
       console.log("aa33a")
     }
   });
-
-
+  
   $('#btAddImg').click(function() { // Adiciona Imagem e remove posiçoes de colocação de texto
-    url = true;
-    var novo = document.getElementById("url").value;
+    var novo;
+    if(document.getElementById('load_type').value == 'url_load'){
+      url = true
+      novo = document.getElementById("url").value;
+    }
+    if(document.getElementById('load_type').value == 'pc'){
+
+      novo = novo = document.getElementById("preview").src;
+    }
+    if(document.getElementById('load_type').value == 'pc'){
+
+      novo = document.getElementById("url").value;
+    }
     var imagem_position = document.getElementById("image_type").value;
     console.log(imagem_position);
     posiçoesocupadas_antigo = posiçoesocupadas;
