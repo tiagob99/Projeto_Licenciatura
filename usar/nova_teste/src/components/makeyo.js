@@ -190,53 +190,110 @@ var url = false //ainda nai foi adicionado
 var image = false;
 var posiçoesocupadas_antigo;
 var elemento = false;
+export function valores(){
+
+  var barra = document.getElementById('bar_color_change').value;
+  var temp;
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== "20px, 100px"){
+    temp = 0;
+  }
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== ""){
+    temp = 0;
+  }
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== "40px, 100px"){
+    temp = 1;
+  }
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== "50px, 100px"){
+    temp = 2;
+  }
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== "1.35px, 0.3px"){
+    temp = 3;
+  }
+  if (document.getElementById('bar'+ barra).style.strokeDasharray== "50.05px, 100px"){
+    temp = 4;
+  }
+  
+
+  switch (barra) {
+    case "0":
+      
+       $('#bar_type').prop('selectedIndex',temp);
+      
+       break;
+    case "1":
+        $('#bar_type').prop('selectedIndex',temp);
+      
+      break;   
+    case "2":
+        $('#bar_type').prop('selectedIndex',temp);
+        
+        break;   
+        
+    case "3":
+        $('#bar_type').prop('selectedIndex',temp);
+        
+        break;   
+    case "4":
+        $('#bar_type').prop('selectedIndex',temp);
+        
+        break;   
+    case "5":
+        $('#bar_type').prop('selectedIndex',temp);
+        
+        break;   
+    case "6":
+        $('#bar_type').prop('selectedIndex',temp);
+        
+        break;               
+  }
+  
+}
 export function bartype(){
-  alert(Linha);
-  var barnumber = valor_linha();
-  var novo = document.getElementById('bar_type0').value;
+  var barnumber = document.getElementById('bar_color_change').value;
+  var novo = document.getElementById('bar_type').value;
   matrix[barnumber][7] = novo;
   
   switch(novo) {
     
     case "currentsteps":
         
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "20,100";
+        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
         //barradius(barnumber);
         break;
     case "yesterdaysteps":
         alert(barnumber);
-        document.getElementById('bar0').style.strokeDasharray  = "40,100";
+        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "40,100";
         matrix[barnumber][2]=40;
         //barradius(barnumber);
         break;
     case "companionsteps":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
+        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50,100";
         matrix[barnumber][2]=50;
         //barradius(barnumber);
         break;
     case "pasthouractivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "1.35,0.3";
+        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "1.35,0.3";
         matrix[barnumber][2]="1.35,0.3";
         break;
     case "goalactivaty":
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = "50,100";
+        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50.05,100";
         matrix[barnumber][2]=50;
-        barradius(barnumber);
+//        barradius(barnumber);
         break;
     default:
         console.log("erro");
         break;
-  }}
+
+  }
+}
 export function conta(){
   var x = Linha;
   document.getElementById('linha').value = x;
 }
 export function valor_linha(){
-  // conta();
-  // var y =  document.getElementById('linha').value;
-  // return y;
-  var y = "bar_type1";
+  conta();
+  var y =  document.getElementById('linha').value;
   return y;
 }
 export function escolha(){
@@ -367,14 +424,15 @@ $(document).ready(function() {
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if (Linha <= 6) {
-      $(container).append('<div style="height:350px; margin-top:15px;"  id="baroptions"' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select onchange="bartype(' + (Linha) + ')" id="bar_type"' + Linha + ' ' +
-      '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      '</p><br><p>Circle Bar ' + (Linha+1) + ' Size </p><br> <input id=barsize' + Linha + '  value="100" max="89" onchange="barsize(' + Linha + ')" type="range" name="b_size">'+
-      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange="barradius(' + Linha + ')" type="range" name="b_size">'+
-      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onchange="barstar(' + Linha + ')" ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onchange="updaterotation(' + Linha + ')" ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-
+      $('#bar_type').prop('selectedIndex',0)
+      $('#bar_color_change').prop('selectedIndex',Linha)
+      // $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
+      // '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
+      // '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
+      // '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
+      // '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
+      // '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
+      
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
 

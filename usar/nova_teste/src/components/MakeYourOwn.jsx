@@ -56,13 +56,13 @@ const MakeYourOwn = () => {
                 <p>Center Dot <input className="jscolor {onFineChange:'centercricule(this)'}" defaultValue="fff" /> </p><br /><br />
               </div>
               <div id="remaining_02">
-              <div id="linha" defaultValue = "1">
+              <div id="linha" defaultValue = "0">
                 <li className="elementos_menu_direito" onClick={make.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
                   <div id="main" style={{height: '70px', width: '100%'}}>
                     <input type="button" id="btAdd" defaultValue="Add Line" className="bt" onClick={make.conta}/>
                     <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
-                    <p>Bar <select id="bar_color_change" >
+                    <p>Bar <select id="bar_color_change" onChange = {make.valores}>
                         <option value={0} >1 </option> 
                         <option value={1}>2</option>
                         <option value={2}>3</option>
@@ -76,7 +76,7 @@ const MakeYourOwn = () => {
                   </div>
                   </div>
                   <div id="third_menu_hidden_1" > 
-                  {/* <p>Bar_type <select id={"bar_type1"} onChange= {'+ bartype() +'}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select></p><br /><br /> */}
+                  <p>Bar_type <select id="bar_type"  onChange= {() => make.bartype()}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option> </select></p><br /><br />
                   
                   </div>
                   </div>

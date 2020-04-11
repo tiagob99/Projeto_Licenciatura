@@ -1,4 +1,5 @@
 import React from 'react';
+import  'react-hook-form';
 import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
