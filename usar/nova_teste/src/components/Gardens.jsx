@@ -5,9 +5,33 @@ import * as garden from './Garden';
 import * as colors from './jscolor';
 
 
-
+import ReactDOM from "react-dom";
+import { useForm } from "react-hook-form";
 
 const Gardens = () => {
+
+  const [indexes, setIndexes] = React.useState([]);
+  const [counter, setCounter] = React.useState(0);
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = data => {
+    console.log(data);
+  };
+
+  const addFriend = () => {
+    setIndexes(prevIndexes => [...prevIndexes, counter]);
+    setCounter(prevCounter => prevCounter + 1);
+  };
+
+  const removeFriend = index => () => {
+    setIndexes(prevIndexes => [...prevIndexes.filter(item => item !== index)]);
+    setCounter(prevCounter => prevCounter - 1);
+  };
+
+  const clearFriends = () => {
+    setIndexes([]);
+  };
+
     return (
 
       <div>
@@ -81,6 +105,52 @@ const Gardens = () => {
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                       {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
                       <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
+                      {/* AQUI ------------------------------------*/}
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        {indexes.map(index => {
+                          const fieldName = `friends[${index}]`;
+                          return (
+                            <fieldset name={fieldName} key={fieldName}>
+                              <label>
+                                Insira o seu texto: 
+                                <input
+                                  type="text"
+                                  name={`${fieldName}.firstName`}
+                                  ref={register}
+                                />
+                                 <select id="first_variable1">
+                                  <option value="none">None</option>
+                                  <option value="yesterday">Yesterday</option>
+                                  <option value="today">Today</option>
+                                  <option value="goal">Goal</option>
+                                  <option value="other_user">Other User</option>
+                                </select>
+                              </label> 
+
+                              {/* <label>
+                                Last Name {index}:
+                                <input
+                                  type="text"
+                                  name={`${fieldName}.lastName`}
+                                  ref={register}
+                                />
+                              </label> */}
+                              <button type="button" onClick={removeFriend(index)}>
+                                Remove
+                              </button>
+                            </fieldset>
+                          );
+                        })}
+
+                        <button type="button" onClick={addFriend}>
+                          Add text
+                        </button>
+                        {/* <button type="button" onClick={clearFriends}>
+                          Clear Friends
+                        </button> */}
+                        <input type="submit" />
+                      </form>
+                      {/* AQUI-------------------------------------------------------------- */}
                     </div>
               </div>
         </div>
