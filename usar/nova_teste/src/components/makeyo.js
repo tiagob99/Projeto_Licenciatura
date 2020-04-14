@@ -6,6 +6,14 @@ import gapi from 'gapi-client';
 
 var open = false;
 var tamanho_que_o_menu_desceu = 0;
+$ (function remo(){
+  if(window.location.pathname !== '/makeYourOwn'){
+    // $('#bardraw').remove();
+    alert('ola');
+  }
+  
+})
+
 export function togglemenu(){
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('toggle-btn').classList.toggle('active');
@@ -435,7 +443,7 @@ $(document).ready(function() {
       
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
-
+      
       $('#main').after(container);
       $("body").append(document.getElementById('third_menu_hidden_1').classList.add('active') + 
          '<svg id=bardraw' + Linha + ' ' +

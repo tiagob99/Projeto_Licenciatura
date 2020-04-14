@@ -4,8 +4,6 @@ import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
 import * as colors from './jscolor';
-
-
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 

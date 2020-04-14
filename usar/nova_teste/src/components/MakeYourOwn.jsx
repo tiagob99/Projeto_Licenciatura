@@ -166,9 +166,10 @@ const MakeYourOwn = () => {
                 <li id="setimo" />
                 <li id="oitavo" />
               </ul>
-            </div>
+            
             <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
             </svg>
+            </div>
             <div className="child elementos dropdiv" id="node1_1">
               <svg height={70} width={200}>
                 <text x={0} y={15} />
