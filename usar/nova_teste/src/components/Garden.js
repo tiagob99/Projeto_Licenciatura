@@ -184,6 +184,21 @@ export function text_color() {
 /*Cores*/
 
 
+/*POP-UP----------------*/
+export function inicia(popupID){
+  const popup= document.getElementById(popupID);
+  console.log(popup);
+  // popup.classList.add('mostrar');
+}
+
+inicia('pop-up-prom');
+
+// const popup=document.querySelector('.aqui');
+// popup.addEventListener('click', () => inicia('pop-up-prom'));
+/*POP-UP----------------*/  
+
+
+
  //  Texto------------------------------------------
   /*vetores cores iniciais*/
   var cores = ["#FF0000", "#FFFFFF", "#00FF00", "#0000FF", "#FF4AD7", "#FF8400",  "#FFFFD7"];
