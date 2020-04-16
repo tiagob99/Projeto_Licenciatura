@@ -71,12 +71,16 @@ const MakeYourOwn = () => {
                         <option value={5}>6</option>
                         <option value={6}>7</option>
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
-                      
+                      <div id="third_menu_hidden_1" > 
+                        <p>Bar Type <select id="bar_type"  onChange= {() => make.bartype()}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option> </select></p><br /><br />
+                        <p>Circle Bar Size </p> <input id= "barsize" defaultValue="100" max="89" onChange={() => make.barsize()} type="range" name="b_size"/><br/>
+                        <p>Circle Bar Radius </p><input id="barradius"  defaultValue="100" max="87" min="50" onChange={() => make.barradius() }type="range" name="b_size"/><br />
+                        <p>Bar Star </p> <select id="bar_star" onChange={() => make.barstar()} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select><br/><br/>
+                        <p>Bar Rotation </p> <select name="bar_rotation" id="bar_star_1" onChange={() => make.updaterotation()} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select><br />
+                      </div>
                   
                   </div>
-                  </div>
-                  <div id="third_menu_hidden_1" > 
-                  <p>Bar_type <select id="bar_type"  onChange= {() => make.bartype()}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option> </select></p><br /><br />
+                  
                   
                   </div>
                   </div>

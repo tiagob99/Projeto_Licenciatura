@@ -25,9 +25,6 @@ const predefine = lazy(() => import ('./components/Predefine'));
 
 
 
-
-
-
 const Routes = () => (
     <BrowserRouter>
         <div> 

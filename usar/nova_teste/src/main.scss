@@ -1027,13 +1027,16 @@ input[type=text], select {
   
   /*watvh background*/
   .watch{
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     background-image: url('/image/motorola.png');
     background-repeat:no-repeat;
-    background-position: center;
-    background-size: 50%;
+    background-position-x: 49.8%;
+    background-position-y: 50%;
+    background-size: 40.8%;
+    
+    
   }
   /*watvh background*/
   
@@ -1252,7 +1255,7 @@ input[type=text], select {
   left:-100%;
 }
 #third_menu_hidden_1.active{
-  margin-top: 55%;
+  margin-top: 0%;
   left: 0;
 }
 #fourth_menu_hidden{
@@ -1268,14 +1271,7 @@ input[type=text], select {
 /*sidebar interior menus*/
 
 /*watvh background*/
-.watch{
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  background-image: url('/image/motorola.png');
-  background-repeat:no-repeat;
-  background-position: center;
-}
+
 /*watvh background*/
 
 /*circle*/
@@ -1502,14 +1498,7 @@ input[type=text], select {
 /*sidebar interior menus*/
 
 /*watvh background*/
-.watch{
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  background-image: url('/image/motorola.png');
-  background-repeat:no-repeat;
-  background-position: center;
-}
+
 /*watvh background*/
 
 /*circle*/
@@ -2003,6 +1992,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 #allItems, #Ul1{
  padding: 0px;
  margin: 0;
+ list-style-type: none;
 }
 #dragdiv{
  position: absolute;
@@ -2139,14 +2129,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 /*sidebar interior menus*/
 
 /*watvh background*/
-.watch{
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  background-image: url('/image/motorola.png');
-  background-repeat:no-repeat;
-  background-position: center;
-}
+
 /*watvh background*/
 
 /*circle*/

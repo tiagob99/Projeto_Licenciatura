@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route ,Link} from 'react-router-dom';
 
 const predefine = () => {
     return (
+      
         // <div className="wrapper">
         //     <div className="tour">
         //         {tour.map((tourItem, i) => {   
@@ -34,6 +35,7 @@ const predefine = () => {
          
 
     <div class="geral_prefefine">
+      
       <div class="margem">
         
         <a href="./Gardens">

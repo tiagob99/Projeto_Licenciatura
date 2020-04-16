@@ -21,9 +21,11 @@ class Header extends Component {
             <Fade top delay={500}>
                 <header className="header">
                     <div className="wrapper wrapper--header">
-                        <Link className="header__logo-link" to="/">
+                        <Link className="header__logo-link" onClick={this.forceUpdate} to="/">
                             <div className="logo"></div>
-                        </Link>                
+                        </Link>  
+                                
+                           
                         <Nav context="header"/>
                         <div className="header__menu" onClick={this.showSideBar}></div>
                         <SideBar showSideBar={showSideBar}/>
