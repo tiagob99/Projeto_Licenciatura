@@ -21,18 +21,7 @@ const MakeYourOwn = () => {
           <ul>
             <li className="elementos_menu_direito" onClick={make.togglemenu1}>Watch Types</li>
             <div id="first_menu_hidden">
-              <label className="labl">
-                <input onChange={make.updatewhatch} type="radio" name="whatch_type" id="digital" defaultChecked="checked" />
-                <div className="child elementos " id="node1">
-                  <svg height={70} width={200}>
-                    <text x={0} y={15} />
-                  </svg>
-                  <span id="hour" />
-                  <span id="minute" />
-                </div>
-              </label>
-              <label className="labl">
-                <input onChange={make.updatewhatch} type="radio" name="whatch_type" id="analog" />
+              <div id="dragdiv">
                 <div className="child elementos" id="node2">
                   <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
                     <g id="pointers">
@@ -43,7 +32,7 @@ const MakeYourOwn = () => {
                     </g>
                   </svg>
                 </div>
-              </label>
+              </div>
             </div>
             <div id="remaining_01">
               <li className="elementos_menu_direito" onClick={make.togglemenu2}>Watch Colors</li>
@@ -55,7 +44,7 @@ const MakeYourOwn = () => {
                 <p>Analog Seconds <input className="jscolor {onFineChange:'updateAnalogSeconds(this)'}" defaultValue="ff0000" /> </p><br />
                 <p>Center Dot <input className="jscolor {onFineChange:'centercricule(this)'}" defaultValue="fff" /> </p><br /><br />
               </div>
-              <div id="remaining_02">
+              <div id="remaining_02_mko">
               <div id="linha" defaultValue = "0">
                 <li className="elementos_menu_direito" onClick={make.togglemenu3}>Line</li>
                 <div id="third_menu_hidden">
@@ -174,22 +163,15 @@ const MakeYourOwn = () => {
             <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
             </svg>
             </div>
-            <div className="child elementos dropdiv" id="node1_1">
-              <svg height={70} width={200}>
-                <text x={0} y={15} />
-              </svg>
-              <span id="hour_1" />
-              <span id="minute_1" />
-            </div>
-            <div className="child elementos dropdiv" id="node2_1" style={{display: 'none'}}>
-              <svg id="clock_1" viewBox="0 0 100 100" width={200} height={200}>
-                <g id="pointers_1">
-                  <line id="hour_pointer_1" x1={50} y1={50} x2={50} y2={27} />
-                  <line id="minute_pointer_1" x1={50} y1={50} x2={50} y2={17} />
-                  <line id="second_pointer_1" x1={50} y1={50} x2={50} y2={13} />
-                  <circle id="center_dot_1" style={{stroke: 'white', strokeWidth: '3px'}} cx={50} cy={50} r={1} />
-                </g>
-              </svg>
+            <div id="dropdiv">
+              <div className="child elementos " id="node1">
+                <svg height={0} width={200}>
+                  <text x={0} y={15} />
+                </svg>
+                <span id="hour" />
+                <span id="minute" />
+                <span id="second" />
+              </div>
             </div>
           </div>
         </div>
