@@ -1453,18 +1453,18 @@ input[type=text], select {
 /*sidebar*/
 
 /*sidebar interior menus*/
-#first_menu_hidden{
+#first_menu_hidden111{
   position: absolute;
   left:-100%;
   width: 90%;
 }
-#first_menu_hidden.active{
-  height:500px;
-  left: auto;
-  margin: 10px;
+#first_menu_hidden111.active{
+  height:50%;
+    left: auto;
+    margin: 1%;
 }
-#remaining_01.active{
-  margin-top: 250px;
+#remaining_111.active{
+  margin-top: 110%;
 }
 #second_menu_hidden{
   position: absolute;

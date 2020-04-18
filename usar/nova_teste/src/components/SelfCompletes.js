@@ -13,8 +13,8 @@ var tamanho_que_o_menu_desceu = 0;
     document.getElementById('toggle-btn').classList.toggle('active');
    }
 export function togglemenu1(){
-    document.getElementById('first_menu_hidden').classList.toggle('active');
-    document.getElementById('remaining_01').classList.toggle('active');
+    document.getElementById('first_menu_hidden111').classList.toggle('active');
+    document.getElementById('remaining_111').classList.toggle('active');
    }
 export function togglemenu2(){
     document.getElementById('second_menu_hidden').classList.toggle('active');

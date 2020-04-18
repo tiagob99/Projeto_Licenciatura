@@ -20,7 +20,7 @@ const SelfComplete =() =>{
             <div id="sidebar">
             <ul>
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu1}>Watch Types</li>
-                <div id="first_menu_hidden">
+                <div id="first_menu_hidden111">
                 <div id="dragdiv">
                     <div className="child elementos " id="node1">
                     <svg height={70} width={200}>
@@ -32,7 +32,7 @@ const SelfComplete =() =>{
                     </div>
                 </div>
                 </div>
-                <div id="remaining_01">
+                <div id="remaining_111">
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
                     <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={selfcomplete.background_color}/> </p>
