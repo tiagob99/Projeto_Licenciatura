@@ -79,7 +79,8 @@ const Mikros = () => {
                         <option value={6}>7</option>
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
                 </div>
-                <div id="remaining_03">
+                </div>
+                <div id="remaining_09">
                   <li id="lastelemente" className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
                     <br /><br /><p>Text</p><br />
@@ -117,7 +118,6 @@ const Mikros = () => {
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                   </div>
                 </div>
-              </div>
             </div>
           </ul>
         </div>

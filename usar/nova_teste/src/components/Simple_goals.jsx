@@ -73,7 +73,8 @@ const Simple_goals = () => {
                         <option value={6}>7</option>
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
                   </div>
-                  <div id="remaining_03">
+                  </div>
+                  <div id="remaining_05">
                     <li className="elementos_menu_direito" onClick={simple.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
                     <select id="first_variable1">
@@ -112,7 +113,6 @@ const Simple_goals = () => {
                       <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>
                   </div>
-                </div>
               </div>
             </ul>
           </div>

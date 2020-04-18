@@ -41,7 +41,7 @@ const Thirtys = () => {
                     <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={terceiro.analog_seconds}/> </p>
                     <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={terceiro.center_circule}/> </p>
                 </div>
-                <div id="remaining_02">
+                <div id="remaining_22">
                     <li className="elementos_menu_direito" onClick={terceiro.togglemenu3}>Line</li>
                     <div id="third_menu_hidden">
                     <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={terceiro.bar_color}/><br /><br />
@@ -50,7 +50,7 @@ const Thirtys = () => {
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={terceiro.bar_radius} type="range" min={50} max={90} name="b_radius" defaultValue={100} /><br /><br />
                     </div>
                 </div>
-                <div id="remaining_03">
+                <div id="remaining_33">
                     <li className="elementos_menu_direito" onClick={terceiro.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
                     <select id="first_variable1">

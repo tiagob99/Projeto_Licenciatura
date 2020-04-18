@@ -19,11 +19,12 @@ var tamanho_que_o_menu_desceu = 0;
    
  export  function togglemenu2(){
     document.getElementById('second_menu_hidden').classList.toggle('active');
-    document.getElementById('remaining_02').classList.toggle('active');
+    document.getElementById('remaining_22').classList.toggle('active');
    }
 
  export  function togglemenu3(){
     document.getElementById('third_menu_hidden').classList.toggle('active');
+    document.getElementById('remaining_33').classList.toggle('active');
    }
 
  export function togglemenu4(){

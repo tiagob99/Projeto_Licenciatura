@@ -84,6 +84,7 @@ const SelfComplete =() =>{
                       </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
                   </div>
                     </div>
+                    </div>
                     <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
@@ -124,7 +125,6 @@ const SelfComplete =() =>{
                         <button type="button" onclick="readropzone()" name="button">Le Relogio</button>
                     </div>
                     </div>
-                </div>
                 </div>
             </ul>
             </div>
