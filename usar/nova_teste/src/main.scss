@@ -1249,6 +1249,14 @@ input[type=text], select {
   position: absolute;
   left:-100%;
 }
+#third_menu_hidden_1{
+  position: absolute;
+  left:-200%;
+}
+#third_menu_hidden_1.active{
+  left:0;
+  margin: 10px;
+}
 #third_menu_hidden.active{
   left:0;
   margin: 10px;
