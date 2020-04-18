@@ -18,9 +18,11 @@ const Nav = props => {
       // setEmail(response.profileObj.email);
       setUrl(response.profileObj.imageUrl);
     };
-    
+    function upd(){
+        window.location.reload();
+    }
     return (
-        <div className={`main-nav main-nav--${context}`}>            
+        <div className={`main-nav main-nav--${context}` }onClick={upd}>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}
             <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn">Make your own</NavLink>            
             <NavLink className={getClassName("/Predefine")} exact to="/predefine">Predefine</NavLink>            
