@@ -60,8 +60,7 @@ $(function clock(){
   if(window.location.pathname === '/makeYourOwn'){
     document.getElementById('hour').innerHTML = hours;
     document.getElementById('minute').innerHTML = ": " + minutes;
-    document.getElementById('hour_1').innerHTML = hours;
-    document.getElementById('minute_1').innerHTML = ": " + minutes;
+    
   }
 },100);})
 
@@ -78,9 +77,7 @@ $(function timerTick() {
       document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
       document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-      document.getElementById('hour_pointer_1').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-      document.getElementById('minute_pointer_1').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-      document.getElementById('second_pointer_1').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+      
     }
     setTimeout(timerTick, 100);
   }
@@ -901,11 +898,11 @@ $(document).ready(function() {
       if (Linha >= 0) {
         tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
       }
+      if (Linha == 0){
+        document.getElementById('third_menu_hidden_1').classList.remove('active')
+      }
     }
-    if (Linha == 0){
-      document.getElementById('third_menu_hidden_1').classList.remove('active');
-
-    }
+    
   });
 
 
