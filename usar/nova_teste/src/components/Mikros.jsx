@@ -22,7 +22,7 @@ const Mikros = () => {
         <div id="sidebar">
           <ul>
             <li className="elementos_menu_direito" onClick={micro.togglemenu1}>Watch Types</li>
-            <div id="first_menu_hidden">
+            <div id="first_menu_hidden11">
               <div id="dragdiv">
                 <div className="child elementos" id="node2">
                   <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
@@ -36,7 +36,7 @@ const Mikros = () => {
                 </div>
               </div>
             </div>
-            <div id="remaining_01">
+            <div id="remaining_11">
               <li className="elementos_menu_direito" onClick={micro.togglemenu2}>Colors</li>
               <div id="second_menu_hidden">
                 <p>Background Colors  <input type="color" id="myColor" defaultValue="#000000" onChange={micro.background_color}/> </p>
