@@ -185,13 +185,13 @@ export function text_color() {
 
 
 /*POP-UP----------------*/
-export function inicia(popupID){
-  const popup= document.getElementById(popupID);
+export function inicia(){
+  const popup= document.getElementById("pop-up-prom");
   console.log(popup);
   // popup.classList.add('mostrar');
 }
 
-inicia('pop-up-prom');
+// inicia('pop-up-prom');
 
 // const popup=document.querySelector('.aqui');
 // popup.addEventListener('click', () => inicia('pop-up-prom'));

@@ -60,7 +60,7 @@ const Gardens = () => {
         <div id="remaining_01">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden" >
-            <p>Background Colors <input class ="aqui" onClick={garden.inicia} type="color" id="myColor" defaultValue="#000000" onChange={garden.background_color}/> </p>
+            <p>Background Colors <input class ="aqui"  onClick={garden.inicia} type="color" id="myColor" defaultValue="#000000" onChange={garden.background_color}/> </p>
             <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={garden.digital_color}/> </p>
             <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={garden.analog_hours}/> </p>
             <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={garden.analog_minutes}/> </p>
