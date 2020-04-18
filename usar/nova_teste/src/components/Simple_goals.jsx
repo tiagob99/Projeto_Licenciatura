@@ -21,7 +21,7 @@ const Simple_goals = () => {
           <div id="sidebar">
             <ul>
               <li className="elementos_menu_direito" onClick={simple.togglemenu1}>Watch Types</li>
-              <div id="first_menu_hidden">
+              <div id="first_menu_hidden1111">
                 <div id="dragdiv">
                   <div className="child elementos " id="node1">
                     <svg height={70} width={200}>
@@ -32,7 +32,7 @@ const Simple_goals = () => {
                   </div>
                 </div>
               </div>
-              <div id="remaining_01">
+              <div id="remaining_1111">
                 <li className="elementos_menu_direito" onClick={simple.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
                   <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={simple.background_color}/> </p>
