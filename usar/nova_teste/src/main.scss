@@ -963,7 +963,7 @@ input[type=text], select {
     display: block;
     background-color: black;
     width: 30px;
-    height: 5px;
+    height: 500px;
     margin:3px;
   }
   #toggle-btn.active{
@@ -985,6 +985,7 @@ input[type=text], select {
     left:0;
     overflow: auto;
     transition: linear all 0.3s;
+    position: absolute;
   }
   .elementos_menu_direito{
     list-style: none;
@@ -1005,13 +1006,17 @@ input[type=text], select {
     width: 90%;
   }
   #first_menu_hidden.active{
-    height:250px;
+    height:500px;
     left: auto;
     margin: 10px;
   }
   #remaining_01.active{
-    margin-top: 250px;
+    margin-top: 50%;
   }
+  #remaining_222.active{
+    margin-top: 120%;
+  }
+
   #second_menu_hidden{
     position: absolute;
     left:-100%;
@@ -1020,6 +1025,7 @@ input[type=text], select {
     margin-top:30px;
   }
   #second_menu_hidden.active{
+    height:200px;
     left:0;
     margin: 10px;
   }
@@ -1157,7 +1163,7 @@ input[type=text], select {
 
 
 
-//mikros
+//mikros---------------------------------------------------------------------
 
 .big_div{
   width: 100%;
@@ -1218,7 +1224,7 @@ input[type=text], select {
   width: 90%;
 }
 #first_menu_hidden.active{
-  height:250px;
+  height:500px;
   left: auto;
   margin: 10px;
 }
@@ -1237,7 +1243,7 @@ input[type=text], select {
   margin: 10px;
 }
 #remaining_02.active{
-  margin-top: 350px;
+  margin-top: 400px;
 }
 #third_menu_hidden{
   position: absolute;
@@ -1247,16 +1253,8 @@ input[type=text], select {
   left:0;
   margin: 10px;
 }
-#remaining_03.active{
-  margin-top: 560px;
-}
-#third_menu_hidden_1{
-  position: absolute;
-  left:-100%;
-}
-#third_menu_hidden_1.active{
-  margin-top: 0%;
-  left: 0;
+#remaining_09.active{
+  margin-top: 350%;
 }
 #fourth_menu_hidden{
   width: 95%;
@@ -1382,7 +1380,7 @@ input[type=text], select {
 // textarea {
 //   /*resize: none;*/
 // }
-
+//mikros---------------------------------------------------------------------
 
 //SELFCOMPLETE----------------------------------------------------
 
@@ -1453,7 +1451,7 @@ input[type=text], select {
   width: 90%;
 }
 #first_menu_hidden.active{
-  height:250px;
+  height:500px;
   left: auto;
   margin: 10px;
 }
@@ -1472,7 +1470,7 @@ input[type=text], select {
   margin: 10px;
 }
 #remaining_02.active{
-  margin-top: 350px;
+  margin-top: 400px;
 }
 #third_menu_hidden{
   position: absolute;
@@ -1483,7 +1481,8 @@ input[type=text], select {
   margin: 10px;
 }
 #remaining_03.active{
-  margin-top: 725px;
+  margin-top: 440%;
+  // margin-top: 1500px; assim funciona com pixeis
 }
 #fourth_menu_hidden{
   width: 95%;
@@ -1608,7 +1607,240 @@ animation:  dash 3s linear;*/
 
 //SELFCOMPLETE---------------------------------------------------------------
 
+//SIMPLE---------------------------------------------------------------------
+// *{
+//   margin:0;
+//   padding: 0;
+// }
+// body, html {
+//   height: 100%;
+//   width: 100%;
+// }
+.big_div{
+  width: 100%;
+  height: 100%;
+  background-image: url('/image/backgroundwatch.jpg');
+}
 
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+/*sidebar*/
+#sidebar{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #191919;
+  color: white;
+  left: -25%;
+}
+#sidebar.active{
+  left:0;
+  overflow: auto;
+  transition: linear all 0.3s;
+}
+.elementos_menu_direito{
+  list-style: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.elementos_menu_direito:hover{
+  background-color: #70D7FF;
+}
+/*sidebar*/
+
+/*sidebar interior menus*/
+#first_menu_hidden{
+  position: absolute;
+  left:-100%;
+  width: 90%;
+}
+#first_menu_hidden.active{
+  height:500px;
+  left: auto;
+  margin: 10px;
+}
+#remaining_01.active{
+  margin-top: 250px;
+}
+#second_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden p {
+  margin-top:30px;
+}
+#second_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02.active{
+  margin-top: 350px;
+}
+#third_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_05.active{
+  margin-top: 270%;
+}
+#fourth_menu_hidden{
+  width: 95%;
+  height: 300px;
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
+
+/*watvh background*/
+.watch{
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url('/image/motorola.png');
+  background-repeat:no-repeat;
+  background-position: center;
+}
+/*watvh background*/
+
+/*circle*/
+.center_circule{
+  top: 50%;
+  left: 50%;
+  margin-left: -265px;
+  margin-top: -265px;
+  width: 530px;
+  height: 530px;
+  border-radius: 100%;
+  background-color: #000;
+  position:absolute;
+}
+#rect{
+  width: 100%;
+  height: 100%;
+}
+/*circle*/
+
+
+/*Relogio Digital*/
+#hour,#minute,#second{
+  size: 20px;
+}
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+#clock {
+  stroke-linecap: round;
+}
+#hour_pointer {
+  stroke-width: 2px;
+  stroke: white;
+}
+#second_pointer {
+  stroke-width: 1px;
+  stroke: #ff0000;
+}
+#minute_pointer {
+  stroke-width: 1px;
+  stroke: white;
+}
+/*Relogio analogico*/
+
+
+/*drag and drop */
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+#node1{
+  font-size: 40px;
+}
+/*drag and drop */
+
+/*barra*/
+.circle-chart{
+  border-radius: 100%;
+}
+
+.animation{
+    animation: circle-chart-fill 2s reverse;
+}
+
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg) ;
+  transform-origin: center;
+}
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+/*transform: scaleX(-1);
+animation:  dash 3s linear;
+@keyframes dash {
+  to {
+    stroke-dashoffset: 50;
+  }
+}*/
+/*barra*/
+
+.text{
+  padding-left: 24%;
+  padding-top: 370px;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+// #texto{
+//   font-size: 10px;
+// }
+
+//SIMPLE---------------------------------------------------------------------
 
 
 
@@ -2097,6 +2329,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   width: 90%;
 }
 #first_menu_hidden.active{
+  margin:500px;
   left: auto;
   margin: 10px;
 }
@@ -2106,6 +2339,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 #second_menu_hidden{
   position: absolute;
   left:-100%;
+  
 }
 #second_menu_hidden p {
   margin-top:30px;
@@ -2114,8 +2348,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   left:0;
   margin: 10px;
 }
-#remaining_02.active{
-  margin-top: 350px;
+#remaining_22.active{
+  margin-top: 110%;
+}
+#remaining_33.active{
+  margin-top: 170%;
 }
 #third_menu_hidden{
   position: absolute;
@@ -2300,7 +2537,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   top: 80%;
 }
 
-/* POP-UP*/
+/* POP-UP----------------------------------------------*/
 .pop-up-container{
   width: 100%;
   height: 100%;
@@ -2361,4 +2598,4 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 
-/* POP-UP*/
+/* POP-UP---------------------------------------------------------*/

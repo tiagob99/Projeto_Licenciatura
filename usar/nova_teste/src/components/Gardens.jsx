@@ -73,7 +73,8 @@ const Gardens = () => {
               </div>
             </div>
           </div>
-          <div id="remaining_03">
+          </div>
+          <div id="remaining_222">
                     <li className="elementos_menu_direito" onClick={garden.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
                     <select id="first_variable1">
@@ -158,7 +159,6 @@ const Gardens = () => {
                       {/* AQUI-------------------------------------------------------------- */}
                     </div>
               </div>
-        </div>
       </ul>
     </div>
     <div className="watch">
