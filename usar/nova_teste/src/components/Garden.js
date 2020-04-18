@@ -15,8 +15,8 @@ export function togglemenu(){
  document.getElementById('toggle-btn').classList.toggle('active');
 }
 export function togglemenu1(){
- document.getElementById('first_menu_hidden').classList.toggle('active');
- document.getElementById('remaining_01').classList.toggle('active');
+ document.getElementById('first_menu_hidden1').classList.toggle('active');
+ document.getElementById('remaining_1').classList.toggle('active');
 }
 export function togglemenu2(){
  document.getElementById('second_menu_hidden').classList.toggle('active');

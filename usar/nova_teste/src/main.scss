@@ -1000,18 +1000,18 @@ input[type=text], select {
   /*sidebar*/
   
   /*sidebar interior menus*/
-  #first_menu_hidden{
+  #first_menu_hidden1{
     position: absolute;
     left:-100%;
     width: 90%;
   }
-  #first_menu_hidden.active{
-    height:500px;
+  #first_menu_hidden1.active{
+    height:50%;
     left: auto;
-    margin: 10px;
+    margin: 1%;
   }
-  #remaining_01.active{
-    margin-top: 50%;
+  #remaining_1.active{
+    margin-top: 100%;
   }
   #remaining_222.active{
     margin-top: 120%;

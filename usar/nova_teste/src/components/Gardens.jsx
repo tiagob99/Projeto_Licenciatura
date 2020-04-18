@@ -45,7 +45,7 @@ const Gardens = () => {
     <div id="sidebar">
       <ul>
         <li className="elementos_menu_direito" onClick={garden.togglemenu1}>Watch Types</li>
-        <div id="first_menu_hidden">
+        <div id="first_menu_hidden1">
           <div id="dragdiv">
             <div className="child elementos " id="node1">
               <svg height={70} width={200}>
@@ -57,7 +57,7 @@ const Gardens = () => {
             </div>
           </div>
         </div>
-        <div id="remaining_01">
+        <div id="remaining_1">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden" >
             <p>Background Colors <input class ="aqui"  onClick={garden.inicia} type="color" id="myColor" defaultValue="#000000" onChange={garden.background_color}/> </p>
