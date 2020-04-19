@@ -72,6 +72,8 @@ const Gardens = () => {
                 <h3>Cuidado</h3>
               </div>
             </div>
+            <div id="main">
+            </div>
           </div>
           </div>
           <div id="remaining_222">

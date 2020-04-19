@@ -29,7 +29,7 @@ const Nav = props => {
             <NavLink className={getClassName("/Login")} exact to="/Login">
                 <GoogleLogin
                 // className="dark"
-                clientId="465234973180-0758f7i8l8t7kbr3nu48us2amsnqhqbq.apps.googleusercontent.com"
+                clientId="948125826703-isqukqa2t6vtfob94invt8h8b0ld9hoj.apps.googleusercontent.com"
                 buttonText="Login"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
