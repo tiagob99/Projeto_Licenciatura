@@ -14,18 +14,18 @@ export function togglemenu(){
 }
 export function togglemenu1(){
   
-  document.getElementById('first_menu_hidden').classList.toggle('active');
-  document.getElementById('remaining_01').classList.toggle('active');}
+  document.getElementById('first_menu_hidden_mko').classList.toggle('active');
+  document.getElementById('remaining_01_mko').classList.toggle('active');}
 
 export function togglemenu2(){
-  document.getElementById('second_menu_hidden').classList.toggle('active');
-  document.getElementById('remaining_02').classList.toggle('active');
+  document.getElementById('second_menu_hidden_mko').classList.toggle('active');
+  document.getElementById('remaining_02_mko').classList.toggle('active');
 
 
 }
 export function togglemenu3(){
-  document.getElementById('third_menu_hidden').classList.toggle('active');
-  document.getElementById('remaining_03').classList.toggle('active');
+  document.getElementById('third_menu_hidden_mko').classList.toggle('active');
+  document.getElementById('remaining_03_mko').classList.toggle('active');
   if(open){
     open = false;
     document.getElementById('lastelemente').style.marginTop = 0 + "px";
@@ -39,7 +39,7 @@ export function togglemenu3(){
   }
 }
 export function togglemenu4(){
-  document.getElementById('fourth_menu_hidden').classList.toggle('active');
+  document.getElementById('fourth_menu_hidden_mko').classList.toggle('active');
 }
 /*Menu*/
 

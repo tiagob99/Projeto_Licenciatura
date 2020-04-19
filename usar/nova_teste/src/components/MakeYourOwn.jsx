@@ -20,7 +20,7 @@ const MakeYourOwn = () => {
         <div id="sidebar">
           <ul>
             <li className="elementos_menu_direito" onClick={make.togglemenu1}>Watch Types</li>
-            <div id="first_menu_hidden">
+            <div id="first_menu_hidden_mko">
               <div id="dragdiv">
                 <div className="child elementos" id="node2">
                   <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
@@ -34,9 +34,9 @@ const MakeYourOwn = () => {
                 </div>
               </div>
             </div>
-            <div id="remaining_01">
+            <div id="remaining_01_mko">
               <li className="elementos_menu_direito" onClick={make.togglemenu2}>Watch Colors</li>
-              <div id="second_menu_hidden">
+              <div id="second_menu_hidden_mko">
                 <p>Background Colors <input className="jscolor {onFineChange:'backgroundcolor(this)'}" defaultValue="000" /> </p> <br />
                 <p>Digital <input className="jscolor {onFineChange:'digitalcolor(this)'}" defaultValue="fff" /> </p><br />
                 <p>Analog Hours <input className="jscolor {onFineChange:'updateAnalogHours(this)'}" defaultValue="fff" /> </p><br />
@@ -44,10 +44,10 @@ const MakeYourOwn = () => {
                 <p>Analog Seconds <input className="jscolor {onFineChange:'updateAnalogSeconds(this)'}" defaultValue="ff0000" /> </p><br />
                 <p>Center Dot <input className="jscolor {onFineChange:'centercricule(this)'}" defaultValue="fff" /> </p><br /><br />
               </div>
-              <div id="remaining_02">
+              <div id="remaining_02_mko">
               <div id="linha" defaultValue = "0">
                 <li className="elementos_menu_direito" onClick={make.togglemenu3}>Line</li>
-                <div id="third_menu_hidden">
+                <div id="third_menu_hidden_mko">
                   <div id="main" style={{height: '70px', width: '100%'}}>
                     <input type="button" id="btAdd" defaultValue="Add Line" className="bt" onClick={make.conta}/>
                     <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
@@ -78,10 +78,10 @@ const MakeYourOwn = () => {
 
                 </div>
                
-                <div id="remaining_03">
+                <div id="remaining_03_mko">
                 <script src="https://apis.google.com/js/client.js"></script>
                   <li id="lastelemente" className="elementos_menu_direito" onClick={make.togglemenu4}>Attributes</li>
-                  <div id="fourth_menu_hidden">
+                  <div id="fourth_menu_hidden_mko">
                     <p>Image</p><br />
 
                     <div id="result"></div>
