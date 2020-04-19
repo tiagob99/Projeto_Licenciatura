@@ -948,9 +948,12 @@ input[type=text], select {
 //   }
   .big_div{
     position: absolute;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-image: url('/image/backgroundwatch.jpg');
+    background-size: contain;
+    
+    
   }
   
   /*toggle btn*/
@@ -1047,17 +1050,17 @@ input[type=text], select {
   /*watvh background*/
   
   /*circle*/
-  .center_circule{
-    top: 50%;
-    left: 50%;
-    margin-left: -265px;
-    margin-top: -265px;
-    width: 330px;
-    height: 330px;
-    border-radius: 50%;
-    background-color: #000;
-    // position:absolute;
-  }
+  // .center_circule{
+  //   top: 50%;
+  //   left: 50%;
+  //   margin-left: -265px;
+  //   margin-top: -265px;
+  //   width: 330px;
+  //   height: 330px;
+  //   border-radius: 50%;
+  //   background-color: #000;
+  //   // position:absolute;
+  // }
   #rect{
     width: 10%;
     height: 10%;
@@ -1165,11 +1168,11 @@ input[type=text], select {
 
 //mikros---------------------------------------------------------------------
 
-.big_div{
-  width: 100%;
-  height: 100%;
-  background: url('/image/backgroundwatch.jpg');
-}
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background: url('/image/backgroundwatch.jpg');
+// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -1288,21 +1291,21 @@ input[type=text], select {
   margin-left: -45%;
   margin-top:-45%;
 }
-.center_circule{
-  top: 50%;
-  left: 50%;
-  margin-left: -265px;
-  margin-top: -265px;
-  width: 530px;
-  height: 530px;
-  border-radius: 100%;
-  background-color: #000;
-  position:absolute;
-}
-#rect{
-  width: 100%;
-  height: 100%;
-}
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
 /*circle*/
 
 
@@ -1401,11 +1404,11 @@ input[type=text], select {
 //   width: 100%;
 // }
 
-.big_div{
-  width: 100%;
-  height: 100%;
-  background-image: url('/image/backgroundwatch.jpg');
-}
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -1509,21 +1512,21 @@ input[type=text], select {
 /*watvh background*/
 
 /*circle*/
-.center_circule{
-  top: 50%;
-  left: 50%;
-  margin-left: -265px;
-  margin-top: -265px;
-  width: 530px;
-  height: 530px;
-  border-radius: 100%;
-  background-color: #000;
-  position:absolute;
-}
-#rect{
-  width: 100%;
-  height: 100%;
-}
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
 /*circle*/
 
 
@@ -1624,11 +1627,11 @@ animation:  dash 3s linear;*/
 //   height: 100%;
 //   width: 100%;
 // }
-.big_div{
-  width: 100%;
-  height: 100%;
-  background-image: url('/image/backgroundwatch.jpg');
-}
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -1727,31 +1730,31 @@ animation:  dash 3s linear;*/
 /*sidebar interior menus*/
 
 /*watvh background*/
-.watch{
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  background-image: url('/image/motorola.png');
-  background-repeat:no-repeat;
-  background-position: center;
-}
+// .watch{
+//   width: 50%;
+//   height: 100%;
+//   margin: 0 auto;
+//   background-image: url('/image/motorola.png');
+//   background-repeat:no-repeat;
+//   background-position: center;
+// }
 /*watvh background*/
 
 /*circle*/
 .center_circule{
-  top: 50%;
-  left: 50%;
-  margin-left: -265px;
-  margin-top: -265px;
-  width: 530px;
-  height: 530px;
+  top: 65.3%;
+  left: 57.6%;
+  margin-left: -25%;
+  margin-top: -25%;
+  width: 35%;
+  height: 72%;
   border-radius: 100%;
   background-color: #000;
   position:absolute;
 }
 #rect{
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
 }
 /*circle*/
 
@@ -2027,53 +2030,56 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 /*sidebar*/
 
 // /*sidebar interior menus*/
-// #first_menu_hidden{
-//   position: absolute;
-//   left:-100%;
-//   width: 90%;
-// }
-// #first_menu_hidden.active{
-//   height:250px;
-//   left: auto;
-//   margin: 10px;
-// }
-// #remaining_01.active{
-//   margin-top: 450px;
-// }
-// #second_menu_hidden{
-//   position: absolute;
-//   left:-100%;
-// }
-// #second_menu_hidden.active{
-//   left:0;
-//   margin: 10px;
-// }
-// #remaining_02.active{
-//   margin-top: 250px;
-// }
-// #third_menu_hidden{
-//   position: absolute;
-//   left:-100%;
-// }
-// #third_menu_hidden.active{
-//   left:0;
-//   margin: 10px;
-//   height: 40px;
-// }
-// #remaining_03.active{
-//   margin-top: 80px;
-// }
-// #fourth_menu_hidden{
-//   width: 95%;
-//   height: 800px;
-//   position: absolute;
-//   left:-100%;
-// }
-// #fourth_menu_hidden.active{
-//   left:0;
-//   margin: 10px;
-// }
-// /*sidebar interior menus*/
+#first_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+  width: 90%;
+}
+#first_menu_hidden_mko.active{
+  height:15%;
+  left: auto;
+  margin: 35%;
+  margin-left: -5%;
+}
+#remaining_01_mko.active{
+  margin-top: 230px;
+  position: relative;
+}
+#second_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02_mko.active{
+  margin-top: 150%;
+  position: relative;
+}
+#third_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+  height: 40px;
+}
+#remaining_03_mko.active{
+  margin-top: 250%;
+}
+#fourth_menu_hidden_mko{
+  width: 95%;
+  height: 800px;
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
 
 
 // /*circle*/
@@ -2278,11 +2284,10 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 // Thirty------------------------------------------------------------
 
-.big_div{
-  width: 100%;
-  height: 100%;
-  background-image: url('/image/backgroundwatch.jpg');
-}
+// .big_div{
+  
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -2378,21 +2383,21 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 /*watvh background*/
 
 /*circle*/
-.center_circule{
-  top: 50%;
-  left: 50%;
-  margin-left: -265px;
-  margin-top: -265px;
-  width: 530px;
-  height: 530px;
-  border-radius: 100%;
-  background-color: #000;
-  position:absolute;
-}
-#rect{
-  width: 100%;
-  height: 100%;
-}
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
 /*circle*/
 
 /*Relogio Digital*/
