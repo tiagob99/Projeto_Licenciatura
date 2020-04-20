@@ -60,10 +60,8 @@ const Gardens = () => {
         <div id="remaining_1">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden" >
-            <div >
-              luis
-
-              
+            <div class="boxalert">
+              Tenham atenção as cores escolhidas.
             </div>
             <p>Background Colors <input type="color" id="myColor" defaultValue="#170A38" onChange={garden.background_color}/> </p>
             <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={garden.digital_color}/> </p>
