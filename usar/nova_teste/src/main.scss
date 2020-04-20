@@ -2612,3 +2612,16 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 
 /* POP-UP---------------------------------------------------------*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+.modal_content {
+  background-color: white;
+  position: absolute;
+}

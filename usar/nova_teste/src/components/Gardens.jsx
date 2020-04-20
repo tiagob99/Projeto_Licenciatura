@@ -60,20 +60,17 @@ const Gardens = () => {
         <div id="remaining_1">
           <li className="elementos_menu_direito" onClick={garden.togglemenu2}>Colors</li>
           <div id="second_menu_hidden" >
-            <p>Background Colors <input class ="aqui"  onClick={garden.inicia} type="color" id="myColor" defaultValue="#000000" onChange={garden.background_color}/> </p>
+            <div >
+              luis
+
+              
+            </div>
+            <p>Background Colors <input type="color" id="myColor" defaultValue="#170A38" onChange={garden.background_color}/> </p>
             <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={garden.digital_color}/> </p>
             <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={garden.analog_hours}/> </p>
             <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={garden.analog_minutes}/> </p>
             <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={garden.analog_seconds}/> </p>
             <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={garden.center_circule}/></p>
-            <div id="pop-up-prom" class="pop-up-container"> 
-              <div class="pop-up">
-                <button class="fechar">x</button>
-                <h3>Cuidado</h3>
-              </div>
-            </div>
-            <div id="main">
-            </div>
           </div>
           </div>
           <div id="remaining_222">
