@@ -106,36 +106,87 @@ export function updatewhatch() {
 
 
 /*Cores*/
-function backgroundcolor(jscolor) {
-    document.getElementById('rect').style.backgroundColor = '#' + jscolor;
+export function backgroundcolor() {
+    var x = document.getElementById("myColor");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('rect').style.backgroundColor = currentVal;
 }
-function digitalcolor(jscolor) {
-    document.getElementById('node1').style.color = '#' + jscolor;
-    document.getElementById('hour_1').style.color = '#' + jscolor;
-    document.getElementById('minute_1').style.color = '#' + jscolor;
+export function digitalcolor() {
+    var x = document.getElementById("myColor1");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('node1').style.color = currentVal;
+    document.getElementById('hour_1').style.color = currentVal;
+    document.getElementById('minute_1').style.color = currentVal;
 }
-function updateAnalogHours(jscolor) {
-    document.getElementById('hour_pointer').style.stroke = '#' + jscolor;
-    document.getElementById('hour_pointer_1').style.stroke = '#' + jscolor;
+
+
+export function updateAnalogHours() {
+    var x = document.getElementById("myColor2");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('hour_pointer').style.stroke = currentVal;
+    document.getElementById('hour_pointer_1').style.stroke = currentVal;
 }
-function updateAnalogMinutes(jscolor) {
-    document.getElementById('minute_pointer').style.stroke = '#' + jscolor;
-    document.getElementById('minute_pointer_1').style.stroke = '#' + jscolor;
+export function updateAnalogMinutes() {
+    var x = document.getElementById("myColor3");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('minute_pointer').style.stroke = currentVal;
+    document.getElementById('minute_pointer_1').style.stroke = currentVal;
 }
-function updateAnalogSeconds(jscolor) {
-    document.getElementById('second_pointer').style.stroke = '#' + jscolor;
-    document.getElementById('second_pointer_1').style.stroke = '#' + jscolor;
+export function updateAnalogSeconds() {
+    var x = document.getElementById("myColor4");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('second_pointer').style.stroke = currentVal;
+    document.getElementById('second_pointer_1').style.stroke = currentVal;
 }
-function centercricule(jscolor) {
-    document.getElementById('center_dot').style.stroke = '#' + jscolor;
-    document.getElementById('center_dot_1').style.stroke = '#' + jscolor;
+export function centercricule() {
+    var x = document.getElementById("myColor5");
+    var currentVal = x.value;
+    x.value = currentVal;
+    document.getElementById('center_dot').style.stroke = currentVal;
+    document.getElementById('center_dot_1').style.stroke = currentVal;
 }
-function barcolor(jscolor) {
+export function barcolor() {
+    var x = document.getElementById("myColor6");
+    var currentVal = x.value;
+    x.value = currentVal;
     var novo = document.getElementById('bar_color_change').value;
-    document.getElementById("bar"+novo).style.stroke = '#' + jscolor;
+    document.getElementById("bar"+novo).style.stroke = currentVal;
+    if(novo == 0){
+      cor_b0 = currentVal;
+    }
+    else if(novo == 1){
+      cor_b1 = currentVal;
+    }
+    else if(novo == 2){
+      cor_b2 = currentVal;
+    }
+    else if(novo == 3){
+      cor_b3 = currentVal;
+    }
+    else if(novo == 4){
+      cor_b4 = currentVal;
+    }
+    else if(novo == 5){
+      cor_b5 = currentVal;
+    }
+    else if(novo == 6){
+      cor_b6 = currentVal;
+    }
 }
 /*Cores*/
 
+var cor_b0 = '#FF0000';
+var cor_b1 = "#FFFFFF";
+var cor_b2 = "#00FF00";
+var cor_b3 = "#0000FF";
+var cor_b4 = "#FF4AD7";
+var cor_b5 = "#FF8400";
+var cor_b6 = "#FFFFD7";
 
 
 /*vetores cores iniciais*/
@@ -524,6 +575,7 @@ export function valores(){
   if(barr_6 == "counterclockwise"){
     rot7 = 1;
   }
+  
  
   switch (barra) {
     case "0":
@@ -534,6 +586,7 @@ export function valores(){
        document.getElementById('barradius').value=rad_1;
        $('#bar_star').prop('selectedIndex',full1);
        $('#bar_star_1').prop('selectedIndex',rot1);
+       document.getElementById("myColor6").value=cor_b0;
        break;
     case "1":
         $('#bar_type').prop('selectedIndex',temp1);
@@ -541,6 +594,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_2;
         $('#bar_star').prop('selectedIndex',full2);
         $('#bar_star_1').prop('selectedIndex',rot2);
+        document.getElementById("myColor6").value=cor_b1;
       break;   
     case "2":
         $('#bar_type').prop('selectedIndex',temp2);
@@ -548,6 +602,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_3;
         $('#bar_star').prop('selectedIndex',full3);
         $('#bar_star_1').prop('selectedIndex',rot3);
+        document.getElementById("myColor6").value=cor_b2;
         break;    
         
     case "3":
@@ -556,6 +611,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_4;
         $('#bar_star').prop('selectedIndex',full4);
         $('#bar_star_1').prop('selectedIndex',rot4);
+        document.getElementById("myColor6").value=cor_b3;
         break;   
     case "4":
         $('#bar_type').prop('selectedIndex',temp4);
@@ -563,6 +619,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_5;
         $('#bar_star').prop('selectedIndex',full5);
         $('#bar_star_1').prop('selectedIndex',rot5);
+        document.getElementById("myColor6").value=cor_b4;
         break;   
     case "5":
         $('#bar_type').prop('selectedIndex',temp5);
@@ -570,6 +627,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_6;
         $('#bar_star').prop('selectedIndex',full6);
         $('#bar_star_1').prop('selectedIndex',rot6);
+        document.getElementById("myColor6").value=cor_b5;
         break;   
     case "6":
         $('#bar_type').prop('selectedIndex',temp6);
@@ -577,6 +635,7 @@ export function valores(){
         document.getElementById('barradius').value=rad_7;
         $('#bar_star').prop('selectedIndex',full7);
         $('#bar_star_1').prop('selectedIndex',rot7);
+        document.getElementById("myColor6").value=cor_b6;
         break;               
   }
   
@@ -734,6 +793,7 @@ export function valor_linha(){
   var y =  document.getElementById('linha').value;
   return y;
 }
+
 export function escolha(){
   if(document.getElementById('load_type').value == 'url_load'){
     $('#filetag').remove();
@@ -772,79 +832,12 @@ function changeImage(input) {
 
   }
   if(document.getElementById('load_type').value == 'drive'){
-    document.getElementById('load_type').insertAdjacentHTML('beforebegin',
-    '<button onClick={make.showPickerDialog}>Show Picker Dialog</button> <!-- The Google API Loader script. --> <script type="text/javascript" src="https://apis.google.com/js/api.js"></script> <script> </script>')
+    // document.getElementById('load_type').insertAdjacentHTML('beforebegin','<div id="result"></div>' +
+    // '<button onClick={make.showPickerDialog}>Show Picker Dialog</button>'+
+
+    // '<!-- The Google API Loader script. -->'+
+    // '<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>')
     
-    var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
-
-    // The Client ID obtained from the Google API Console. Replace with your own Client ID.
-    var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com";
-
-    // Replace with your own project number from console.developers.google.com.
-    // See "Project number" under "IAM & Admin" > "Settings"
-    var appId = "novo-269521";
-
-    // Scope to use to access user's Drive items.
-    var scope = ['https://www.googleapis.com/auth/drive.file'];
-
-    var pickerApiLoaded = false;
-    var oauthToken;
-
-    // Use the Google API Loader script to load the google.picker script.
-    function loadPicker() {
-      gapi.load('auth', {'callback': onAuthApiLoad});
-      gapi.load('picker', {'callback': onPickerApiLoad});
-    }
-
-    function onAuthApiLoad() {
-      window.gapi.auth.authorize(
-          {
-            'client_id': clientId,
-            'scope': scope,
-            'immediate': false
-          },
-          handleAuthResult);
-    }
-
-    function onPickerApiLoad() {
-      pickerApiLoaded = true;
-      createPicker();
-    }
-
-    function handleAuthResult(authResult) {
-      if (authResult && !authResult.error) {
-        oauthToken = authResult.access_token;
-        createPicker();
-      }
-    }
-
-    // Create and render a Picker object for searching images.
-    function createPicker() {
-      if (pickerApiLoaded && oauthToken) {
-        var view = new google.picker.View(google.picker.ViewId.DOCS);
-        view.setMimeTypes("image/png,image/jpeg,image/jpg");
-        var picker = new google.picker.PickerBuilder()
-            .enableFeature(google.picker.Feature.NAV_HIDDEN)
-            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-            .setAppId(appId)
-            .setOAuthToken(oauthToken)
-            .addView(view)
-            .addView(new google.picker.DocsUploadView())
-            .setDeveloperKey(developerKey)
-            .setCallback(pickerCallback)
-            .build();
-         picker.setVisible(true);
-      }
-    }
-
-    // A simple callback implementation.
-    function pickerCallback(data) {
-      if (data.action == google.picker.Action.PICKED) {
-        var fileId = data.docs[0].id;
-        alert('The user selected: ' + fileId);
-      }
-    }
-
     
     }
    
@@ -853,17 +846,138 @@ function changeImage(input) {
 
   }
 
+// TESTE DA API
+
+  export function showPickerDialog(){
+    loadPicker()
+  }
+
+  var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
+
+  // The Client ID obtained from the Google API Console. Replace with your own Client ID.
+  var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
+
+  // Replace with your own project number from console.developers.google.com.
+  // See "Project number" under "IAM & Admin" > "Settings"
+  var appId = "novo-269521";
+
+  // Scope to use to access user's Drive items.
+  var scope = ['https://www.googleapis.com/auth/drive.file'];
+
+  var pickerApiLoaded = false;
+  var oauthToken;
+
+  // Use the Google API Loader script to load the google.picker script.
+  function loadPicker() {
+    gapi.load('auth', {'callback': onAuthApiLoad});
+    gapi.load('picker', {'callback': onPickerApiLoad});
+  }
+
+  function onAuthApiLoad() {
+    window.gapi.auth.authorize(
+        {
+          'client_id': clientId,
+          'scope': scope,
+          'immediate': false
+        },
+        handleAuthResult);
+  }
+
+  function onPickerApiLoad() {
+    pickerApiLoaded = true;
+    createPicker();
+  }
+
+  function handleAuthResult(authResult) {
+    if (authResult && !authResult.error) {
+      oauthToken = authResult.access_token;
+      createPicker();
+    }
+  }
+
+  // Create and render a Picker object for searching images.
+  function createPicker() {
+    if (pickerApiLoaded && oauthToken) {
+      var view = new google.picker.View(google.picker.ViewId.DOCS);
+      view.setMimeTypes("image/png,image/jpeg,image/jpg");
+      var picker = new google.picker.PickerBuilder()
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+          .setAppId(appId)
+          .setOAuthToken(oauthToken)
+          .addView(view)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(developerKey)
+          .setCallback(pickerCallback)
+          .build();
+       picker.setVisible(true);
+    }
+  }
+
+  // A simple callback implementation.
+  function pickerCallback(data) {
+    if (data.action == google.picker.Action.PICKED) {
+      var fileId = data.docs[0].id;
+      alert('The user selected: ' + fileId);
+    }
+  }
+
 
 $(document).ready(function() {
 
   var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
-
+  if(Linha == 0){
+    document.getElementById("myColor6").defaultValue = "#FF0000";
+  }
+  else if(Linha == 1){
+    document.getElementById("myColor6").defaultValue = "#FFFFFF";
+  }
+  else if(Linha == 2){
+       document.getElementById("myColor6").defaultValue = "#00FF00";
+  }
+  else if(Linha == 3){
+       document.getElementById("myColor6").defaultValue = "#0000FF";
+  }
+  else if(Linha == 4){
+       document.getElementById("myColor6").defaultValue = "#FF4AD7";
+  }
+  else if(Linha == 5){
+       document.getElementById("myColor6").defaultValue = "#FF8400";
+  }
+  else if(Linha == 6){
+       document.getElementById("myColor6").defaultValue = "#FFFFD7";
+  }
 
   $('#btAdd').click(function() { //Adiciona uma linha
+    if(Linha == 0){
+      document.getElementById("myColor6").defaultValue = "#FF0000";
+  }
+  else if(Linha == 1){
+    document.getElementById("myColor6").defaultValue = "#FFFFFF";
+  }
+  else if(Linha == 2){
+    document.getElementById("myColor6").defaultValue = "#00FF00";
+  }
+  else if(Linha == 3){
+    document.getElementById("myColor6").defaultValue = "#0000FF";
+  }
+  else if(Linha == 4){
+    document.getElementById("myColor6").defaultValue = "#FF4AD7";
+  }
+  else if(Linha == 5){
+    document.getElementById("myColor6").defaultValue = "#FF8400";
+  }
+  else if(Linha == 6){
+    document.getElementById("myColor6").defaultValue = "#FFFFD7";
+  }
     if (Linha <= 6) {
-      $('#bar_type').prop('selectedIndex',0)
-      $('#bar_color_change').prop('selectedIndex',Linha)
+      $('#bar_type').prop('selectedIndex',0);
+      $('#bar_color_change').prop('selectedIndex',Linha);
+      // document.getElementById("myColor6").value = ;
+
+      
+      
       // $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
       // '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
       // '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
@@ -883,12 +997,62 @@ $(document).ready(function() {
       Linha = Linha + 1;
         
       }
+      
   });
 
 
   $('#btRemove').click(function() { // Remove uma linha
+
+  if(Linha == 0){
+      document.getElementById("myColor6").defaultValue = "#FF0000";
+  }
+  else if(Linha == 1){
+    document.getElementById("myColor6").defaultValue = "#FFFFFF";
+  }
+  else if(Linha == 2){
+    
+    document.getElementById("myColor6").defaultValue = "#00FF00";
+  }
+  else if(Linha == 3){
+    
+    document.getElementById("myColor6").defaultValue = "#0000FF";
+  }
+  else if(Linha == 4){
+    
+    document.getElementById("myColor6").defaultValue = "#FF4AD7";
+  }
+  else if(Linha == 5){
+    document.getElementById("myColor6").defaultValue = "#FF8400";
+  }
+  else if(Linha == 6){
+    document.getElementById("myColor6").defaultValue = "#FFFFD7";
+  }
+
     if (Linha != 0) {
+      
+      
       Linha = Linha - 1;
+      $('#bar_color_change').prop('selectedIndex',Linha-1);
+      if(Linha == 1){
+        document.getElementById("myColor6").defaultValue = "#FF0000";
+      }
+      if(Linha == 2){
+        document.getElementById("myColor6").defaultValue = "#FFFFFF";
+      }
+      if(Linha == 3){
+        document.getElementById("myColor6").defaultValue = "#00FF00";
+      }
+      if(Linha == 4){
+        document.getElementById("myColor6").defaultValue = "#0000FF";
+      }
+      if(Linha == 5){
+        document.getElementById("myColor6").defaultValue = "#FF4AD7";
+      }
+      if(Linha == 6){
+        document.getElementById("myColor6").defaultValue = "#FF8400";
+      }
+      
+
       $('#baroptions' + Linha).remove();
       $('#bardraw' + Linha).remove();
       var novo = tamanho_que_o_menu_desceu - 450;

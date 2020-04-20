@@ -1061,10 +1061,10 @@ input[type=text], select {
   //   background-color: #000;
   //   // position:absolute;
   // }
-  #rect{
-    width: 10%;
-    height: 10%;
-  }
+  // #rect{
+  //   width: 50%;
+  //   height: 50%;
+  // }
   /*circle*/
   
   
@@ -1742,19 +1742,19 @@ animation:  dash 3s linear;*/
 
 /*circle*/
 .center_circule{
-  top: 65.3%;
-  left: 57.6%;
-  margin-left: -25%;
-  margin-top: -25%;
-  width: 35%;
-  height: 72%;
-  border-radius: 100%;
-  background-color: #000;
-  position:absolute;
-}
+    top: 50%;
+    left: 50%;
+    margin-left: -265px;
+    margin-top: -265px;
+    width: 530px;
+    height: 530px;
+    border-radius: 100%;
+    background-color: #000;
+    position:absolute;
+  }
 #rect{
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
 }
 /*circle*/
 

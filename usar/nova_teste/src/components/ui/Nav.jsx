@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import GoogleLogin from "react-google-login";
-
+import {GooglePicker, MyCustomButton} from "react-google-picker";
 const Nav = props => {
     const {context, history} = props;   
     const getClassName = pathname => (
@@ -21,6 +21,7 @@ const Nav = props => {
     function upd(){
         window.location.reload();
     }
+            
     return (
         <div className={`main-nav main-nav--${context}` }onClick={upd}>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}

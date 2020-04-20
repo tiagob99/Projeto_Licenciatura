@@ -4,6 +4,8 @@ import { albums } from '../data/albums';
 import * as make from'./makeyo';
 import './makeyo';
 import { bar_type } from './mikrosjs';
+import {GooglePicker, MyCustomButton} from "react-google-picker";
+
 
 
 const MakeYourOwn = () => {
@@ -37,12 +39,12 @@ const MakeYourOwn = () => {
             <div id="remaining_01_mko">
               <li className="elementos_menu_direito" onClick={make.togglemenu2}>Watch Colors</li>
               <div id="second_menu_hidden_mko">
-                <p>Background Colors <input className="jscolor {onFineChange:'backgroundcolor(this)'}" defaultValue="000" /> </p> <br />
-                <p>Digital <input className="jscolor {onFineChange:'digitalcolor(this)'}" defaultValue="fff" /> </p><br />
-                <p>Analog Hours <input className="jscolor {onFineChange:'updateAnalogHours(this)'}" defaultValue="fff" /> </p><br />
-                <p>Analog Minuts <input className="jscolor {onFineChange:'updateAnalogMinutes(this)'}" defaultValue="fff" /> </p><br />
-                <p>Analog Seconds <input className="jscolor {onFineChange:'updateAnalogSeconds(this)'}" defaultValue="ff0000" /> </p><br />
-                <p>Center Dot <input className="jscolor {onFineChange:'centercricule(this)'}" defaultValue="fff" /> </p><br /><br />
+                <p>Background Colors  <input type="color" id="myColor" defaultValue="#000000" onChange={make.backgroundcolor}/> </p>
+                <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={make.digitalcolor}/> </p>
+                <p>Analog Hours  <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={make.updateAnalogHours}/> </p>
+                <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={make.updateAnalogMinutes}/> </p>
+                <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={make.updateAnalogSeconds}/> </p>
+                <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={make.centercricule}/></p>
               </div>
               <div id="remaining_02_mko">
               <div id="linha" defaultValue = "0">
@@ -61,7 +63,7 @@ const MakeYourOwn = () => {
                         <option value={4}>5</option>
                         <option value={5}>6</option>
                         <option value={6}>7</option>
-                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
+                      </select> Color <input type="color" id="myColor6"  onChange={make.barcolor}/></p>
                         <p>Bar Type <select id="bar_type"  onChange= {() => make.bartype()}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option> </select></p><br /><br />
                         <p>Circle Bar Size </p> <input id= "barsize" defaultValue="100" max="89" onChange={() => make.barsize()} type="range" name="b_size"/><br/>
                         <p>Circle Bar Radius </p><input id="barradius"  defaultValue="100" max="87" min="50" onChange={() => make.barradius() }type="range" name="b_size"/><br />
@@ -86,7 +88,14 @@ const MakeYourOwn = () => {
 
                     <div id="result"></div>
                     <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+      
+                    <div id="result"></div>
+    <button onClick={make.showPickerDialog}>Show Picker Dialog</button>
+
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+
                     <input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />
+                    
                     <select id="load_type" style={{marginRight: '10px'}} onChange = {make.escolha} >
                       <option value="url_load" selected="selected">URL</option>
                       <option value="pc">Your Computer</option>
