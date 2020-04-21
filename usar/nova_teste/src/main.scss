@@ -947,7 +947,7 @@ input[type=text], select {
 //     width: 100%;
 //   }
   .big_div{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-image: url('/image/backgroundwatch.jpg');
@@ -1043,7 +1043,7 @@ input[type=text], select {
     background-repeat:no-repeat;
     background-position-x: 49.8%;
     background-position-y: 50%;
-    background-size: 40.8%;
+    background-size: 30.8%;
     
     
   }
@@ -1743,19 +1743,29 @@ animation:  dash 3s linear;*/
 /*circle*/
 .center_circule{
     top: 50%;
-    left: 50%;
-    margin-left: -265px;
-    margin-top: -265px;
-    width: 530px;
-    height: 530px;
+    left: 47.8%;
+    margin-left: -11.10%;
+    margin-top: -13.3%;
+    width: 26.5%;
     border-radius: 100%;
     background-color: #000;
     position:absolute;
   }
+  .center_circule:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 #rect{
-  width: 100%;
-  height: 100%;
+  width: 99%;
+  height: 99%;
+  position: absolute;
+  margin-top: -49.4%;
+  margin-left: -47.4%;
+  // border-radius: 0%;
 }
+
+
 /*circle*/
 
 
