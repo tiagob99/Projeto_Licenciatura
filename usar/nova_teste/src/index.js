@@ -22,6 +22,7 @@ const terceiro =lazy(() => import ('./components/Thirtys'));
 const home = lazy(() => import ('./components/home/Home')); 
 const myo = lazy(() => import ('./components/MakeYourOwn')); 
 const predefine = lazy(() => import ('./components/Predefine')); 
+const teste = lazy(() => import ('./components/teste')); 
 
 
 
@@ -39,6 +40,7 @@ const Routes = () => (
             <Route exact path="/SelfComplete" component ={self}/>
             <Route exact path="/Simple_goals" component={simple}/>  
             <Route exact path="/Thirtys" component={terceiro}/>
+            <Route exact path="/teste" component={teste}/>
             <Footer/>
             </Suspense>  
         </div>

@@ -117,8 +117,8 @@ export function digitalcolor() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color = currentVal;
-    document.getElementById('hour_1').style.color = currentVal;
-    document.getElementById('minute_1').style.color = currentVal;
+    // document.getElementById('hour_1').style.color = currentVal;
+    // document.getElementById('minute_1').style.color = currentVal;
 }
 
 
@@ -127,28 +127,28 @@ export function updateAnalogHours() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('hour_pointer').style.stroke = currentVal;
-    document.getElementById('hour_pointer_1').style.stroke = currentVal;
+    // document.getElementById('hour_pointer_1').style.stroke = currentVal;
 }
 export function updateAnalogMinutes() {
     var x = document.getElementById("myColor3");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('minute_pointer').style.stroke = currentVal;
-    document.getElementById('minute_pointer_1').style.stroke = currentVal;
+    // document.getElementById('minute_pointer_1').style.stroke = currentVal;
 }
 export function updateAnalogSeconds() {
     var x = document.getElementById("myColor4");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('second_pointer').style.stroke = currentVal;
-    document.getElementById('second_pointer_1').style.stroke = currentVal;
+    // document.getElementById('second_pointer_1').style.stroke = currentVal;
 }
 export function centercricule() {
     var x = document.getElementById("myColor5");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('center_dot').style.stroke = currentVal;
-    document.getElementById('center_dot_1').style.stroke = currentVal;
+    // document.getElementById('center_dot_1').style.stroke = currentVal;
 }
 export function barcolor() {
     var x = document.getElementById("myColor6");
@@ -213,18 +213,17 @@ for(var i=0; i<7; i++) {
 /*Matriz texto inicial*/
 var matrixtext = [];
 for(var i=0; i<8; i++) {
-    matrixtext[i] =  new Array(8);
+    matrixtext[i] =  new Array(7);
 }
 for(var i=0; i<8; i++) {
   matrixtext[i][0]="none";
   matrixtext[i][1]="";
-  matrixtext[i][2]="none";
-  matrixtext[i][3]="";
+  // matrixtext[i][2]="none";
+  // matrixtext[i][3]="dasdsa";
   matrixtext[i][4]="none";
   matrixtext[i][5]="fixa";
   matrixtext[i][6]="";
   matrixtext[i][7]="";
-  matrixtext[i][8]="";
 }
 var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
 var posiçoesocupadas = [0,0,0,0,0,0,0,0];
@@ -831,28 +830,28 @@ function changeImage(input) {
 }
 
   }
-  if(document.getElementById('load_type').value == 'drive'){
-    // document.getElementById('load_type').insertAdjacentHTML('beforebegin','<div id="result"></div>' +
-    // '<button onClick={make.showPickerDialog}>Show Picker Dialog</button>'+
+  // if(document.getElementById('load_type').value == 'drive'){
+  //   document.getElementById('load_type').insertAdjacentHTML('beforebegin', '<div id="result" onload="showPickerDialog()"></div><a href="teste"  onclick="showPickerDialog()">Show Picker Dialog</button>')
 
-    // '<!-- The Google API Loader script. -->'+
-    // '<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>')
     
     
-    }
+    
+  //   }
    
     
   
 
   }
-
 // TESTE DA API
 
   export function showPickerDialog(){
+    
     loadPicker()
   }
 
-  var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
+ // The Browser API key obtained from the Google API Console.
+    // Replace with your own Browser API key, or your own key.
+    var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
 
   // The Client ID obtained from the Google API Console. Replace with your own Client ID.
   var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
@@ -1208,11 +1207,11 @@ $(document).ready(function() {
     }
     if(document.getElementById('load_type').value == 'pc'){
 
-      novo = novo = document.getElementById("preview").src;
+      novo= document.getElementById("preview").src;
     }
     if(document.getElementById('load_type').value == 'pc'){
 
-      novo = document.getElementById("url").value;
+      // novo = document.getElementById("url").value;
     }
     var imagem_position = document.getElementById("image_type").value;
     console.log(imagem_position);
@@ -1725,7 +1724,7 @@ function limpa() {
   document.getElementById('quinto').style.opacity=0;
   document.getElementById('sexto').style.opacity=0;
   document.getElementById('setimo').style.opacity=0;
-  document.getElementById('oitavo').style.opacity=0;
+ // document.getElementById('oitavo').style.opacity=0;
 }
 /*posiçoes do texto*/
 

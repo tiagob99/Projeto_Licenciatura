@@ -1764,6 +1764,26 @@ animation:  dash 3s linear;*/
   margin-left: -47.4%;
   // border-radius: 0%;
 }
+#img_background {
+  width: 350%;
+  height: 350%;
+  border-radius:100% ;
+  display: initial;
+  position: absolute;
+  left: -125%;
+  top: -125%;
+}
+#img_div {
+  width: 30%;
+  height: 30%;
+  display: initial;
+  position: absolute;
+  left: 57%;
+  top: 68%;
+  margin-left: -23%;
+  margin-top: -68%;
+  z-index: 10;
+}
 
 
 /*circle*/

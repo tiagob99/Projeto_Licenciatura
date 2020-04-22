@@ -81,18 +81,20 @@ const MakeYourOwn = () => {
                 </div>
                
                 <div id="remaining_03_mko">
-                <script src="https://apis.google.com/js/client.js"></script>
+                
                   <li id="lastelemente" className="elementos_menu_direito" onClick={make.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden_mko">
                     <p>Image</p><br />
 
-                    <div id="result"></div>
+                
                     <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
       
                     <div id="result"></div>
-    <button onClick={make.showPickerDialog}>Show Picker Dialog</button>
+                    <button onClick={make.showPickerDialog}>Show Picker Dialog</button>
+                    <script src="https://apis.google.com/js/client.js"></script>
+                        <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 
-    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+                    
 
                     <input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />
                     
@@ -147,11 +149,11 @@ const MakeYourOwn = () => {
         </div>
         <div className="watch">
           <div className="center_circule">
-            <div id="img_div" style={{width: '150px', height: '150px', left: '50%', top: '50%', marginTop: '-200px', marginLeft: '-75px', position: 'absolute', zIndex: 10, display: 'none'}}>
+            <div id="img_div" style={{width: '30%', height: '30%', left: '57%%', top: '68%', marginTop: '-60%', marginLeft: '-23%', position: 'absolute', zIndex: 10, display: 'none'}}>
               <img id="img" src style={{width: '100%', height: '100%'}} />
             </div>
             <div id="background" className="center_circule">
-              <img id="img_backgroud" src style={{width: '100%', height: '100%', borderRadius: '100%', display: 'none'}} />
+              <img id="img_backgroud" src style={{width: '350%', height: '350%', borderRadius: '100%', display: 'none', position: 'absolute', left: '-125%', top: '-125%'}} />
               <p id="rect" className="center_circule" />
             </div>
             <div id="dragdiv" style={{zIndex: 2}}>
@@ -167,7 +169,7 @@ const MakeYourOwn = () => {
             <div id="dropdiv" style={{zIndex: 2}}>
               <ul id="Ul1">
                 <li id="setimo" />
-                <li id="oitavo" />
+                {/* <li id="oitavo" /> */}
               </ul>
             
             <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
