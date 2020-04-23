@@ -23,11 +23,11 @@ const Nav = props => {
     }
             
     return (
-        <div className={`main-nav main-nav--${context}` }onClick={upd}>            
+        <div className={`main-nav main-nav--${context}` }>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}
             <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn">Make your own</NavLink>            
-            <NavLink className={getClassName("/Predefine")} exact to="/predefine">Predefine</NavLink>            
-            <NavLink className={getClassName("/Login")} exact to="/Login">
+            <NavLink className={getClassName("/Predefine")} exact to="/predefine" >Predefine</NavLink>            
+            <NavLink className={getClassName("/Login")} >
                 <GoogleLogin
                 // className="dark"
                 clientId="465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
@@ -35,7 +35,8 @@ const Nav = props => {
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={"single_host_origin"}/>
-            </NavLink>
+                
+            </NavLink> 
             <NavLink>{name}</NavLink>            
         </div>
 

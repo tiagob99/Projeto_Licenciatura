@@ -844,14 +844,11 @@ function changeImage(input) {
   }
 // TESTE DA API
 
-  export function showPickerDialog(){
-    
-    loadPicker()
-  }
+  
 
  // The Browser API key obtained from the Google API Console.
     // Replace with your own Browser API key, or your own key.
-    var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
+  var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
 
   // The Client ID obtained from the Google API Console. Replace with your own Client ID.
   var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
@@ -868,29 +865,37 @@ function changeImage(input) {
 
   // Use the Google API Loader script to load the google.picker script.
   function loadPicker() {
+    
     gapi.load('auth', {'callback': onAuthApiLoad});
     gapi.load('picker', {'callback': onPickerApiLoad});
   }
 
   function onAuthApiLoad() {
+
     window.gapi.auth.authorize(
+      
         {
           'client_id': clientId,
           'scope': scope,
           'immediate': false
         },
         handleAuthResult);
+        
   }
 
   function onPickerApiLoad() {
     pickerApiLoaded = true;
     createPicker();
+
   }
 
   function handleAuthResult(authResult) {
+    
     if (authResult && !authResult.error) {
       oauthToken = authResult.access_token;
       createPicker();
+
+      
     }
   }
 
@@ -920,7 +925,10 @@ function changeImage(input) {
       alert('The user selected: ' + fileId);
     }
   }
-
+  export function showPickerDialog(){
+    
+    loadPicker()
+  }
 
 $(document).ready(function() {
 
