@@ -49,6 +49,7 @@ const MakeYourOwn = () => {
   function handleAuthResult(authResult) {
     if (authResult && !authResult.error) {
       oauthToken = authResult.access_token;
+      
       createPicker();
     }
   }
@@ -56,6 +57,7 @@ const MakeYourOwn = () => {
   // Create and render a Picker object for searching images.
   function createPicker() {
     if (pickerApiLoaded && oauthToken) {
+      
       var view = new google.picker.View(google.picker.ViewId.DOCS);
       view.setMimeTypes("image/png,image/jpeg,image/jpg");
       var picker = new google.picker.PickerBuilder()
@@ -83,10 +85,10 @@ const MakeYourOwn = () => {
     loadPicker()
 }
     return (
+      
       <div>
       <meta charSet="utf-8" />
       <title>Make your own</title>
-      
       <div className="big_div">
         <div id="toggle-btn" onClick={make.togglemenu}>
           <span />
@@ -95,8 +97,6 @@ const MakeYourOwn = () => {
         </div>
         <div id="sidebar">
           <ul>
-          <div id="result"></div>
-                   <button onClick={showPickerDialog}>Show Picker Dialog</button>
             <li className="elementos_menu_direito" onClick={make.togglemenu1}>Watch Types</li>
             <div id="first_menu_hidden_mko">
               <div id="dragdiv">
@@ -165,6 +165,9 @@ const MakeYourOwn = () => {
                 
                     
       
+                    <div id="result"></div>
+                   <button onClick={showPickerDialog}>Show Picker Dialog</button>
+                   
                     
                     
 

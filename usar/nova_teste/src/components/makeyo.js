@@ -8,6 +8,7 @@ var open = false;
 var tamanho_que_o_menu_desceu = 0;
 var t=1;
 
+
 export function togglemenu(){
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('toggle-btn').classList.toggle('active');
@@ -830,13 +831,13 @@ function changeImage(input) {
 }
 
   }
-  // if(document.getElementById('load_type').value == 'drive'){
-  //   document.getElementById('load_type').insertAdjacentHTML('beforebegin', '<div id="result" onload="showPickerDialog()"></div><a href="teste"  onclick="showPickerDialog()">Show Picker Dialog</button>')
+  if(document.getElementById('load_type').value == 'drive'){
+    document.getElementById('load_type').insertAdjacentHTML('beforebegin', '<div id="result" onload="showPickerDialog()"></div><a href="teste"  onclick="showPickerDialog()">Show Picker Dialog</button>')
 
     
     
     
-  //   }
+    }
    
     
   

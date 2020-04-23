@@ -23,9 +23,9 @@ const Nav = props => {
     }
             
     return (
-        <div className={`main-nav main-nav--${context}` }>            
+        <div className={`main-nav main-nav--${context}`}>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}
-            <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn">Make your own</NavLink>            
+            <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn" >Make your own</NavLink>            
             <NavLink className={getClassName("/Predefine")} exact to="/predefine" >Predefine</NavLink>            
             <NavLink className={getClassName("/Login")} >
                 <GoogleLogin
@@ -37,7 +37,10 @@ const Nav = props => {
                 cookiePolicy={"single_host_origin"}/>
                 
             </NavLink> 
-            <NavLink>{name}</NavLink>            
+            <NavLink>{name}</NavLink>  
+            <NavLink>
+                
+                </NavLink>          
         </div>
 
         

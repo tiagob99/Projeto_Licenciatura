@@ -4,7 +4,7 @@ import Button from './ui/Button';
 import { Flip } from 'react-reveal';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route ,Link} from 'react-router-dom';
-
+import {GooglePicker, MyCustomButton} from "react-google-picker";
 
 
 const predefine = () => {
@@ -35,9 +35,9 @@ const predefine = () => {
          
 
     <div class="geral_prefefine">
-      
+     
       <div class="margem">
-        
+      
         <a href="./Gardens">
           <div class="first">
             <div className="cards-list">

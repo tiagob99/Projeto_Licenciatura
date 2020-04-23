@@ -27,6 +27,7 @@ const teste = lazy(() => import ('./components/teste'));
 
 
 const Routes = () => (
+    
     <BrowserRouter>
         <div> 
             <Suspense fallback={<div>Loading...</div>}>           

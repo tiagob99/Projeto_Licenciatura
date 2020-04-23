@@ -11,6 +11,7 @@ class Header extends Component {
     }
 
     showSideBar = () => {
+        
         const {showSideBar} = this.state;
         this.setState({showSideBar: !showSideBar})
     }    
@@ -20,7 +21,7 @@ class Header extends Component {
         return (
             <Fade top delay={500}>
                 <header className="header">
-                    <div className="wrapper wrapper--header">
+                    <div className="wrapper wrapper--header" >
                         <Link className="header__logo-link" onClick={this.forceUpdate} to="/">
                             <div className="logo"></div>
                         </Link>  
