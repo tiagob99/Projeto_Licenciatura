@@ -35,17 +35,17 @@ const Thirtys = () => {
                 <li className="elementos_menu_direito" onClick={terceiro.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
                     <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={terceiro.background_color}/> </p>
-                    <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={terceiro.digital_color}/> </p>
-                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={terceiro.analog_hours}/> </p>
-                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={terceiro.analog_minutes}/> </p>
+                    <p>Digital <input type="color" id="myColor1" defaultValue="#FFF8DC" onChange={terceiro.digital_color}/> </p>
+                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFF8DC" onChange={terceiro.analog_hours}/> </p>
+                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFF8DC" onChange={terceiro.analog_minutes}/> </p>
                     <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={terceiro.analog_seconds}/> </p>
-                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={terceiro.center_circule}/> </p>
+                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFF8DC" onChange={terceiro.center_circule}/> </p>
                 </div>
                 <div id="remaining_22">
                     <li className="elementos_menu_direito" onClick={terceiro.togglemenu3}>Line</li>
                     <div id="third_menu_hidden">
                     <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={terceiro.bar_color}/><br /><br />
-                    <p>Circle Bar Active</p> <br /> <input type="color" id="myColor7" defaultValue="#FFFAFA" onChange={terceiro.bar_color2}/><br /><br />
+                    <p>Circle Bar Active</p> <br /> <input type="color" id="myColor7" defaultValue="#FFF8DC" onChange={terceiro.bar_color2}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_size" onChange={terceiro.bar_thickness} type="range" name="b_size" defaultValue={100} /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={terceiro.bar_radius} type="range" min={50} max={90} name="b_radius" defaultValue={100} /><br /><br />
                     </div>

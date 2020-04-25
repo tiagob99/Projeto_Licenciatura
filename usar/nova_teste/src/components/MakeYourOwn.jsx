@@ -116,11 +116,11 @@ const MakeYourOwn = () => {
               <li className="elementos_menu_direito" onClick={make.togglemenu2}>Watch Colors</li>
               <div id="second_menu_hidden_mko">
                 <p>Background Colors  <input type="color" id="myColor" defaultValue="#000000" onChange={make.backgroundcolor}/> </p>
-                <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={make.digitalcolor}/> </p>
-                <p>Analog Hours  <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={make.updateAnalogHours}/> </p>
-                <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={make.updateAnalogMinutes}/> </p>
+                <p>Digital <input type="color" id="myColor1" defaultValue="#FFF8DC" onChange={make.digitalcolor}/> </p>
+                <p>Analog Hours  <input type="color" id="myColor2" defaultValue="#FFF8DC" onChange={make.updateAnalogHours}/> </p>
+                <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFF8DC" onChange={make.updateAnalogMinutes}/> </p>
                 <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={make.updateAnalogSeconds}/> </p>
-                <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={make.centercricule}/></p>
+                <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFF8DC" onChange={make.centercricule}/></p>
               </div>
               <div id="remaining_02_mko">
               <div id="linha" defaultValue = "0">

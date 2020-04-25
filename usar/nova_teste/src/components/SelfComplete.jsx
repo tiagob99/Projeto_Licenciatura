@@ -36,11 +36,11 @@ const SelfComplete =() =>{
                 <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu2}>Colors</li>
                 <div id="second_menu_hidden">
                     <p>Background Colors <input type="color" id="myColor" defaultValue="#000000" onChange={selfcomplete.background_color}/> </p>
-                    <p>Digital <input type="color" id="myColor1" defaultValue="#FFFAFA" onChange={selfcomplete.digital_color}/> </p>
-                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFFAFA" onChange={selfcomplete.analog_hours}/> </p>
-                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFFAFA" onChange={selfcomplete.analog_minutes}/> </p>
+                    <p>Digital <input type="color" id="myColor1" defaultValue="#FFF8DC" onChange={selfcomplete.digital_color}/> </p>
+                    <p>Analog Hours <input type="color" id="myColor2" defaultValue="#FFF8DC" onChange={selfcomplete.analog_hours}/> </p>
+                    <p>Analog Minuts <input type="color" id="myColor3" defaultValue="#FFF8DC" onChange={selfcomplete.analog_minutes}/> </p>
                     <p>Analog Seconds <input type="color" id="myColor4" defaultValue="#FF0000" onChange={selfcomplete.analog_seconds}/> </p>
-                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFFAFA" onChange={selfcomplete.center_circule}/> </p>
+                    <p>Center Dot <input type="color" id="myColor5" defaultValue="#FFF8DC" onChange={selfcomplete.center_circule}/> </p>
                 </div>
                 <div id="remaining_02">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu3}>Line</li>
