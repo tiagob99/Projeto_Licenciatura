@@ -500,44 +500,6 @@ export function text_color() {
   
   
   
-  /*Personalização dos elementos*/
-  export function barsize (barnumber){
-        var tamanho = document.getElementById('barsize'+barnumber).value;
-    
-    tamanho = (tamanho/100)*2+0.1;
-    matrix[barnumber][6]=tamanho;
-    document.getElementById('bar'+barnumber).style.strokeWidth =  tamanho;
-  }
-  
-  
-  
-  function barradius(barnumber) {
-    if(matrix[barnumber][5]=="full"){
-      var tamanho = document.getElementById('barradius'+barnumber).value;
-      tamanho = (tamanho/100)*15+1;
-      matrix[barnumber][1]=tamanho;
-      document.getElementById('bar'+barnumber).style.r =  tamanho;
-      document.getElementById('bar'+barnumber).style.strokeDasharray = 101+",100";
-    }
-    else if(matrix[barnumber][7]!="pasthouractivaty"){
-      var tamanho = document.getElementById('barradius'+barnumber).value;
-      tamanho = (tamanho/100)*15+1;
-      matrix[barnumber][1]=tamanho;
-      document.getElementById('bar'+barnumber).style.r =  tamanho;
-      document.getElementById('bar'+barnumber).style.strokeDasharray = (2*3.1415*tamanho)*(matrix[barnumber][2]/100)+",100"; //20 é o tamanho da barra
-    }
-    else {
-      var tamanho = document.getElementById('barradius'+barnumber).value;
-      tamanho = (tamanho/100)*15+1;
-      matrix[barnumber][1]=tamanho;
-      document.getElementById('bar'+barnumber).style.r =  tamanho;
-    }
-  }
-  
-  /*Personalização dos elementos*/
-  
-  
-  
   /*drag and drop texto*/
   $(function() {
       $("#dragdiv li,#dropdiv li").draggable({
@@ -648,3 +610,13 @@ export function text_color() {
   console.log(Math.random().toString(36).substring(2, 15))
   console.log(Math.random().toString(36).substring(2, 15))
      
+  
+  //fechar e abrir menu-----------------
+  export function abrir(){
+    document.getElementById('testes').classList.add('active')
+  }
+
+  export function fechar(){
+    document.getElementById('testes').classList.remove('active')
+  }
+  //fechar e abrir menu-----------------
