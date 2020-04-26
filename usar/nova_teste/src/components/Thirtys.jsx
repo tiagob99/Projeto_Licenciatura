@@ -53,6 +53,7 @@ const Thirtys = () => {
                 <div id="remaining_33">
                     <li className="elementos_menu_direito" onClick={terceiro.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
+                    <div id="testes">
                     <select id="first_variable1">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -85,6 +86,9 @@ const Thirtys = () => {
                     <br />
                     <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    </div>
+                    <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={terceiro.abrir} />
+                    <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={terceiro.fechar}/>
                       {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
                       <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>

@@ -88,6 +88,7 @@ const SelfComplete =() =>{
                     <div id="remaining_03">
                     <li className="elementos_menu_direito" onClick={selfcomplete.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
+                    <div id="testes">
                     <select id="first_variable1">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -123,6 +124,9 @@ const SelfComplete =() =>{
                         {/* <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br /> */}
                         {/* <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br /> */}
                         <button type="button" onclick="readropzone()" name="button">Le Relogio</button>
+                        </div>
+                        <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={selfcomplete.abrir} />
+                        <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={selfcomplete.fechar}/>
                     </div>
                     </div>
                 </div>

@@ -83,6 +83,7 @@ const Mikros = () => {
                 <div id="remaining_09">
                   <li id="lastelemente" className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
+                  <div id="testes">
                     <br /><br /><p>Text</p><br />
                     <select id="first_variable1">
                       <option value="none">None</option>
@@ -116,6 +117,9 @@ const Mikros = () => {
                     <br />
                     <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    </div>
+                    <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={micro.abrir} />
+                    <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={micro.fechar}/>
                   </div>
                 </div>
             </div>
