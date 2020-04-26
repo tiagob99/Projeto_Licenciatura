@@ -1745,3 +1745,14 @@ console.log(Math.random().toString(36).substring(2, 15))
 console.log(Math.random().toString(36).substring(2, 15))
 console.log(Math.random().toString(36).substring(2, 15))
 console.log(Math.random().toString(36).substring(2, 15))
+
+
+//fechar e abrir menu-----------------
+export function abrir(){
+  document.getElementById('testes').classList.add('active')
+}
+
+export function fechar(){
+  document.getElementById('testes').classList.remove('active')
+}
+//fechar e abrir menu-----------------

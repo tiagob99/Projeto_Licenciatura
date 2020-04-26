@@ -187,7 +187,7 @@ const MakeYourOwn = () => {
                     </select>
                     <input type="button" id="btAddImg" defaultValue="Add Image" style={{marginRight: '10px'}} className="bt" />
                     <input type="button" style={{marginTop: '10px'}} className="bt" defaultValue="Remove Image" id="btRemImg" />
-                    <br /><br /><p>Text</p><br />
+                    <div id="testes">
                     <select id="first_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -196,7 +196,7 @@ const MakeYourOwn = () => {
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    <select id="third_variable">
+                    {/* <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
@@ -210,7 +210,7 @@ const MakeYourOwn = () => {
                       <option value="today">Today</option>
                       <option value="goal">Daily Goal</option>
                       <option value="other_user">Other User</option>
-                    </select> <br /><br />
+                    </select> <br /><br /> */}
                     <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
@@ -218,6 +218,9 @@ const MakeYourOwn = () => {
                     <br />
                     <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                    </div>
+                    <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={make.abrir} />
+                    <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={make.fechar}/>
                   </div>
                 </div>
               
