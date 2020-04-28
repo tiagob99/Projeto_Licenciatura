@@ -1033,16 +1033,65 @@ input[type=text], select {
     margin: 10px;
   }
 
+  #fourth_menu_hidden1{
+    width: 95%;
+    height: 300px;
+    position: absolute;
+    left:-100%;
+  }
+  #fourth_menu_hidden1.active{
+    left:0;
+    margin:10%;
+    position: relative;
+  }
+
   #testes{
     position: absolute;
-    left: -100%;
+    left: -200%;
   }
 
   #testes.active{
-    height: 200px;
+    height: 100px;
     left: -40px;
     margin:40px;
   }
+
+  #first_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    text-align: center;
+    margin: 1%;
+  }
+
+  #second_variable{
+    margin-left: 3%;
+  }
+
+  #third_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    margin: 1%;
+  }
+
+  #fourth_variable{
+    margin-left: 3%;
+  }
+
+  #fifth_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    margin: 1%;
+  }
+  // #oitavo1{
+  //   margin-left: 150px;
+  //   margin-bottom: 150px;
+
+  // }
+
+  
   /*sidebar interior menus*/
   
   /*watvh background*/

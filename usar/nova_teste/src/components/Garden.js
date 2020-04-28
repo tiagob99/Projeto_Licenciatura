@@ -382,7 +382,7 @@ export function text_color() {
         '</select>').insertAfter('#mesage_type')
       }
       else{
-        $("#mesage_time1").remove();
+        $("#mesage_time").remove();
         $("#percentagem").remove();
         $("#timeframe").remove();
       }
@@ -404,13 +404,13 @@ export function text_color() {
           elemento = true;
           console.log("aaaaaaa")
         }
-        var variable_text =$('#first_variable1').val();
-        var variable_text1 =$('#third_variable1').val();
-        var variable_text2 = $('#fifth_variable1').val();
-        var text = $('#second_variable1').val();
-        var text2 = $('#fourth_variable1').val();
-        var tipo_mensagem = $('#mesage_type1').val();
-        var tipo_mensagem1 = $('#mesage_time1').val();
+        var variable_text =$('#first_variable').val();
+        var variable_text1 =$('#third_variable').val();
+        var variable_text2 = $('#fifth_variable').val();
+        var text = $('#second_variable').val();
+        var text2 = $('#fourth_variable').val();
+        var tipo_mensagem = $('#mesage_type').val();
+        var tipo_mensagem1 = $('#mesage_time').val();
         var tipo_mensagem2;
         if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
           if (tipo_mensagem1=="timeframe"){
@@ -593,13 +593,13 @@ export function text_color() {
   
   
   function limpa() {
-    document.getElementById('primeiro1').style.opacity=0;
-    document.getElementById('segundo1').style.opacity=0;
-    document.getElementById('terceiro1').style.opacity=0;
-    document.getElementById('quinto1').style.opacity=0;
-    document.getElementById('sexto1').style.opacity=0;
-    document.getElementById('setimo1').style.opacity=0;
-    document.getElementById('oitavo1').style.opacity=0;
+    document.getElementById('primeiro').style.opacity=0;
+    document.getElementById('segundo').style.opacity=0;
+    document.getElementById('terceiro').style.opacity=0;
+    document.getElementById('quinto').style.opacity=0;
+    document.getElementById('sexto').style.opacity=0;
+    document.getElementById('setimo').style.opacity=0;
+    document.getElementById('oitavo').style.opacity=0;
   }
   /*posiçoes do texto*/
   

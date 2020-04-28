@@ -55,31 +55,31 @@ const Gardens = () => {
                     <li className="elementos_menu_direito" onClick={garden.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
                     <div id="testes">
-                    <select id="first_variable1">
+                    <select id="first_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Goal</option>
                       <option value="other_user">Other User</option>
                     </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <select id="third_variable1">
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""}  />
+                     <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Goal</option>
                       <option value="other_user">Other User</option>
                     </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} /> */}
-                    {/* <select id="fifth_variable1">
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} /> 
+                    <select id="fifth_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Daily Goal</option>
                       <option value="other_user">Other User</option>
-                    </select> */}
+                    </select> 
                     <br /><br /> 
-                    <select id="mesage_type1">
+                    <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
                     </select> <br />
