@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "gapi-client": "0.0.3",
+    "html2react": "^1.2.1",
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "node-sass": "^4.13.1",
