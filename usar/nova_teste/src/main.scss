@@ -1091,6 +1091,29 @@ input[type=text], select {
     background-color: grey;
     // padding: 1%;
     margin: 1%;
+    position:absolute;
+    margin-left: 3%;
+    
+    
+  }
+
+  #mesage_time{
+    color: honeydew;
+    background-color: grey;
+    margin: 17%;
+    margin-right: 1%;
+    margin-left: 3%;
+  }
+
+  #timeframe{
+    color: honeydew;
+    background-color: grey;
+    margin: -15%;
+    padding-right: 10px;
+    margin-right: 10%;
+    
+    
+    
 
   }
 
@@ -1798,7 +1821,7 @@ animation:  dash 3s linear;*/
 }
 #fourth_menu_hidden{
   width: 95%;
-  height: 300px;
+  height: 400px; // tava a 300
   position: absolute;
   left:-100%;
 }
@@ -2381,7 +2404,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
  
 
 }
-#aqui{
+#oitavo1-1{
   margin-top: -23.95px;
   margin-left: 10px;
   
