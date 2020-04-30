@@ -937,27 +937,27 @@ $(document).ready(function() {
 
   var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
-  if(Linha == 0){
-    document.getElementById("myColor6").defaultValue = "#FF0000";
-  }
-  else if(Linha == 1){
-    document.getElementById("myColor6").defaultValue = "#FFFFFF";
-  }
-  else if(Linha == 2){
-       document.getElementById("myColor6").defaultValue = "#00FF00";
-  }
-  else if(Linha == 3){
-       document.getElementById("myColor6").defaultValue = "#0000FF";
-  }
-  else if(Linha == 4){
-       document.getElementById("myColor6").defaultValue = "#FF4AD7";
-  }
-  else if(Linha == 5){
-       document.getElementById("myColor6").defaultValue = "#FF8400";
-  }
-  else if(Linha == 6){
-       document.getElementById("myColor6").defaultValue = "#FFFFD7";
-  }
+  // if(Linha == 0){
+  //   document.getElementById("myColor6").defaultValue = "#FF0000";
+  // }
+  // else if(Linha == 1){
+  //   document.getElementById("myColor6").defaultValue = "#FFFFFF";
+  // }
+  // else if(Linha == 2){
+  //      document.getElementById("myColor6").defaultValue = "#00FF00";
+  // }
+  // else if(Linha == 3){
+  //      document.getElementById("myColor6").defaultValue = "#0000FF";
+  // }
+  // else if(Linha == 4){
+  //      document.getElementById("myColor6").defaultValue = "#FF4AD7";
+  // }
+  // else if(Linha == 5){
+  //      document.getElementById("myColor6").defaultValue = "#FF8400";
+  // }
+  // else if(Linha == 6){
+  //      document.getElementById("myColor6").defaultValue = "#FFFFD7";
+  // }
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if(Linha == 0){
