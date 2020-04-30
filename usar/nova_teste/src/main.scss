@@ -41,11 +41,11 @@ $small: "only screen and (max-width : 430px)";
 html, body,#root{
     padding: 0;
     margin: 0;
-    border: none;    
+    border: none;
     font-family: $oswald;
     color: $main-font-col;
-    
-    
+
+
 }
 
 
@@ -91,7 +91,7 @@ h1 {
     margin-bottom: 20px;
 
     @media #{$small} {
-        font-size: $second-header-size; 
+        font-size: $second-header-size;
     }
 }
 
@@ -103,7 +103,7 @@ h3 {
     font-size: $third-header-size;
 }
 
-input[type=text], select {    
+input[type=text], select {
     border: none;
     height: 45px;
     padding: 0 15px;
@@ -117,11 +117,11 @@ input[type=text], select {
     min-height: 100%;
 }
 
-.home {        
+.home {
     &__header{
         height: 100vh;
-        background: $main-pic;      
-        
+        background: $main-pic;
+
         @media #{$small} {
             background-position: 0 0;
         }
@@ -131,41 +131,41 @@ input[type=text], select {
         font-size: $caption-size;
         color: rgba(255,255,255,0.8);
         margin-top: 50px;
-        
-       
+
+
 
         @media #{$small} {
-            font-size: $second-header-size; 
+            font-size: $second-header-size;
         }
-       
-       
+
+
     }
-    
+
     &__scroll-down {
         width: 25px;
         height: 70px;
         background: url('/img/scroll.png') no-repeat;
         margin-top: 65px;
         animation: hovering 3s ease-in-out infinite;
-        cursor: pointer;   
-        transition: all .3s ease;   
+        cursor: pointer;
+        transition: all .3s ease;
         transition: transform .5s ease;
         &:hover{
           transform: scale(1.5);
         }
       }
-      
-      
+
+
   }
 
 
 
 .Login{
-    
+
     padding:50px;
     width: 500000px;
-    
-    
+
+
 }
 .wrapper {
     margin: 0 auto;
@@ -190,7 +190,7 @@ input[type=text], select {
         @media #{$large} {
             padding: 0 20px;
         }
-    }   
+    }
 
     &--footer {
         @media #{$large} {
@@ -207,7 +207,7 @@ input[type=text], select {
 .logo {
     width: 300px;
     height: 70px;
-    background: url('/img/Logotipo.png') no-repeat;    
+    background: url('/img/Logotipo.png') no-repeat;
 }
 
 .main-nav {
@@ -236,7 +236,7 @@ input[type=text], select {
         }
 
         >a {
-            margin-right: 85px;            
+            margin-right: 85px;
         }
     }
 
@@ -247,12 +247,12 @@ input[type=text], select {
     &__item {
         text-transform: uppercase;
         display: inline-block;
-        color: $main-nav-col;  
-        
+        color: $main-nav-col;
+
         @media #{$medium} {
             margin: 0 0 20px 0;
         }
-        
+
         &.active{
             color: $link-hover-col;
 
@@ -267,14 +267,14 @@ input[type=text], select {
     width: 100%;
     min-height: 356px;
     background: $header-back;
-    padding: 199px 0 40px;        
-    box-sizing: border-box;   
+    padding: 199px 0 40px;
+    box-sizing: border-box;
     background-position: top;
 
     @media #{$medium} {
         background: $header-back;
     }
-    
+
     &__logos {
         width:40%;
         display: flex;
@@ -285,25 +285,25 @@ input[type=text], select {
             margin-bottom: 40px;
             align-items: center;
             order: 2;
-        }        
+        }
     }
 
     &__copy {
         font-size: 20px;
         font-family: $arial;
-        color: $footer-font-col; 
+        color: $footer-font-col;
         padding:50px;
-              
+
     }
 
     &__subscribe {
         width: 40%;
-        min-width: 340px;                
+        min-width: 340px;
 
         @media #{$large} {
             margin-bottom: 40px;
             order: 1
-        }        
+        }
     }
 
     &__social {
@@ -318,7 +318,7 @@ input[type=text], select {
     .logo{
        margin-top: 0;
        display: flex;
-       background-size: 30%; 
+       background-size: 30%;
        width: 210px;
        position: relative;
        height: -50px;
@@ -326,7 +326,7 @@ input[type=text], select {
         margin-bottom: 40px;
         align-items: center;
         order: 2;
-    } 
+    }
     }
 
 
@@ -337,7 +337,7 @@ input[type=text], select {
         text-align: center;
     }
 
-    
+
 }
 
 .subscribe {
@@ -370,7 +370,7 @@ input[type=text], select {
             height: 22px;
             background: #fff;
             border: 1px solid #707070;
-        }        
+        }
     }
 
     &__agreement {
@@ -399,7 +399,7 @@ input[type=text], select {
     text-transform: uppercase;
     font-size: 21px;
     width: 195px;
-    height: 45px;    
+    height: 45px;
     cursor: pointer;
     transition: all .3s ease;
 
@@ -415,7 +415,7 @@ input[type=text], select {
 }
 
 .socials {
-    display: flex;    
+    display: flex;
 
     &__facebook {
         @extend .social-icon;
@@ -457,7 +457,7 @@ input[type=text], select {
 
     &__caption {
         flex-grow: 1;
-        flex-basis: 100%;        
+        flex-basis: 100%;
         display: flex;
 
         h1 {
@@ -489,11 +489,11 @@ input[type=text], select {
         background-position: center;
         box-sizing: border-box;
         border: 10px solid #fff;
-        margin-right: 50px;        
+        margin-right: 50px;
         align-self: flex-start;
 
         @media #{$medium} {
-            margin-right: 0;            
+            margin-right: 0;
             margin-bottom: 20px;
         }
     }
@@ -527,9 +527,9 @@ input[type=text], select {
     }
 
     &__playlist {
-        background: #fff;  
+        background: #fff;
         max-height: 260px;
-        overflow: auto;      
+        overflow: auto;
     }
 
     &__track {
@@ -591,7 +591,7 @@ input[type=text], select {
 
 .header {
     background: $header-back;
-    height: 83px;    
+    height: 83px;
     position: relative;
     z-index: 5;
 
@@ -634,13 +634,13 @@ input[type=text], select {
     right: 0;
     width: 80%;
     background: $header-back;
-    z-index: 5;    
+    z-index: 5;
 }
 
 .landing {
     &__video-container {
         align-self: flex-start;
-    }    
+    }
 
     &__video {
         width: 100%;
@@ -659,11 +659,11 @@ input[type=text], select {
 //         font-size: $caption-size;
 //         position: relative;
 //         margin-bottom: 100px;
-//         margin-top: 100px;        
+//         margin-top: 100px;
 
 //         &::before, &::after {
 //             content: '';
-//             display: block;            
+//             display: block;
 //             position: absolute;
 //             height: 50px;
 //             width: 1px;
@@ -690,7 +690,7 @@ input[type=text], select {
 
 //     &__img {
 //         margin-bottom: 20px;
-//         width: 100%;        
+//         width: 100%;
 //     }
 
 //     &__title {
@@ -715,8 +715,8 @@ input[type=text], select {
         margin-bottom: 60px;
         border-right: 1px dotted #fff;
         box-sizing: border-box;
-        padding: 20px 30px 20px 0;    
-        
+        padding: 20px 30px 20px 0;
+
         @media #{$small} {
             border:none;
         }
@@ -761,9 +761,9 @@ input[type=text], select {
         justify-content: space-around;
     }
 
-    &__item {        
+    &__item {
         margin-bottom: 60px;
-        
+
 
         &--purchased {
             opacity: .6;
@@ -787,7 +787,7 @@ input[type=text], select {
     &__price {
         font-size: $third-header-size;
         margin-bottom: 18px;
-    }    
+    }
 
     &__details {
         display: flex;
@@ -859,7 +859,7 @@ input[type=text], select {
 
 //aqui predefine
 
-  
+
   /*watches*/
   .geral_prefefine{
     min-height: 100%;
@@ -935,9 +935,9 @@ input[type=text], select {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  
-  
-//Garden------------------------------------------------------------------- 
+
+
+//Garden-------------------------------------------------------------------
 // *{
 //     margin:0;
 //     padding: 0;
@@ -952,10 +952,10 @@ input[type=text], select {
     height: 130%;
     background-image: url('/image/backgroundwatch.jpg');
     background-size: contain;
-    
-    
+
+
   }
-  
+
   /*toggle btn*/
   #toggle-btn{
     position: absolute;
@@ -974,7 +974,7 @@ input[type=text], select {
     transition: linear all 0.3s;
   }
   /*toggle btn*/
-  
+
   /*sidebar*/
   #sidebar{
     position: absolute;
@@ -1001,7 +1001,7 @@ input[type=text], select {
     background-color: #70D7FF;
   }
   /*sidebar*/
-  
+
   /*sidebar interior menus*/
   #first_menu_hidden1{
     position: absolute;
@@ -1110,9 +1110,9 @@ input[type=text], select {
 
   // }
 
-  
+
   /*sidebar interior menus*/
-  
+
   /*watvh background*/
   .watch{
     width: 100%;
@@ -1123,11 +1123,11 @@ input[type=text], select {
     background-position-x: 49.8%;
     background-position-y: 50%;
     background-size: 30.8%;
-    
-    
+
+
   }
   /*watvh background*/
-  
+
   /*circle*/
   // .center_circule{
   //   top: 50%;
@@ -1145,14 +1145,14 @@ input[type=text], select {
   //   height: 50%;
   // }
   /*circle*/
-  
-  
+
+
   /*Relogio Digital*/
   #hour,#minute,#second{
     size: 10px;
   }
   /*Relogio Digital*/
-  
+
   /*Relogio analogico*/
   #clock {
     stroke-linecap: round;
@@ -1170,8 +1170,8 @@ input[type=text], select {
     stroke: white;
   }
   /*Relogio analogico*/
-  
-  
+
+
   /*drag and drop */
   .ui-drop-hover{
     border:2px solid #bbb;
@@ -1201,16 +1201,16 @@ input[type=text], select {
     font-size: 40px;
   }
   /*drag and drop */
-  
+
   /*barra*/
   .circle-chart{
     border-radius: 100%;
   }
-  
+
   .animation{
       animation: circle-chart-fill 2s reverse;
   }
-  
+
   .circle-chart__circle {
     animation: circle-chart-fill 2s reverse;
     transform: rotate(-90deg) ;
@@ -1227,7 +1227,7 @@ input[type=text], select {
     }
   }*/
   /*barra*/
-  
+
   .text{
     padding-left: 24%;
     padding-top: 370px;
@@ -1365,8 +1365,8 @@ input[type=text], select {
 /*circle*/
 .circle-chart{
   border-radius: 100%;
-  position:absolute; 
-  left:50%; top: 50%; 
+  position:absolute;
+  left:50%; top: 50%;
   margin-left: -45%;
   margin-top:-45%;
 }
@@ -2007,7 +2007,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 .card:hover {
   transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
@@ -2359,7 +2359,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
  position: absolute;
  left: 50%;
  top: 50%;
- width:500px;
+ width:50px;
  height:19px;
  margin-left: -250px;
  margin-top: -9.5px;
@@ -2367,10 +2367,19 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 #quarto{
   margin-top:100px;
+
+}
+#setimo{
+  margin-top: 80px;
+  margin-left: -120px;
 }
 
 #oitavo{
-  margin-left: 125px;
+  // margin-bottom: 80px;
+  margin-top: -50px; //nao consigo colocar a oitava posiçao mais para cima??????
+  margin-right: 80px;
+ 
+
 }
 
 #dragdiv li:hover, #dropdiv li:hover{
@@ -2391,7 +2400,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 // Thirty------------------------------------------------------------
 
 // .big_div{
-  
+
 //   background-image: url('/image/backgroundwatch.jpg');
 // }
 
@@ -2458,7 +2467,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 #second_menu_hidden{
   position: absolute;
   left:-100%;
-  
+
 }
 #second_menu_hidden p {
   margin-top:30px;
