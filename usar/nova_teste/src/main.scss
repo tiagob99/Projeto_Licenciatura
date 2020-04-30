@@ -2349,7 +2349,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 #dragdiv{
  position: absolute;
  left: 50%;
- top: 50%;
+ top: 55%;
  margin-top:-187px;
  margin-left:-90px;
  width:204px;
@@ -2376,10 +2376,15 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 #oitavo{
   // margin-bottom: 80px;
-  margin-top: -50px; //nao consigo colocar a oitava posiçao mais para cima??????
-  margin-right: 80px;
+  // margin-top: -50px; //nao consigo colocar a oitava posiçao mais para cima??????
+  margin-right: 90px;
  
 
+}
+#aqui{
+  margin-top: -23.95px;
+  margin-left: 10px;
+  
 }
 
 #dragdiv li:hover, #dropdiv li:hover{
