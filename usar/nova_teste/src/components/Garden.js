@@ -267,22 +267,22 @@ export function text_color() {
   var cores = ["#FF0000", "#FFFFFF", "#00FF00", "#0000FF", "#FF4AD7", "#FF8400",  "#FFFFD7"];
   /*vetores cores iniciais*/
   
-  /*Matriz barras iniciais*/
-  var matrix = [];
-  for(var i=0; i<7; i++) {
-      matrix[i] =  new Array(7);
-  }
-  for(var i=0; i<7; i++) {
-    matrix[i][0]=i;
-    matrix[i][1]=16;
-    matrix[i][2]=20;
-    matrix[i][3]=-180;
-    matrix[i][4]=true;
-    matrix[i][5]="tophalf";
-    matrix[i][6]=2;
-    matrix[i][7]="csteps";
-  }
-  /*Matriz barras iniciais*/
+  // /*Matriz barras iniciais*/
+  // var matrix = [];
+  // for(var i=0; i<7; i++) {
+  //     matrix[i] =  new Array(7);
+  // }
+  // for(var i=0; i<7; i++) {
+  //   matrix[i][0]=i;
+  //   matrix[i][1]=16;
+  //   matrix[i][2]=20;
+  //   matrix[i][3]=-180;
+  //   matrix[i][4]=true;
+  //   matrix[i][5]="tophalf";
+  //   matrix[i][6]=2;
+  //   matrix[i][7]="csteps";
+  // }
+  // /*Matriz barras iniciais*/
   
   /*Matriz texto inicial*/
   var matrixtext = [];
@@ -314,13 +314,13 @@ export function text_color() {
   var image = false;
   var posiçoesocupadas_antigo;
   var elemento = false;
-  function bartype(barnumber){
-    alert('bar_type'+barnumber)
-    var novo = document.getElementById('bar_type'+barnumber).value;
-    alert('bar_type'+barnumber);
-    matrix[barnumber][7] = novo;
+  // function bartype(barnumber){
+  //   alert('bar_type'+barnumber)
+  //   var novo = document.getElementById('bar_type'+barnumber).value;
+  //   alert('bar_type'+barnumber);
+  //   matrix[barnumber][7] = novo;
     
-    }
+  //   }
   
   
   $(document).ready(function() {
@@ -329,40 +329,40 @@ export function text_color() {
     var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
   
   
-    $('#btAdd1').click(function() { //Adiciona uma linha
-      if (Linha <= 6) {
-        $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-        '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
-        '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-        '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-        '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-        '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
+    // $('#btAdd1').click(function() { //Adiciona uma linha
+    //   if (Linha <= 6) {
+    //     $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
+    //     '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
+    //     '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
+    //     '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
+    //     '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
+    //     '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
         
-        document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
-        tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
+    //     document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
+    //     tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
   
-        $('#main').after(container);
-        $("body").append('<svg id=bardraw' + Linha + ' ' +
-        ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-        '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
-        '</svg>')
-        Linha = Linha + 1;
-        }
-    });
+    //     $('#main').after(container);
+    //     $("body").append('<svg id=bardraw' + Linha + ' ' +
+    //     ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+    //     '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
+    //     '</svg>')
+    //     Linha = Linha + 1;
+    //     }
+    // });
   
   
-    $('#btRemove1').click(function() { // Remove uma linha
-      if (Linha != 0) {
-        Linha = Linha - 1;
-        $('#baroptions' + Linha).remove();
-        $('#bardraw' + Linha).remove();
-        var novo = tamanho_que_o_menu_desceu - 450;
-        document.getElementById('lastelemente').style.marginTop = novo + "px";
-        if (Linha >= 0) {
-          tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
-        }
-      }
-    });
+    // $('#btRemove1').click(function() { // Remove uma linha
+    //   if (Linha != 0) {
+    //     Linha = Linha - 1;
+    //     $('#baroptions' + Linha).remove();
+    //     $('#bardraw' + Linha).remove();
+    //     var novo = tamanho_que_o_menu_desceu - 450;
+    //     document.getElementById('lastelemente').style.marginTop = novo + "px";
+    //     if (Linha >= 0) {
+    //       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
+    //     }
+    //   }
+    // });
   
   
     $('#mesage_type1').change(function() { // Adiciona se é de percentangem ou timeframe
@@ -392,7 +392,7 @@ export function text_color() {
     $('#btAddText').click(function() { //Adiciona uma caixa de texto
       var ha_posiçao_livre = false;
       var novo = 0;
-      while (posiçoesocupadas[novo]==1 && novo<8) {
+      while (posiçoesocupadas[novo]==1 && novo<7) {
         novo = novo + 1;
       }
       if(posiçoesocupadas[novo]==0){
@@ -475,7 +475,7 @@ export function text_color() {
         matrixtext[aux1][3]="";
         matrixtext[aux1][4]="none";
         matrixtext[aux1][5]="fixa";
-        matrixtext[aux1][6]="";
+        matrixtext[aux1][6]="fixa";
         matrixtext[aux1][7]="";
         $('#'+  matrixtext[Texto][8]).text("");
       }
