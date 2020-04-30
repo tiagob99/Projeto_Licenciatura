@@ -9,7 +9,7 @@ import { bar_type } from './mikrosjs';
 import {GooglePicker, MyCustomButton} from "react-google-picker";
 import google from "react-google-picker";
 import gapi from 'gapi-client';
-import './google';
+//import './google';
 
     
 
@@ -91,6 +91,7 @@ const MakeYourOwn = () => {
   function showPickerDialog(){
 //    $('teste').loadHTML('./teste.html');
 }
+
     return (
       
       <div>
@@ -175,11 +176,10 @@ const MakeYourOwn = () => {
                     
       
                     <div id="result"></div>
+                    
                     {/* <div dangerouslySetInnerHTML={ {__html: htmlContent} } /> */}
                    {/* <button onClick={showPickerDialog}>Show Picker Dialog</button> */}
-                   <div>
-    {content}
-  </div>
+                
                     
                     
 
