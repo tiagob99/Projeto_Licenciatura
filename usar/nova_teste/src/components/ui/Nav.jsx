@@ -19,14 +19,19 @@ const Nav = props => {
       setUrl(response.profileObj.imageUrl);
     };
     function upd(){
-        window.location.reload();
+        //window.location.reload(true);
+        window.location.href = "/makeYourOwn";
+    }
+    function upd_m(){
+        //window.location.reload(true);
+        window.location.href = "/Predefine";
     }
             
     return (
         <div className={`main-nav main-nav--${context}`}>            
             {/* <NavLink className={getClassName("/about")} exact to="/about">About</NavLink>                         */}
-            <NavLink className={getClassName("/makeYourOwn")} exact to="/makeYourOwn" >Make your own</NavLink>            
-            <NavLink className={getClassName("/Predefine")} exact to="/predefine" >Predefine</NavLink>            
+            <NavLink className={getClassName("/makeYourOwn")} onClick={upd} exact to="/makeYourOwn" >Make your own</ NavLink>            
+            <NavLink className={getClassName("/Predefine")} onClick = {upd_m} exact to="/predefine" >Predefine</NavLink>            
             <NavLink className={getClassName("/Login")} >
                 <GoogleLogin
                 // className="dark"
