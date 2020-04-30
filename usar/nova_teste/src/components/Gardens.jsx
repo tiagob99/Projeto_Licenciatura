@@ -79,6 +79,7 @@ const Gardens = () => {
                       <option value="other_user">Other User</option>
                     </select> 
                     <br /><br /> 
+                    <div>Tipo de Mensagem</div>
                     <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
@@ -112,7 +113,7 @@ const Gardens = () => {
             <div id="dropdiv" style={{zIndex: 2}}> 
               <ul id="Ul1">
                 <li id="setimo" />
-                <div id="aqui">
+                <div id="oitavo1-1">
                 <li id="oitavo" />
                 </div>
               </ul>

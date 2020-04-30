@@ -365,7 +365,7 @@ export function text_color() {
     // });
   
   
-    $('#mesage_type1').change(function() { // Adiciona se é de percentangem ou timeframe
+    $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
       if(novo=="temporaria"){
         $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
