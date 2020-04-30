@@ -1001,7 +1001,7 @@ $(document).ready(function() {
       $('#main').after(container);
       $("body").append(document.getElementById('third_menu_hidden_1').classList.add('active') + 
          '<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+      ' style=" width:30%;  top:70%; left: 48%; border-radius: 100%; position:absolute;  margin-top: -13.2%;  margin-left: -13.4%; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
       '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
@@ -1455,13 +1455,13 @@ export function barstar (){
          
          if (previous == "novo"){
            
-          document.getElementById('bardraw'+barnumber).style.width = "530px";
-          document.getElementById('bardraw'+barnumber).style.height = "530px";
-          document.getElementById('bardraw'+barnumber).style.marginTop = "-161px";
-          document.getElementById('bardraw'+barnumber).style.marginLeft = "-260px";
+          document.getElementById('bardraw'+barnumber).style.width = "30%";
+          //document.getElementById('bardraw'+barnumber).style.height = "530px";
+          document.getElementById('bardraw'+barnumber).style.marginTop = "-15%";
+          document.getElementById('bardraw'+barnumber).style.marginLeft = "-26%";
           previous="v"
          }
-          document.getElementById('bar'+barnumber).style.strokeDasharray  = "101,100";
+          document.getElementById('bar'+barnumber).style.strokeDasharray  = "300%,300%";
           matrix[barnumber][5]="full";
           
         }
@@ -1491,10 +1491,10 @@ export function barstar (){
          
         document.getElementById('bardraw'+barnumber).style.marginTop = "-203px";
         document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
-        document.getElementById('bardraw'+barnumber).style.width = "530px";
-        document.getElementById('bardraw'+barnumber).style.height = "530px";
+        document.getElementById('bardraw'+barnumber).style.width = "30%";
+       //document.getElementById('bardraw'+barnumber).style.height = "530px";
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg)";
-        document.getElementById('bar'+barnumber).style.strokeDasharray  = matrix[barnumber][2] +",100";
+        document.getElementById('bar'+barnumber).style.strokeDasharray  = matrix[barnumber][2] +",200%";
         matrix[barnumber][5]="tophalf";
         matrix[barnumber][3]=-180;
         barradius();
@@ -1527,8 +1527,8 @@ export function barstar (){
         document.getElementById('bardraw'+barnumber).style.marginTop = "-203px";
         document.getElementById('bardraw'+barnumber).style.marginLeft = "-260px";
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + 0 + "deg)";
-        document.getElementById('bardraw'+barnumber).style.width = "530px";
-        document.getElementById('bardraw'+barnumber).style.height = "609px";
+        document.getElementById('bardraw'+barnumber).style.width = "30%";
+        document.getElementById('bardraw'+barnumber).style.height = "35%";
         document.getElementById('bar'+barnumber).style.strokeDasharray  =  matrix[barnumber][2] +",100";
         matrix[barnumber][5]="bottomhalf";
         matrix[barnumber][3]=0;

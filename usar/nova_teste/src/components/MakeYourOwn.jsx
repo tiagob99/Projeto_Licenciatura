@@ -1,4 +1,6 @@
 import React from 'react';
+import $ from'jquery';
+import 'jquery-ui-dist/jquery-ui';
 import Album from './Album';
 import { albums } from '../data/albums';
 import * as make from'./makeyo';
@@ -7,11 +9,115 @@ import { bar_type } from './mikrosjs';
 import {GooglePicker, MyCustomButton} from "react-google-picker";
 import google from "react-google-picker";
 import gapi from 'gapi-client';
+import HTML2React from 'html2react';
 
+function Link (props) {
+  return <a {...props} style={{ textDecoration: 'none' }} />
+}
+const html = `<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Picker Example</title>
 
+    <script type="text/javascript">
+
+    // The Browser API key obtained from the Google API Console.
+    // Replace with your own Browser API key, or your own key.
+    var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
+
+    // The Client ID obtained from the Google API Console. Replace with your own Client ID.
+    var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
+
+    // Replace with your own project number from console.developers.google.com.
+    // See "Project number" under "IAM & Admin" > "Settings"
+    var appId = "novo-269521";
+
+    // Scope to use to access user's Drive items.
+    var scope = ['https://www.googleapis.com/auth/drive.file'];
+
+    var pickerApiLoaded = false;
+    var oauthToken;
+
+    // Use the Google API Loader script to load the google.picker script.
+    function loadPicker() {
+      gapi.load('auth', {'callback': onAuthApiLoad});
+      gapi.load('picker', {'callback': onPickerApiLoad});
+    }
+
+    function onAuthApiLoad() {
+      window.gapi.auth.authorize(
+          {
+            'client_id': clientId,
+            'scope': scope,
+            'immediate': false
+          },
+          handleAuthResult);
+    }
+
+    function onPickerApiLoad() {
+      pickerApiLoaded = true;
+      createPicker();
+    }
+
+    function handleAuthResult(authResult) {
+      if (authResult && !authResult.error) {
+        oauthToken = authResult.access_token;
+        createPicker();
+      }
+    }
+
+    // Create and render a Picker object for searching images.
+    function createPicker() {
+      if (pickerApiLoaded && oauthToken) {
+        var view = new google.picker.View(google.picker.ViewId.DOCS);
+        view.setMimeTypes("image/png,image/jpeg,image/jpg");
+        var picker = new google.picker.PickerBuilder()
+            .enableFeature(google.picker.Feature.NAV_HIDDEN)
+            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+            .setAppId(appId)
+            .setOAuthToken(oauthToken)
+            .addView(view)
+            .addView(new google.picker.DocsUploadView())
+            .setDeveloperKey(developerKey)
+            .setCallback(pickerCallback)
+            .build();
+         picker.setVisible(true);
+      }
+    }
+
+    // A simple callback implementation.
+    function pickerCallback(data) {
+      if (data.action == google.picker.Action.PICKED) {
+        var fileId = data.docs[0].id;
+        alert('The user selected: ' + fileId);
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="result"></div>
+    <button onclick="showPickerDialog()">Show Picker Dialog</button>
+
+    <!-- The Google API Loader script. -->
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script>
+    function showPickerDialog(){
+        loadPicker()
+    }
+    </script>
+  </body>
+</html>`
+const content = HTML2React(html, {
+  a: Link
+})      
+   
+  
 const MakeYourOwn = () => {
+  
   var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
-
+  
+  
   // The Client ID obtained from the Google API Console. Replace with your own Client ID.
   var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
 
@@ -82,14 +188,16 @@ const MakeYourOwn = () => {
     }
   }
   function showPickerDialog(){
-    loadPicker()
+    $('teste').loadHTML('./teste.html');
 }
     return (
       
       <div>
+
       <meta charSet="utf-8" />
       <title>Make your own</title>
       <div className="big_div">
+     
         <div id="toggle-btn" onClick={make.togglemenu}>
           <span />
           <span />
@@ -166,8 +274,11 @@ const MakeYourOwn = () => {
                     
       
                     <div id="result"></div>
+                    {/* <div dangerouslySetInnerHTML={ {__html: htmlContent} } /> */}
                    <button onClick={showPickerDialog}>Show Picker Dialog</button>
-                   
+                   <div>
+    {content}
+  </div>
                     
                     
 
@@ -252,7 +363,7 @@ const MakeYourOwn = () => {
                 {/* <li id="oitavo" /> */}
               </ul>
             
-            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="530px" height="530px" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-265px', marginTop: '-265px'}}>
+            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="150%" height="150%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-11%', marginTop: '-13%'}}>
             </svg>
             </div>
             <div id="dropdiv">
