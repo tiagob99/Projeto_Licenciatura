@@ -368,7 +368,7 @@ export function text_color() {
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
       if(novo=="temporaria"){
-        $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
+        $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
           '<option value="timeframe">Timeframe</option>'+
           '<option value="percentagem">Percentagem</option>'+
         '</select>'+
@@ -387,6 +387,41 @@ export function text_color() {
         $("#timeframe").remove();
       }
     });
+
+    //aqui**************************************************************************************************
+    function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
+     var novo = document.getElementById("mesage_time").value;
+      if(novo=="percentagem"){
+        $("#timeframe").remove();
+        $('<select id="percentagem" style="margin-left:10px;">'+
+          '<option value="10">10%</option>'+
+          '<option value="20">20%</option>'+
+          '<option value="30">30%</option>'+
+          '<option value="40">40%</option>'+
+          '<option value="50">50%</option>'+
+          '<option value="60">60%</option>'+
+          '<option value="70">70%</option>'+
+          '<option value="80">80%</option>'+
+          '<option value="90">90%</option>'+
+          '<option value="100">100%</option>'+
+        '</select>').insertAfter('#mesage_time')
+      }
+      else{
+        $("#percentagem").remove();
+        $('<select id="timeframe" style="margin-left:10px;">'+
+        '<option value="10">10 Minutos</option>'+
+        '<option value="20">20 Minutos</option>'+
+        '<option value="30">30 Minutos</option>'+
+        '<option value="40">40 Minutos</option>'+
+        '<option value="50">50 Minutos</option>'+
+        '<option value="60">60 Minutos</option>'+
+        '</select>').insertAfter('#mesage_time')
+      }
+    }
+    /*adicionar elementos*/
+    
+
+  
   
   
     $('#btAddText').click(function() { //Adiciona uma caixa de texto
