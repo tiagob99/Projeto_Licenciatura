@@ -81,11 +81,45 @@ const Gardens = () => {
                     <br /><br /> 
                     <div>Tipo de Mensagem</div>
                     <select id="mesage_type">
+                      
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
-                    </select> <br />
+
+                    </select>
+                    <div id="tipo_temp" >
+                        <select id="mesage_time" onChange={garden.funct} >
+                      <option value="timeframe">Timeframe</option>
+                      <option value="percentagem">Percentagem</option>
+                    </select>
+                      <div id="tipo_timeframe">
+                      <select id="timeframe"  >
+                    <option value="10">10 Minutos</option>
+                    <option value="20">20 Minutos</option>
+                    <option value="30">30 Minutos</option>
+                    <option value="40">40 Minutos</option>
+                    <option value="50">50 Minutos</option>
+                    <option value="60">60 Minutos</option>
+                    </select>
+                      </div>
+                      <div id="tipo_percentagem">
+                      <select id="percentagem" >
+                    <option value="10">10 %</option>
+                    <option value="20">20 %</option>
+                    <option value="30">30 %</option>
+                    <option value="40">40 %</option>
+                    <option value="50">50 %</option>
+                    <option value="60">60 %</option>
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <option value="100">100 %</option>
+                    </select>
+                      </div>
+                      </div>
+                     <br />
+                    
                     <br />
-                    <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt"  />
+                    <input type="button" id="btAddText" onClick = {garden.tempo} defaultValue="Add Fixed Text" className="bt"  />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
                     </div>
                     <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={garden.abrir} />

@@ -89,14 +89,15 @@ $(function readropzone() {
 })
 /*drag and drop*/
 
-
-
+var minutes;
+var seconds;
 /*Relogio Digital*/
 $(function clock(){
   setInterval(() => {
   const fullDate = new Date();
   var hours = fullDate.getHours();
-  var minutes = fullDate.getMinutes();
+   minutes = fullDate.getMinutes();
+   seconds = fullDate.getSeconds();
   if (hours<10){
     hours = "0" + hours
   }
@@ -128,7 +129,95 @@ $(function timerTick() {
 /*Relogio analogico*/
 
 
+export function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
+  
+  var novo = document.getElementById("mesage_time").value;
+  if(novo=="percentagem"){
+  document.getElementById('tipo_timeframe').classList.remove('active');
+   $("body").append(document.getElementById('tipo_percentagem').classList.add('active'));
+ }
+ else{
+  document.getElementById('tipo_percentagem').classList.remove('active');
+   $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
+   
+ }
+ }
+ var final_m;
+ var final_s;
+ export function tempo(){
+  var novo = document.getElementById("timeframe").value;
+  var conta ;
+  if(novo == "10"){
+    conta = minutes + 1;
+  }
+  if(novo == "20"){
+    conta = minutes + 20;
+  }
+  if(novo == "30"){
+    conta = minutes + 30;
+  }
+  if(novo == "40"){
+    conta = minutes + 40;
+  }
+  if(novo == "50"){
+    conta = minutes + 50;
+  }
+  if(novo == "60"){
+    conta = minutes + 60;
+  }
+  if(conta > 60){
+    final_m= conta-60;
+    final_s= seconds;
+  }
+  else{
+    final_m= conta;
+    final_s= seconds;
 
+  }
+ }
+ setInterval(function remove_tempo(){
+   
+   if(minutes==final_m){
+    if(seconds == final_s){
+      if(posiçoesocupadas[Texto-1]==0){  //erro
+        Texto = Texto - 1;
+        console.log("a11aa")
+      }
+      if (Texto > 0 && image==false && posiçoesocupadas[Texto-1]==1) { //erro
+        console.log("22aaa")
+        Texto = Texto - 1;
+        var aux1 = 0;
+        while(id[aux1]!=matrixtext[Texto][8]){
+          aux1 = aux1+ 1;
+        }
+        posiçoesocupadas[aux1]=0;
+        matrixtext[aux1][0]="none";
+        matrixtext[aux1][1]="";
+        matrixtext[aux1][2]="none";
+        matrixtext[aux1][3]="";
+        matrixtext[aux1][4]="none";
+        matrixtext[aux1][5]="fixa";
+        matrixtext[aux1][6]="fixa";
+        matrixtext[aux1][7]="";
+        $('#'+  matrixtext[Texto][8]).text("");
+      }
+      else if (image==true){
+        matrixtext[4][0]="none";
+        matrixtext[4][1]="";
+        matrixtext[4][2]="none";
+        matrixtext[4][3]="";
+        matrixtext[4][4]="none";
+        matrixtext[4][5]="fixa";
+        matrixtext[4][6]="";
+        matrixtext[4][7]="";
+        posiçoesocupadas= [1,1,1,0,1,1,1,1];
+        $('#quarto').text("");
+        elemento = false;
+        console.log("aa33a")
+      }
+    }
+    }
+ },0)
 /*Cores*/
 
 export function background_color() {
@@ -368,18 +457,18 @@ export function text_color() {
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
       if(novo=="temporaria"){
-        $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
-          '<option value="timeframe">Timeframe</option>'+
-          '<option value="percentagem">Percentagem</option>'+
-        '</select>'+
-        '<select id="timeframe" style="margin-left:10px;">'+
-        '<option value="10">10 Minutos</option>'+
-        '<option value="20">20 Minutos</option>'+
-        '<option value="30">30 Minutos</option>'+
-        '<option value="40">40 Minutos</option>'+
-        '<option value="50">50 Minutos</option>'+
-        '<option value="60">60 Minutos</option>'+
-        '</select>').insertAfter('#mesage_type')
+        // $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
+        //   '<option value="timeframe">Timeframe</option>'+
+        //   '<option value="percentagem">Percentagem</option>'+
+        // '</select>'+
+        // '<select id="timeframe" style="margin-left:10px;">'+
+        // '<option value="10">10 Minutos</option>'+
+        // '<option value="20">20 Minutos</option>'+
+        // '<option value="30">30 Minutos</option>'+
+        // '<option value="40">40 Minutos</option>'+
+        // '<option value="50">50 Minutos</option>'+
+        // '<option value="60">60 Minutos</option>'+
+        // '</select>').insertAfter('#mesage_type')
       }
       else{
         $("#mesage_time").remove();
@@ -387,37 +476,11 @@ export function text_color() {
         $("#timeframe").remove();
       }
     });
+    
 
+    
     //aqui**************************************************************************************************
-    function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
-     var novo = document.getElementById("mesage_time").value;
-      if(novo=="percentagem"){
-        $("#timeframe").remove();
-        $('<select id="percentagem" style="margin-left:10px;">'+
-          '<option value="10">10%</option>'+
-          '<option value="20">20%</option>'+
-          '<option value="30">30%</option>'+
-          '<option value="40">40%</option>'+
-          '<option value="50">50%</option>'+
-          '<option value="60">60%</option>'+
-          '<option value="70">70%</option>'+
-          '<option value="80">80%</option>'+
-          '<option value="90">90%</option>'+
-          '<option value="100">100%</option>'+
-        '</select>').insertAfter('#mesage_time')
-      }
-      else{
-        $("#percentagem").remove();
-        $('<select id="timeframe" style="margin-left:10px;">'+
-        '<option value="10">10 Minutos</option>'+
-        '<option value="20">20 Minutos</option>'+
-        '<option value="30">30 Minutos</option>'+
-        '<option value="40">40 Minutos</option>'+
-        '<option value="50">50 Minutos</option>'+
-        '<option value="60">60 Minutos</option>'+
-        '</select>').insertAfter('#mesage_time')
-      }
-    }
+    
     /*adicionar elementos*/
     
 
