@@ -473,13 +473,13 @@ export function text_color() {
           variable_text2 = "";
         }
         if (variable_text!=""){
-          variable_text = "1290";
+          variable_text = document.getElementById("first_variable").value;
         }
         if (variable_text1!=""){
-          variable_text1 = "1290";
+          variable_text1 = document.getElementById("first_variable").value;
         }
         if (variable_text2!=""){
-          variable_text2 = "1290";
+          variable_text2 = document.getElementById("first_variable").value;
         }
         posiçoesocupadas[novo]=1;
         $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
