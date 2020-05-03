@@ -154,9 +154,9 @@ const Gardens = () => {
             </div>
         <div id="dropdiv">
           <div className="child elementos" id="node2">
-            <svg id="clock" viewBox="0 0 100 100" width={200} height={200}>
+            <svg id="clock" viewBox="0 0 100 100" >
               <g id="pointers">
-                <line id="hour_pointer" x1={50} y1={50} x2={50} y2={27} />
+                <line id="hour_pointer" x1={50} y1={50} x2={50} y2={27}/>
                 <line id="minute_pointer" x1={50} y1={50} x2={50} y2={17} />
                 <line id="second_pointer" x1={50} y1={50} x2={50} y2={13} />
                 <circle id="center_dot" style={{stroke: 'white', strokeWidth: '3px'}} cx={50} cy={50} r={1} />

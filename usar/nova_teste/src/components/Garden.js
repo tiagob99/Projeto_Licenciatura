@@ -457,6 +457,8 @@ export function text_color() {
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
       if(novo=="temporaria"){
+        $("body").append(document.getElementById('mesage_time').classList.add('active'));
+        $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
         // $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
         //   '<option value="timeframe">Timeframe</option>'+
         //   '<option value="percentagem">Percentagem</option>'+
@@ -471,9 +473,14 @@ export function text_color() {
         // '</select>').insertAfter('#mesage_type')
       }
       else{
-        $("#mesage_time").remove();
-        $("#percentagem").remove();
-        $("#timeframe").remove();
+        $("body").append(document.getElementById('mesage_time').classList.remove('active'));
+        
+        $("body").append(document.getElementById('percentagem').classList.remove('active'));
+        
+        $("body").append(document.getElementById('timeframe').classList.remove('active'));
+        $("body").append(document.getElementById('tipo_timeframe').classList.remove('active'));
+        $("body").append(document.getElementById('tipo_percentagem').classList.remove('active'));
+        
       }
     });
     
