@@ -54,35 +54,67 @@ const Thirtys = () => {
                     <li className="elementos_menu_direito" onClick={terceiro.togglemenu4}>Attributes</li>
                     <div id="fourth_menu_hidden">
                     <div id="testes">
-                    <select id="first_variable1">
+                    <select id="first_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Goal</option>
                       <option value="other_user">Other User</option>
                     </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={terceiro.text_color}/>
-                    <select id="third_variable1">
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={terceiro.text_color}/> */}
+                    <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Goal</option>
                       <option value="other_user">Other User</option>
                     </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    <select id="fifth_variable1">
+                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
+                    <select id="fifth_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
                       <option value="goal">Daily Goal</option>
                       <option value="other_user">Other User</option>
-                    </select>  */}
+                    </select> 
                     <br /><br />
-                    <select id="mesage_type1">
+                    <div>Tipo de Mensagem</div>
+                    <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
-                    </select> <br />
+                    </select>
+                    <div id="tipo_temp" >
+                        <select id="mesage_time" onChange={terceiro.funct} >
+                      <option value="timeframe">Timeframe</option>
+                      <option value="percentagem">Percentagem</option>
+                    </select>
+                      <div id="tipo_timeframe">
+                      <select id="timeframe"  >
+                    <option value="10">10 Minutos</option>
+                    <option value="20">20 Minutos</option>
+                    <option value="30">30 Minutos</option>
+                    <option value="40">40 Minutos</option>
+                    <option value="50">50 Minutos</option>
+                    <option value="60">60 Minutos</option>
+                    </select>
+                      </div>
+                      <div id="tipo_percentagem">
+                      <select id="percentagem" >
+                    <option value="10">10 %</option>
+                    <option value="20">20 %</option>
+                    <option value="30">30 %</option>
+                    <option value="40">40 %</option>
+                    <option value="50">50 %</option>
+                    <option value="60">60 %</option>
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <option value="100">100 %</option>
+                    </select>
+                      </div>
+                      </div>
+                    <br />
                     <br />
                     <input type="button" id="btAddText1" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText1" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
@@ -112,13 +144,15 @@ const Thirtys = () => {
                 <li id="terceiro" />
                 <li id="quarto" />
                 <li id="quinto" />
-                <li id="sexto" />
+                {/* <li id="sexto" /> */}
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>
               <ul id="Ul1">
                 <li id="setimo" />
+                <div id="oitavo1-1">
                 <li id="oitavo" />
+                </div>
               </ul>
             </div>
                 <div id="dropdiv">

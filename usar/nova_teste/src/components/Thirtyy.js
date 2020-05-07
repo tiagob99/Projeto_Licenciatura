@@ -127,6 +127,21 @@ var tamanho_que_o_menu_desceu = 0;
    })
    /*Relogio analogico*/
   
+   //tipo de mensagem
+   export function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
+  
+    var novo = document.getElementById("mesage_time").value;
+    if(novo=="percentagem"){
+    document.getElementById('tipo_timeframe').classList.remove('active');
+     $("body").append(document.getElementById('tipo_percentagem').classList.add('active'));
+   }
+   else{
+    document.getElementById('tipo_percentagem').classList.remove('active');
+     $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
+     
+   }
+   }
+   //tipo de mensagem
    
    
    /*Cores*/
@@ -317,26 +332,32 @@ $(document).ready(function() {
   });
 
 
-  $('#mesage_type1').change(function() { // Adiciona se é de percentangem ou timeframe
+  $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
     if(novo=="temporaria"){
-      $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-        '<option value="timeframe">Timeframe</option>'+
-        '<option value="percentagem">Percentagem</option>'+
-      '</select>'+
-      '<select id="timeframe" style="margin-left:10px;">'+
-      '<option value="10">10 Minutos</option>'+
-      '<option value="20">20 Minutos</option>'+
-      '<option value="30">30 Minutos</option>'+
-      '<option value="40">40 Minutos</option>'+
-      '<option value="50">50 Minutos</option>'+
-      '<option value="60">60 Minutos</option>'+
-      '</select>').insertAfter('#mesage_type')
+      $("body").append(document.getElementById('mesage_time').classList.add('active'));
+      $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
+      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
+      //   '<option value="timeframe">Timeframe</option>'+
+      //   '<option value="percentagem">Percentagem</option>'+
+      // '</select>'+
+      // '<select id="timeframe" style="margin-left:10px;">'+
+      // '<option value="10">10 Minutos</option>'+
+      // '<option value="20">20 Minutos</option>'+
+      // '<option value="30">30 Minutos</option>'+
+      // '<option value="40">40 Minutos</option>'+
+      // '<option value="50">50 Minutos</option>'+
+      // '<option value="60">60 Minutos</option>'+
+      // '</select>').insertAfter('#mesage_type')
     }
     else{
-      $("#mesage_time1").remove();
-      $("#percentagem").remove();
-      $("#timeframe").remove();
+      $("body").append(document.getElementById('mesage_time').classList.remove('active'));
+        
+        $("body").append(document.getElementById('percentagem').classList.remove('active'));
+        
+        $("body").append(document.getElementById('timeframe').classList.remove('active'));
+        $("body").append(document.getElementById('tipo_timeframe').classList.remove('active'));
+        $("body").append(document.getElementById('tipo_percentagem').classList.remove('active'));
     }
   });
 
@@ -356,13 +377,13 @@ $(document).ready(function() {
         elemento = true;
         console.log("aaaaaaa")
       }
-      var variable_text =$('#first_variable1').val();
-      var variable_text1 =$('#third_variable1').val();
-      var variable_text2 = $('#fifth_variable1').val();
-      var text = $('#second_variable1').val();
-      var text2 = $('#fourth_variable1').val();
-      var tipo_mensagem = $('#mesage_type1').val();
-      var tipo_mensagem1 = $('#mesage_time1').val();
+      var variable_text =$('#first_variable').val();
+      var variable_text1 =$('#third_variable').val();
+      var variable_text2 = $('#fifth_variable').val();
+      var text = $('#second_variable').val();
+      var text2 = $('#fourth_variable').val();
+      var tipo_mensagem = $('#mesage_type').val();
+      var tipo_mensagem1 = $('#mesage_time').val();
       var tipo_mensagem2;
       if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
         if (tipo_mensagem1=="timeframe"){
@@ -583,13 +604,13 @@ function trocaposicaoocupada (posição_troca, texto_posição_troca, posição_
 
 
 function limpa() {
-  document.getElementById('primeiro1').style.opacity=0;
-  document.getElementById('segundo1').style.opacity=0;
-  document.getElementById('terceiro1').style.opacity=0;
-  document.getElementById('quinto1').style.opacity=0;
-  document.getElementById('sexto1').style.opacity=0;
-  document.getElementById('setimo1').style.opacity=0;
-  document.getElementById('oitavo1').style.opacity=0;
+  document.getElementById('primeiro').style.opacity=0;
+  document.getElementById('segundo').style.opacity=0;
+  document.getElementById('terceiro').style.opacity=0;
+  document.getElementById('quinto').style.opacity=0;
+  document.getElementById('sexto').style.opacity=0;
+  document.getElementById('setimo').style.opacity=0;
+  document.getElementById('oitavo').style.opacity=0;
 }
 /*posiçoes do texto*/
 
