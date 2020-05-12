@@ -323,219 +323,219 @@ for(var i=0; i<7; i++) {
 }
 /*Matriz barras iniciais*/
 
-/*Matriz texto inicial*/
-var matrixtext = [];
-for(var i=0; i<8; i++) {
-    matrixtext[i] =  new Array(8);
-}
-for(var i=0; i<8; i++) {
-  matrixtext[i][0]="none";
-  matrixtext[i][1]="";
-  matrixtext[i][2]="none";
-  matrixtext[i][3]="";
-  matrixtext[i][4]="none";
-  matrixtext[i][5]="fixa";
-  matrixtext[i][6]="";
-  matrixtext[i][7]="";
-  matrixtext[i][8]="";
-}
-var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
-var posiçoesocupadas = [0,0,0,0,0,0,0,0];
-for (var i=0; i<8; i++){
-  matrixtext[i][8]=id[i];
-}
-/*Matriz texto inicial*/
+// /*Matriz texto inicial*/
+// var matrixtext = [];
+// for(var i=0; i<8; i++) {
+//     matrixtext[i] =  new Array(8);
+// }
+// for(var i=0; i<8; i++) {
+//   matrixtext[i][0]="none";
+//   matrixtext[i][1]="";
+//   matrixtext[i][2]="none";
+//   matrixtext[i][3]="";
+//   matrixtext[i][4]="none";
+//   matrixtext[i][5]="fixa";
+//   matrixtext[i][6]="";
+//   matrixtext[i][7]="";
+//   matrixtext[i][8]="";
+// }
+// var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
+// var posiçoesocupadas = [0,0,0,0,0,0,0,0];
+// for (var i=0; i<8; i++){
+//   matrixtext[i][8]=id[i];
+// }
+// /*Matriz texto inicial*/
 
-/*adicionar elementos*/
-var Linha = 0;
-var Texto = 0;
-var url = false //ainda nai foi adicionado
-var image = false;
-var posiçoesocupadas_antigo;
-var elemento = false;
-function bartype(barnumber){
-  alert('bar_type'+barnumber)
-  var novo = document.getElementById('bar_type'+barnumber).value;
-  alert('bar_type'+barnumber);
-  matrix[barnumber][7] = novo;
+// /*adicionar elementos*/
+// var Linha = 0;
+// var Texto = 0;
+// var url = false //ainda nai foi adicionado
+// var image = false;
+// var posiçoesocupadas_antigo;
+// var elemento = false;
+// function bartype(barnumber){
+//   alert('bar_type'+barnumber)
+//   var novo = document.getElementById('bar_type'+barnumber).value;
+//   alert('bar_type'+barnumber);
+//   matrix[barnumber][7] = novo;
   
-  }
+//   }
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
-  var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
+//   var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
+//   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
 
 
-  $('#btAdd1').click(function() { //Adiciona uma linha
-    if (Linha <= 6) {
-      $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
-      '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
+//   $('#btAdd1').click(function() { //Adiciona uma linha
+//     if (Linha <= 6) {
+//       $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
+//       '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
+//       '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
+//       '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
+//       '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
+//       '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
       
-      document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
-      tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
+//       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
+//       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
 
-      $('#main').after(container);
-      $("body").append('<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
-      '</svg>')
-      Linha = Linha + 1;
-      }
-  });
-
-
-  $('#btRemove1').click(function() { // Remove uma linha
-    if (Linha != 0) {
-      Linha = Linha - 1;
-      $('#baroptions' + Linha).remove();
-      $('#bardraw' + Linha).remove();
-      var novo = tamanho_que_o_menu_desceu - 450;
-      document.getElementById('lastelemente').style.marginTop = novo + "px";
-      if (Linha >= 0) {
-        tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
-      }
-    }
-  });
+//       $('#main').after(container);
+//       $("body").append('<svg id=bardraw' + Linha + ' ' +
+//       ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
+//       '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
+//       '</svg>')
+//       Linha = Linha + 1;
+//       }
+//   });
 
 
-  $('#mesage_type1').change(function() { // Adiciona se é de percentangem ou timeframe
-    var novo = document.getElementById("mesage_type").value;
-    if(novo=="temporaria"){
-      $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-        '<option value="timeframe">Timeframe</option>'+
-        '<option value="percentagem">Percentagem</option>'+
-      '</select>'+
-      '<select id="timeframe" style="margin-left:10px;">'+
-      '<option value="10">10 Minutos</option>'+
-      '<option value="20">20 Minutos</option>'+
-      '<option value="30">30 Minutos</option>'+
-      '<option value="40">40 Minutos</option>'+
-      '<option value="50">50 Minutos</option>'+
-      '<option value="60">60 Minutos</option>'+
-      '</select>').insertAfter('#mesage_type')
-    }
-    else{
-      $("#mesage_time1").remove();
-      $("#percentagem").remove();
-      $("#timeframe").remove();
-    }
-  });
+//   $('#btRemove1').click(function() { // Remove uma linha
+//     if (Linha != 0) {
+//       Linha = Linha - 1;
+//       $('#baroptions' + Linha).remove();
+//       $('#bardraw' + Linha).remove();
+//       var novo = tamanho_que_o_menu_desceu - 450;
+//       document.getElementById('lastelemente').style.marginTop = novo + "px";
+//       if (Linha >= 0) {
+//         tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
+//       }
+//     }
+//   });
 
 
-  $('#btAddText').click(function() { //Adiciona uma caixa de texto
-    var ha_posiçao_livre = false;
-    var novo = 0;
-    while (posiçoesocupadas[novo]==1 && novo<8) {
-      novo = novo + 1;
-    }
-    if(posiçoesocupadas[novo]==0){
-      ha_posiçao_livre=true;
-    }
-    if (Texto<8){
-      console.log(Texto)
-      if(Texto ==3){
-        elemento = true;
-        console.log("aaaaaaa")
-      }
-      var variable_text =$('#first_variable1').val();
-      var variable_text1 =$('#third_variable1').val();
-      var variable_text2 = $('#fifth_variable1').val();
-      var text = $('#second_variable1').val();
-      var text2 = $('#fourth_variable1').val();
-      var tipo_mensagem = $('#mesage_type1').val();
-      var tipo_mensagem1 = $('#mesage_time1').val();
-      var tipo_mensagem2;
-      if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
-        if (tipo_mensagem1=="timeframe"){
-          tipo_mensagem2 = $('#timeframe').val();
-        }
-        else{
-          tipo_mensagem2 = $('#percentagem').val();
-        }
-        matrixtext[Texto][6]=tipo_mensagem1;
-        matrixtext[Texto][7]=tipo_mensagem2;
-      }
-      matrixtext[Texto][0]=variable_text;
-      matrixtext[Texto][1]=text;
-      matrixtext[Texto][2]=variable_text1;
-      matrixtext[Texto][3]=text2;
-      matrixtext[Texto][4]=variable_text2;
-      matrixtext[Texto][5]=tipo_mensagem;
-      if (variable_text=="none"){
-        variable_text = "";
-      }
-      if (variable_text1=="none"){
-        variable_text1 = "";
-      }
-      if (variable_text2=="none"){
-        variable_text2 = "";
-      }
-      if (variable_text!=""){
-        variable_text = "1290";
-      }
-      if (variable_text1!=""){
-        variable_text1 = "1290";
-      }
-      if (variable_text2!=""){
-        variable_text2 = "1290";
-      }
-      posiçoesocupadas[novo]=1;
-      $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
-      matrixtext[Texto][8]=id[novo];
-      Texto = Texto + 1;
-    }
-    console.log(posiçoesocupadas);
-    console.log(matrixtext);
-  });
+//   $('#mesage_type1').change(function() { // Adiciona se é de percentangem ou timeframe
+//     var novo = document.getElementById("mesage_type").value;
+//     if(novo=="temporaria"){
+//       $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
+//         '<option value="timeframe">Timeframe</option>'+
+//         '<option value="percentagem">Percentagem</option>'+
+//       '</select>'+
+//       '<select id="timeframe" style="margin-left:10px;">'+
+//       '<option value="10">10 Minutos</option>'+
+//       '<option value="20">20 Minutos</option>'+
+//       '<option value="30">30 Minutos</option>'+
+//       '<option value="40">40 Minutos</option>'+
+//       '<option value="50">50 Minutos</option>'+
+//       '<option value="60">60 Minutos</option>'+
+//       '</select>').insertAfter('#mesage_type')
+//     }
+//     else{
+//       $("#mesage_time1").remove();
+//       $("#percentagem").remove();
+//       $("#timeframe").remove();
+//     }
+//   });
 
 
-  $('#btRemoveText').click(function() { // Remove uma caixa de texto
-    if(posiçoesocupadas[Texto-1]==0){  //erro
-      Texto = Texto - 1;
-      console.log("a11aa")
-    }
-    if (Texto > 0 && image==false && posiçoesocupadas[Texto-1]==1) { //erro
-      console.log("22aaa")
-      Texto = Texto - 1;
-      var aux1 = 0;
-      while(id[aux1]!=matrixtext[Texto][8]){
-        aux1 = aux1+ 1;
-      }
-      posiçoesocupadas[aux1]=0;
-      matrixtext[aux1][0]="none";
-      matrixtext[aux1][1]="";
-      matrixtext[aux1][2]="none";
-      matrixtext[aux1][3]="";
-      matrixtext[aux1][4]="none";
-      matrixtext[aux1][5]="fixa";
-      matrixtext[aux1][6]="";
-      matrixtext[aux1][7]="";
-      $('#'+  matrixtext[Texto][8]).text("");
-    }
-    else if (image==true){
-      matrixtext[4][0]="none";
-      matrixtext[4][1]="";
-      matrixtext[4][2]="none";
-      matrixtext[4][3]="";
-      matrixtext[4][4]="none";
-      matrixtext[4][5]="fixa";
-      matrixtext[4][6]="";
-      matrixtext[4][7]="";
-      posiçoesocupadas= [1,1,1,0,1,1,1,1];
-      $('#quarto').text("");
-      elemento = false;
-      console.log("aa33a")
-    }
-  });
+//   $('#btAddText').click(function() { //Adiciona uma caixa de texto
+//     var ha_posiçao_livre = false;
+//     var novo = 0;
+//     while (posiçoesocupadas[novo]==1 && novo<8) {
+//       novo = novo + 1;
+//     }
+//     if(posiçoesocupadas[novo]==0){
+//       ha_posiçao_livre=true;
+//     }
+//     if (Texto<8){
+//       console.log(Texto)
+//       if(Texto ==3){
+//         elemento = true;
+//         console.log("aaaaaaa")
+//       }
+//       var variable_text =$('#first_variable1').val();
+//       var variable_text1 =$('#third_variable1').val();
+//       var variable_text2 = $('#fifth_variable1').val();
+//       var text = $('#second_variable1').val();
+//       var text2 = $('#fourth_variable1').val();
+//       var tipo_mensagem = $('#mesage_type1').val();
+//       var tipo_mensagem1 = $('#mesage_time1').val();
+//       var tipo_mensagem2;
+//       if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
+//         if (tipo_mensagem1=="timeframe"){
+//           tipo_mensagem2 = $('#timeframe').val();
+//         }
+//         else{
+//           tipo_mensagem2 = $('#percentagem').val();
+//         }
+//         matrixtext[Texto][6]=tipo_mensagem1;
+//         matrixtext[Texto][7]=tipo_mensagem2;
+//       }
+//       matrixtext[Texto][0]=variable_text;
+//       matrixtext[Texto][1]=text;
+//       matrixtext[Texto][2]=variable_text1;
+//       matrixtext[Texto][3]=text2;
+//       matrixtext[Texto][4]=variable_text2;
+//       matrixtext[Texto][5]=tipo_mensagem;
+//       if (variable_text=="none"){
+//         variable_text = "";
+//       }
+//       if (variable_text1=="none"){
+//         variable_text1 = "";
+//       }
+//       if (variable_text2=="none"){
+//         variable_text2 = "";
+//       }
+//       if (variable_text!=""){
+//         variable_text = "1290";
+//       }
+//       if (variable_text1!=""){
+//         variable_text1 = "1290";
+//       }
+//       if (variable_text2!=""){
+//         variable_text2 = "1290";
+//       }
+//       posiçoesocupadas[novo]=1;
+//       $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
+//       matrixtext[Texto][8]=id[novo];
+//       Texto = Texto + 1;
+//     }
+//     console.log(posiçoesocupadas);
+//     console.log(matrixtext);
+//   });
 
-});
-/*adicionar elementos*/
+
+//   $('#btRemoveText').click(function() { // Remove uma caixa de texto
+//     if(posiçoesocupadas[Texto-1]==0){  //erro
+//       Texto = Texto - 1;
+//       console.log("a11aa")
+//     }
+//     if (Texto > 0 && image==false && posiçoesocupadas[Texto-1]==1) { //erro
+//       console.log("22aaa")
+//       Texto = Texto - 1;
+//       var aux1 = 0;
+//       while(id[aux1]!=matrixtext[Texto][8]){
+//         aux1 = aux1+ 1;
+//       }
+//       posiçoesocupadas[aux1]=0;
+//       matrixtext[aux1][0]="none";
+//       matrixtext[aux1][1]="";
+//       matrixtext[aux1][2]="none";
+//       matrixtext[aux1][3]="";
+//       matrixtext[aux1][4]="none";
+//       matrixtext[aux1][5]="fixa";
+//       matrixtext[aux1][6]="";
+//       matrixtext[aux1][7]="";
+//       $('#'+  matrixtext[Texto][8]).text("");
+//     }
+//     else if (image==true){
+//       matrixtext[4][0]="none";
+//       matrixtext[4][1]="";
+//       matrixtext[4][2]="none";
+//       matrixtext[4][3]="";
+//       matrixtext[4][4]="none";
+//       matrixtext[4][5]="fixa";
+//       matrixtext[4][6]="";
+//       matrixtext[4][7]="";
+//       posiçoesocupadas= [1,1,1,0,1,1,1,1];
+//       $('#quarto').text("");
+//       elemento = false;
+//       console.log("aa33a")
+//     }
+//   });
+
+// });
+// /*adicionar elementos*/
 
 
 
@@ -577,122 +577,131 @@ function barradius(barnumber) {
 
 
 
-/*drag and drop texto*/
-$(function() {
-    $("#dragdiv li,#dropdiv li").draggable({
-        appendTo: "body",
-        helper: "clone",
-        revert: "invalid"
-    });
-    initDroppable($("#dropdiv li,#dragdiv li"));
-    function initDroppable($elements) {
-        $elements.droppable({
-            activeClass: "ui-state-default",
-            hoverClass: "ui-drop-hover",
-            accept: ":not(.ui-sortable-helper)",
-            over: function(event, ui) {
-                var $this = $(this);
-            },
-            drop: function(event, ui) {
-                var $this = $(this);
-                var linew1 = $(this)
-                var li1 = $('<li id="'+linew1.attr('id') +'">' + ui.draggable.text() + '</li>')
-                linew1 = $(this).after(li1);
-                var linew2 = $(ui.draggable)
-                var li2 = $('<li id="'+linew2.attr('id') +'">' + $(this).text() + '</li>')
-                linew2 = $(ui.draggable).after(li2);
+// /*drag and drop texto*/
+// $(function() {
+//     $("#dragdiv li,#dropdiv li").draggable({
+//         appendTo: "body",
+//         helper: "clone",
+//         revert: "invalid"
+//     });
+//     initDroppable($("#dropdiv li,#dragdiv li"));
+//     function initDroppable($elements) {
+//         $elements.droppable({
+//             activeClass: "ui-state-default",
+//             hoverClass: "ui-drop-hover",
+//             accept: ":not(.ui-sortable-helper)",
+//             over: function(event, ui) {
+//                 var $this = $(this);
+//             },
+//             drop: function(event, ui) {
+//                 var $this = $(this);
+//                 var linew1 = $(this)
+//                 var li1 = $('<li id="'+linew1.attr('id') +'">' + ui.draggable.text() + '</li>')
+//                 linew1 = $(this).after(li1);
+//                 var linew2 = $(ui.draggable)
+//                 var li2 = $('<li id="'+linew2.attr('id') +'">' + $(this).text() + '</li>')
+//                 linew2 = $(ui.draggable).after(li2);
 
-                trocaposicao(linew1.attr('id'),linew2.attr('id'))
-                trocaposicaoocupada(linew1.attr('id') , linew1.text() , linew2.attr('id') ,linew2.text() )
-                console.log(linew1.text())
-                console.log(linew1.attr('id'))
-                console.log(linew2.text())
-                console.log(linew2.attr('id'))
+//                 trocaposicao(linew1.attr('id'),linew2.attr('id'))
+//                 trocaposicaoocupada(linew1.attr('id') , linew1.text() , linew2.attr('id') ,linew2.text() )
+//                 console.log(linew1.text())
+//                 console.log(linew1.attr('id'))
+//                 console.log(linew2.text())
+//                 console.log(linew2.attr('id'))
 
-                $(ui.draggable).remove();
-                $(this).remove();
+//                 $(ui.draggable).remove();
+//                 $(this).remove();
 
-                initDroppable($("#dropdiv li,#dragdiv li"));
-                $("#dragdiv li,#dropdiv li").draggable({
-                    appendTo: "body",
-                    helper: "clone",
-                    revert: "invalid"
-                });
-            }
-        });
-        console.log(matrixtext);
-        console.log(posiçoesocupadas);
-    }
-});
-/*drag and drop texto*/
-
-
-/*posiçoes do texto*/
-function trocaposicao(posição_troca, posição_agarrada) {
-  for (var i=0; i<8; i++){
-    if(matrixtext[i][8]==posição_troca){
-      matrixtext[i][8]=posição_agarrada;
-    }
-    else if (matrixtext[i][8]==posição_agarrada) {
-      matrixtext[i][8]=posição_troca;
-    }
-  }
-}
+//                 initDroppable($("#dropdiv li,#dragdiv li"));
+//                 $("#dragdiv li,#dropdiv li").draggable({
+//                     appendTo: "body",
+//                     helper: "clone",
+//                     revert: "invalid"
+//                 });
+//             }
+//         });
+//         console.log(matrixtext);
+//         console.log(posiçoesocupadas);
+//     }
+// });
+// /*drag and drop texto*/
 
 
-function trocaposicaoocupada (posição_troca, texto_posição_troca, posição_agarrada,texto_posição_agarrada) {
-  if(texto_posição_troca=="" && texto_posição_agarrada==""){
-  }
-  else {
-    if(texto_posição_agarrada!="" && texto_posição_troca!=""){
-
-    }
-    else{
-      var aux1 = 0;
-      var aux2 = 0;
-      while(id[aux1]!=posição_agarrada){
-        aux1 = aux1+ 1;
-      }
-      while(id[aux2]!=posição_troca){
-        aux2 = aux2 + 1;
-      }
-      if(texto_posição_agarrada!=""){
-        posiçoesocupadas[aux1]=0;
-        posiçoesocupadas[aux2]=1;
-      }
-      if(texto_posição_troca!=""){
-        posiçoesocupadas[aux2]=0;
-        posiçoesocupadas[aux1]=1;
-      }
-    }
-  }
-}
+// /*posiçoes do texto*/
+// function trocaposicao(posição_troca, posição_agarrada) {
+//   for (var i=0; i<8; i++){
+//     if(matrixtext[i][8]==posição_troca){
+//       matrixtext[i][8]=posição_agarrada;
+//     }
+//     else if (matrixtext[i][8]==posição_agarrada) {
+//       matrixtext[i][8]=posição_troca;
+//     }
+//   }
+// }
 
 
-function limpa() {
-  document.getElementById('primeiro1').style.opacity=0;
-  document.getElementById('segundo1').style.opacity=0;
-  document.getElementById('terceiro1').style.opacity=0;
-  document.getElementById('quinto1').style.opacity=0;
-  document.getElementById('sexto1').style.opacity=0;
-  document.getElementById('setimo1').style.opacity=0;
-  document.getElementById('oitavo1').style.opacity=0;
-}
-/*posiçoes do texto*/
+// function trocaposicaoocupada (posição_troca, texto_posição_troca, posição_agarrada,texto_posição_agarrada) {
+//   if(texto_posição_troca=="" && texto_posição_agarrada==""){
+//   }
+//   else {
+//     if(texto_posição_agarrada!="" && texto_posição_troca!=""){
+
+//     }
+//     else{
+//       var aux1 = 0;
+//       var aux2 = 0;
+//       while(id[aux1]!=posição_agarrada){
+//         aux1 = aux1+ 1;
+//       }
+//       while(id[aux2]!=posição_troca){
+//         aux2 = aux2 + 1;
+//       }
+//       if(texto_posição_agarrada!=""){
+//         posiçoesocupadas[aux1]=0;
+//         posiçoesocupadas[aux2]=1;
+//       }
+//       if(texto_posição_troca!=""){
+//         posiçoesocupadas[aux2]=0;
+//         posiçoesocupadas[aux1]=1;
+//       }
+//     }
+//   }
+// }
 
 
-console.log(Math.random().toString(36).substring(2, 15))
-console.log(Math.random().toString(36).substring(2, 15))
-console.log(Math.random().toString(36).substring(2, 15))
-console.log(Math.random().toString(36).substring(2, 15))
-console.log(Math.random().toString(36).substring(2, 15))
+// function limpa() {
+//   document.getElementById('primeiro1').style.opacity=0;
+//   document.getElementById('segundo1').style.opacity=0;
+//   document.getElementById('terceiro1').style.opacity=0;
+//   document.getElementById('quinto1').style.opacity=0;
+//   document.getElementById('sexto1').style.opacity=0;
+//   document.getElementById('setimo1').style.opacity=0;
+//   document.getElementById('oitavo1').style.opacity=0;
+// }
+// /*posiçoes do texto*/
+
+
+// console.log(Math.random().toString(36).substring(2, 15))
+// console.log(Math.random().toString(36).substring(2, 15))
+// console.log(Math.random().toString(36).substring(2, 15))
+// console.log(Math.random().toString(36).substring(2, 15))
+// console.log(Math.random().toString(36).substring(2, 15))
 
 //fechar e abrir menu-----------------
 export function abrir(){
-  document.getElementById('testes').classList.add('active')
+  document.getElementById('testesmicro').classList.add('active')
 }
 
 export function fechar(){
-  document.getElementById('testes').classList.remove('active')
+  document.getElementById('testesmicro').classList.remove('active')
 }
 //fechar e abrir menu-----------------
+
+//TEXTO
+var captura="";
+
+export function cap(){
+  captura= document.getElementById('valor').value;
+  document.getElementById('valorescrito').innerHTML= captura;
+}
+//TEXTO

@@ -83,40 +83,21 @@ const Mikros = () => {
                 <div id="remaining_09">
                   <li id="lastelemente" className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
-                  <div id="testes">
-                    <br /><br /><p>Text</p><br />
-                    <select id="first_variable1">
-                      <option value="none">None</option>
-                      <option value="yesterday">Yesterday</option>
-                      <option value="today">Today</option>
-                      <option value="goal">Goal</option>
-                      <option value="other_user">Other User</option>
-                    </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable1" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={micro.text_color}/> */}
-                    {/* <select id="third_variable1">
-                      <option value="none">None</option>
-                      <option value="yesterday">Yesterday</option>
-                      <option value="today">Today</option>
-                      <option value="goal">Goal</option>
-                      <option value="other_user">Other User</option>
-                    </select>
-                    <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="fourth_variable1" name="field7" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    <select id="fifth_variable1">
-                      <option value="none">None</option>
-                      <option value="yesterday">Yesterday</option>
-                      <option value="today">Today</option>
-                      <option value="goal">Daily Goal</option>
-                      <option value="other_user">Other User</option>
-                    </select> */}
+                  <div id="testesmicro">
                      <br /><br />
-                    <select id="mesage_type1">
-                      <option value="fixa">Fixa</option>
-                      <option value="temporaria">Temporaria</option>
-                    </select> <br />
-                    <br />
-                    <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
-                    <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
+                     <br /><br />
+                     {/* <div id="posicaotexto">
+                     <div class="text">
+                        <p>Message</p>
+                        <textarea name="field5" class="tex_box" placeholder="Insert your message" rows="15" cols="45" ></textarea>
+                    </div>
+                    </div> */}
+
+                    <input type="text" id="valor" placeholder="Insira a sua mensagem.." />
+                    <input type="submit" onClick={micro.cap} value="Adicionar mensagem"/>
+                    
+                    {/* <input type="button" id="btAddTextmicro" defaultValue="Add Text" className="bt" />
+                    <input type="button" id="btRemoveTextmicro" defaultValue="Remove Text" className="bt" /><br /><br /> */}
                     </div>
                     <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={micro.abrir} />
                     <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={micro.fechar}/>
@@ -127,6 +108,9 @@ const Mikros = () => {
         </div>
         <div className="watch">
           <div className="center_circule">
+          <div class="centro">
+                      <p id="valorescrito"></p>
+                    </div>
             <p id="rect" className="center_circule" />
             <div className="circule">
               <svg className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="90%" height="90%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-45%', marginTop: '-45%'}}>
