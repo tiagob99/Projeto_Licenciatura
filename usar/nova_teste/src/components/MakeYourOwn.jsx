@@ -176,7 +176,7 @@ const MakeYourOwn = () => {
                     
       
                     <div id="result"></div>
-                    <a href = "/g">aqui</a>
+                    {/* <a href = "/g">aqui</a> */}
                     {/* <div dangerouslySetInnerHTML={ {__html: htmlContent} } /> */}
                    {/* <button onClick={showPickerDialog}>Show Picker Dialog</button> */}
                 

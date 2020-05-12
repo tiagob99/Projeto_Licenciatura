@@ -1058,6 +1058,47 @@ input[type=text], select {
     position: relative;
   }
 
+  #imagens{
+    position: absolute;
+    left: -400%;
+  }
+  #imagens.active{
+    height: 27%;
+    left: -4%;
+    margin:4%;
+  }
+  #images_2{
+    position: absolute;
+    left: -400%;
+
+  }
+  #images_2.active{
+    height: 10%;
+    top: 290%;
+    left: -4%;
+    margin:4%;
+  }
+  #images_3{
+    position: absolute;
+    left: -400%;
+  }
+  #images_3.active{
+    top: 380%;
+    left: -4%;
+    margin:4%;
+  }
+  #h3_{
+    background: #448E9D;
+  }
+  #h3_1{
+    background: #448E9D;
+    font-size: 95%;
+  }
+  #h3_2{
+    background: #448E9D;
+    font-size: 96%;
+  }
+
   #testes{
     position: absolute;
     left: -200%;

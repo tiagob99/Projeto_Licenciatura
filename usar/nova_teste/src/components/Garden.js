@@ -1,11 +1,14 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
+import { func } from 'prop-types';
 
 
 /*Menu*/
 var open = false;
 var tamanho_que_o_menu_desceu = 0;
+var url = false //ainda nai foi adicionado
+var image = false;
 
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -269,6 +272,141 @@ export function text_color() {
   x.value = currentVal;
   document.getElementById('texto').style.color =  currentVal;
  }
+ 
+ 
+ export function image_change(){
+ var valor1 = document.getElementById("images").value;
+   var texto1  = 'Esta imagem irá aparecer quando atingir os '
+   var texto2 = 'A segunda imagem irá aparecer quando atingir os '
+   var texto3 = 'A teceira imagem irá aparecer quando atingir os '
+   document.getElementById("h3_").innerHTML = texto1 + document.getElementById("images").value + '%';
+   if(document.getElementById("images").value != 100){
+     if(document.getElementById("images_2").classList == ''){
+      document.getElementById("h3_1").innerHTML = texto2 + document.getElementById("images").value + '%';
+      document.getElementById("images_2").classList.add("active");
+      document.getElementById("images_2").defaultValue = document.getElementById("images").value;
+     }
+     else{
+       if(document.getElementById("images_2").value < document.getElementById("images").value){
+        if(document.getElementById("images_2").value != 100){
+          document.getElementById("images_2").value = document.getElementById("images").value;
+        }
+       }
+       else{
+        //document.getElementById("images_2").value = document.getElementById("images_2").value;
+        document.getElementById("h3_1").innerHTML = texto2 + document.getElementById("images_2").value + '%';
+
+       }
+
+     }
+    
+    
+   }
+   else{
+    document.getElementById("h3_1").innerHTML = "";
+    document.getElementById("images_2").classList.remove("active");
+    document.getElementById("h3_2").innerHTML ="";
+    document.getElementById("images_3").classList.remove("active");
+   }
+   if(document.getElementById("images_2").value != 100){
+     
+      if(document.getElementById("images_3").classList == ''){
+        document.getElementById("h3_2").innerHTML = texto3 + document.getElementById("images_2").value + '%';
+        document.getElementById("images_3").classList.add("active");
+        document.getElementById("images_3").defaultValue = document.getElementById("images_2").value;
+     }
+     else{
+      if(document.getElementById("images_3").value < document.getElementById("images_2").value){
+        if(document.getElementById("images_3").value != 100){
+        document.getElementById("images_3").value = document.getElementById("images_2").value;
+        }
+      }
+      else{
+      document.getElementById("h3_2").innerHTML = texto3 + document.getElementById("images_3").value + '%';
+    } 
+    }
+   
+  }
+   else{
+    document.getElementById("h3_2").innerHTML ="";
+    document.getElementById("images_3").classList.remove("active");
+
+   }
+
+   
+ 
+}
+export function clica() { // Adiciona Imagem e remove posiçoes de colocação de texto
+  var novo;
+  if(document.getElementById('load_type').value == 'url_load'){
+    url = true
+    novo = document.getElementById("url").value;
+  }
+  if(document.getElementById('load_type').value == 'pc'){
+
+    novo= document.getElementById("preview").src;
+  }
+  if(document.getElementById('load_type').value == 'pc'){
+
+    // novo = document.getElementById("url").value;
+  }
+  // var imagem_position = document.getElementById("image_type").value;
+  // console.log(imagem_position);
+  posiçoesocupadas_antigo = posiçoesocupadas;
+  posiçoesocupadas = [1,1,1,0,1,1,1,1];
+  image = true;
+  
+    document.getElementById("img").src = novo;
+    alert('aqui')
+    document.getElementById("img_backgroud").src = novo;
+    document.getElementById("img_backgroud").style.display = "initial";
+    document.getElementById('img_backgroud').style.display = "initial";
+      document.getElementById('img').style.display = "none";
+      document.getElementById('rect').style.display = "none";
+    limpa();
+    
+
+};
+// $('#image_type').change(function() { // Altera o tipo de imagem
+//   if(url ==true){
+//     var novo = document.getElementById("image_type").value;
+//     if(novo=="bakground"){
+//       document.getElementById('img_backgroud').style.display = "initial";
+//       document.getElementById('img').style.display = "none";
+//       document.getElementById('rect').style.display = "none";
+//     }
+//     else{
+//       document.getElementById('img_backgroud').style.display = "none";
+//       document.getElementById('img').style.display = "initial";
+//       document.getElementById('rect').style.display = "initial";
+//     }
+//   }
+// });
+$('#btRemImg').click(function() { // remove Imagem
+  document.getElementById('img_div').style.display = "none";
+  document.getElementById('img').style.display = "none";
+  document.getElementById('img_backgroud').style.display = "none";
+  document.getElementById('primeiro').style.opacity=1;
+  document.getElementById('segundo').style.opacity=1;
+  document.getElementById('terceiro').style.opacity=1;
+  document.getElementById('quinto').style.opacity=1;
+  document.getElementById('sexto').style.opacity=1;
+  document.getElementById('setimo').style.opacity=1;
+  document.getElementById('oitavo').style.opacity=1;
+  image = false;
+  for (var i = 0; i < 8; i++) {
+    if (i==3){
+      if(elemento == true){
+        posiçoesocupadas[3]=1;
+        console.log("true")
+      }
+    }
+    else{
+      posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+    }
+  }
+});
+
 /*Cores*/
 
 
@@ -702,7 +840,7 @@ export function text_color() {
     document.getElementById('segundo').style.opacity=0;
     document.getElementById('terceiro').style.opacity=0;
     document.getElementById('quinto').style.opacity=0;
-    document.getElementById('sexto').style.opacity=0;
+ //   document.getElementById('sexto').style.opacity=0;
     document.getElementById('setimo').style.opacity=0;
     document.getElementById('oitavo').style.opacity=0;
   }
@@ -724,4 +862,56 @@ export function text_color() {
   export function fechar(){
     document.getElementById('testes').classList.remove('active')
   }
+  export function add_image(){
+    if(document.getElementById('imagens').classList == 'active'){
+      document.getElementById('imagens').classList.remove('active')
+  }
+  else{
+    document.getElementById('imagens').classList.add('active')
+  }
+
+  }
+  export function escolha(){
+    if(document.getElementById('load_type').value == 'url_load'){
+      $('#filetag').remove();
+      $('#preview').remove();
+      document.getElementById('load_type').insertAdjacentHTML('beforebegin',
+      '<input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />');
+    }
+    
+    if(document.getElementById('load_type').value == 'pc'){
+      $('#url').remove();
+      document.getElementById('load_type').insertAdjacentHTML('beforebegin',
+      '<input type="file" id="filetag"> <img src="" id="preview">')
+  
+      var fileTag = document.getElementById("filetag"),
+      preview = document.getElementById("preview");
+      
+  fileTag.addEventListener("change", function() {
+    changeImage(this);
+  });
+  
+  function changeImage(input) {
+    var reader;
+  
+    if (input.files && input.files[0]) {
+      reader = new FileReader();
+  
+      reader.onload = function(e) {
+        preview.setAttribute('src', e.target.result);
+      }
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+      
+  
+  }
+  
+    }
+    
+     
+      
+    
+  
+    }
   //fechar e abrir menu-----------------
