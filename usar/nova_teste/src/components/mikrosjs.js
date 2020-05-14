@@ -82,6 +82,7 @@ $(function readropzone() {
   else {
     console.log("Analogico");
   }
+  //codigo= r+digital
 })
 /*drag and drop*/
 
@@ -140,7 +141,7 @@ export function background_color() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-    
+    //codigo = codigo+ /bc + currentVal/ + 
 }
 
 export function digital_color() {
