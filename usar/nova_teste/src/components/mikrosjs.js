@@ -705,4 +705,9 @@ export function cap(){
   captura= document.getElementById('valor').value;
   document.getElementById('valorescrito').innerHTML= captura;
 }
+
+export function text_size() {
+  var novo = document.getElementById('text_size').value;
+  document.getElementById('valorescrito').style.fontSize = novo + "px";
+}
 //TEXTO
