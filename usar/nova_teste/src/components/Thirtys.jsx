@@ -140,20 +140,20 @@ const Thirtys = () => {
                 <div id="dragdiv" style={{zIndex: 2}}>
               <ul id="allItems">
                 <li id="primeiro" />
-                <li id="segundo" />
-                <li id="terceiro" />
-                <li id="quarto" />
-                <li id="quinto" />
-                {/* <li id="sexto" /> */}
+                 <li id="segundo" />
+                <li id="terceiro" /> 
+                 <li id="quarto" />
+                <li id="quinto" /> 
+                <li id="sexto" />
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>
-              <ul id="Ul1">
-                <li id="setimo" />
+               <ul id="Ul1">
+                {/* <li id="setimo" />
                 <div id="oitavo1-1">
-                <li id="oitavo" />
-                </div>
-              </ul>
+                <li id="oitavo" /> */}
+                {/* </div> */}
+              </ul> 
             </div>
                 <div id="dropdiv">
                 <div className="child elementos" id="node2">

@@ -194,10 +194,10 @@ export function bar_color2(jscolor) {
 }
 
 export function text_color() {
-  var x = document.getElementById("myColor7");
+  var x = document.getElementById("myColor8");
   var currentVal = x.value;
   x.value = currentVal;
-  document.getElementById('texto').style.color =  currentVal;
+  document.getElementById('valorescrito').style.color =  currentVal;
  }
 /*Cores*/
 

@@ -95,7 +95,9 @@ const Mikros = () => {
 
                     <input type="text" id="valor" placeholder="Insira a sua mensagem.." />
                     <input type="submit" onClick={micro.cap} value="Adicionar mensagem"/>
-                    
+                    <div id="position">
+                    <input type="color" id="myColor8" defaultValue="#FFF8DC" onChange={micro.text_color}/>
+                    </div>
                     {/* <input type="button" id="btAddTextmicro" defaultValue="Add Text" className="bt" />
                     <input type="button" id="btRemoveTextmicro" defaultValue="Remove Text" className="bt" /><br /><br /> */}
                     </div>

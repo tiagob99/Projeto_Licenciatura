@@ -356,10 +356,10 @@ for(var i=0; i<8; i++) {
   matrixtext[i][7]="";
   matrixtext[i][8]="";
 }
-var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
+var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "setimo", "oitavo"]; //posiçoes
 var posiçoesocupadas = [0,0,0,0,0,0,0,0];
-for (var i=0; i<8; i++){
-  matrixtext[i][8]=id[i];
+for (var i=0; i<7; i++){
+  matrixtext[i][7]=id[i];
 }
 /*Matriz texto inicial*/
 
@@ -457,13 +457,13 @@ $(document).ready(function() {
   $('#btAddText').click(function() { //Adiciona uma caixa de texto
     var ha_posiçao_livre = false;
     var novo = 0;
-    while (posiçoesocupadas[novo]==1 && novo<8) {
+    while (posiçoesocupadas[novo]==1 && novo<7) {
       novo = novo + 1;
     }
     if(posiçoesocupadas[novo]==0){
       ha_posiçao_livre=true;
     }
-    if (Texto<8){
+    if (Texto<7){
       console.log(Texto)
       if(Texto ==3){
         elemento = true;
@@ -513,7 +513,7 @@ $(document).ready(function() {
       }
       posiçoesocupadas[novo]=1;
       $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
-      matrixtext[Texto][8]=id[novo];
+      matrixtext[Texto][7]=id[novo];
       Texto = Texto + 1;
     }
     console.log(posiçoesocupadas);
@@ -530,7 +530,7 @@ $(document).ready(function() {
       console.log("22aaa")
       Texto = Texto - 1;
       var aux1 = 0;
-      while(id[aux1]!=matrixtext[Texto][8]){
+      while(id[aux1]!=matrixtext[Texto][7]){
         aux1 = aux1+ 1;
       }
       posiçoesocupadas[aux1]=0;
@@ -541,8 +541,8 @@ $(document).ready(function() {
       matrixtext[aux1][4]="none";
       matrixtext[aux1][5]="fixa";
       matrixtext[aux1][6]="";
-      matrixtext[aux1][7]="";
-      $('#'+  matrixtext[Texto][8]).text("");
+      // matrixtext[aux1][7]="";
+      $('#'+  matrixtext[Texto][7]).text("");
     }
     else if (image==true){
       matrixtext[4][0]="none";
@@ -553,7 +553,7 @@ $(document).ready(function() {
       matrixtext[4][5]="fixa";
       matrixtext[4][6]="";
       matrixtext[4][7]="";
-      posiçoesocupadas= [1,1,1,0,1,1,1,1];
+      posiçoesocupadas= [1,1,1,0,1,1,1];
       $('#quarto').text("");
       elemento = false;
       console.log("aa33a")
