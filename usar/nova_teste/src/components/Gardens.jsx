@@ -92,7 +92,7 @@ const Gardens = () => {
                       <option value="percentagem">Percentagem</option>
                     </select>
                       <div id="tipo_timeframe">
-                      <select id="timeframe"  >
+                      <select id="timeframe" onChange={garden.troca}  >
                     <option value="10">10 Minutos</option>
                     <option value="20">20 Minutos</option>
                     <option value="30">30 Minutos</option>
@@ -102,7 +102,7 @@ const Gardens = () => {
                     </select>
                       </div>
                       <div id="tipo_percentagem">
-                      <select id="percentagem" >
+                      <select id="percentagem" onChange={garden.troca2}>
                     <option value="10">10 %</option>
                     <option value="20">20 %</option>
                     <option value="30">30 %</option>
@@ -183,6 +183,7 @@ const Gardens = () => {
       </ul>
     </div>
     <div className="watch">
+
       <div className="center_circule">
             <div id="img_div" style={{width: '30%', height: '30%', left: '57%%', top: '68%', marginTop: '-60%', marginLeft: '-23%', position: 'absolute', zIndex: 10, display: 'none'}}>
               <img id="img" src style={{width: '100%', height: '100%'}} />
@@ -192,7 +193,7 @@ const Gardens = () => {
               <img id="img_backgroud" src style={{width: '100%', height: '100%', borderRadius: '100%', display: 'none', position: 'absolute', left: '-0%', top: '-0%'}} />
 
             </div>
-        <div id="dragdiv" style={{zIndex: 2}}>
+        <div id="dragdiv" style={{zIndex: 2}} >
               <ul id="allItems">
                 <li id="primeiro" />
                 <li id="segundo" />
@@ -225,8 +226,13 @@ const Gardens = () => {
         </div>
       </div>
     </div>
+    <input type="button" onClick={garden.cod} id="alerta" value="codigo" className="cod" />
+    <p id= "codee"></p>
   </div>
+
 </div>
+
+
 
   ); 
 }

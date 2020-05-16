@@ -66,9 +66,14 @@ $(function() {
 
           if (moved==drop) {//Caso seja arrastado da direita para a esquerda
             drop = $(this).attr("id");
+            
           }
           else{ //Caso seja arrastado da esquerda para a direita
             drop = moved;
+            if(moved=="node1"){
+              concatenar('WT','Digital');}
+              else{concatenar('WT','Analogico')}
+              
           }
             $(ui.draggable).remove();
             $(this).remove();
@@ -85,9 +90,12 @@ $(function readropzone() {
   }
   else if (drop == "node1") {
     console.log("Digital");
+    
   }
   else {
     console.log("Analogico");
+    
+
   }
 })
 /*drag and drop*/
@@ -135,11 +143,21 @@ $(function timerTick() {
 export function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
   
   var novo = document.getElementById("mesage_time").value;
+  // var total;
+
   if(novo=="percentagem"){
+
+    // total= document.getElementById('percentagem').value;
+    // concatenar('TP',total);
+
   document.getElementById('tipo_timeframe').classList.remove('active');
    $("body").append(document.getElementById('tipo_percentagem').classList.add('active'));
  }
  else{
+
+  //  total= document.getElementById('timeframe').value;
+  //  concatenar('TT',total);
+
   document.getElementById('tipo_percentagem').classList.remove('active');
    $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
    
@@ -228,6 +246,8 @@ export function background_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('rect').style.backgroundColor =  currentVal;
+  
+  concatenar('BC',currentVal);
 
 }
 
@@ -236,6 +256,7 @@ export function digital_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('node1').style.color =  currentVal;
+  concatenar('DC',currentVal);
 }
 
 export function analog_hours() {
@@ -243,6 +264,7 @@ export function analog_hours() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('hour_pointer').style.stroke =  currentVal;
+  concatenar('HC',currentVal);
 }
 
 export function analog_minutes() {
@@ -250,6 +272,7 @@ export function analog_minutes() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('minute_pointer').style.stroke =  currentVal;
+  concatenar('MC',currentVal);
 }
 
 export function analog_seconds() {
@@ -257,6 +280,7 @@ export function analog_seconds() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('second_pointer').style.stroke =  currentVal;
+  concatenar('SC',currentVal);
 }
 
 export function center_circule() {
@@ -264,6 +288,7 @@ export function center_circule() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('center_dot').style.stroke =  currentVal;
+  concatenar('CC',currentVal);
 }
 
 export function text_color() {
@@ -271,6 +296,7 @@ export function text_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('texto').style.color =  currentVal;
+  concatenar('TC',currentVal);
  }
  
  
@@ -341,10 +367,14 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
   if(document.getElementById('load_type').value == 'url_load'){
     url = true
     novo = document.getElementById("url").value;
+    concatenar('TIM','URL');
+    concatenar('SRC',novo);
   }
   if(document.getElementById('load_type').value == 'pc'){
 
     novo= document.getElementById("preview").src;
+    concatenar('TIM','PC');
+    concatenar('SRC',novo);
   }
   if(document.getElementById('load_type').value == 'pc'){
 
@@ -357,7 +387,6 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
   image = true;
   
     document.getElementById("img").src = novo;
-    alert('aqui')
     document.getElementById("img_backgroud").src = novo;
     document.getElementById("img_backgroud").style.display = "initial";
     document.getElementById('img_backgroud').style.display = "initial";
@@ -594,9 +623,13 @@ $('#btRemImg').click(function() { // remove Imagem
   
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
+      concatenar('MT',novo);
       if(novo=="temporaria"){
         $("body").append(document.getElementById('mesage_time').classList.add('active'));
         $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
+
+        // var total=document.getElementById('percentagem').value;
+        // concatenar('TP', total);
         // $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
         //   '<option value="timeframe">Timeframe</option>'+
         //   '<option value="percentagem">Percentagem</option>'+
@@ -621,6 +654,8 @@ $('#btRemImg').click(function() { // remove Imagem
         
       }
     });
+
+     
     
 
     
@@ -696,6 +731,28 @@ $('#btRemImg').click(function() { // remove Imagem
       }
       console.log(posiçoesocupadas);
       console.log(matrixtext);
+
+      if(window.location.pathname === '/Gardens'){
+      if(document.getElementById('primeiro').innerHTML!=""){
+       concatenar('PP',document.getElementById('primeiro').innerHTML);}
+
+      if(document.getElementById('segundo').innerHTML!=""){
+       concatenar('PS',document.getElementById('segundo').innerHTML);}
+
+      if(document.getElementById('terceiro').innerHTML!=""){
+      concatenar('PT',document.getElementById('terceiro').innerHTML);}
+
+      if(document.getElementById('quarto').innerHTML!=""){
+       concatenar('PQ',document.getElementById('quarto').innerHTML);}
+
+      if(document.getElementById('quinto').innerHTML!=""){
+      concatenar('PQI',document.getElementById('quinto').innerHTML);}
+
+      if(document.getElementById('setimo').innerHTML!=""){
+      concatenar('PSE',document.getElementById('setimo').innerHTML);}
+
+      if(document.getElementById('oitavo').innerHTML!=""){
+      concatenar('PO',document.getElementById('oitavo').innerHTML);}}
     });
   
   
@@ -736,6 +793,26 @@ $('#btRemImg').click(function() { // remove Imagem
         elemento = false;
         console.log("aa33a")
       }
+      // if(document.getElementById('primeiro').innerHTML!=""){
+      //   concatenar('PP',document.getElementById('primeiro').innerHTML)}
+  
+      //   if(document.getElementById('segundo').innerHTML!=""){
+      //   concatenar('PS',document.getElementById('segundo').innerHTML);}
+  
+      //   if(document.getElementById('terceiro').innerHTML!=""){
+      //   concatenar('PT',document.getElementById('terceiro').innerHTML);}
+  
+      //   if(document.getElementById('quarto').innerHTML!=""){
+      //   concatenar('PQ',document.getElementById('quarto').innerHTML);}
+  
+      //   if(document.getElementById('quinto').innerHTML!=""){
+      //   concatenar('PQI',document.getElementById('quinto').innerHTML);}
+  
+      //   if(document.getElementById('setimo').innerHTML!=""){
+      //   concatenar('PSE',document.getElementById('setimo').innerHTML);}
+  
+      //   if(document.getElementById('oitavo').innerHTML!=""){
+      //   concatenar('PO',document.getElementById('oitavo').innerHTML);}
     });
   
   });
@@ -862,6 +939,7 @@ $('#btRemImg').click(function() { // remove Imagem
   export function fechar(){
     document.getElementById('testes').classList.remove('active')
   }
+
   export function add_image(){
     if(document.getElementById('imagens').classList == 'active'){
       document.getElementById('imagens').classList.remove('active')
@@ -871,8 +949,11 @@ $('#btRemImg').click(function() { // remove Imagem
   }
 
   }
+
+
   export function escolha(){
     if(document.getElementById('load_type').value == 'url_load'){
+      // concatenar('TIM','URL');
       $('#filetag').remove();
       $('#preview').remove();
       document.getElementById('load_type').insertAdjacentHTML('beforebegin',
@@ -880,6 +961,7 @@ $('#btRemImg').click(function() { // remove Imagem
     }
     
     if(document.getElementById('load_type').value == 'pc'){
+      // concatenar('TIM','PC')
       $('#url').remove();
       document.getElementById('load_type').insertAdjacentHTML('beforebegin',
       '<input type="file" id="filetag"> <img src="" id="preview">')
@@ -908,10 +990,39 @@ $('#btRemImg').click(function() { // remove Imagem
   }
   
     }
-    
-     
-      
-    
   
     }
   //fechar e abrir menu-----------------
+
+
+  //CODIGO
+  var codigo="Gardens";
+  export function concatenar(id,valor){
+    codigo=codigo + '|' + id + '|' + valor;
+  }
+
+  export function cod(){
+    document.getElementById('codee').innerHTML=codigo;
+
+    
+  }
+  //CODIGO
+
+  export function first(posicao){
+  concatenar(posicao,document.getElementById(posicao).innerHTML)
+}
+
+export function troca(){
+  var total= document.getElementById('timeframe').value;
+  concatenar('TT',total);
+
+}
+
+export function troca2(){
+  var total= document.getElementById('percentagem').value;
+  concatenar('TP',total);
+
+}
+
+
+

@@ -709,7 +709,7 @@ export function cap(){
 var removido="";
 export function remo(){
   // removido.document.getElementById('valor').value;
-  // document.getElementById('valor').innerHTML=removido;
+  document.getElementById('valor').value=removido;
   document.getElementById('valorescrito').innerHTML=removido;
 }
 

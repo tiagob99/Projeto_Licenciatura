@@ -92,7 +92,7 @@ const Mikros = () => {
                     </div>
                     <div id="position">
                     <p>Text Size/Color</p>
-                    <input id="text_size" onChange={() => micro.text_size()} type="range" min="15" max="25" name="text_si" value="16"/>
+                    <input id="text_size" onChange={() => micro.text_size()} type="range" min="15" max="25" name="text_si" defaultValue="16"/>
                     <input type="color" id="myColor8" defaultValue="#FFF8DC" onChange={micro.text_color}/>
                     </div>
                     {/* <input type="button" id="btAddTextmicro" defaultValue="Add Text" className="bt" />
