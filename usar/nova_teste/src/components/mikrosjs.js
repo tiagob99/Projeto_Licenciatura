@@ -706,6 +706,13 @@ export function cap(){
   document.getElementById('valorescrito').innerHTML= captura;
 }
 
+var removido="";
+export function remo(){
+  // removido.document.getElementById('valor').value;
+  // document.getElementById('valor').innerHTML=removido;
+  document.getElementById('valorescrito').innerHTML=removido;
+}
+
 export function text_size() {
   var novo = document.getElementById('text_size').value;
   document.getElementById('valorescrito').style.fontSize = novo + "px";

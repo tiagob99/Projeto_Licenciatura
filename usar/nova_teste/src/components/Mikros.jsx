@@ -84,17 +84,12 @@ const Mikros = () => {
                   <li id="lastelemente" className="elementos_menu_direito" onClick={micro.togglemenu4}>Attributes</li>
                   <div id="fourth_menu_hidden">
                   <div id="testesmicro">
-                     <br /><br />
-                     <br /><br />
-                     {/* <div id="posicaotexto">
-                     <div class="text">
-                        <p>Message</p>
-                        <textarea name="field5" class="tex_box" placeholder="Insert your message" rows="15" cols="45" ></textarea>
-                    </div>
-                    </div> */}
-
+                     
                     <input type="text" id="valor" placeholder="Insira a sua mensagem.." />
-                    <input type="submit" onClick={micro.cap} value="Adicionar mensagem"/>
+                    <div id="position-botao">
+                    <input type="submit" onClick={micro.cap} value="Add message"/>
+                    <input type="submit"  onClick={micro.remo} value="Remove message"/>
+                    </div>
                     <div id="position">
                     <p>Text Size/Color</p>
                     <input id="text_size" onChange={() => micro.text_size()} type="range" min="15" max="25" name="text_si" value="16"/>
