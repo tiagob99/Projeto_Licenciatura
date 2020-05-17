@@ -147,6 +147,8 @@ const Mikros = () => {
             </div>
           </div>
         </div>
+        <input type="button" onClick={micro.cod} id="alerta" value="codigo" className="cod" />
+        <p id= "codee"></p>
       </div>
     </div>
     

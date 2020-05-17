@@ -68,6 +68,10 @@ var tamanho_que_o_menu_desceu = 0;
                }
                else{  //Caso seja arrastado da esquerda para a direita
                  drop = moved;
+                 if(moved=="node1"){
+                  concatenar('WT','Digital');}
+                  else{concatenar('WT','Analogico')}      
+
                }
                $(ui.draggable).remove();
                $(this).remove();
@@ -150,48 +154,55 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-   }
+    concatenar('BC',currentVal);
+  }
 
   export function digital_color() {
     var x = document.getElementById("myColor1");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color =  currentVal;
-   }
+    concatenar('DC',currentVal);
+  }
    
    export function analog_hours() {
     var x = document.getElementById("myColor2");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('hour_pointer').style.stroke =  currentVal;
-   }
+    concatenar('HC',currentVal);
+  }
 
    export function analog_minutes() {
     var x = document.getElementById("myColor3");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('minute_pointer').style.stroke =  currentVal;
-   }
+    concatenar('MC',currentVal);
+  }
 
    export function analog_seconds() {
     var x = document.getElementById("myColor4");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('second_pointer').style.stroke =  currentVal;
-   }
+    concatenar('SC',currentVal);
+  }
 
    export function bar_color() {
     var x = document.getElementById("myColor6");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('cor_da_barra').style.stroke =  currentVal;
-   }
+    concatenar('BC1',currentVal);
+  }
 
    export function bar_color2() {
     var x = document.getElementById("myColor7");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('cor_da_barra2').style.stroke =  currentVal;
+    concatenar('BC2',currentVal);
    }
 
    export function center_circule() {
@@ -199,14 +210,16 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('center_dot').style.stroke =  currentVal;
-   }
+    concatenar('CC',currentVal);
+  }
 
    export function text_color() {
     var x = document.getElementById("myColor7");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('texto').style.color =  currentVal;
-   }
+    concatenar('TC',currentVal);
+  }
    /*Cores*/
    
    
@@ -334,6 +347,7 @@ $(document).ready(function() {
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
+    concatenar('MT',novo);
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -631,4 +645,30 @@ export function fechar(){
 }
 //fechar e abrir menu-----------------
 
-   
+
+//CODIGO
+var codigo="Thistys";
+export function concatenar(id,valor){
+  codigo=codigo + '|' + id + '|' + valor;
+}
+
+export function cod(){
+  document.getElementById('codee').innerHTML=codigo;
+
+  
+}
+//CODIGO
+
+//CODIGO-PERCENTAGEM
+export function troca(){
+  var total= document.getElementById('timeframe').value;
+  concatenar('TT',total);
+
+}
+
+export function troca2(){
+  var total= document.getElementById('percentagem').value;
+  concatenar('TP',total);
+
+}
+//CODIGO-PERCENTAGEM

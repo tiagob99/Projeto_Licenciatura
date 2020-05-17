@@ -65,6 +65,9 @@ $(function() {
           }
           else{ //Caso seja arrastado da esquerda para a direita
             drop = moved;
+            if(moved=="node1"){
+              concatenar('WT','Digital');}
+              else{concatenar('WT','Analogico')}
           }
             $(ui.draggable).remove();
             $(this).remove();
@@ -141,7 +144,8 @@ export function background_color() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-    //codigo = codigo+ /bc + currentVal/ + 
+    
+    concatenar('BC',currentVal);
 }
 
 export function digital_color() {
@@ -149,6 +153,7 @@ export function digital_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('node1').style.color =  currentVal;
+  concatenar('DC',currentVal);
 }
 
 export function analog_hours() {
@@ -156,6 +161,7 @@ export function analog_hours() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('hour_pointer').style.stroke = currentVal;
+  concatenar('HC',currentVal);
 }
 
 export function analog_minutes() {
@@ -163,6 +169,7 @@ export function analog_minutes() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('minute_pointer').style.stroke = currentVal;
+  concatenar('MC',currentVal);
 }
 
 export function analog_seconds() {
@@ -170,6 +177,7 @@ export function analog_seconds() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('second_pointer').style.stroke = currentVal;
+  concatenar('SC',currentVal);
 }
 
 export function center_circule() {
@@ -177,6 +185,7 @@ export function center_circule() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('center_dot').style.stroke = currentVal;
+  concatenar('CC',currentVal);
 }
 
 export function bar_color1() {
@@ -184,6 +193,7 @@ export function bar_color1() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('bar1').style.stroke = currentVal;
+  concatenar('B1C', currentVal);
 }
 
 export function bar_color2(jscolor) {
@@ -191,6 +201,7 @@ export function bar_color2(jscolor) {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('bar2').style.stroke = currentVal;
+  concatenar('B2C', currentVal);
 }
 
 export function text_color() {
@@ -198,7 +209,8 @@ export function text_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('valorescrito').style.color =  currentVal;
- }
+  concatenar('TC',currentVal);
+}
 /*Cores*/
 
 
@@ -718,3 +730,17 @@ export function text_size() {
   document.getElementById('valorescrito').style.fontSize = novo + "px";
 }
 //TEXTO
+
+//CODIGO
+var codigo="MiKros";
+
+export function concatenar(id,valor){
+  codigo= codigo + '|' + id + '|' + valor;
+}
+
+export function cod(){
+  document.getElementById('codee').innerHTML=codigo;
+
+  
+}
+//CODIGO

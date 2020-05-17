@@ -72,8 +72,7 @@ $(function() {
             drop = moved;
             if(moved=="node1"){
               concatenar('WT','Digital');}
-              else{concatenar('WT','Analogico')}
-              
+              else{concatenar('WT','Analogico')}           
           }
             $(ui.draggable).remove();
             $(this).remove();
@@ -1012,6 +1011,7 @@ $('#btRemImg').click(function() { // remove Imagem
   concatenar(posicao,document.getElementById(posicao).innerHTML)
 }
 
+//CODIGO-PERCENTAGEM
 export function troca(){
   var total= document.getElementById('timeframe').value;
   concatenar('TT',total);
@@ -1023,6 +1023,6 @@ export function troca2(){
   concatenar('TP',total);
 
 }
-
+//CODIGO-PERCENTAGEM
 
 

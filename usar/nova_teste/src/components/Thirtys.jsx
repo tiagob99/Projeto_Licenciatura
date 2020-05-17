@@ -90,7 +90,7 @@ const Thirtys = () => {
                       <option value="percentagem">Percentagem</option>
                     </select>
                       <div id="tipo_timeframe">
-                      <select id="timeframe"  >
+                      <select id="timeframe"  onChange={terceiro.troca}>
                     <option value="10">10 Minutos</option>
                     <option value="20">20 Minutos</option>
                     <option value="30">30 Minutos</option>
@@ -100,7 +100,7 @@ const Thirtys = () => {
                     </select>
                       </div>
                       <div id="tipo_percentagem">
-                      <select id="percentagem" >
+                      <select id="percentagem"  onChange={terceiro.troca2}>
                     <option value="10">10 %</option>
                     <option value="20">20 %</option>
                     <option value="30">30 %</option>
@@ -165,12 +165,14 @@ const Thirtys = () => {
                         <circle id="center_dot" style={{stroke: 'white', strokeWidth: '3px'}} cx={50} cy={50} r={1} />
                     </g>
                     </svg>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
-            </div>
+            <input type="button" onClick={terceiro.cod} id="alerta" value="codigo" className="cod" />
+            <p id= "codee"></p>
         </div>
-        </div>
+      </div>
 
     );
 }

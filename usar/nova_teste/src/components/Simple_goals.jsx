@@ -114,7 +114,7 @@ const Simple_goals = () => {
                       <option value="percentagem">Percentagem</option>
                     </select>
                       <div id="tipo_timeframe">
-                      <select id="timeframe"  >
+                      <select id="timeframe"  onChange={simple.troca}>
                     <option value="10">10 Minutos</option>
                     <option value="20">20 Minutos</option>
                     <option value="30">30 Minutos</option>
@@ -124,7 +124,7 @@ const Simple_goals = () => {
                     </select>
                       </div>
                       <div id="tipo_percentagem">
-                      <select id="percentagem" >
+                      <select id="percentagem"  onChange={simple.troca2}>
                     <option value="10">10 %</option>
                     <option value="20">20 %</option>
                     <option value="30">30 %</option>
@@ -196,6 +196,8 @@ const Simple_goals = () => {
               </div>
             </div>
           </div>
+          <input type="button" onClick={simple.cod} id="alerta" value="codigo" className="cod" />
+          <p id= "codee"></p>
         </div>
       </div>
       );
