@@ -968,6 +968,9 @@ input[type=text], select {
 
 
   }
+  #preview{
+    height: 150%;
+  }
 
   /*toggle btn*/
   #toggle-btn{
@@ -1062,11 +1065,23 @@ input[type=text], select {
     position: absolute;
     left: -400%;
   }
+  #imagens12{
+    position: absolute;
+    left: -400%;
+
+  }
   #imagens.active{
     height: 27%;
     left: -4%;
     margin:4%;
   }
+  #imagens12.active{
+    height: 27%;
+    left: -4%;
+    margin:4%;
+    top: 150%;
+  }
+  
   #images_2{
     position: absolute;
     left: -400%;
@@ -1074,7 +1089,7 @@ input[type=text], select {
   }
   #images_2.active{
     height: 10%;
-    top: 290%;
+    //top: 390%;
     left: -4%;
     margin:4%;
   }
@@ -1083,7 +1098,7 @@ input[type=text], select {
     left: -400%;
   }
   #images_3.active{
-    top: 380%;
+   // top: 480%;
     left: -4%;
     margin:4%;
   }

@@ -309,7 +309,9 @@ export function text_color() {
      if(document.getElementById("images_2").classList == ''){
       document.getElementById("h3_1").innerHTML = texto2 + document.getElementById("images").value + '%';
       document.getElementById("images_2").classList.add("active");
+      
       document.getElementById("images_2").defaultValue = document.getElementById("images").value;
+      
      }
      else{
        if(document.getElementById("images_2").value < document.getElementById("images").value){
@@ -324,26 +326,22 @@ export function text_color() {
        }
 
      }
-    
-    
-   }
-   else{
-    document.getElementById("h3_1").innerHTML = "";
-    document.getElementById("images_2").classList.remove("active");
-    document.getElementById("h3_2").innerHTML ="";
-    document.getElementById("images_3").classList.remove("active");
-   }
-   if(document.getElementById("images_2").value != 100){
+     if(document.getElementById("images_2").value != 100){
      
       if(document.getElementById("images_3").classList == ''){
         document.getElementById("h3_2").innerHTML = texto3 + document.getElementById("images_2").value + '%';
         document.getElementById("images_3").classList.add("active");
+       
         document.getElementById("images_3").defaultValue = document.getElementById("images_2").value;
      }
      else{
       if(document.getElementById("images_3").value < document.getElementById("images_2").value){
         if(document.getElementById("images_3").value != 100){
         document.getElementById("images_3").value = document.getElementById("images_2").value;
+        }
+        else{
+          document.getElementById("images_3").value = 100;
+          document.getElementById("h3_2").innerHTML = texto3 + '100%';
         }
       }
       else{
@@ -353,10 +351,22 @@ export function text_color() {
    
   }
    else{
+    document.getElementById("images_2").value = 100;
+    document.getElementById("h3_1").innerHTML = texto2 + '100%';
     document.getElementById("h3_2").innerHTML ="";
     document.getElementById("images_3").classList.remove("active");
 
    }
+    
+    
+   }
+   else{
+    document.getElementById("h3_1").innerHTML = "";
+    document.getElementById("images_2").classList.remove("active");
+    document.getElementById("h3_2").innerHTML = "";
+    document.getElementById("images_3").classList.remove("active");
+   }
+   
 
    
  
@@ -395,6 +405,29 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
     
 
 };
+export function tira(){
+  document.getElementById('img_div').style.display = "none";
+      document.getElementById('img').style.display = "none";
+      document.getElementById('img_backgroud').style.display = "none";
+      document.getElementById('primeiro').style.opacity=1;
+      document.getElementById('segundo').style.opacity=1;
+      document.getElementById('terceiro').style.opacity=1;
+      document.getElementById('quinto').style.opacity=1;
+      document.getElementById('setimo').style.opacity=1;
+      document.getElementById('oitavo').style.opacity=1;
+      image = false;
+      for (var i = 0; i < 7; i++) {
+        if (i==3){
+          if(elemento == true){
+            posiçoesocupadas[3]=1;
+            console.log("true")
+          }
+        }
+        else{
+          posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+        }
+      }
+}
 // $('#image_type').change(function() { // Altera o tipo de imagem
 //   if(url ==true){
 //     var novo = document.getElementById("image_type").value;
@@ -933,6 +966,13 @@ $('#btRemImg').click(function() { // remove Imagem
   //fechar e abrir menu-----------------
   export function abrir(){
     document.getElementById('testes').classList.add('active')
+    if(document.getElementById('imagens').classList == 'active'){
+
+      document.getElementById('imagens').style.top = '150%';
+    }
+    else{
+      document.getElementById('imagens').style.top = '10%';
+    }
   }
 
   export function fechar(){
@@ -944,7 +984,15 @@ $('#btRemImg').click(function() { // remove Imagem
       document.getElementById('imagens').classList.remove('active')
   }
   else{
-    document.getElementById('imagens').classList.add('active')
+    document.getElementById('imagens').classList.add('active');
+    if(document.getElementById('testes').classList == 'active'){
+
+      document.getElementById('imagens').style.top = '150%';
+    }
+    else{
+      document.getElementById('imagens').style.top = '10%';
+    }
+    
   }
 
   }
@@ -953,6 +1001,8 @@ $('#btRemImg').click(function() { // remove Imagem
   export function escolha(){
     if(document.getElementById('load_type').value == 'url_load'){
       // concatenar('TIM','URL');
+      document.getElementById('images_2').style.top = '290%';
+      document.getElementById('images_3').style.top = '390%';
       $('#filetag').remove();
       $('#preview').remove();
       document.getElementById('load_type').insertAdjacentHTML('beforebegin',
@@ -960,11 +1010,14 @@ $('#btRemImg').click(function() { // remove Imagem
     }
     
     if(document.getElementById('load_type').value == 'pc'){
+      document.getElementById('images_2').style.top = '400%';
+      document.getElementById('images_3').style.top = '490%';
       // concatenar('TIM','PC')
       $('#url').remove();
       document.getElementById('load_type').insertAdjacentHTML('beforebegin',
       '<input type="file" id="filetag"> <img src="" id="preview">')
-  
+
+      //document.getElementById('preview').style.top='150%';
       var fileTag = document.getElementById("filetag"),
       preview = document.getElementById("preview");
       

@@ -165,7 +165,7 @@ const Gardens = () => {
                       <option value="bakground">Background</option>
                     </select> */}
                     <input type="button" onClick = {garden.clica} id="btAddImg" defaultValue="Add Image" style={{marginRight: '10px'}} className="bt" />
-                    <input type="button" style={{marginTop: '10px'}} className="bt" defaultValue="Remove Image" id="btRemImg" /><br/>
+                    <input type="button" style={{marginTop: '10px'}} onClick={garden.tira} className="bt" defaultValue="Remove Image" id="btRemImg" /><br/>
                     <h4 id = "h3_"> </h4>
                       <input id="images" defaultValue="0" max="100" min = "0" onChange={() => garden.image_change()} type="range" name="i_change"/><br/>
                     <h4 id = "h3_1"> </h4>
