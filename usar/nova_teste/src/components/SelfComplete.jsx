@@ -49,7 +49,7 @@ const SelfComplete =() =>{
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_today" onChange={selfcomplete.bar_thickness_today} type="range" max={90} name="b_size" /><br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius_today" onChange={selfcomplete.bar_radius_today} type="range" name="b_radius" defaultValue={100} /><br /><br />
                     <p>Second Circle Bar</p><br />
-                    <select name="second_bar_value">
+                    <select name="second_bar_value" id='second_bar_value' onChange={selfcomplete.second_bar_value}>
                         <option value="yesterday">Yesterday</option>
                         <option value="another_ser">Another User</option>
                     </select>
@@ -70,19 +70,7 @@ const SelfComplete =() =>{
                         <option value="counterclockwise">Counterclockwise</option>
                     </select>
                     <br /><br />
-                    <div id="main" style={{height: '70px', width: '100%'}}>
-                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
-                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
-                    <p>Bar <select id="bar_color_change">
-                        <option value={0}>1</option>
-                        <option value={1}>2</option>
-                        <option value={2}>3</option>
-                        <option value={3}>4</option>
-                        <option value={4}>5</option>
-                        <option value={5}>6</option>
-                        <option value={6}>7</option>
-                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
-                  </div>
+                    
                     </div>
                     </div>
                     <div id="remaining_03">

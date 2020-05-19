@@ -46,8 +46,8 @@ const Thirtys = () => {
                     <div id="third_menu_hidden">
                     <p>Circle Bar</p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={terceiro.bar_color}/><br /><br />
                     <p>Circle Bar Active</p> <br /> <input type="color" id="myColor7" defaultValue="#FFF8DC" onChange={terceiro.bar_color2}/><br /><br />
-                    <p>Circle Bar Size </p> <br /> <input id="bar_size" onChange={terceiro.bar_thickness} type="range" name="b_size" defaultValue={100} /><br /><br />
-                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={terceiro.bar_radius} type="range" min={50} max={90} name="b_radius" defaultValue={100} /><br /><br />
+                    <p>Circle Bar Size </p> <br /> <input id="bar_size" onChange={terceiro.bar_thickness} type="range" min = {40} max={80} name="b_size" defaultValue={100} /><br /><br />
+                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={terceiro.bar_radius} type="range" min={69} max={80} name="b_radius" defaultValue='80' /><br /><br />
                     </div>
                 </div>
                 <div id="remaining_33">

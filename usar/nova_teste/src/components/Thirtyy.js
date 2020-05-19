@@ -230,14 +230,23 @@ var tamanho_que_o_menu_desceu = 0;
        novo = (novo/20)+0.1;
        document.getElementById('cor_da_barra').style.strokeWidth =  novo;
        document.getElementById('cor_da_barra2').style.strokeWidth =  novo;
+       concatenar('BT1',novo);
+       concatenar('BT2',novo);
+
    }
    
    
    export function bar_radius() {
+       var circle = document.getElementById('cor_da_barra');
+       var circle2 = document.getElementById('cor_da_barra2');
        var novo = document.getElementById('bar_radius').value;
        novo = (novo/100)*14+3;
-       document.getElementById('cor_da_barra').style.r =  novo;
-       document.getElementById('cor_da_barra2').style.r =  novo;
+       circle.setAttribute("r", novo);
+       circle2.setAttribute("r", novo);
+       concatenar('BR1',novo);
+       concatenar('BR2',novo);
+      //  document.getElementById('cor_da_barra').style.r =  novo;
+      //  document.getElementById('cor_da_barra2').style.r =  novo;
    }
    
    /*personalização*/
@@ -281,7 +290,7 @@ for(var i=0; i<8; i++) {
   matrixtext[i][8]="";
 }
 var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto"]; //posiçoes
-var posiçoesocupadas = [0,0,0,0,0];
+var posiçoesocupadas = [1,1,1,0,1];
 for (var i=0; i<5; i++){
   matrixtext[i][5]=id[i];
 }

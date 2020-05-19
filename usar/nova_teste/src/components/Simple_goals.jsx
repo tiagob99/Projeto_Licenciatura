@@ -55,23 +55,13 @@ const Simple_goals = () => {
                     </select>
                     <br /><br />
                     <p>Circle Bar Rotation </p> <br />
-                    <select name="bar_rotation" id="bar_star" onchange="update_rotation()">
+                    <select name="bar_rotation" id="bar_star" onChange={simple.update_rotation}>
                       <option value="clockwise">Clockwise</option>
                       <option value="counterclockwise">Counterclockwise</option>
                     </select>
                     <br /><br />
                     <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={simple.bar_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
-                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" />
-                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
-                    <p>Bar <select id="bar_color_change">
-                        <option value={0}>1</option>
-                        <option value={1}>2</option>
-                        <option value={2}>3</option>
-                        <option value={3}>4</option>
-                        <option value={4}>5</option>
-                        <option value={5}>6</option>
-                        <option value={6}>7</option>
-                      </select> Color <input style={{marginLeft: '10px'}} className="jscolor {onFineChange:'barcolor(this)'}" defaultValue="fff" /> </p><br /><br />
+                    
                   </div>
                   </div>
                   <div id="remaining_05">

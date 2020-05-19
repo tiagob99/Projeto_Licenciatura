@@ -1,6 +1,7 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
+import { func } from 'prop-types';
 
 
 
@@ -237,6 +238,7 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_thickness_today').value;
        novo = (novo/100)*2+0.1;
        document.getElementById('today_bar').style.strokeWidth =  novo;
+       concatenar('BT1', novo);
    }
    
    
@@ -244,11 +246,14 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_thickness_yesterday').value;
        novo = (novo/100)*2+0.1;
        document.getElementById('yesterday_bar').style.strokeWidth =  novo;
+       concatenar('BT2', novo);
    }
    
    
    export function bar_type(){
+    
      var novo = document.getElementById('bar_type').value;
+     concatenar('BTYPE',novo);
      if (novo == "full"){
        document.getElementById('today_bar').style.strokeDasharray  = "18,100"
        document.getElementById('today_bar').style.transform = "rotate(" + 270 + "deg)"
@@ -287,6 +292,7 @@ export function togglemenu4(){
    
    export function update_rotation(){
      if (right){
+      concatenar('BROT','COUNTERCLOCKWISE');
        if(position == "full"){
          var novo = degrees -180
          document.getElementById('today_bar').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -301,6 +307,7 @@ export function togglemenu4(){
        }
      }
      else {
+      concatenar('BROT','CLOCKWISE');
        document.getElementById('today_bar').style.transform = "rotate(" + degrees  + "deg) "
        document.getElementById('yesterday_bar').style.transform = "rotate(" + degrees  + "deg) "
        right = true;
@@ -311,6 +318,7 @@ export function togglemenu4(){
    export function bar_radius_today() {
        var novo = document.getElementById('bar_radius_today').value;
        novo = (novo/100)*15+1;
+       concatenar('BR1',novo);
        document.getElementById('today_bar').style.r =  novo;
        document.getElementById('today_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_today/100)+",100";
    }
@@ -319,6 +327,7 @@ export function togglemenu4(){
    export function bar_radius_yesterday() {
        var novo = document.getElementById('bar_radius_yesterday').value;
        novo = (novo/100)*15+1;
+       concatenar('BR2',novo);
        document.getElementById('yesterday_bar').style.r =  novo;
        document.getElementById('yesterday_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_yesterday/100)+",100";
    }
@@ -327,6 +336,7 @@ export function togglemenu4(){
    export function text_size() {
        var novo = document.getElementById('text_size').value;
        document.getElementById('texto').style.fontSize = novo + "px";
+       concatenar('TEXT_S',novo);
    }
    /*personalização*/
    
@@ -385,9 +395,9 @@ var image = false;
 var posiçoesocupadas_antigo;
 var elemento = false;
 function bartype(barnumber){
-  alert('bar_type'+barnumber)
+  
   var novo = document.getElementById('bar_type'+barnumber).value;
-  alert('bar_type'+barnumber);
+  
   matrix[barnumber][7] = novo;
   
   }
@@ -399,40 +409,7 @@ $(document).ready(function() {
   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
 
 
-  $('#btAdd1').click(function() { //Adiciona uma linha
-    if (Linha <= 6) {
-      $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
-      '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-      '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-      
-      document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
-      tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
-
-      $('#main').after(container);
-      $("body").append('<svg id=bardraw' + Linha + ' ' +
-      ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
-      '</svg>')
-      Linha = Linha + 1;
-      }
-  });
-
-
-  $('#btRemove1').click(function() { // Remove uma linha
-    if (Linha != 0) {
-      Linha = Linha - 1;
-      $('#baroptions' + Linha).remove();
-      $('#bardraw' + Linha).remove();
-      var novo = tamanho_que_o_menu_desceu - 450;
-      document.getElementById('lastelemente').style.marginTop = novo + "px";
-      if (Linha >= 0) {
-        tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
-      }
-    }
-  });
+  // 
 
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
@@ -441,18 +418,6 @@ $(document).ready(function() {
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
-      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-      //   '<option value="timeframe">Timeframe</option>'+
-      //   '<option value="percentagem">Percentagem</option>'+
-      // '</select>'+
-      // '<select id="timeframe" style="margin-left:10px;">'+
-      // '<option value="10">10 Minutos</option>'+
-      // '<option value="20">20 Minutos</option>'+
-      // '<option value="30">30 Minutos</option>'+
-      // '<option value="40">40 Minutos</option>'+
-      // '<option value="50">50 Minutos</option>'+
-      // '<option value="60">60 Minutos</option>'+
-      // '</select>').insertAfter('#mesage_type')
     }
     else{
       $("body").append(document.getElementById('mesage_time').classList.remove('active'));
@@ -764,3 +729,11 @@ export function troca2(){
 
 }
 //CODIGO-PERCENTAGEM
+export function second_bar_value(){
+  if(document.getElementById('second_bar_value').value == 'yesterday'){
+    concatenar('SBV','YESTERDAY');
+  }
+  else{
+    concatenar('SBV','OTHER');
+  }
+}

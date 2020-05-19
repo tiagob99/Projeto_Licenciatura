@@ -62,12 +62,13 @@ $(function() {
 
           if (moved==drop) {//Caso seja arrastado da direita para a esquerda
             drop = $(this).attr("id");
-          }
-          else{ //Caso seja arrastado da esquerda para a direita
-            drop = moved;
             if(moved=="node1"){
               concatenar('WT','Digital');}
               else{concatenar('WT','Analogico')}
+          }
+          else{ //Caso seja arrastado da esquerda para a direita
+            drop = moved;
+            
           }
             $(ui.draggable).remove();
             $(this).remove();
@@ -80,9 +81,11 @@ $(function() {
 
 $(function readropzone() {
   if (drop == "node1") {
+    concatenar('WT','Analogico');
     console.log("Digital");
   }
   else {
+    concatenar('WT','Digital');
     console.log("Analogico");
   }
   //codigo= r+digital
@@ -196,7 +199,7 @@ export function bar_color1() {
   concatenar('B1C', currentVal);
 }
 
-export function bar_color2(jscolor) {
+export function bar_color2() {
   var x = document.getElementById("myColor7");
   var currentVal = x.value;
   x.value = currentVal;
@@ -234,6 +237,8 @@ export function bars_radius() {
     document.getElementById('bar1').style.strokeDasharray = (2*3.1415*raio1)*(tamanho_barra1/100)+",100";
     document.getElementById('bar2').style.r =  raio2;
     document.getElementById('bar2').style.strokeDasharray = (2*3.1415*raio2)*(tamanho_barra2/100)+",100";
+    concatenar('BR1',raio1);
+    concatenar('BR2',raio2);
 }
 
 
@@ -241,6 +246,7 @@ export function bar_thickness_1() {
     var novo = document.getElementById('bar_size1').value;
     novo = (novo/100)*2+0.2;
     document.getElementById('bar1').style.strokeWidth =  novo;
+    concatenar('BT1',novo);
 }
 
 
@@ -248,11 +254,13 @@ export function bar_thickness_2() {
     var novo = document.getElementById('bar_size2').value;
     novo = (novo/100)*2+0.2;
     document.getElementById('bar2').style.strokeWidth =  novo;
+    concatenar('BT2',novo);
 }
 
 
 export function bar_type(){
   var novo = document.getElementById('bar_type').value;
+  concatenar('BTYPE',novo);
   if (novo == "full"){
     document.getElementById('bar2').style.strokeDasharray  = "30,100"
     document.getElementById('bar2').style.transform = "rotate(" + 270 + "deg)"
@@ -290,7 +298,9 @@ export function bar_type(){
 
 
 export function update_rotation(){
+  
   if (right){
+    concatenar('BROT','COUNTERCLOCKWISE');
     if(position == "full"){
       var novo = degrees -180
       document.getElementById('bar2').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -305,6 +315,7 @@ export function update_rotation(){
     }
   }
   else {
+    concatenar('BROT','CLOCKWISE');
     document.getElementById('bar2').style.transform = "rotate(" + degrees  + "deg) "
     document.getElementById('bar1').style.transform = "rotate(" + degrees  + "deg) "
     right = true;
@@ -716,6 +727,7 @@ var captura="";
 export function cap(){
   captura= document.getElementById('valor').value;
   document.getElementById('valorescrito').innerHTML= captura;
+  concatenar('TEXT',captura);
 }
 
 var removido="";
@@ -723,11 +735,15 @@ export function remo(){
   // removido.document.getElementById('valor').value;
   document.getElementById('valor').value=removido;
   document.getElementById('valorescrito').innerHTML=removido;
+  concatenar('TEXT',removido);
+
 }
 
 export function text_size() {
   var novo = document.getElementById('text_size').value;
   document.getElementById('valorescrito').style.fontSize = novo + "px";
+  concatenar('TEXT_S',novo);
+
 }
 //TEXTO
 
@@ -740,7 +756,9 @@ export function concatenar(id,valor){
 
 export function cod(){
   document.getElementById('codee').innerHTML=codigo;
-
   
+  
+
+
 }
 //CODIGO
