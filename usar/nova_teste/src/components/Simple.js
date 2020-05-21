@@ -438,6 +438,28 @@ $(document).ready(function() {
     }
     console.log(posiçoesocupadas);
     console.log(matrixtext);
+
+    if(document.getElementById('oitavo').innerHTML!=""){
+      concatenar('PO',document.getElementById('oitavo').innerHTML);}
+
+     else if(document.getElementById('setimo').innerHTML!=""){
+      concatenar('PSE',document.getElementById('setimo').innerHTML);}
+
+     else if(document.getElementById('quinto').innerHTML!=""){
+     concatenar('PQI',document.getElementById('quinto').innerHTML);}
+
+     else if(document.getElementById('quarto').innerHTML!=""){
+      concatenar('PQ',document.getElementById('quarto').innerHTML);}
+
+     else if(document.getElementById('terceiro').innerHTML!=""){
+      concatenar('PT',document.getElementById('terceiro').innerHTML);}
+
+     else if(document.getElementById('segundo').innerHTML!=""){
+     concatenar('PS',document.getElementById('segundo').innerHTML);}
+
+     else if(document.getElementById('primeiro').innerHTML!=""){
+       concatenar('PP',document.getElementById('primeiro').innerHTML);}
+
   });
 
 

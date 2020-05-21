@@ -764,27 +764,27 @@ $('#btRemImg').click(function() { // remove Imagem
       console.log(posiçoesocupadas);
       console.log(matrixtext);
 
-      if(window.location.pathname === '/Gardens'){
-      if(document.getElementById('primeiro').innerHTML!=""){
-       concatenar('PP',document.getElementById('primeiro').innerHTML);}
+     
+      // if(document.getElementById('oitavo').innerHTML!=""){
+      //  concatenar('PO',document.getElementById('oitavo').innerHTML);}
 
-      if(document.getElementById('segundo').innerHTML!=""){
-       concatenar('PS',document.getElementById('segundo').innerHTML);}
+      // else if(document.getElementById('setimo').innerHTML!=""){
+      //  concatenar('PSE',document.getElementById('setimo').innerHTML);}
 
-      if(document.getElementById('terceiro').innerHTML!=""){
-      concatenar('PT',document.getElementById('terceiro').innerHTML);}
+      // else if(document.getElementById('quinto').innerHTML!=""){
+      // concatenar('PQI',document.getElementById('quinto').innerHTML);}
 
-      if(document.getElementById('quarto').innerHTML!=""){
-       concatenar('PQ',document.getElementById('quarto').innerHTML);}
+      // else if(document.getElementById('quarto').innerHTML!=""){
+      //  concatenar('PQ',document.getElementById('quarto').innerHTML);}
 
-      if(document.getElementById('quinto').innerHTML!=""){
-      concatenar('PQI',document.getElementById('quinto').innerHTML);}
+      // else if(document.getElementById('terceiro').innerHTML!=""){
+      //  concatenar('PT',document.getElementById('terceiro').innerHTML);}
 
-      if(document.getElementById('setimo').innerHTML!=""){
-      concatenar('PSE',document.getElementById('setimo').innerHTML);}
+      // else if(document.getElementById('segundo').innerHTML!=""){
+      // concatenar('PS',document.getElementById('segundo').innerHTML);}
 
-      if(document.getElementById('oitavo').innerHTML!=""){
-      concatenar('PO',document.getElementById('oitavo').innerHTML);}}
+      // else if(document.getElementById('primeiro').innerHTML!=""){
+      //   concatenar('PP',document.getElementById('primeiro').innerHTML);}
     });
   
   
@@ -1051,6 +1051,10 @@ $('#btRemImg').click(function() { // remove Imagem
   var codigo="Gardens";
   export function concatenar(id,valor){
     codigo=codigo + '|' + id + '|' + valor;
+  }
+
+  export function concatenaraux(){
+
   }
 
   export function cod(){
