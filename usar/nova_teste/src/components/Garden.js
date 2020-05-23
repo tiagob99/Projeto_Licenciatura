@@ -748,13 +748,13 @@ $('#btRemImg').click(function() { // remove Imagem
           variable_text2 = "";
         }
         if (variable_text!=""){
-          variable_text = document.getElementById("first_variable").value;
+          variable_text = "1290";
         }
         if (variable_text1!=""){
-          variable_text1 = document.getElementById("first_variable").value;
+          variable_text1 = "1290";
         }
         if (variable_text2!=""){
-          variable_text2 = document.getElementById("first_variable").value;
+          variable_text2 = "1290";
         }
         posiçoesocupadas[novo]=1;
         $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
@@ -763,28 +763,28 @@ $('#btRemImg').click(function() { // remove Imagem
       }
       console.log(posiçoesocupadas);
       console.log(matrixtext);
-
-     
-      // if(document.getElementById('oitavo').innerHTML!=""){
-      //  concatenar('PO',document.getElementById('oitavo').innerHTML);}
-
-      // else if(document.getElementById('setimo').innerHTML!=""){
-      //  concatenar('PSE',document.getElementById('setimo').innerHTML);}
-
-      // else if(document.getElementById('quinto').innerHTML!=""){
-      // concatenar('PQI',document.getElementById('quinto').innerHTML);}
-
-      // else if(document.getElementById('quarto').innerHTML!=""){
-      //  concatenar('PQ',document.getElementById('quarto').innerHTML);}
-
-      // else if(document.getElementById('terceiro').innerHTML!=""){
-      //  concatenar('PT',document.getElementById('terceiro').innerHTML);}
-
-      // else if(document.getElementById('segundo').innerHTML!=""){
-      // concatenar('PS',document.getElementById('segundo').innerHTML);}
-
-      // else if(document.getElementById('primeiro').innerHTML!=""){
-      //   concatenar('PP',document.getElementById('primeiro').innerHTML);}
+  
+      if(document.getElementById('oitavo').innerHTML!=""){
+        concatenar('PO',document.getElementById('oitavo').innerHTML);}
+  
+       else if(document.getElementById('setimo').innerHTML!=""){
+        concatenar('PSE',document.getElementById('setimo').innerHTML);}
+  
+       else if(document.getElementById('quinto').innerHTML!=""){
+       concatenar('PQI',document.getElementById('quinto').innerHTML);}
+  
+       else if(document.getElementById('quarto').innerHTML!=""){
+        concatenar('PQ',document.getElementById('quarto').innerHTML);}
+  
+       else if(document.getElementById('terceiro').innerHTML!=""){
+        concatenar('PT',document.getElementById('terceiro').innerHTML);}
+  
+       else if(document.getElementById('segundo').innerHTML!=""){
+       concatenar('PS',document.getElementById('segundo').innerHTML);}
+  
+       else if(document.getElementById('primeiro').innerHTML!=""){
+         concatenar('PP',document.getElementById('primeiro').innerHTML);}
+  
     });
   
   

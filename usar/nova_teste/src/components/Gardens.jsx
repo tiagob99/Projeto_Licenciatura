@@ -119,7 +119,7 @@ const Gardens = () => {
                      <br />
                     
                     <br />
-                    <input type="button" id="btAddText" onClick = {garden.tempo} defaultValue="Add Fixed Text" className="bt"  />
+                    <input type="button" id="btAddText"  defaultValue="Add Fixed Text" className="bt"  />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
 
                    
