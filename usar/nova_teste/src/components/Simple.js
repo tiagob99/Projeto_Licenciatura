@@ -65,8 +65,8 @@ export function togglemenu(){
                else{ //Caso seja arrastado da esquerda para a direita
                  drop = moved;
                  if(moved=="node1"){
-                  concatenar('WT','Digital');}
-                  else{concatenar('WT','Analogico')} 
+                  verifica('WT','Digital');}
+                  else{verifica('WT','Analogico')} 
                }
                $(ui.draggable).remove();
                $(this).remove();
@@ -147,7 +147,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-    concatenar('BC',currentVal);
+    verifica('BC',currentVal);
   }
 
    export function digital_color() {
@@ -155,7 +155,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color =  currentVal;
-    concatenar('DC',currentVal);
+    verifica('DC',currentVal);
    }
 
    export function analog_hours() {
@@ -163,7 +163,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('hour_pointer').style.stroke =  currentVal;
-    concatenar('HC',currentVal);
+    verifica('HC',currentVal);
   }
 
    export function analog_minutes() {
@@ -171,7 +171,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('minute_pointer').style.stroke =  currentVal;
-    concatenar('MC',currentVal);
+    verifica('MC',currentVal);
   }
 
    export function analog_seconds() {
@@ -179,7 +179,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('second_pointer').style.stroke =  currentVal;
-    concatenar('SC',currentVal);
+    verifica('SC',currentVal);
   }
 
    export function bar_color() {
@@ -187,7 +187,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('bar').style.stroke =  currentVal;
-    concatenar('BarC',currentVal);
+    verifica('BarC',currentVal);
    }
 
    export function center_circule() {
@@ -195,7 +195,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('center_dot').style.stroke =  currentVal;
-    concatenar('CC',currentVal);
+    verifica('CC',currentVal);
   }
    
    export function text_color() {
@@ -203,7 +203,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('texto').style.color =  currentVal;
-    concatenar('TC',currentVal);
+    verifica('TC',currentVal);
    }
    /*Cores*/
    
@@ -218,13 +218,13 @@ $(function clock(){setInterval(() => {
        var novo = document.getElementById('bar_thickness').value;
        novo = (novo/100)*2+0.1;
        document.getElementById('bar').style.strokeWidth =  novo;
-       concatenar('BT1',novo);
+       verifica('BT1',novo);
    }
    
    
    export function bar_type() {
        var novo = document.getElementById('bar_type').value;
-       concatenar('BTYPE',novo);
+       verifica('BTYPE',novo);
        if (novo == "full"){
          document.getElementById('bar').style.strokeDasharray  = "101,100"
          tamanho_barra = 101;
@@ -250,17 +250,17 @@ $(function clock(){setInterval(() => {
        raio = novo;
        document.getElementById('bar').style.r =  novo;
        document.getElementById('bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra/100)+",100";
-       concatenar('BR1',raio);
+       verifica('BR1',raio);
       }
    
    
   export function update_rotation (){
        if (right){
-        concatenar('BROT','COUNTERCLOCKWISE');
+        verifica('BROT','COUNTERCLOCKWISE');
          right = false;
        }
        else {
-        concatenar('BROT','CLOCKWISE');
+        verifica('BROT','CLOCKWISE');
          right = true;
        }
    }
@@ -344,7 +344,7 @@ $(document).ready(function() {
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
-    concatenar('MT',novo);
+    verifica('MT',novo);
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -440,25 +440,25 @@ $(document).ready(function() {
     console.log(matrixtext);
 
     if(document.getElementById('oitavo').innerHTML!=""){
-      concatenar('PO',document.getElementById('oitavo').innerHTML);}
+      verifica('PO',document.getElementById('oitavo').innerHTML);}
 
      else if(document.getElementById('setimo').innerHTML!=""){
-      concatenar('PSE',document.getElementById('setimo').innerHTML);}
+      verifica('PSE',document.getElementById('setimo').innerHTML);}
 
      else if(document.getElementById('quinto').innerHTML!=""){
-     concatenar('PQI',document.getElementById('quinto').innerHTML);}
+     verifica('PQI',document.getElementById('quinto').innerHTML);}
 
      else if(document.getElementById('quarto').innerHTML!=""){
-      concatenar('PQ',document.getElementById('quarto').innerHTML);}
+      verifica('PQ',document.getElementById('quarto').innerHTML);}
 
      else if(document.getElementById('terceiro').innerHTML!=""){
-      concatenar('PT',document.getElementById('terceiro').innerHTML);}
+      verifica('PT',document.getElementById('terceiro').innerHTML);}
 
      else if(document.getElementById('segundo').innerHTML!=""){
-     concatenar('PS',document.getElementById('segundo').innerHTML);}
+     verifica('PS',document.getElementById('segundo').innerHTML);}
 
      else if(document.getElementById('primeiro').innerHTML!=""){
-       concatenar('PP',document.getElementById('primeiro').innerHTML);}
+       verifica('PP',document.getElementById('primeiro').innerHTML);}
 
   });
 
@@ -667,12 +667,32 @@ export function fechar(){
 
 //CODIGO
 var codigo="SimpleC";
+var array_codigo=["SIMPLE"];
+
 export function concatenar(id,valor){
-  codigo=codigo + '|' + id + '|' + valor;
+  // codigo=codigo + '|' + id + '|' + valor;
+  array_codigo.push(id,valor);
+}
+
+function verifica(id, valor){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i+1] = valor;
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+  concatenar(id, valor);
+
 }
 
 export function cod(){
-  document.getElementById('codee').innerHTML=codigo;
+  document.getElementById('codee').innerHTML=array_codigo;
 
   
 }
@@ -681,13 +701,13 @@ export function cod(){
 //CODIGO-PERCENTAGEM
 export function troca(){
   var total= document.getElementById('timeframe').value;
-  concatenar('TT',total);
+  verifica('TT',total);
 
 }
 
 export function troca2(){
   var total= document.getElementById('percentagem').value;
-  concatenar('TP',total);
+  verifica('TP',total);
 
 }
 //CODIGO-PERCENTAGEM
