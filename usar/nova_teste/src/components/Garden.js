@@ -245,8 +245,8 @@ export function background_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('rect').style.backgroundColor =  currentVal;
-  
-  concatenar('BC',currentVal);
+  verifica('BC',currentVal);
+  //concatenar('BC',currentVal);
 
 }
 
@@ -255,7 +255,8 @@ export function digital_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('node1').style.color =  currentVal;
-  concatenar('DC',currentVal);
+  verifica('DC',currentVal);
+  //concatenar('DC',currentVal);
 }
 
 export function analog_hours() {
@@ -1049,17 +1050,93 @@ $('#btRemImg').click(function() { // remove Imagem
 
   //CODIGO
   var codigo="Gardens";
+   var array_codigo=["GARDENS"];
+  // var array_codigo= [];
+  
   export function concatenar(id,valor){
-    codigo=codigo + '|' + id + '|' + valor;
-  }
+    //codigo=codigo + '|' + id + '|' + valor;
+    //
 
-  export function concatenaraux(){
+   array_codigo.push(id,valor);
+    
+    
+  }
+  function verifica(id, valor){
+    var i = 0;
+    while(i<array_codigo.length-1){
+      if(id==array_codigo[i]){
+        array_codigo[i+1] = valor;
+        i++;
+        return 0;
+      }
+      else{
+        i++;
+      }
+     
+    }
+    concatenar(id, valor);
 
   }
+  var aux_array_codigo=[];
+ 
+  // export function concatenaraux(){
+  //   alert(aux_array_codigo)
+  //   var i = array_codigo.length-1;
+  //   var j = 0;
+  //   // for(var i=0; i>2; i++){
+  //   //   alert('aqui');
+  //     while(i>0){
+  //       if(aux_array_codigo.length == 0){
+  //         aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
+  //       }
+  //       else{
+  //         //alert(aux_array_codigo.length);
+  //         while(j<aux_array_codigo.length){
+            
+  //           j++;
+  //          alert(array_codigo[i-1])
+  //           alert(aux_array_codigo[j-1])
+  //           if(array_codigo[i-1] == aux_array_codigo[j-1]){
+  //             alert('aqui');
+
+  //             aux_array_codigo.splice(1,2,array_codigo[i]);
+  //             //aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
+  //             j=aux_array_codigo.length;
+              
+  //           }
+  //           else if(array_codigo[i-1] != aux_array_codigo[j-1]){
+              
+  //           }
+  //           else{
+  //             alert('aui')
+  //             aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
+  //           }
+            
+              
+          
+            
+            
+  //         }
+          
+          
+  //       }
+  //     i=i-2;
+  //   }
+      
+      
+  //   // }
+  //   //alert(array_codigo);
+  //   //array_codigo = aux_array_codigo;
+  //   //alert(array_codigo);
+  // }
 
   export function cod(){
-    document.getElementById('codee').innerHTML=codigo;
+    
+    // concatenaraux();
 
+    document.getElementById('codee').innerHTML=array_codigo;
+    // document.getElementById('codee').innerHTML=codigo;
+    
     
   }
   //CODIGO
