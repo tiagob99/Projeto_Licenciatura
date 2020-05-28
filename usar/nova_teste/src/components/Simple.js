@@ -187,7 +187,7 @@ $(function clock(){setInterval(() => {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('bar').style.stroke =  currentVal;
-    verifica('BarC',currentVal);
+    verifica('BC1',currentVal);
    }
 
    export function center_circule() {

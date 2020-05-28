@@ -333,11 +333,11 @@ export function togglemenu4(){
    }
    
    
-   export function text_size() {
-       var novo = document.getElementById('text_size').value;
-       document.getElementById('texto').style.fontSize = novo + "px";
-          verifica('TEXT_S',novo);
-   }
+  //  export function text_size() {
+  //      var novo = document.getElementById('text_size').value;
+  //      document.getElementById('texto').style.fontSize = novo + "px";
+  //         verifica('TEXT_S',novo);
+  //  }
    /*personalização*/
    
 
