@@ -71,8 +71,8 @@ $(function() {
           else{ //Caso seja arrastado da esquerda para a direita
             drop = moved;
             if(moved=="node1"){
-              concatenar('WT','Digital');}
-              else{concatenar('WT','Analogico')}           
+              verifica('WT','Digital');}
+              else{verifica('WT','Analogico')}           
           }
             $(ui.draggable).remove();
             $(this).remove();
@@ -264,7 +264,7 @@ export function analog_hours() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('hour_pointer').style.stroke =  currentVal;
-  concatenar('HC',currentVal);
+  verifica('HC',currentVal);
 }
 
 export function analog_minutes() {
@@ -272,7 +272,7 @@ export function analog_minutes() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('minute_pointer').style.stroke =  currentVal;
-  concatenar('MC',currentVal);
+  verifica('MC',currentVal);
 }
 
 export function analog_seconds() {
@@ -280,7 +280,7 @@ export function analog_seconds() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('second_pointer').style.stroke =  currentVal;
-  concatenar('SC',currentVal);
+  verifica('SC',currentVal);
 }
 
 export function center_circule() {
@@ -288,7 +288,7 @@ export function center_circule() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('center_dot').style.stroke =  currentVal;
-  concatenar('CC',currentVal);
+  verifica('CC',currentVal);
 }
 
 export function text_color() {
@@ -296,7 +296,7 @@ export function text_color() {
   var currentVal = x.value;
   x.value = currentVal;
   document.getElementById('texto').style.color =  currentVal;
-  concatenar('TC',currentVal);
+  verifica('TC',currentVal);
  }
  
  
@@ -377,14 +377,14 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
   if(document.getElementById('load_type').value == 'url_load'){
     url = true
     novo = document.getElementById("url").value;
-    concatenar('TIM','URL');
-    concatenar('SRC',novo);
+    verifica('TIM','URL');
+    verifica('SRC',novo);
   }
   if(document.getElementById('load_type').value == 'pc'){
 
     novo= document.getElementById("preview").src;
-    concatenar('TIM','PC');
-    concatenar('SRC',novo);
+    verifica('TIM','PC');
+    verifica('SRC',novo);
   }
   if(document.getElementById('load_type').value == 'pc'){
 
@@ -484,72 +484,6 @@ $('#btRemImg').click(function() { // remove Imagem
 // const popup=document.querySelector('.aqui');
 // popup.addEventListener('click', () => inicia('pop-up-prom'));
 /*POP-UP--------------antigo--*/  
-
-//MODAL+++++++++++++++++++++++++++++++++++++++++++++
-
-
-// Modal.setAppElement('#main');
-
-// class ExampleApp extends React.Component {
-//   constructor () {
-//     super();
-//     this.state = {
-//       showModal: false
-//     };
-    
-//     this.handleOpenModal = this.handleOpenModal.bind(this);
-//     this.handleCloseModal = this.handleCloseModal.bind(this);
-//   }
-  
-//   handleOpenModal () {
-//     this.setState({ showModal: true });
-//   }
-  
-//   handleCloseModal () {
-//     this.setState({ showModal: false });
-//   }
-  
-//   render () {
-//     return (
-//       <div>
-//         <button onClick={this.handleOpenModal}>Trigger Modal</button>
-//         <Modal 
-//            isOpen={this.state.showModal}
-//            contentLabel="onRequestClose Example"
-//            onRequestClose={this.handleCloseModal}
-//         >
-//           <p>Modal text!</p>
-//           <button onClick={this.handleCloseModal}>Close Modal</button>
-//         </Modal>
-//       </div>
-//     );
-//   }
-// }
-
-// const props = {};
-
-// ReactDOM.render(<ExampleApp {...props} />, document.getElementById('main'))
-
-
-//MODAL+++++++++++++++++++++++++++++++++++++++++++++
-
-//modal 2.0---------------------------------------
-// Modal.setAppElement('#root')
-// function pop(){
-//   const [modalIsOpen,setModalIsOpen]= useState(false)
-//   return(
-//     <div className="pop">
-//       <button onClick={() => setModalIsOpen(true)}>Open</button>
-//       <Modal isOpen={modalIsOpen}>
-//         <h2>Titulo</h2>
-//         <p>Cuidado</p>
-//       </Modal>
-//     </div>
-//   );
-// }
-// export default pop;
-//modal 2.0---------------------------------------
-
 
  //  Texto------------------------------------------
   /*vetores cores iniciais*/
@@ -656,7 +590,7 @@ $('#btRemImg').click(function() { // remove Imagem
   
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
       var novo = document.getElementById("mesage_type").value;
-      concatenar('MT',novo);
+      verifica('MT',novo);
       if(novo=="temporaria"){
         $("body").append(document.getElementById('mesage_time').classList.add('active'));
         $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -749,13 +683,13 @@ $('#btRemImg').click(function() { // remove Imagem
           variable_text2 = "";
         }
         if (variable_text!=""){
-          variable_text = document.getElementById("first_variable").value;
+          variable_text = "1290";
         }
         if (variable_text1!=""){
-          variable_text1 = document.getElementById("first_variable").value;
+          variable_text1 = "1290";
         }
         if (variable_text2!=""){
-          variable_text2 = document.getElementById("first_variable").value;
+          variable_text2 = "1290";
         }
         posiçoesocupadas[novo]=1;
         $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
@@ -764,28 +698,28 @@ $('#btRemImg').click(function() { // remove Imagem
       }
       console.log(posiçoesocupadas);
       console.log(matrixtext);
-
-     
-      // if(document.getElementById('oitavo').innerHTML!=""){
-      //  concatenar('PO',document.getElementById('oitavo').innerHTML);}
-
-      // else if(document.getElementById('setimo').innerHTML!=""){
-      //  concatenar('PSE',document.getElementById('setimo').innerHTML);}
-
-      // else if(document.getElementById('quinto').innerHTML!=""){
-      // concatenar('PQI',document.getElementById('quinto').innerHTML);}
-
-      // else if(document.getElementById('quarto').innerHTML!=""){
-      //  concatenar('PQ',document.getElementById('quarto').innerHTML);}
-
-      // else if(document.getElementById('terceiro').innerHTML!=""){
-      //  concatenar('PT',document.getElementById('terceiro').innerHTML);}
-
-      // else if(document.getElementById('segundo').innerHTML!=""){
-      // concatenar('PS',document.getElementById('segundo').innerHTML);}
-
-      // else if(document.getElementById('primeiro').innerHTML!=""){
-      //   concatenar('PP',document.getElementById('primeiro').innerHTML);}
+  
+      if(document.getElementById('oitavo').innerHTML!=""){
+        verifica('PO',document.getElementById('oitavo').innerHTML);}
+  
+       else if(document.getElementById('setimo').innerHTML!=""){
+        verifica('PSE',document.getElementById('setimo').innerHTML);}
+  
+       else if(document.getElementById('quinto').innerHTML!=""){
+       verifica('PQI',document.getElementById('quinto').innerHTML);}
+  
+       else if(document.getElementById('quarto').innerHTML!=""){
+        verifica('PQ',document.getElementById('quarto').innerHTML);}
+  
+       else if(document.getElementById('terceiro').innerHTML!=""){
+        verifica('PT',document.getElementById('terceiro').innerHTML);}
+  
+       else if(document.getElementById('segundo').innerHTML!=""){
+        verifica('PS',document.getElementById('segundo').innerHTML);}
+  
+       else if(document.getElementById('primeiro').innerHTML!=""){
+        verifica('PP',document.getElementById('primeiro').innerHTML);}
+  
     });
   
   
@@ -1152,19 +1086,19 @@ $('#btRemImg').click(function() { // remove Imagem
   //CODIGO
 
   export function first(posicao){
-  concatenar(posicao,document.getElementById(posicao).innerHTML)
+  verifica(posicao,document.getElementById(posicao).innerHTML)
 }
 
 //CODIGO-PERCENTAGEM
 export function troca(){
   var total= document.getElementById('timeframe').value;
-  concatenar('TT',total);
+  verifica('TT',total);
 
 }
 
 export function troca2(){
   var total= document.getElementById('percentagem').value;
-  concatenar('TP',total);
+  verifica('TP',total);
 
 }
 //CODIGO-PERCENTAGEM

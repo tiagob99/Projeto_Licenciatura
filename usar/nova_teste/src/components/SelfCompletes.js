@@ -70,8 +70,8 @@ export function togglemenu4(){
              else{ //Caso seja arrastado da esquerda para a direita
                drop = moved;
                if(moved=="node1"){
-                concatenar('WT','Digital');}
-                else{concatenar('WT','Analogico')}   
+                  verifica('WT','Digital');}
+                else  {verifica('WT','Analogico')}   
              }
                $(ui.draggable).remove();
                $(this).remove();
@@ -155,7 +155,7 @@ export function togglemenu4(){
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-    concatenar('BC',currentVal);
+      verifica('BC',currentVal);
  
   }
 
@@ -164,7 +164,7 @@ export function togglemenu4(){
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color =  currentVal;
-    concatenar('DC',currentVal);
+      verifica('DC',currentVal);
   }
 
     export function analog_hours() {
@@ -172,7 +172,7 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('hour_pointer').style.stroke =  currentVal;
-      concatenar('HC',currentVal);
+        verifica('HC',currentVal);
     }
 
     export function analog_minutes() {
@@ -180,7 +180,7 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('minute_pointer').style.stroke =  currentVal;   
-      concatenar('MC',currentVal);
+        verifica('MC',currentVal);
     }
 
     export function analog_seconds() {
@@ -188,7 +188,7 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('second_pointer').style.stroke =  currentVal;
-      concatenar('SC',currentVal);
+        verifica('SC',currentVal);
     }
 
     export function center_circule() {
@@ -196,7 +196,7 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('center_dot').style.stroke =  currentVal;
-      concatenar('CC',currentVal);
+        verifica('CC',currentVal);
     }
    
     export function text_color() {
@@ -204,7 +204,7 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('aqui').style.color =  currentVal;
-      concatenar('TC',currentVal);
+        verifica('TC',currentVal);
     }
   
     export function line_color_today() {
@@ -212,14 +212,14 @@ export function togglemenu4(){
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('today_bar').style.stroke =  currentVal;
-      concatenar('TBC', currentVal);
+        verifica('TBC', currentVal);
     }
     export function line_color_yesterday() {
       var x = document.getElementById("myColor7");
       var currentVal = x.value;
       x.value = currentVal;
       document.getElementById('yesterday_bar').style.stroke =  currentVal;
-      concatenar('YBC', currentVal);
+        verifica('YBC', currentVal);
     }
    /*Cores*/
    
@@ -238,7 +238,7 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_thickness_today').value;
        novo = (novo/100)*2+0.1;
        document.getElementById('today_bar').style.strokeWidth =  novo;
-       concatenar('BT1', novo);
+          verifica('BT1', novo);
    }
    
    
@@ -246,14 +246,14 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_thickness_yesterday').value;
        novo = (novo/100)*2+0.1;
        document.getElementById('yesterday_bar').style.strokeWidth =  novo;
-       concatenar('BT2', novo);
+          verifica('BT2', novo);
    }
    
    
    export function bar_type(){
     
      var novo = document.getElementById('bar_type').value;
-     concatenar('BTYPE',novo);
+        verifica('BTYPE',novo);
      if (novo == "full"){
        document.getElementById('today_bar').style.strokeDasharray  = "18,100"
        document.getElementById('today_bar').style.transform = "rotate(" + 270 + "deg)"
@@ -292,7 +292,7 @@ export function togglemenu4(){
    
    export function update_rotation(){
      if (right){
-      concatenar('BROT','COUNTERCLOCKWISE');
+        verifica('BROT','COUNTERCLOCKWISE');
        if(position == "full"){
          var novo = degrees -180
          document.getElementById('today_bar').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -307,7 +307,7 @@ export function togglemenu4(){
        }
      }
      else {
-      concatenar('BROT','CLOCKWISE');
+        verifica('BROT','CLOCKWISE');
        document.getElementById('today_bar').style.transform = "rotate(" + degrees  + "deg) "
        document.getElementById('yesterday_bar').style.transform = "rotate(" + degrees  + "deg) "
        right = true;
@@ -318,7 +318,7 @@ export function togglemenu4(){
    export function bar_radius_today() {
        var novo = document.getElementById('bar_radius_today').value;
        novo = (novo/100)*15+1;
-       concatenar('BR1',novo);
+          verifica('BR1',novo);
        document.getElementById('today_bar').style.r =  novo;
        document.getElementById('today_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_today/100)+",100";
    }
@@ -327,17 +327,17 @@ export function togglemenu4(){
    export function bar_radius_yesterday() {
        var novo = document.getElementById('bar_radius_yesterday').value;
        novo = (novo/100)*15+1;
-       concatenar('BR2',novo);
+          verifica('BR2',novo);
        document.getElementById('yesterday_bar').style.r =  novo;
        document.getElementById('yesterday_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_yesterday/100)+",100";
    }
    
    
-   export function text_size() {
-       var novo = document.getElementById('text_size').value;
-       document.getElementById('texto').style.fontSize = novo + "px";
-       concatenar('TEXT_S',novo);
-   }
+  //  export function text_size() {
+  //      var novo = document.getElementById('text_size').value;
+  //      document.getElementById('texto').style.fontSize = novo + "px";
+  //         verifica('TEXT_S',novo);
+  //  }
    /*personalização*/
    
 
@@ -414,7 +414,7 @@ $(document).ready(function() {
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
-    concatenar('MT',novo);
+      verifica('MT',novo);
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -500,25 +500,25 @@ $(document).ready(function() {
     console.log(matrixtext);
 
     if(document.getElementById('oitavo').innerHTML!=""){
-       concatenar('PO',document.getElementById('oitavo').innerHTML);}
+          verifica('PO',document.getElementById('oitavo').innerHTML);}
 
       else if(document.getElementById('setimo').innerHTML!=""){
-       concatenar('PSE',document.getElementById('setimo').innerHTML);}
+          verifica('PSE',document.getElementById('setimo').innerHTML);}
 
       else if(document.getElementById('quinto').innerHTML!=""){
-      concatenar('PQI',document.getElementById('quinto').innerHTML);}
+        verifica('PQI',document.getElementById('quinto').innerHTML);}
 
       else if(document.getElementById('quarto').innerHTML!=""){
-       concatenar('PQ',document.getElementById('quarto').innerHTML);}
+          verifica('PQ',document.getElementById('quarto').innerHTML);}
 
       else if(document.getElementById('terceiro').innerHTML!=""){
-       concatenar('PT',document.getElementById('terceiro').innerHTML);}
+          verifica('PT',document.getElementById('terceiro').innerHTML);}
 
       else if(document.getElementById('segundo').innerHTML!=""){
-      concatenar('PS',document.getElementById('segundo').innerHTML);}
+        verifica('PS',document.getElementById('segundo').innerHTML);}
 
       else if(document.getElementById('primeiro').innerHTML!=""){
-        concatenar('PP',document.getElementById('primeiro').innerHTML);}
+          verifica('PP',document.getElementById('primeiro').innerHTML);}
 
   });
 
@@ -727,12 +727,38 @@ export function fechar(){
 
 //CODIGO
 var codigo="SelfComplete";
-export function concatenar(id,valor){
-  codigo=codigo + '|' + id + '|' + valor;
+
+var array_codigo=["SELFCOMPLETE"];
+
+export function  concatenar(id,valor){
+  // codigo=codigo + '|' + id + '|' + valor;
+  array_codigo.push(id,valor);
 }
 
+
+function verifica(id, valor){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i+1] = valor;
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+  concatenar(id, valor);
+
+}
+
+
+
+
+
 export function cod(){
-  document.getElementById('codee').innerHTML=codigo;
+  document.getElementById('codee').innerHTML=array_codigo;
 
   
 }
@@ -740,22 +766,22 @@ export function cod(){
 
 //CODIGO-PERCENTAGEM
 export function troca(){
-  var total= document.getElementById('timeframe').value;
-  concatenar('TT',total);
+  var total= document.getElementById('timeframe').value;     
+   verifica('TT',total);
 
 }
 
 export function troca2(){
-  var total= document.getElementById('percentagem').value;
-  concatenar('TP',total);
+  var total= document.getElementById('percentagem').value;      
+  verifica('TP',total);
 
 }
 //CODIGO-PERCENTAGEM
 export function second_bar_value(){
   if(document.getElementById('second_bar_value').value == 'yesterday'){
-    concatenar('SBV','YESTERDAY');
+      verifica('SBV','YESTERDAY');
   }
   else{
-    concatenar('SBV','OTHER');
+      verifica('SBV','OTHER');
   }
 }

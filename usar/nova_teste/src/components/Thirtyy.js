@@ -69,8 +69,8 @@ var tamanho_que_o_menu_desceu = 0;
                else{  //Caso seja arrastado da esquerda para a direita
                  drop = moved;
                  if(moved=="node1"){
-                  concatenar('WT','Digital');}
-                  else{concatenar('WT','Analogico')}      
+                  verifica('WT','Digital');}
+                  else{verifica('WT','Analogico')}      
 
                }
                $(ui.draggable).remove();
@@ -154,7 +154,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor =  currentVal;
-    concatenar('BC',currentVal);
+    verifica('BC',currentVal);
   }
 
   export function digital_color() {
@@ -162,7 +162,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color =  currentVal;
-    concatenar('DC',currentVal);
+    verifica('DC',currentVal);
   }
    
    export function analog_hours() {
@@ -170,7 +170,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('hour_pointer').style.stroke =  currentVal;
-    concatenar('HC',currentVal);
+    verifica('HC',currentVal);
   }
 
    export function analog_minutes() {
@@ -178,7 +178,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('minute_pointer').style.stroke =  currentVal;
-    concatenar('MC',currentVal);
+    verifica('MC',currentVal);
   }
 
    export function analog_seconds() {
@@ -186,7 +186,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('second_pointer').style.stroke =  currentVal;
-    concatenar('SC',currentVal);
+    verifica('SC',currentVal);
   }
 
    export function bar_color() {
@@ -194,7 +194,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('cor_da_barra').style.stroke =  currentVal;
-    concatenar('BC1',currentVal);
+    verifica('BC1',currentVal);
   }
 
    export function bar_color2() {
@@ -202,7 +202,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('cor_da_barra2').style.stroke =  currentVal;
-    concatenar('BC2',currentVal);
+    verifica('BC2',currentVal);
    }
 
    export function center_circule() {
@@ -210,7 +210,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('center_dot').style.stroke =  currentVal;
-    concatenar('CC',currentVal);
+    verifica('CC',currentVal);
   }
 
    export function text_color() {
@@ -218,7 +218,7 @@ var tamanho_que_o_menu_desceu = 0;
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('texto').style.color =  currentVal;
-    concatenar('TC',currentVal);
+    verifica('TC',currentVal);
   }
    /*Cores*/
    
@@ -230,8 +230,8 @@ var tamanho_que_o_menu_desceu = 0;
        novo = (novo/20)+0.1;
        document.getElementById('cor_da_barra').style.strokeWidth =  novo;
        document.getElementById('cor_da_barra2').style.strokeWidth =  novo;
-       concatenar('BT1',novo);
-       concatenar('BT2',novo);
+       verifica('BT1',novo);
+       verifica('BT2',novo);
 
    }
    
@@ -243,8 +243,8 @@ var tamanho_que_o_menu_desceu = 0;
        novo = (novo/100)*14+3;
        circle.setAttribute("r", novo);
        circle2.setAttribute("r", novo);
-       concatenar('BR1',novo);
-       concatenar('BR2',novo);
+       verifica('BR1',novo);
+       verifica('BR2',novo);
       //  document.getElementById('cor_da_barra').style.r =  novo;
       //  document.getElementById('cor_da_barra2').style.r =  novo;
    }
@@ -356,7 +356,7 @@ $(document).ready(function() {
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
-    concatenar('MT',novo);
+    verifica('MT',novo);
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -451,7 +451,7 @@ $(document).ready(function() {
     console.log(matrixtext);
 
     // if(document.getElementById('oitavo').innerHTML!=""){
-    //   concatenar('PO',document.getElementById('oitavo').innerHTML);}
+    //   verifica('PO',document.getElementById('oitavo').innerHTML);}
 
     //  else if(document.getElementById('setimo').innerHTML!=""){
     //   concatenar('PSE',document.getElementById('setimo').innerHTML);}
@@ -460,7 +460,7 @@ $(document).ready(function() {
     //  concatenar('PQI',document.getElementById('quinto').innerHTML);}
 
     if(document.getElementById('quarto').innerHTML!=""){
-      concatenar('PQ',document.getElementById('quarto').innerHTML);}
+      verifica('PQ',document.getElementById('quarto').innerHTML);}
 
     //  else if(document.getElementById('terceiro').innerHTML!=""){
     //   concatenar('PT',document.getElementById('terceiro').innerHTML);}
@@ -679,12 +679,33 @@ export function fechar(){
 
 //CODIGO
 var codigo="Thistys";
+var array_codigo=["THIRTYS"];
+
 export function concatenar(id,valor){
-  codigo=codigo + '|' + id + '|' + valor;
+  // codigo=codigo + '|' + id + '|' + valor;
+  array_codigo.push(id,valor);
+}
+
+
+function verifica(id, valor){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i+1] = valor;
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+  concatenar(id, valor);
+
 }
 
 export function cod(){
-  document.getElementById('codee').innerHTML=codigo;
+  document.getElementById('codee').innerHTML=array_codigo;
 
   
 }
@@ -693,13 +714,13 @@ export function cod(){
 //CODIGO-PERCENTAGEM
 export function troca(){
   var total= document.getElementById('timeframe').value;
-  concatenar('TT',total);
+  verifica('TT',total);
 
 }
 
 export function troca2(){
   var total= document.getElementById('percentagem').value;
-  concatenar('TP',total);
+  verifica('TP',total);
 
 }
 //CODIGO-PERCENTAGEM
