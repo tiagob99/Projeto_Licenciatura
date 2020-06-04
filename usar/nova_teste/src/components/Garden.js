@@ -1078,6 +1078,7 @@ $('#btRemImg').click(function() { // remove Imagem
 
   }
   var aux_array_codigo=[];
+
  
   // export function concatenaraux(){
   //   alert(aux_array_codigo)
@@ -1136,9 +1137,18 @@ $('#btRemImg').click(function() { // remove Imagem
 
     document.getElementById('codee').innerHTML=array_codigo;
     // document.getElementById('codee').innerHTML=codigo;
+    // <?php
+    // $conn = new mysqli('localhost','root','','test');
+    // if($conn->connect_error){
+    //   echo "$conn->connect_error";
+    //   die("Connection Failed : ". $conn->connect_error);
+    // }
+    // />
+    
     
     
   }
+  
   //CODIGO
 
   export function first(posicao){
