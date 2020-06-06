@@ -3,7 +3,6 @@ import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
 import { func } from 'prop-types';
 
-
 /*Menu*/
 var open = false;
 var tamanho_que_o_menu_desceu = 0;

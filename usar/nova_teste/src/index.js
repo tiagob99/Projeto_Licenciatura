@@ -12,6 +12,9 @@ import Login from './components/Login/Login';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
 // import SelfComplete from './components/SelfComplete';
+import './conexao';
+
+   
 
 
 const garden = lazy(() => import ('./components/Gardens')); 
