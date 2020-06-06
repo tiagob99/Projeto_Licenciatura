@@ -1102,5 +1102,3 @@ export function troca2(){
 
 }
 //CODIGO-PERCENTAGEM
-
-
