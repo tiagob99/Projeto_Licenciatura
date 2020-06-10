@@ -1,0 +1,2892 @@
+$main-back: #0A1013;
+$main-font-col: #fff;
+$third-header-size: 27px;
+$second-header-size: 34px;
+$main-nav-col: white;
+$link-hover-col: #448E9D;
+$bright-blue: #448E9D;
+$caption-size: 49px;
+$header-back: #E5E4DF;
+$main-pic: $header-back url(https://cdn.hipwallpaper.com/i/55/66/oL1kYx.jpg) 0 top no-repeat;
+$footer-font-col: #535353;
+$footer-caption-col: #44423C;
+$arial: Arial, Helvetica, sans-serif;
+$oswald: 'Oswald', Arial, Helvetica, sans-serif;
+$button-col: #35484A;
+
+//BREAKPOINTS
+
+$large: "only screen and (max-width : 1370px)";
+$medium: "only screen and (max-width : 768px)";
+$small: "only screen and (max-width : 430px)";
+
+@keyframes hovering {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(3px)
+    }
+    40% {
+        transform: translateY(0)
+    }
+    80% {
+        transform: translateY(-3px)
+    }
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+html, body,#root{
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: $oswald;
+    color: $main-font-col;
+
+
+}
+
+
+a {
+    text-decoration: none;
+    transition: all .2s ease;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        background: transparent;
+        position: absolute;
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        transition: all .2s ease;
+    }
+
+    &:hover {
+        color:$link-hover-col;
+
+        &::after {
+            background: $bright-blue;
+        }
+    }
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: $caption-size;
+    margin-bottom: 20px;
+
+    @media #{$small} {
+        font-size: $second-header-size;
+    }
+}
+
+h2 {
+    font-size: $second-header-size;
+}
+
+h3 {
+    font-size: $third-header-size;
+}
+
+input[type=text], select {
+    border: none;
+    height: 45px;
+    padding: 0 15px;
+    line-height: 45px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#root {
+    background: $main-back;
+    min-height: 100%;
+}
+
+.home {
+    &__header{
+        height: 100vh;
+        background: $main-pic;
+
+        @media #{$small} {
+            background-position: 0 0;
+        }
+    }
+
+    &__caption {
+        font-size: $caption-size;
+        color: rgba(255,255,255,0.8);
+        margin-top: 50px;
+
+
+
+        @media #{$small} {
+            font-size: $second-header-size;
+        }
+
+
+    }
+
+    &__scroll-down {
+        width: 25px;
+        height: 70px;
+        background: url('/img/scroll.png') no-repeat;
+        margin-top: 65px;
+        animation: hovering 3s ease-in-out infinite;
+        cursor: pointer;
+        transition: all .3s ease;
+        transition: transform .5s ease;
+        &:hover{
+          transform: scale(1.5);
+        }
+      }
+
+
+  }
+
+
+
+.Login{
+
+    padding:50px;
+    width: 500000px;
+
+
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 1364px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 60px 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+
+    @media #{$large} {
+        padding: 60px 20px;
+    }
+
+    &--header, &--footer {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0;
+
+        @media #{$large} {
+            padding: 0 20px;
+        }
+    }
+
+    &--footer {
+        @media #{$large} {
+            justify-content: center;
+        }
+
+        @media #{$medium} {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.logo {
+    width: 300px;
+    height: 70px;
+    background: url('/img/Logotipo.png') no-repeat;
+}
+
+.main-nav {
+    position: relative;
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+    flex-grow: 1;
+    font-size: $third-header-size;
+
+    @media #{$medium} {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &--header {
+        font-size: 21px;
+        margin-top: 26px;
+        justify-content: flex-start;
+
+        @media #{$medium} {
+            display: none;
+        }
+
+        >a {
+            margin-right: 85px;
+        }
+    }
+
+    &--sidebar {
+        width:100%;
+    }
+
+    &__item {
+        text-transform: uppercase;
+        display: inline-block;
+        color: $main-nav-col;
+
+        @media #{$medium} {
+            margin: 0 0 20px 0;
+        }
+
+        &.active{
+            color: $link-hover-col;
+
+            &::after {
+                background: $bright-blue;
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    min-height: 356px;
+    background: $header-back;
+    padding: 199px 0 40px;
+    box-sizing: border-box;
+    background-position: top;
+
+    @media #{$medium} {
+        background: $header-back;
+    }
+
+    &__logos {
+        width:40%;
+        display: flex;
+        flex-direction: column;
+        min-width: 340px;
+
+        @media #{$large} {
+            margin-bottom: 40px;
+            align-items: center;
+            order: 2;
+        }
+    }
+
+    &__copy {
+        font-size: 20px;
+        font-family: $arial;
+        color: $footer-font-col;
+        padding:50px;
+
+    }
+
+    &__subscribe {
+        width: 40%;
+        min-width: 340px;
+
+        @media #{$large} {
+            margin-bottom: 40px;
+            order: 1
+        }
+    }
+
+    &__social {
+        width: 20%;
+        min-width: 230px;
+
+        @media #{$large} {
+            order: 3
+        }
+    }
+
+    .logo{
+       margin-top: 0;
+       display: flex;
+       background-size: 30%;
+       width: 210px;
+       position: relative;
+       height: -50px;
+       @media #{$large} {
+        margin-bottom: 40px;
+        align-items: center;
+        order: 2;
+    }
+    }
+
+
+    h3 {
+        color:$footer-caption-col;
+        margin-bottom: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+
+    @media #{$medium} {
+        align-items: center;
+    }
+
+    input[type=text], select {
+        width: 400px;
+        margin-bottom: 15px;
+
+        @media #{$large} {
+            width: 100%;
+        }
+    }
+
+    input[type=checkbox] {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        margin-left: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            border: 1px solid #707070;
+        }
+    }
+
+    &__agreement {
+        display: flex;
+        font-size: 12px;
+        color:$footer-font-col;
+        font-family: $arial;
+        width: 400px;
+        line-height: 17px;
+        margin-bottom: 30px;
+
+        @media #{$large} {
+            width: 100%;
+        }
+    }
+}
+
+.prim-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $button-col;
+    border: none;
+    color: #fff;
+    font-family: $oswald;
+    text-transform: uppercase;
+    font-size: 21px;
+    width: 195px;
+    height: 45px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+        background: lighten($color: $button-col, $amount: 4)
+    }
+}
+
+.social-icon {
+    width: 33px;
+    height: 33px;
+    margin-right: 20px;
+}
+
+.socials {
+    display: flex;
+
+    &__facebook {
+        @extend .social-icon;
+        background: url('/img/facebook.svg') center no-repeat;
+        width: 50%;
+    }
+    &__instagram {
+        @extend .social-icon;
+        background: url('/img/instagram.svg') center no-repeat;
+        width: 50%;
+    }
+    &__twitter {
+        @extend .social-icon;
+        background: url('/img/twitter.svg') center no-repeat;
+        width: 50%;
+    }
+    &__youtube {
+        @extend .social-icon;
+        width: 47px;
+        background: url('/img/youtube.svg') center no-repeat;
+        width: 50%;
+    }
+
+    &--album {
+        >div {
+            filter: brightness(5);
+        }
+    }
+}
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    @media #{$medium} {
+        justify-content: center;
+    }
+
+    &__caption {
+        flex-grow: 1;
+        flex-basis: 100%;
+        display: flex;
+
+        h1 {
+            width: 400px;
+            white-space: nowrap;
+
+            @media #{$medium} {
+                white-space: normal;
+                width: auto;
+                font-size: $second-header-size;
+            }
+        }
+    }
+
+    &__year {
+        font-size: $caption-size;
+        opacity: .8;
+        width: 100px;
+        text-align: right;
+
+        @media #{$medium} {
+            font-size: $second-header-size;
+        }
+    }
+
+    &__cover {
+        width: 100%;
+        max-width: 500px;
+        background-position: center;
+        box-sizing: border-box;
+        border: 10px solid #fff;
+        margin-right: 50px;
+        align-self: flex-start;
+
+        @media #{$medium} {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__pricing {
+        display: flex;
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    &__pricing-item {
+        border-right: 1px solid #fff;
+        padding: 0 20px;
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+
+        &:last-of-type {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        span {
+            opacity: .8;
+        }
+    }
+
+    &__pre-order {
+        font-size: 27px;
+    }
+
+    &__playlist {
+        background: #fff;
+        max-height: 260px;
+        overflow: auto;
+    }
+
+    &__track {
+        font-size: 13px;
+        border-bottom: 1px solid #DFDFDF;
+        font-family: $arial;
+        color: #000;
+        list-style-type: none;
+        padding: 20px;
+        box-sizing: border-box;
+
+        i {
+            display: inline-block;
+            background: url('/img/play.svg') center bottom no-repeat;
+            width: 13px;
+            height: 13px;
+            margin-right: 15px;
+        }
+    }
+
+    &__player {
+        background: #f8f8f8;
+        margin-bottom: 20px;
+        color:#747474;
+        padding: 20px 18px;
+    }
+
+    &__trackline-container{
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    &__trackline {
+        flex-grow: 1;
+        background: #c2c2c2;
+        height: 4px;
+        border-radius: 50%;
+        margin: 10px 10px 0;
+    }
+
+    &__play-buttons {
+        display: flex;
+    }
+
+    &__prev, &__next {
+        width: 21px;
+        height: 13px;
+        margin-right: 15px;
+    }
+
+    &__prev {
+        background: url('/img/prev-track.svg') no-repeat;
+    }
+
+    &__next {
+        background: url('/img/next-track.svg') no-repeat;
+    }
+}
+
+.header {
+    background: $header-back;
+    height: 83px;
+    position: relative;
+    z-index: 5;
+
+    .logo {
+        margin-top: 3px;
+        width: 105px;
+        background-size: 70%;
+        margin-right: 85px;
+    }
+
+    &__logo-link {
+
+        @media #{$medium} {
+            flex-grow: 1;
+        }
+        &::after {
+            display: none;
+        }
+    }
+
+    &__menu {
+        width: 23px;
+        height: 23px;
+        background: url('/img/menu.svg') no-repeat;
+        background-size: cover;
+        margin-top: 30px;
+        cursor: pointer;
+        display: none;
+
+        @media #{$medium} {
+            display: block;
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 83px;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    background: $header-back;
+    z-index: 5;
+}
+
+.landing {
+    &__video-container {
+        align-self: flex-start;
+    }
+
+    &__video {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+// .about {
+//     max-width: 1088px;
+
+//     &__year {
+//         text-align: center;
+//         font-size: $caption-size;
+//         position: relative;
+//         margin-bottom: 100px;
+//         margin-top: 100px;
+
+//         &::before, &::after {
+//             content: '';
+//             display: block;
+//             position: absolute;
+//             height: 50px;
+//             width: 1px;
+//             left: 50%;
+//             border-left: 1px dotted #fff;
+//         }
+
+//         &::before {
+//             top: -70px;
+//         }
+//         &::after {
+//             bottom: -70px;
+//         }
+//     }
+
+//     &__item:first-of-type {
+//         .about__year {
+//             margin-top: 0;
+//             &::before {
+//                 display: none;
+//             }
+//         }
+//     }
+
+//     &__img {
+//         margin-bottom: 20px;
+//         width: 100%;
+//     }
+
+//     &__title {
+//         font-size: $second-header-size;
+//         margin-bottom: 13px;
+//     }
+
+//     &__text {
+//         font-family: $arial;
+//         font-size: 17px;
+//     }
+// }
+
+.tour {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+        display: flex;
+        flex-basis: calc(33.3% - 30px);
+        margin-bottom: 60px;
+        border-right: 1px dotted #fff;
+        box-sizing: border-box;
+        padding: 20px 30px 20px 0;
+
+        @media #{$small} {
+            border:none;
+        }
+
+        &:nth-of-type(3n + 3) {
+            border-right: none;
+        }
+    }
+
+    &__day {
+        font-size: 95px;
+        line-height: 100px;
+    }
+
+    &__month {
+        font-size: 23px;
+        text-transform: uppercase;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+    }
+
+    &__location {
+        flex-grow: 1;
+        font-size: 20px;
+    }
+}
+
+.shop {
+    width: 100%;
+
+    h2 {
+        margin-bottom: 28px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &__item {
+        margin-bottom: 60px;
+
+
+        &--purchased {
+            opacity: .6;
+
+            .prim-button{
+                background: #c11111;
+            }
+
+            .shop__details {
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__name{
+        font-size: $third-header-size;
+        text-transform: uppercase;
+        opacity: .8;
+    }
+
+    &__price {
+        font-size: $third-header-size;
+        margin-bottom: 18px;
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__size-error {
+        position: absolute;
+        top: -50px;
+        background: #fff;
+        color: #000;
+        font-family: $arial;
+        padding: 10px 20px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            border-style: solid;
+            border-width: 8px;
+            border-color: #fff transparent transparent transparent;
+            bottom: -16px;
+            left: 45%;
+        }
+    }
+
+    &__img {
+        max-width: 367px;
+        width:100%;
+    }
+}
+
+.sizes, .amount {
+    font-family: $arial;
+    margin-bottom: 30px;
+
+    span {
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: 5px;
+        min-width: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 13px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+    &__change {
+        cursor: pointer;
+    }
+}
+
+.sizes span {
+    cursor: pointer;
+
+    &.selected {
+        background: #fff;
+        color: #000;
+    }
+}
+
+
+//aqui predefine
+
+
+  /*watches*/
+  .geral_prefefine{
+    min-height: 100%;
+  }
+  .margem{
+    margin-top: 70px;
+    padding-left: 20px;
+    overflow: auto;
+    padding-bottom: 200px;
+  }
+  .download {
+    margin-top: 400px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+  }
+  .first{
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    // background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .second{
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    // background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .third{
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    // background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .fourth{
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    // background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .fifth{
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    // background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .six{
+    height: 450px;
+    width: 250px;
+    display: inline-block;
+    margin:50px;
+    // background-image: url(img/smartwatch_predifine_template1.jpg);
+    background: url('/image/smartwatch_predifine_template1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+//Garden-------------------------------------------------------------------
+
+#tipo_percentagem.active{
+  margin-left: 15%;
+}
+#tipo_percentagem{
+  margin-left:-100%;
+}
+#tipo_timeframe.active{
+  margin-left:15%;
+}
+#tipo_timeframe{
+  margin-left:-115%;
+}
+// *{
+//     margin:0;
+//     padding: 0;
+//   }
+//   body, html {
+//     height: 100%;
+//     width: 100%;
+//   }
+  .big_div{
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    background-image: url('/image/backgroundwatch.jpg');
+    background-size: contain;
+
+
+  }
+  #preview{
+    height: 150%;
+  }
+
+  /*toggle btn*/
+  #toggle-btn{
+    position: absolute;
+    left: 35px;
+    top: 35px;
+  }
+  #toggle-btn span {
+    display: block;
+    background-color: black;
+    width: 30px;
+    height: 500px;
+    margin:3px;
+  }
+  #toggle-btn.active{
+    left:26%;
+    transition: linear all 0.3s;
+  }
+  /*toggle btn*/
+
+  /*sidebar*/
+  #sidebar{
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: #191919;
+    color: white;
+    left: -25%;
+  }
+  #sidebar.active{
+    left:0;
+    overflow: auto;
+    transition: linear all 0.3s;
+    position: absolute;
+  }
+  .elementos_menu_direito{
+    list-style: none;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+    font-size: 20px;
+  }
+  .elementos_menu_direito:hover{
+    background-color: #70D7FF;
+  }
+  /*sidebar*/
+
+  /*sidebar interior menus*/
+  #first_menu_hidden1{
+    position: absolute;
+    left:-100%;
+    width: 90%;
+  }
+  #first_menu_hidden1.active{
+    height:50%;
+    left: auto;
+    margin: 1%;
+  }
+  #remaining_1.active{
+    margin-top: 110%;
+  }
+  #remaining_222.active{
+    margin-top: 120%;
+  }
+
+  #second_menu_hidden{
+    position: absolute;
+    left:-100%;
+  }
+  #second_menu_hidden p {
+    margin-top:30px;
+  }
+  #second_menu_hidden.active{
+    height:200px;
+    left:0;
+    margin: 10px;
+  }
+
+  #fourth_menu_hidden1{
+    width: 95%;
+    height: 300px;
+    position: absolute;
+    left:-100%;
+  }
+  #fourth_menu_hidden1.active{
+    left:0;
+    margin:10%;
+    position: relative;
+  }
+
+  #imagens{
+    position: absolute;
+    left: -400%;
+  }
+  #imagens12{
+    position: absolute;
+    left: -400%;
+
+  }
+  #imagens.active{
+    height: 27%;
+    left: -4%;
+    margin:4%;
+  }
+  #imagens12.active{
+    height: 27%;
+    left: -4%;
+    margin:4%;
+    top: 150%;
+  }
+  
+  #images_2{
+    position: absolute;
+    left: -400%;
+
+  }
+  #images_2.active{
+    height: 10%;
+    //top: 390%;
+    left: -4%;
+    margin:4%;
+  }
+  #images_3{
+    position: absolute;
+    left: -400%;
+  }
+  #images_3.active{
+   // top: 480%;
+    left: -4%;
+    margin:4%;
+  }
+  #h3_{
+    background: #448E9D;
+  }
+  #h3_1{
+    background: #448E9D;
+    font-size: 95%;
+  }
+  #h3_2{
+    background: #448E9D;
+    font-size: 96%;
+  }
+
+  #testes{
+    position: absolute;
+    left: -200%;
+  }
+
+  #testes.active{
+    height: 100px;
+    left: -40px;
+    margin:40px;
+  }
+
+  #first_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    text-align: center;
+    margin: 1%;
+  }
+
+  #second_variable{
+    margin-left: 3%;
+  }
+
+  #third_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    margin: 1%;
+  }
+
+  #fourth_variable{
+    margin-left: 3%;
+  }
+
+  #fifth_variable{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    margin: 1%;
+  }
+
+  #mesage_type{
+    color: honeydew;
+    background-color: grey;
+    // padding: 1%;
+    margin: 1%;
+    position:absolute;
+    margin-left: 3%;
+    
+    
+  }
+
+  #mesage_time{
+    
+    margin: 17%;
+    margin-right: 1%;
+    margin-left: -203%;
+  }
+  #mesage_time.active{
+    color: honeydew;
+    background-color: grey;
+    margin: 17%;
+    margin-right: 1%;
+    margin-left: 3%;
+  }
+
+  #timeframe{
+    color: honeydew;
+    background-color: grey;
+    margin: -15%;
+    padding-right: 10px;
+    margin-right: 10%;
+    margin-top: -10%;
+   
+  }
+  #percentagem{
+    color: honeydew;
+    background-color: grey;
+    margin: -15%;
+    padding-right: 10px;
+    margin-right: 10%;
+  
+  }
+
+  #adicionaText{
+    // color: honeydew;
+    // background:black;
+    margin: 1%;
+  }
+
+  #btAddText{
+    margin: 1%;
+    // margin-left: 15%;
+  }
+  // #oitavo1{
+  //   margin-left: 150px;
+  //   margin-bottom: 150px;
+
+  // }
+
+
+  /*sidebar interior menus*/
+
+  /*watvh background*/
+  .watch{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url('/image/motorola.png');
+    background-repeat:no-repeat;
+    background-position-x: 49.8%;
+    background-position-y: 50%;
+    background-size: 30.8%;
+
+
+  }
+  /*watvh background*/
+
+  /*circle*/
+  // .center_circule{
+  //   top: 50%;
+  //   left: 50%;
+  //   margin-left: -265px;
+  //   margin-top: -265px;
+  //   width: 330px;
+  //   height: 330px;
+  //   border-radius: 50%;
+  //   background-color: #000;
+  //   // position:absolute;
+  // }
+  // #rect{
+  //   width: 50%;
+  //   height: 50%;
+  // }
+  /*circle*/
+
+
+  /*Relogio Digital*/
+  // #hour,#minute,#second{
+  //   size: 9;
+  //   height: 50%;
+  // }
+  /*Relogio Digital*/
+
+  /*Relogio analogico*/
+  #clock {
+    stroke-linecap: round;
+    height: 100%;
+    width: 100%;
+  }
+  #hour_pointer {
+    stroke-width: 1%;
+    stroke: white;
+    
+  }
+
+  #second_pointer {
+    stroke-width: 1%;
+    stroke: #ff0000;
+  }
+  #minute_pointer {
+    stroke-width: 1%;
+    stroke: white;
+  }
+  /*Relogio analogico*/
+
+
+  /*drag and drop */
+  .ui-drop-hover{
+    border:2px solid #bbb;
+  }
+  #dragdiv,#dropdiv{
+    width:100%;
+    height:100%;
+  }
+  #dropdiv{
+    left:50%;
+    top: 50%;
+    height:200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    position: absolute;
+  }
+  .ui-draggable{
+    color: white;
+  }
+  .elementos{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+  }
+ 
+  #node1{
+    @media #{$small} {
+      font-size: 150%;
+    }
+    font-size: 250%;
+  }
+  /*drag and drop */
+
+  /*barra*/
+  .circle-chart{
+    border-radius: 100%;
+  }
+
+  .animation{
+      animation: circle-chart-fill 2s reverse;
+  }
+
+  .circle-chart__circle {
+    animation: circle-chart-fill 2s reverse;
+    transform: rotate(-90deg) ;
+    transform-origin: center;
+  }
+  @keyframes circle-chart-fill {
+    to { stroke-dasharray: 0 100; }
+  }
+  /*transform: scaleX(-1);
+  animation:  dash 3s linear;
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 50;
+    }
+  }*/
+  /*barra*/
+
+  // .text{
+  //   padding-left: 24%;
+  //   // padding-top: 370px;
+  //   color: white;
+  //   position: absolute;
+  //   z-index: 1;
+  // }
+  #texto{
+    font-size: 10px;
+  }
+
+  #codee{
+    color:red;
+  }
+  // Garden-----------------------------------------------------------
+
+
+
+
+
+
+//mikros---------------------------------------------------------------------
+
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background: url('/image/backgroundwatch.jpg');
+// }
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 155px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+/*sidebar*/
+#sidebar{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #191919;
+  color: rgb(255, 254, 254);
+  left: -25%;
+}
+#sidebar.active{
+  left:0;
+  overflow: auto;
+  transition: linear all 0.3s;
+}
+.elementos_menu_direito{
+  list-style: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.elementos_menu_direito:hover{
+  background-color: #70D7FF;
+}
+/*sidebar*/
+
+/*sidebar interior menus*/
+#first_menu_hidden11{
+  position: absolute;
+  left:-100%;
+  height: 90%;
+  width: 90%;
+}
+#first_menu_hidden11.active{
+  height:50%;
+    left: auto;
+    margin: 1%;
+}
+#remaining_11.active{
+  margin-top: 110%;
+}
+#second_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden p {
+  margin-top:30px;
+}
+#second_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02.active{
+  margin-top: 400px;
+}
+#third_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden_1{
+  position: absolute;
+  left:-200%;
+}
+#third_menu_hidden_1.active{
+  left:0;
+  margin: 10px;
+}
+#third_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_09.active{
+  margin-top: 350%;
+}
+#fourth_menu_hidden{
+  width: 95%;
+  height: 300px;
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
+
+/*watvh background*/
+
+/*watvh background*/
+
+/*circle*/
+.circle-chart{
+  border-radius: 100%;
+  position:absolute;
+  left:50%; top: 50%;
+  margin-left: -45%;
+  margin-top:-45%;
+}
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
+/*circle*/
+
+
+/*Relogio Digital*/
+// #hour,#minute,#second{
+//   size: 20px;
+// }
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+// #clock {
+//   stroke-linecap: round;
+// }
+// #hour_pointer {
+//   stroke-width: 2px;
+//   stroke: white;
+// }
+// #second_pointer {
+//   stroke-width: 1px;
+//   stroke: #FF0000;
+// }
+// #minute_pointer {
+//   stroke-width: 1px;
+//   stroke: white;
+// }
+/*Relogio analogico*/
+
+
+/*drag and drop */
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+// #node1{
+//   font-size: 40px;
+// }
+.center_dot{
+  stroke:white; stroke-width:3px;
+}
+/*drag and drop */
+
+ /*barra*/
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+/*barra*/
+
+.text_box{
+  resize: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #B0CFE0;
+  border-radius: 4px;
+  
+}
+.textarea {
+  resize: none;
+}
+
+.text{
+  padding-left: 24%;
+  // padding-top: 370px;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+
+#posicaotexto{
+  margin-left: -25%;
+  margin-top: -50%;
+}
+
+// #btAddTextmicro{
+//   margin-top: 185%;
+// }
+
+// #valorescrito{
+//   margin-left: 400%;
+// }
+
+.centro{
+  margin-left: 32%;
+  margin-top: 50%;
+  color: white;
+  position: absolute;
+  z-index: 1;
+ width: 50%;
+ height: 50%;
+
+}
+#valorescrito{
+  width: 70%;
+  height: 70%;
+ text-align: center;
+}
+
+#valor{
+  color: honeydew;
+  background-color: grey;
+  padding:1%;
+  text-align: left;
+}
+
+#testesmicro{
+  position: absolute;
+  left: -200%;
+}
+
+#testesmicro.active{
+  height: 1%;
+  left: -26px;
+  margin:30px;
+  margin-top: 20%;
+  
+
+}
+
+#position{
+  margin-left: 85%;
+  margin-top: -77%;
+  position: absolute;
+}
+
+#position-botao{
+  margin-top: 15%;
+}
+//mikros---------------------------------------------------------------------
+
+//SELFCOMPLETE----------------------------------------------------
+
+// *{
+//   margin:0;
+//   padding: 0;
+// }
+// body, html {
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+/*sidebar*/
+#sidebar{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #191919;
+  color: white;
+  left: -25%;
+}
+#sidebar.active{
+  left:0;
+  overflow: auto;
+  transition: linear all 0.3s;
+}
+.elementos_menu_direito{
+  list-style: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.elementos_menu_direito:hover{
+  background-color: #70D7FF;
+}
+/*sidebar*/
+
+/*sidebar interior menus*/
+#first_menu_hidden111{
+  position: absolute;
+  left:-100%;
+  width: 90%;
+}
+#first_menu_hidden111.active{
+  height:50%;
+    left: auto;
+    margin: 1%;
+}
+#remaining_111.active{
+  margin-top: 110%;
+}
+#second_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden p {
+  margin-top:30px;
+}
+#second_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02.active{
+  margin-top: 400px;
+}
+#third_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_03.active{
+  margin-top: 440%;
+  // margin-top: 1500px; assim funciona com pixeis
+}
+#fourth_menu_hidden{
+  width: 95%;
+  height: 300px;
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
+
+/*watvh background*/
+
+/*watvh background*/
+
+/*circle*/
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
+/*circle*/
+
+
+/*Relogio Digital*/
+// #hour,#minute,#second{
+//   size: 20px;
+// }
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+// #clock {
+//   stroke-linecap: round;
+// }
+// #hour_pointer {
+//   stroke-width: 2px;
+//   stroke: white;
+// }
+// #second_pointer {
+//   stroke-width: 1px;
+//   stroke: #ff0000;
+// }
+// #minute_pointer {
+//   stroke-width: 1px;
+//   stroke: white;
+// }
+/*Relogio analogico*/
+
+
+/*drag and drop */
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+// #node1{
+//   font-size: 40px;
+// }
+/*drag and drop */
+
+/*barra*/
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg) ;
+  transform-origin: center;
+}
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+/*transform: scaleX(-1);
+animation:  dash 3s linear;*/
+@keyframes dash {
+  to {
+    stroke-dashoffset: 50;
+  }
+}
+/*barra*/
+
+// .text{
+//   padding-left: 24%;
+//   // padding-top: 370px;
+//   color: white;
+//   position: absolute;
+//   z-index: 1;
+// }
+// #texto{
+//   font-size: 10px;
+// }
+
+
+
+//SELFCOMPLETE---------------------------------------------------------------
+
+//SIMPLE---------------------------------------------------------------------
+// *{
+//   margin:0;
+//   padding: 0;
+// }
+// body, html {
+//   height: 100%;
+//   width: 100%;
+// }
+// .big_div{
+//   width: 100%;
+//   height: 100%;
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+/*sidebar*/
+#sidebar{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #191919;
+  color: white;
+  left: -25%;
+}
+#sidebar.active{
+  left:0;
+  overflow: auto;
+  transition: linear all 0.3s;
+}
+.elementos_menu_direito{
+  list-style: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.elementos_menu_direito:hover{
+  background-color: #70D7FF;
+}
+/*sidebar*/
+
+/*sidebar interior menus*/
+#first_menu_hidden1111{
+  position: absolute;
+  left:-100%;
+  width: 90%;
+}
+#first_menu_hidden1111.active{
+  height:50%;
+  left: auto;
+  margin: 1%;
+}
+#remaining_1111.active{
+  margin-top: 110%;
+}
+#second_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden p {
+  margin-top:30px;
+}
+#second_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02.active{
+  margin-top: 350px;
+}
+#third_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_05.active{
+  margin-top: 270%;
+}
+#fourth_menu_hidden{
+  width: 95%;
+  height: 400px; // tava a 300
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
+
+/*watvh background*/
+// .watch{
+//   width: 50%;
+//   height: 100%;
+//   margin: 0 auto;
+//   background-image: url('/image/motorola.png');
+//   background-repeat:no-repeat;
+//   background-position: center;
+// }
+/*watvh background*/
+
+/*circle*/
+.center_circule{
+    top: 50%;
+    left: 47.8%;
+    margin-left: -11.10%;
+    margin-top: -13.3%;
+    width: 26.5%;
+    border-radius: 100%;
+    background-color: #000;
+    position:absolute;
+  }
+  .center_circule:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+#rect{
+  width: 99%;
+  height: 99%;
+  position: absolute;
+  margin-top: -49.4%;
+  margin-left: -47.4%;
+  // border-radius: 0%;
+}
+#background {
+    width: 100%;
+    position: absolute;
+    left: 11%;
+    top: 14%;
+}
+#img_div {
+  width: 30%;
+  height: 30%;
+  display: initial;
+  position: absolute;
+  left: 57%;
+  top: 68%;
+  margin-left: -23%;
+  margin-top: -68%;
+  z-index: 10;
+}
+
+
+/*circle*/
+
+
+/*Relogio Digital*/
+// #hour,#minute,#second{
+//   size: 20px;
+// }
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+// #clock {
+//   stroke-linecap: round;
+// }
+// #hour_pointer {
+//   stroke-width: 2px;
+//   stroke: white;
+// }
+// #second_pointer {
+//   stroke-width: 1px;
+//   stroke: #ff0000;
+// }
+// #minute_pointer {
+//   stroke-width: 1px;
+//   stroke: white;
+// }
+/*Relogio analogico*/
+
+
+/*drag and drop */
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+// #node1{
+//   font-size: 40px;
+// }
+/*drag and drop */
+
+/*barra*/
+.circle-chart{
+  border-radius: 100%;
+}
+
+.animation{
+    animation: circle-chart-fill 2s reverse;
+}
+
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg) ;
+  transform-origin: center;
+}
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+/*transform: scaleX(-1);
+animation:  dash 3s linear;
+@keyframes dash {
+  to {
+    stroke-dashoffset: 50;
+  }
+}*/
+/*barra*/
+
+// .text{
+//   padding-left: 24%;
+//   // padding-top: 370px;
+//   color: white;
+//   position: absolute;
+//   z-index: 1;
+// }
+// #texto{
+//   font-size: 10px;
+// }
+
+//SIMPLE---------------------------------------------------------------------
+
+
+
+
+//CARDS-----------------------------
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+//CARDS-----------------------------
+
+
+
+
+/*cabeçalho*/
+.cabeçalho{
+  width: 100%;
+  height: 70px;
+  background-color: #060606;
+}
+.menu{  /* usar nav tags */
+  width: 85%;
+  height: 70px;
+  float: left;
+}
+.login{
+  float: right;
+  height: 70px;
+  width: 15%;
+  text-align: center;
+}
+.lista{
+  margin-left: 20px;
+}
+.elementos_lista{
+  list-style: none;
+  display: inline-block;
+  // float: left; --COMENTEI ISTO
+  margin-left: 30px;
+  line-height: 70px;
+}
+.elementos_lista_texto{
+  text-decoration: none;
+  font-size: 18px;
+  font-family: arial;
+  color: #bcbcbc;
+  padding: 0 30px;
+}
+.elementos_lista_texto:hover{
+  color:  #70D7FF ;
+}
+/*cabeçalho*/
+
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 95px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+// /*sidebar*/
+// #sidebar{
+//   position: absolute;
+//   width: 25%;
+//   height: 100%;
+//   background-color: #191919;
+//   color: white;
+//   left: -25%;
+// }
+// #sidebar.active{
+//   left:0;
+//   overflow: auto;
+//   transition: linear all 0.3s;
+// }
+// .elementos_menu_direito{
+//   list-style: none;
+//   text-align: center;
+//   line-height: 50px;
+//   margin: 5px;
+//   font-size: 20px;
+// }
+// .elementos_menu_direito:hover{
+//   background-color: #70D7FF;
+// }
+#lastelemente{
+  margin-top: 0;
+}
+/*sidebar*/
+
+// /*sidebar interior menus*/
+#first_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+  width: 90%;
+}
+#first_menu_hidden_mko.active{
+  height:15%;
+  left: auto;
+  margin: 35%;
+  margin-left: -5%;
+}
+#remaining_01_mko.active{
+  margin-top: 230px;
+  position: relative;
+}
+#second_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+}
+#second_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_02_mko.active{
+  margin-top: 150%;
+  position: relative;
+}
+#third_menu_hidden_mko{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+  height: 40px;
+}
+#remaining_03_mko.active{
+  margin-top: 250%;
+}
+#fourth_menu_hidden_mko{
+  width: 95%;
+  height: 800px;
+  position: absolute;
+  left:-100%;
+}
+#fourth_menu_hidden_mko.active{
+  left:0;
+  margin: 10px;
+}
+/*sidebar interior menus*/
+
+
+// /*circle*/
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
+// /*circle*/
+
+
+// /*Relogio Digital*/
+// #hour,#minute,#second{
+//   size: 20px;
+// }
+// /*Relogio Digital*/
+
+// /*Relogio analogico*/
+// #clock {
+//   stroke-linecap: round;
+// }
+// #hour_pointer {
+//   stroke-width: 2px;
+//   width: 0%;
+//   stroke: white;
+// }
+// #second_pointer {
+//   stroke-width: 1px;
+//   stroke: #ff0000;
+// }
+// #minute_pointer {
+//   stroke-width: 1px;
+//   stroke: white;
+// }
+/*Relogio analogico*/
+/*Relogio Digital*/
+#hour_1,#minute_1,#second_1{
+  font-size: 40px;
+  color: white;
+}
+// #node1{
+//   font-size: 40px;
+// }
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+#clock_1 {
+  stroke-linecap: round;
+}
+#hour_pointer_1 {
+  stroke-width: 2px;
+  stroke: white;
+}
+#second_pointer_1 {
+  stroke-width: 1px;
+  stroke: #ff0000;
+}
+#minute_pointer_1 {
+  stroke-width: 1px;
+  stroke: white;
+}
+/*Relogio analogico*/
+
+
+/*drag and drop*/
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+  z-index: 10;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+// #node1{
+//   font-size: 40px;
+// }
+/*drag and drop */
+
+/*Center whatch*/
+.labl {
+    display : block;
+}
+.labl > input{
+    visibility: hidden;
+    position: absolute;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    border:2px solid #bbb;
+}
+.dropdiv{  /* Parte do Relogio */
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+  z-index: 1;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+
+/*Center whatch*/
+
+.ui-draggable-dragging{
+  text-align: center;
+  width:200px;
+  height: 15px;
+  color:white;
+}
+.ui-draggable, .ui-droppable{
+    list-style:none;
+ }
+#dragdiv li,#dropdiv li{
+ border: 2px solid rgba(0,0,0,0);
+ text-align: center;
+ color: white;
+ width:180px;
+ height: 15px;
+}
+#dragdiv li{
+  margin-bottom: 40px;
+}
+#dropdiv li{
+ display: inline-block;
+}
+#allItems, #Ul1{
+ padding: 0px;
+ margin: 0;
+ list-style-type: none;
+}
+#dragdiv{
+ position: absolute;
+ left: 50%;
+ top: 55%;
+ margin-top:-187px;
+ margin-left:-90px;
+ width:204px;
+ height:374px;
+}
+#dropdiv{
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ width:50px;
+ height:19px;
+ margin-left: -250px;
+ margin-top: -9.5px;
+}
+
+#quarto{
+  margin-top:100px;
+
+}
+#setimo{
+  margin-top: 80px;
+  margin-left: -120px;
+}
+
+#oitavo{
+  // margin-bottom: 80px;
+  // margin-top: -50px; //nao consigo colocar a oitava posiçao mais para cima??????
+  margin-right: 90px;
+ 
+
+}
+#oitavo1-1{
+  margin-top: -23.95px;
+  margin-left: 10px;
+  
+}
+
+#dragdiv li:hover, #dropdiv li:hover{
+ border:2px solid #bbb;
+}
+
+
+.botão_direita{
+  height: 100px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  left: 80%;
+  top: 80%;
+}
+
+
+// Thirty------------------------------------------------------------
+
+// .big_div{
+
+//   background-image: url('/image/backgroundwatch.jpg');
+// }
+
+/*toggle btn*/
+#toggle-btn{
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#toggle-btn span {
+  display: block;
+  background-color: black;
+  width: 30px;
+  height: 5px;
+  margin:3px;
+}
+#toggle-btn.active{
+  left:26%;
+  transition: linear all 0.3s;
+}
+/*toggle btn*/
+
+/*sidebar*/
+#sidebar{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #191919;
+  color: white;
+  left: -25%;
+}
+#sidebar.active{
+  left:0;
+  overflow: auto;
+  transition: linear all 0.3s;
+}
+.elementos_menu_direito{
+  list-style: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.elementos_menu_direito:hover{
+  background-color: #70D7FF;
+}
+/*sidebar*/
+
+/*sidebar interior menus*/
+#first_menu_hidden11111{
+  position: absolute;
+  left:-100%;
+  height: 200px;
+  width: 90%;
+}
+#first_menu_hidden11111.active{
+  height:50%;
+  left: auto;
+  margin: 1%;
+}
+#remaining_11111.active{
+  margin-top:110%;
+}
+#second_menu_hidden{
+  position: absolute;
+  left:-100%;
+
+}
+#second_menu_hidden p {
+  margin-top:30px;
+}
+#second_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+#remaining_22.active{
+  margin-top: 110%;
+}
+#remaining_33.active{
+  margin-top: 170%;
+}
+#third_menu_hidden{
+  position: absolute;
+  left:-100%;
+}
+#third_menu_hidden.active{
+  left:0;
+  margin: 10px;
+}
+
+/*sidebar interior menus*/
+
+/*watvh background*/
+
+/*watvh background*/
+
+/*circle*/
+// .center_circule{
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -265px;
+//   margin-top: -265px;
+//   width: 530px;
+//   height: 530px;
+//   border-radius: 100%;
+//   background-color: #000;
+//   position:absolute;
+// }
+// #rect{
+//   width: 100%;
+//   height: 100%;
+// }
+/*circle*/
+
+/*Relogio Digital*/
+// #hour,#minute,#second{
+//   size: 20px;
+// }
+/*Relogio Digital*/
+
+/*Relogio analogico*/
+
+// #clock {
+//   stroke-linecap: round;
+// }
+// #hour_pointer {
+//   stroke-width: 2px;
+//   stroke: white;
+// }
+// #second_pointer {
+//   stroke-width: 1px;
+//   stroke: #FF0000;
+// }
+// #minute_pointer {
+//   stroke-width: 1px;
+//   stroke: white;
+// }
+/*Relogio analogico*/
+
+
+/*drag and drop */
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+}
+
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+// #node1{
+//   font-size: 40px;
+// }
+/*drag and drop */
+
+/*barra*/
+.circle-chart{
+  border-radius: 100%;
+}
+.circle-chart__circle {
+
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+/*barra*/
+
+// thirty-------------------------------------------------------------
+
+
+//makeyourown
+
+
+
+
+
+
+/*drag and drop
+.ui-drop-hover{
+  border:2px solid #bbb;
+}
+#dragdiv,#dropdiv{
+  width:100%;
+  height:100%;
+}
+#dropdiv{
+  left:50%;
+  top: 50%;
+  height:200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  position: absolute;
+  z-index: 10;
+}
+.ui-draggable{
+  color: white;
+}
+.elementos{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+#node1{
+  font-size: 40px;
+}
+/*drag and drop */
+
+/*Center whatch*/
+.labl {
+    display : block;
+}
+.labl > input{
+    visibility: hidden;
+    position: absolute;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    border:2px solid #bbb;
+}
+
+
+
+#quarto{
+  margin-top:100px;
+}
+
+#oitavo{
+  margin-left: 125px;
+}
+
+#dragdiv li:hover, #dropdiv li:hover{
+ border:2px solid #bbb;
+}
+
+
+
+.botão_direita{
+  height: 100px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  left: 80%;
+  top: 80%;
+}
+
+//alerta cores++++++++++++++
+.boxalert {
+  background:silver;
+  font-size: 15px;
+  padding:5px;
+  border: 2px solid;
+  text-align: center;
+}
+//alerta cores++++++++++++++
+
+//Botao codigo
+#alerta{
+  // color:black;
+  // background-color: red;
+  // text-align: justify;
+  // padding:1%;
+  // box-shadow: blue;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#alerta:hover {opacity: 1}
+//Botao codigo
