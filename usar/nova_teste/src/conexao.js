@@ -21,40 +21,42 @@ var app  = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.json({type:'application/json'}));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 var con = mysql.createConnection({
- 
+  
     host:'localhost',
     port:'3000',
     user:'anacaraban',
     password:'PvyAQs573SD', //empty for window
-    database: 'placebo_data'
+    database: 'placebo_data',
+    multipleStatements: true
 
 });
 
-var server = app.listen(1348, function(){
-  var host = server.address().address
-  var port = server.address().port
-  console.log("start");
 
+
+
+con.connect((err) => {
+  if (!err)
+      console.log('DB connection succeded.');
+  else
+      console.log('DB connection failed \n Error : ' + JSON.stringify(err, undefined, 2));
 });
+// while(con.state == "disconnected"){
+//   console.log(con.state)
+// }
+app.listen(3000, () => console.log('Express server is runnig at port no : 3000'));
 
-con.connect(function(error){
-  if(error) console.log(error);
-  else console.log("connected");
-});
+// app.get('/user', function(req, res){
+//   con.query('select * from users', function(error, rows, fields){
+//         if(error) console.log(error);
 
-app.get('/user', function(req, res){
-  con.query('select * from users', function(error, rows, fields){
-        if(error) console.log(error);
+//         else{
+//             console.log(rows);
+//             res.send(rows);
 
-        else{
-            console.log(rows);
-            res.send(rows);
+//         }
 
-        }
-
-  });
-});
+//   });
+// });
