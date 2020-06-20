@@ -2,6 +2,10 @@ import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
 import { func } from 'prop-types';
+import * as db from './database';
+import Gardens from './Gardens';
+import * as login from './Login/Login';
+
 
 /*Menu*/
 var open = false;
@@ -128,7 +132,7 @@ $(function timerTick() {
     var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
     var m = 6 * aqui.getMinutes();
     var s = 6 * aqui.getSeconds();
-    if(window.location.pathname === '/Gardens'){
+    if(window.location.pathname == '/Gardens'){
       document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
       document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');}
@@ -723,6 +727,26 @@ $('#btRemImg').click(function() { // remove Imagem
   
   
     $('#btRemoveText').click(function() { // Remove uma caixa de texto
+      if(document.getElementById('oitavo').innerHTML!=""){
+        verifica_apaga('PO')}
+  
+       else if(document.getElementById('setimo').innerHTML!=""){
+        verifica_apaga('PSE')}
+  
+       else if(document.getElementById('quinto').innerHTML!=""){
+       verifica_apaga('PQI')}
+  
+       else if(document.getElementById('quarto').innerHTML!=""){
+        verifica_apaga('PQ')}
+  
+       else if(document.getElementById('terceiro').innerHTML!=""){
+        verifica_apaga('PT')}
+  
+       else if(document.getElementById('segundo').innerHTML!=""){
+        verifica_apaga('PS')}
+  
+       else if(document.getElementById('primeiro').innerHTML!=""){
+        verifica_apaga('PP')}
       if(posiçoesocupadas[Texto-1]==0){  //erro
         Texto = Texto - 1;
         console.log("a11aa")
@@ -1010,6 +1034,22 @@ $('#btRemImg').click(function() { // remove Imagem
     concatenar(id, valor);
 
   }
+  function verifica_apaga(id){
+    var i = 0;
+    while(i<array_codigo.length-1){
+      if(id==array_codigo[i]){
+        array_codigo[i] = id
+        array_codigo[i+1] = '';
+        i++;
+        return 0;
+      }
+      else{
+        i++;
+      }
+     
+    }
+
+  }
   var aux_array_codigo=[];
 
  
@@ -1067,8 +1107,13 @@ $('#btRemImg').click(function() { // remove Imagem
   export function cod(){
     
     // concatenaraux();
-
+    var i=1;
     document.getElementById('codee').innerHTML=array_codigo;
+    while(i<array_codigo.length){
+      db.database_new('Gardens',array_codigo[i], array_codigo[i+1]);
+      i=i+2;
+    }
+    
     // document.getElementById('codee').innerHTML=codigo;
     // <?php
     // $conn = new mysqli('localhost','root','','test');
@@ -1101,3 +1146,5 @@ export function troca2(){
 
 }
 //CODIGO-PERCENTAGEM
+
+

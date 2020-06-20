@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
+import * as db from '../database';
 
-
+export var mail
 
 export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");
+  
+  alert(email);
 
   const responseGoogle = response => {
     setName(response.profileObj.name);
-    // setEmail(response.profileObj.email);
+    setEmail(response.profileObj.email);
     setUrl(response.profileObj.imageUrl);
+    mail = email;
+    
   };
   return (
     <div className="Login">
@@ -19,8 +24,8 @@ export default function Login() {
 
       <h2 className="bemvindo">Welcome:{name} </h2>
 
-      {/* <h2 className="email"> Email: {email} </h2> */}
-
+      {/* <h2 className="email" > Email: {email} </h2> */}
+      
       {/* <img className="imagem" src={url} alt={name} /> */}
 
       <GoogleLogin
@@ -30,7 +35,14 @@ export default function Login() {
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
+        
+        
       />
+      
     </div>
-  );
+
+  )
+  
+  ;
+  
 };

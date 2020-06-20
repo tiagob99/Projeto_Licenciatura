@@ -2,6 +2,10 @@ import React,{ useState } from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import GoogleLogin from "react-google-login";
 import {GooglePicker, MyCustomButton} from "react-google-picker";
+import { mail } from '../Login/Login';
+import * as db from '../database';
+
+
 const Nav = props => {
     const {context, history} = props;   
     const getClassName = pathname => (
@@ -15,7 +19,7 @@ const Nav = props => {
   
     const responseGoogle = response => {
       setName(response.profileObj.name);
-      // setEmail(response.profileObj.email);
+      setEmail(response.profileObj.email);
       setUrl(response.profileObj.imageUrl);
     };
     function upd(){
@@ -33,7 +37,7 @@ const Nav = props => {
             <NavLink className={getClassName("/makeYourOwn")} onClick={upd} exact to="/makeYourOwn" >Make your own</ NavLink>            
             <NavLink className={getClassName("/Predefine")} onClick = {upd_m} exact to="/predefine" >Predefine</NavLink>            
             <NavLink className={getClassName("/Login")} >
-                <GoogleLogin
+                <GoogleLogin 
                 // className="dark"
                 clientId="465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
                 buttonText="Login"

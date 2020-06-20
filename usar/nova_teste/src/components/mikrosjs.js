@@ -1,6 +1,7 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
+import * as db from './database';
 
 
 
@@ -776,5 +777,11 @@ function verifica(id, valor){
 
 export function cod(){
   document.getElementById('codee').innerHTML=array_codigo;
+  var i=1;
+
+  while(i<array_codigo.length){
+    db.database_new('Mikros',array_codigo[i], array_codigo[i+1]);
+    i=i+2;
+  }
 }
 //CODIGO
