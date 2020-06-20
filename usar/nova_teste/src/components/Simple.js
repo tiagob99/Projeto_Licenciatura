@@ -1,6 +1,9 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
+import * as db from './database';
+
+
 
 /*Menu*/
 var open = false;
@@ -464,6 +467,26 @@ $(document).ready(function() {
 
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
+    if(document.getElementById('oitavo').innerHTML!=""){
+      verifica_apaga('PO')}
+
+     else if(document.getElementById('setimo').innerHTML!=""){
+      verifica_apaga('PSE')}
+
+     else if(document.getElementById('quinto').innerHTML!=""){
+     verifica_apaga('PQI')}
+
+     else if(document.getElementById('quarto').innerHTML!=""){
+      verifica_apaga('PQ')}
+
+     else if(document.getElementById('terceiro').innerHTML!=""){
+      verifica_apaga('PT')}
+
+     else if(document.getElementById('segundo').innerHTML!=""){
+      verifica_apaga('PS')}
+
+     else if(document.getElementById('primeiro').innerHTML!=""){
+      verifica_apaga('PP')}
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
@@ -693,7 +716,12 @@ function verifica(id, valor){
 
 export function cod(){
   document.getElementById('codee').innerHTML=array_codigo;
+  var i=1;
 
+  while(i<array_codigo.length){
+    db.database_new('Simple',array_codigo[i], array_codigo[i+1]);
+    i=i+2;
+  }
   
 }
 //CODIGO
@@ -711,3 +739,20 @@ export function troca2(){
 
 }
 //CODIGO-PERCENTAGEM
+
+function verifica_apaga(id){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i] = id
+      array_codigo[i+1] = '';
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+
+}
