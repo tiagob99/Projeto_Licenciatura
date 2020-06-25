@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import GoogleLogin from "react-google-login";
 import {GooglePicker, MyCustomButton} from "react-google-picker";
-import { mail } from '../Login/Login';
+import { mail } from '../Login/Data';
 import * as db from '../database';
 
 
@@ -44,8 +44,8 @@ const Nav = props => {
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={"single_host_origin"}/>
-                
             </NavLink> 
+            <NavLink className={getClassName("/Data")} exact to="/Data" >Data</NavLink>
             <NavLink>{name}</NavLink>  
             <NavLink>
                 

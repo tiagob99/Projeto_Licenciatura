@@ -4,7 +4,8 @@ import './jscolor';
 import { func } from 'prop-types';
 import * as db from './database';
 import Gardens from './Gardens';
-import * as login from './Login/Login';
+import * as login from './Login/Data';
+import * as data from './Login/Data';
 
 
 /*Menu*/
@@ -259,7 +260,6 @@ export function digital_color() {
   x.value = currentVal;
   document.getElementById('node1').style.color =  currentVal;
   verifica('DC',currentVal);
-  //concatenar('DC',currentVal);
 }
 
 export function analog_hours() {
@@ -1112,8 +1112,10 @@ $('#btRemImg').click(function() { // remove Imagem
     while(i<array_codigo.length){
       db.database_new('Gardens',array_codigo[i], array_codigo[i+1]);
       i=i+2;
+
     }
-    
+//    data.definicao = data.definicao;
+    //alert(data.definicao);
     // document.getElementById('codee').innerHTML=codigo;
     // <?php
     // $conn = new mysqli('localhost','root','','test');

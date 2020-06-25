@@ -1,6 +1,5 @@
 import firebase from 'firebase';
 import { funct } from './Garden';
-import * as login from './Login/Login';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDAcpp-AHr2I_-jsBHHq_6egdEB92e8lHI",
