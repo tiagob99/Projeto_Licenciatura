@@ -44,6 +44,7 @@ html, body,#root{
     border: none;
     font-family: $oswald;
     color: $main-font-col;
+    
 
 
 }
@@ -1025,12 +1026,13 @@ input[type=text], select {
     width: 90%;
   }
   #first_menu_hidden1.active{
-    height:50%;
-    left: auto;
+    height:0%;
+    left: 5%;
     margin: 1%;
+    top:20%
   }
   #remaining_1.active{
-    margin-top: 110%;
+    margin-top: 70%;
   }
   #remaining_222.active{
     margin-top: 120%;
@@ -1423,9 +1425,10 @@ input[type=text], select {
   width: 90%;
 }
 #first_menu_hidden11.active{
-  height:50%;
-    left: auto;
+  height:0%;
+    left: 5%;
     margin: 1%;
+    top:35%
 }
 #remaining_11.active{
   margin-top: 110%;
@@ -1727,9 +1730,10 @@ input[type=text], select {
   width: 90%;
 }
 #first_menu_hidden111.active{
-  height:50%;
-    left: auto;
+  height:0%;
+    left: 5%;
     margin: 1%;
+    top:30%
 }
 #remaining_111.active{
   margin-top: 110%;
@@ -1950,9 +1954,10 @@ animation:  dash 3s linear;*/
   width: 90%;
 }
 #first_menu_hidden1111.active{
-  height:50%;
-  left: auto;
-  margin: 1%;
+  height:0%;
+    left: 5%;
+    margin: 1%;
+    top:30%
 }
 #remaining_1111.active{
   margin-top: 110%;
@@ -2046,6 +2051,7 @@ animation:  dash 3s linear;*/
   margin-top: -68%;
   z-index: 10;
 }
+
 
 
 /*circle*/
@@ -2649,9 +2655,10 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   width: 90%;
 }
 #first_menu_hidden11111.active{
-  height:50%;
-  left: auto;
-  margin: 1%;
+  height:0%;
+    left: 5%;
+    margin: 1%;
+    top:30%
 }
 #remaining_11111.active{
   margin-top:110%;
@@ -2886,7 +2893,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
 }
 
 #alerta:hover {opacity: 1}
 //Botao codigo
+

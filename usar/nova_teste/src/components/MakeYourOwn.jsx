@@ -9,6 +9,10 @@ import { bar_type } from './mikrosjs';
 import {GooglePicker, MyCustomButton} from "react-google-picker";
 import google from "react-google-picker";
 import gapi from 'gapi-client';
+import * as selfcomplete from './SelfCompletes';
+import * as garden from './Garden';
+
+
 //import './google';
 
     
@@ -226,7 +230,37 @@ const MakeYourOwn = () => {
                     <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
-                    </select> <br />
+                    </select> 
+                    <div id="tipo_temp" >
+                        <select id="mesage_time" onChange={garden.funct} >
+                      <option value="timeframe">Timeframe</option>
+                      <option value="percentagem">Percentagem</option>
+                    </select>
+                      <div id="tipo_timeframe">
+                      <select id="timeframe" onChange={garden.troca}  >
+                    <option value="10">10 Minutos</option>
+                    <option value="20">20 Minutos</option>
+                    <option value="30">30 Minutos</option>
+                    <option value="40">40 Minutos</option>
+                    <option value="50">50 Minutos</option>
+                    <option value="60">60 Minutos</option>
+                    </select>
+                      </div>
+                      <div id="tipo_percentagem">
+                      <select id="percentagem" onChange={garden.troca2}>
+                    <option value="10">10 %</option>
+                    <option value="20">20 %</option>
+                    <option value="30">30 %</option>
+                    <option value="40">40 %</option>
+                    <option value="50">50 %</option>
+                    <option value="60">60 %</option>
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <option value="100">100 %</option>
+                    </select>
+                      </div>
+                      </div>
                     <br />
                     <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
@@ -245,7 +279,7 @@ const MakeYourOwn = () => {
               <img id="img" src style={{width: '100%', height: '100%'}} />
             </div>
             <div id="background" className="center_circule">
-              <img id="img_backgroud" src style={{width: '350%', height: '350%', borderRadius: '100%', display: 'none', position: 'absolute', left: '-125%', top: '-125%'}} />
+              <img id="img_backgroud_s" src style={{width: '100%', height: '100%', borderRadius: '100%', display: 'none', position: 'absolute', left: '0%', top: '0%'}} />
               <p id="rect" className="center_circule" />
             </div>
             <div id="dragdiv" style={{zIndex: 2}}>
@@ -261,7 +295,7 @@ const MakeYourOwn = () => {
             <div id="dropdiv" style={{zIndex: 2}}>
               <ul id="Ul1">
                 <li id="setimo" />
-                {/* <li id="oitavo" /> */}
+                <li id="oitavo" />
               </ul>
             
             <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="150%" height="150%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-11%', marginTop: '-13%'}}>
@@ -279,8 +313,8 @@ const MakeYourOwn = () => {
             </div>
           </div>
         </div>
-        <div className="botão_direita">
-        </div>
+      <input type="button" onClick={make.cod} id="alerta" value="codigo" className="cod" />
+            <p id= "codee"></p>
       </div>
     </div>
 

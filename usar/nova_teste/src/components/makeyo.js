@@ -2,6 +2,7 @@ import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import google from "react-google-picker";
 import gapi from 'gapi-client';
+import * as db from './database';
 /*Menu*/
 
 var open = false;
@@ -97,11 +98,13 @@ export function updatewhatch() {
     document.getElementById('node2_1').style.display = "initial";
     document.getElementById('node1_1').style.display = "none";
     watchtype = "analog";
+    verifica('WT','Analogico');
   }
   else{
     document.getElementById('node1_1').style.display = "initial";
     document.getElementById('node2_1').style.display = "none";
     watchtype = "digital";
+    verifica('WT','Digital');
   }
 }
 /* Change center watch type*/
@@ -114,14 +117,16 @@ export function backgroundcolor() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('rect').style.backgroundColor = currentVal;
-}
+    verifica('BC',currentVal);
+
+  }
 export function digitalcolor() {
     var x = document.getElementById("myColor1");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('node1').style.color = currentVal;
-    // document.getElementById('hour_1').style.color = currentVal;
-    // document.getElementById('minute_1').style.color = currentVal;
+    verifica('DC',currentVal);
+
 }
 
 
@@ -130,29 +135,29 @@ export function updateAnalogHours() {
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('hour_pointer').style.stroke = currentVal;
-    // document.getElementById('hour_pointer_1').style.stroke = currentVal;
-}
+    verifica('HC',currentVal);
+  }
 export function updateAnalogMinutes() {
     var x = document.getElementById("myColor3");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('minute_pointer').style.stroke = currentVal;
-    // document.getElementById('minute_pointer_1').style.stroke = currentVal;
-}
+    verifica('MC',currentVal);
+  }
 export function updateAnalogSeconds() {
     var x = document.getElementById("myColor4");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('second_pointer').style.stroke = currentVal;
-    // document.getElementById('second_pointer_1').style.stroke = currentVal;
-}
+    verifica('SC',currentVal);
+  }
 export function centercricule() {
     var x = document.getElementById("myColor5");
     var currentVal = x.value;
     x.value = currentVal;
     document.getElementById('center_dot').style.stroke = currentVal;
-    // document.getElementById('center_dot_1').style.stroke = currentVal;
-}
+    verifica('CC',currentVal);
+  }
 export function barcolor() {
     var x = document.getElementById("myColor6");
     var currentVal = x.value;
@@ -161,24 +166,38 @@ export function barcolor() {
     document.getElementById("bar"+novo).style.stroke = currentVal;
     if(novo == 0){
       cor_b0 = currentVal;
+      verifica('B0C', currentVal);
+
     }
     else if(novo == 1){
       cor_b1 = currentVal;
+      verifica('B1C', currentVal);
+
     }
     else if(novo == 2){
       cor_b2 = currentVal;
+      verifica('B2C', currentVal);
+
     }
     else if(novo == 3){
       cor_b3 = currentVal;
+      verifica('B3C', currentVal);
+
     }
     else if(novo == 4){
       cor_b4 = currentVal;
+      verifica('B4C', currentVal);
+
     }
     else if(novo == 5){
       cor_b5 = currentVal;
+      verifica('B5C', currentVal);
+
     }
     else if(novo == 6){
       cor_b6 = currentVal;
+      verifica('B6C', currentVal);
+
     }
 }
 /*Cores*/
@@ -581,7 +600,6 @@ export function valores(){
  
   switch (barra) {
     case "0":
-      alert (barr_0);  
       
        $('#bar_type').prop('selectedIndex',temp0);
        document.getElementById('barsize').value=tamanho_1;
@@ -1082,24 +1100,33 @@ $(document).ready(function() {
 
   $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
     var novo = document.getElementById("mesage_type").value;
+    verifica('MT',novo);
     if(novo=="temporaria"){
-      $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-        '<option value="timeframe">Timeframe</option>'+
-        '<option value="percentagem">Percentagem</option>'+
-      '</select>'+
-      '<select id="timeframe" style="margin-left:10px;">'+
-      '<option value="10">10 Minutos</option>'+
-      '<option value="20">20 Minutos</option>'+
-      '<option value="30">30 Minutos</option>'+
-      '<option value="40">40 Minutos</option>'+
-      '<option value="50">50 Minutos</option>'+
-      '<option value="60">60 Minutos</option>'+
-      '</select>').insertAfter('#mesage_type')
+      $("body").append(document.getElementById('mesage_time').classList.add('active'));
+      $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
+
+      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
+      //   '<option value="timeframe">Timeframe</option>'+
+      //   '<option value="percentagem">Percentagem</option>'+
+      // '</select>'+
+      // '<select id="timeframe" style="margin-left:10px;">'+
+      // '<option value="10">10 Minutos</option>'+
+      // '<option value="20">20 Minutos</option>'+
+      // '<option value="30">30 Minutos</option>'+
+      // '<option value="40">40 Minutos</option>'+
+      // '<option value="50">50 Minutos</option>'+
+      // '<option value="60">60 Minutos</option>'+
+      // '</select>').insertAfter('#mesage_type')
     }
     else{
-      $("#mesage_time").remove();
-      $("#percentagem").remove();
-      $("#timeframe").remove();
+      $("body").append(document.getElementById('mesage_time').classList.remove('active'));
+        
+      $("body").append(document.getElementById('percentagem').classList.remove('active'));
+      
+      $("body").append(document.getElementById('timeframe').classList.remove('active'));
+      $("body").append(document.getElementById('tipo_timeframe').classList.remove('active'));
+      $("body").append(document.getElementById('tipo_percentagem').classList.remove('active'));
+      
     }
   });
 
@@ -1168,10 +1195,52 @@ $(document).ready(function() {
     }
     console.log(posiçoesocupadas);
     console.log(matrixtext);
+
+    // if(document.getElementById('oitavo').innerHTML!=""){
+    //   verifica('PO',document.getElementById('oitavo').innerHTML);}
+
+      if(document.getElementById('setimo').innerHTML!=""){
+      verifica('PSE',document.getElementById('setimo').innerHTML);}
+
+     else if(document.getElementById('quinto').innerHTML!=""){
+     verifica('PQI',document.getElementById('quinto').innerHTML);}
+
+     else if(document.getElementById('quarto').innerHTML!=""){
+      verifica('PQ',document.getElementById('quarto').innerHTML);}
+
+     else if(document.getElementById('terceiro').innerHTML!=""){
+      verifica('PT',document.getElementById('terceiro').innerHTML);}
+
+     else if(document.getElementById('segundo').innerHTML!=""){
+      verifica('PS',document.getElementById('segundo').innerHTML);}
+
+     else if(document.getElementById('primeiro').innerHTML!=""){
+      verifica('PP',document.getElementById('primeiro').innerHTML);}
+
   });
   
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
+    if(document.getElementById('oitavo').innerHTML!=""){
+      verifica_apaga('PO')}
+
+     else if(document.getElementById('setimo').innerHTML!=""){
+      verifica_apaga('PSE')}
+
+     else if(document.getElementById('quinto').innerHTML!=""){
+     verifica_apaga('PQI')}
+
+     else if(document.getElementById('quarto').innerHTML!=""){
+      verifica_apaga('PQ')}
+
+     else if(document.getElementById('terceiro').innerHTML!=""){
+      verifica_apaga('PT')}
+
+     else if(document.getElementById('segundo').innerHTML!=""){
+      verifica_apaga('PS')}
+
+     else if(document.getElementById('primeiro').innerHTML!=""){
+      verifica_apaga('PP')}
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
@@ -1215,10 +1284,14 @@ $(document).ready(function() {
     if(document.getElementById('load_type').value == 'url_load'){
       url = true
       novo = document.getElementById("url").value;
+      verifica('TIM','URL');
+      verifica('SRC',novo);
     }
     if(document.getElementById('load_type').value == 'pc'){
 
       novo= document.getElementById("preview").src;
+      verifica('TIM','PC');
+      verifica('SRC',novo);
     }
     if(document.getElementById('load_type').value == 'pc'){
 
@@ -1231,15 +1304,17 @@ $(document).ready(function() {
     image = true;
     if(imagem_position=="top"){
       document.getElementById("img").src = novo;
-      document.getElementById("img_backgroud").src = novo;
+      document.getElementById("img_backgroud_s").src = novo;
       document.getElementById("img").style.display = "initial";
       document.getElementById("img_div").style.display = "initial";
       limpa();
     }
     else{
       document.getElementById("img").src = novo;
-      document.getElementById("img_backgroud").src = novo;
-      document.getElementById("img_backgroud").style.display = "initial";
+      document.getElementById("img_backgroud_s").src = novo;
+      document.getElementById("img_backgroud_s").style.display = "initial";
+        document.getElementById('img').style.display = "none";
+        document.getElementById('rect').style.display = "none";
       limpa();
     }
 
@@ -1250,12 +1325,15 @@ $(document).ready(function() {
     if(url ==true){
       var novo = document.getElementById("image_type").value;
       if(novo=="bakground"){
-        document.getElementById('img_backgroud').style.display = "initial";
+        verifica('BCK_IMG','Background');
+   
+        document.getElementById("img_backgroud_s").style.display = "initial";
         document.getElementById('img').style.display = "none";
         document.getElementById('rect').style.display = "none";
       }
       else{
-        document.getElementById('img_backgroud').style.display = "none";
+        verifica('BCK_IMG','topo');
+        document.getElementById('img_backgroud_s').style.display = "none";
         document.getElementById('img').style.display = "initial";
         document.getElementById('rect').style.display = "initial";
       }
@@ -1266,7 +1344,7 @@ $(document).ready(function() {
   $('#btRemImg').click(function() { // remove Imagem
       document.getElementById('img_div').style.display = "none";
       document.getElementById('img').style.display = "none";
-      document.getElementById('img_backgroud').style.display = "none";
+      document.getElementById('img_backgroud_s').style.display = "none";
       document.getElementById('primeiro').style.opacity=1;
       document.getElementById('segundo').style.opacity=1;
       document.getElementById('terceiro').style.opacity=1;
@@ -1756,3 +1834,55 @@ export function fechar(){
   document.getElementById('testes').classList.remove('active')
 }
 //fechar e abrir menu-----------------
+
+export function cod(){
+    
+  // concatenaraux();
+  var i=1;
+  document.getElementById('codee').innerHTML=array_codigo;
+  while(i<array_codigo.length){
+    db.database_new('Gardens',array_codigo[i], array_codigo[i+1]);
+    i=i+2;
+
+  }
+
+}
+var codigo="MiKros";
+var array_codigo=["MIKROS"];
+
+export function concatenar(id,valor){
+  // codigo= codigo + '|' + id + '|' + valor;
+  array_codigo.push(id,valor);
+}
+function verifica(id, valor){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i+1] = valor;
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+  concatenar(id, valor);
+
+}
+function verifica_apaga(id){
+  var i = 0;
+  while(i<array_codigo.length-1){
+    if(id==array_codigo[i]){
+      array_codigo[i] = id
+      array_codigo[i+1] = '';
+      i++;
+      return 0;
+    }
+    else{
+      i++;
+    }
+   
+  }
+
+}

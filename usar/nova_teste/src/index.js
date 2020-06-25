@@ -8,7 +8,7 @@ import './main.scss';
 // import predefine from './components/Predefine';
 // import Gardens from './components/Gardens';    
 // import Mikros from './components/Mikros';
-import Login from './components/Login/Login';
+import Data from './components/Login/Data';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
 // import SelfComplete from './components/SelfComplete';
@@ -38,7 +38,7 @@ const Routes = () => (
             <Route exact path="/" component={home}/>
             <Route exact path="/MakeYourOwn" component={myo}/>
             <Route exact path="/Predefine" component={predefine}/>
-            <Route exact path="/Login" component={Login}/>
+            <Route exact path="/Data" component={Data}/>
             <Route exact path="/Gardens" component={garden}/>
             <Route exact path="/Mikros" component={mikros}/> 
             <Route exact path="/SelfComplete" component ={self}/>
