@@ -10,10 +10,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import * as data from './dados';
-import './result_fetch';
+import * as dados from '../database';
 
 export var definicao;
-
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -22,6 +21,7 @@ const useStyles = makeStyles({
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
+  
 }
 
 const rows = [
