@@ -11,6 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import * as data from './dados';
 import * as dados from '../database';
+import axios from 'axios';
 
 export var definicao;
 const useStyles = makeStyles({
@@ -32,13 +33,25 @@ const rows = [
   createData('teste', 356, 16.0, 49, 3.9),
 
 ];
+
+// var dados_f=[];
+
+// function bd (){
+//   console.log('--------------------------------'); 
+//   axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
+//   console.log(dados_f);
+// };
+
+
 export default function Data() {
   const classes = useStyles();
+  
+
     
   
   return (
     
-
+      
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -68,6 +81,8 @@ export default function Data() {
 
   )
 }
+
+
 
 
 

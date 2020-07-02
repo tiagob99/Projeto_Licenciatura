@@ -7,6 +7,8 @@ import Gardens from './Gardens';
 import * as login from './Login/Data';
 import * as data from './Login/Data';
 
+import axios from 'axios';
+
 
 /*Menu*/
 var open = false;
@@ -1150,3 +1152,22 @@ export function troca2(){
 //CODIGO-PERCENTAGEM
 
 
+
+var dados_f=[];
+
+function bd (){
+  console.log('--------------------------------'); 
+  axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
+  console.log(dados_f.data);
+  
+};
+
+bd();
+
+
+// async function axiosTest() {
+//   const response = await axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json');
+//   const data = await response.json(); 
+//   console.log('____________________________');
+//   console.log(data);
+// }

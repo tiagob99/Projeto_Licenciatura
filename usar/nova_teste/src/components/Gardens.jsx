@@ -19,6 +19,7 @@ const Gardens = () => {
   <title>Garden</title>
   <div className="big_div">
     <div id="toggle-btn" onClick={garden.togglemenu}>
+    
       <span />
       <span />
       <span />

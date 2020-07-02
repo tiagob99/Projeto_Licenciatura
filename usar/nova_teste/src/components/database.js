@@ -30,16 +30,8 @@ export function database_new(pagina,key,value){
         console.log('INSERTED !');
     }).catch((error) => {
         console.log(error);
-    });
-     
-
-    
-   
-        
-    
-}
-
-    
+    });  
+}   
     var ref = database.ref('Gardens');
 ref.on('value', gotData,errData)
 
