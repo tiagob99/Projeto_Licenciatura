@@ -92,18 +92,21 @@ $(function timerTick() {
 
 
 /* Change center watch type*/
-var watchtype = "digital"
-export function updatewhatch() {
-  if ( watchtype === "digital"){
-    document.getElementById('node2_1').style.display = "initial";
-    document.getElementById('node1_1').style.display = "none";
-    watchtype = "analog";
+//var watchtype = "digital"
+
+function updatewhatch() {
+  
+  if ( document.getElementsByClassName('child elementos')[1].id === "node2"){
+    // document.getElementById('node2_1').style.display = "initial";
+    // document.getElementById('node1_1').style.display = "none";
     verifica('WT','Analogico');
+    //watchtype = "analog";
+    
   }
   else{
-    document.getElementById('node1_1').style.display = "initial";
-    document.getElementById('node2_1').style.display = "none";
-    watchtype = "digital";
+    // document.getElementById('node1_1').style.display = "initial";
+    // document.getElementById('node2_1').style.display = "none";
+   // watchtype = "digital";
     verifica('WT','Digital');
   }
 }
@@ -113,6 +116,7 @@ export function updatewhatch() {
 
 /*Cores*/
 export function backgroundcolor() {
+    alert(document.getElementsByClassName('child elementos')[1].id)
     var x = document.getElementById("myColor");
     var currentVal = x.value;
     x.value = currentVal;
@@ -166,37 +170,30 @@ export function barcolor() {
     document.getElementById("bar"+novo).style.stroke = currentVal;
     if(novo == 0){
       cor_b0 = currentVal;
-      verifica('B0C', currentVal);
 
     }
     else if(novo == 1){
       cor_b1 = currentVal;
-      verifica('B1C', currentVal);
 
     }
     else if(novo == 2){
       cor_b2 = currentVal;
-      verifica('B2C', currentVal);
 
     }
     else if(novo == 3){
       cor_b3 = currentVal;
-      verifica('B3C', currentVal);
 
     }
     else if(novo == 4){
       cor_b4 = currentVal;
-      verifica('B4C', currentVal);
 
     }
     else if(novo == 5){
       cor_b5 = currentVal;
-      verifica('B5C', currentVal);
 
     }
     else if(novo == 6){
       cor_b6 = currentVal;
-      verifica('B6C', currentVal);
 
     }
 }
@@ -602,11 +599,17 @@ export function valores(){
     case "0":
       
        $('#bar_type').prop('selectedIndex',temp0);
+       
        document.getElementById('barsize').value=tamanho_1;
+       
        document.getElementById('barradius').value=rad_1;
+       
        $('#bar_star').prop('selectedIndex',full1);
+       
        $('#bar_star_1').prop('selectedIndex',rot1);
+       
        document.getElementById("myColor6").value=cor_b0;
+       
        break;
     case "1":
         $('#bar_type').prop('selectedIndex',temp1);
@@ -1156,14 +1159,19 @@ $(document).ready(function() {
       var tipo_mensagem2;
       if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
         if (tipo_mensagem1=="timeframe"){
+          verifica('MESSAGET',tipo_mensagem1)
+          verifica('MESSAGEVALUE',$('#timeframe').val())
           tipo_mensagem2 = $('#timeframe').val();
         }
         else{
+          verifica('MESSAGET',tipo_mensagem1)
+          verifica('MESSAGEVALUE',$('#percentagem').val())
           tipo_mensagem2 = $('#percentagem').val();
         }
         matrixtext[Texto][6]=tipo_mensagem1;
         matrixtext[Texto][7]=tipo_mensagem2;
       }
+      //verifica('MT','fixa')
       matrixtext[Texto][0]=variable_text;
       matrixtext[Texto][1]=text;
       matrixtext[Texto][2]=variable_text1;
@@ -1221,26 +1229,31 @@ $(document).ready(function() {
   
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
-    if(document.getElementById('oitavo').innerHTML!=""){
-      verifica_apaga('PO')}
+    // if(document.getElementById('oitavo').innerHTML!=""){
+    //   verifica_apaga('PO')}
 
-     else if(document.getElementById('setimo').innerHTML!=""){
-      verifica_apaga('PSE')}
+    //  if(document.getElementById('setimo').innerHTML!=""){
+    //   verifica_apaga('PSE')}
 
-     else if(document.getElementById('quinto').innerHTML!=""){
-     verifica_apaga('PQI')}
+    //  if(document.getElementById('quinto').innerHTML!=""){
+    //  verifica_apaga('PQI')}
 
-     else if(document.getElementById('quarto').innerHTML!=""){
-      verifica_apaga('PQ')}
+    //  if(document.getElementById('quarto').innerHTML!=""){
+    //   verifica_apaga('PQ')}
 
-     else if(document.getElementById('terceiro').innerHTML!=""){
-      verifica_apaga('PT')}
+    //  if(document.getElementById('terceiro').innerHTML!=""){
+    //   verifica_apaga('PT')}
 
-     else if(document.getElementById('segundo').innerHTML!=""){
-      verifica_apaga('PS')}
+    //  if(document.getElementById('segundo').innerHTML!=""){
+    //   verifica_apaga('PS')}
 
-     else if(document.getElementById('primeiro').innerHTML!=""){
-      verifica_apaga('PP')}
+    //  if(document.getElementById('primeiro').innerHTML!=""){
+    //   verifica_apaga('PP')
+    //   verifica_apaga('MT')
+    //   verifica_apaga('MESSAGET')
+    //   verifica_apaga('MESSAGEVALUE')
+
+    // }
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
@@ -1836,12 +1849,94 @@ export function fechar(){
 //fechar e abrir menu-----------------
 
 export function cod(){
-    
+  updatewhatch();
+  if(Linha==1){
+    verifica('B1T',tipob_0);
+    verifica('B1S',tamanho_1);
+    verifica('B1R',rad_1);
+    verifica('B1STAR',star0);
+    verifica('B1STAR1',barr_0);
+    verifica('B1C',cor_b0);
+  }
+  if(Linha==2){
+    verifica('B2T',tipob_1);
+    verifica('B2S',tamanho_2);
+    verifica('B2R',rad_2);
+    verifica('B2STAR',star1);
+    verifica('B2STAR1',barr_1);
+    verifica('B2C',cor_b1);
+  }
+  if(Linha==3){
+    verifica('B3T',tipob_2);
+    verifica('B3S',tamanho_3);
+    verifica('B3R',rad_3);
+    verifica('B3STAR',star2);
+    verifica('B3STAR',barr_2);
+    verifica('B3C',cor_b2);
+  }
+  if(Linha==4){
+    verifica('B4T',tipob_3);
+    verifica('B4S',tamanho_4);
+    verifica('B4R',rad_4);
+    verifica('B4STAR',star3);
+    verifica('B4STAR',barr_3);
+    verifica('B4C',cor_b3);
+  }
+  if(Linha==5){
+    verifica('B5T',tipob_4);
+    verifica('B5S',tamanho_5);
+    verifica('B5R',rad_5);
+    verifica('B5STAR',star4);
+    verifica('B5STAR1',barr_4);
+    verifica('B5C',cor_b4);
+  }
+  if(Linha==6){
+    verifica('B6T',tipob_5);
+    verifica('B6S',tamanho_6);
+    verifica('B6R',rad_6);
+    verifica('B6STAR',star5);
+    verifica('B6STAR1',barr_5);
+    verifica('B6C',cor_b5);
+  }
+  if(Linha==7){
+    verifica('B7T',tipob_6);
+    verifica('B7S',tamanho_7);
+    verifica('B7R',rad_6);
+    verifica('B7STAR',star6);
+    verifica('B7STAR1',barr_6);
+    verifica('B7C',cor_b6);
+  }
+  
   // concatenaraux();
   var i=1;
   document.getElementById('codee').innerHTML=array_codigo;
+  if(document.getElementById('oitavo').innerHTML!=""){
+    verifica_apaga('PO')}
+
+  else if(document.getElementById('setimo').innerHTML!=""){
+    verifica_apaga('PSE')}
+
+  else if(document.getElementById('quinto').innerHTML!=""){
+   verifica_apaga('PQI')}
+
+  else if(document.getElementById('quarto').innerHTML!=""){
+    verifica_apaga('PQ')}
+
+  else if(document.getElementById('terceiro').innerHTML!=""){
+    verifica_apaga('PT')}
+
+  else if(document.getElementById('segundo').innerHTML!=""){
+    verifica_apaga('PS')}
+
+  else if(document.getElementById('primeiro').innerHTML!=""){
+    verifica_apaga('PS')
+    verifica_apaga('PP')
+    verifica_apaga('MT')
+    verifica_apaga('MESSAGET')
+    verifica_apaga('MESSAGEVALUE')
+   }
   while(i<array_codigo.length){
-    db.database_new('Gardens',array_codigo[i], array_codigo[i+1]);
+    db.database_new('MAKEYOUROWN',array_codigo[i], array_codigo[i+1]);
     i=i+2;
 
   }
@@ -1872,8 +1967,9 @@ function verifica(id, valor){
 }
 function verifica_apaga(id){
   var i = 0;
-  while(i<array_codigo.length-1){
+  while(i<=array_codigo.length-1){
     if(id==array_codigo[i]){
+      
       array_codigo[i] = id
       array_codigo[i+1] = '';
       i++;
