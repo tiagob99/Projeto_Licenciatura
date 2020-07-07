@@ -19,7 +19,9 @@ const firebaseConfig = {
 var firebaseApp = firebase.initializeApp(firebaseConfig)
 var database = firebase.database();
 export function database_new(pagina,key,value){
-        firebase.database().ref(pagina + '/' + key).set(
+    var uti = firebase.auth().currentUser;
+      email = uti.displayName;
+        firebase.database().ref(email+'/'+pagina + '/' + key).set(
             {
                 value: value
 
@@ -33,23 +35,23 @@ export function database_new(pagina,key,value){
     });  
 }   
     var ref = database.ref('Gardens');
-ref.on('value', gotData,errData)
+// ref.on('value', gotData,errData)
 
 
 
 
-function gotData(data){
-    var res = data.val();
-    var keys = Object.keys(res)
-    //console.log(data)
-    for(var i = 0; i < keys.length; i++) {
-        var k = keys[i];
-        var initials = res[k].initials;
-        var ress = res[k].ress;
+// function gotData(data){
+//     var res = data.val();
+//     var keys = Object.keys(res)
+//     //console.log(data)
+//     for(var i = 0; i < keys.length; i++) {
+//         var k = keys[i];
+//         var initials = res[k].initials;
+//         var ress = res[k].ress;
         
-    }
+//     }
     
-}
+// }
 
 
 function errData(err){
@@ -61,3 +63,55 @@ function errData(err){
 //     firebase.database().ref(email)
 //     }
 
+//login
+var provider = new firebase.auth.GoogleAuthProvider();
+var email;
+export function login(){
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        window.location.href ="./Predefine"
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+      firebase.auth().getRedirectResult().then(function(result) {
+        if (result.credential) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // ...
+        }
+        // The signed-in user info.
+        var user = result.user;
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+      
+      
+}
+
+export function logout(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+      window.location.href = "./";    
+      email = ''
+}

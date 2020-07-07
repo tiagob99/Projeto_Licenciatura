@@ -43,8 +43,7 @@ const Album = ({id, title, year, coverUrl, preOrder, pricing, tracklist}) => {
                     <Socials context="album"/> */}
                     <br></br>
                     
-                    Months on ye at by esteem desire warmth former. Sure that that way gave any fond now. His boy middleton sir nor engrossed affection excellent. Dissimilar compliment cultivated preference eat sufficient may. Well next door soon we mr he four. Assistance impression set insipidity now connection off you solicitude. Under as seems we me stuff those style at. Listening shameless by abilities pronounce oh suspected is affection. Next it draw in draw much bred.<br></br>
-                    Exquisite cordially mr happiness of neglected distrusts. Boisterous impossible unaffected he me everything. Is fine loud deal an rent open give. Find upon and sent spot song son eyes. Do endeavor he differed carriage is learning my graceful. Feel plan know is he like on pure. See burst found sir met think hopes are marry among. Delightful remarkably new assistance saw literature mrs favourable.
+                    Este website foi desenvolvido como proposta de projeto de final de Licenciatura e tem como propósito facilitar a configurar o seu smartwatch de forma mais rápida e intuítiva.
                     
                 </div>
             </div>

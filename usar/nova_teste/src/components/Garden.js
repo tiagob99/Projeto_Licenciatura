@@ -1,11 +1,14 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
+import firebase from 'firebase';
 import './jscolor';
 import { func } from 'prop-types';
 import * as db from './database';
 import Gardens from './Gardens';
 import * as login from './Login/Data';
 import * as data from './Login/Data';
+import * as database from './database';
+
 
 import axios from 'axios';
 
@@ -121,7 +124,7 @@ $(function clock(){
     minutes = "0" + minutes
   }
 
-  if(window.location.pathname == '/Gardens'){
+  if(window.location.pathname === '/Gardens'){
     document.getElementById('hour').innerHTML = hours;
     document.getElementById('minute').innerHTML = ": " + minutes;}},
   100);
@@ -1106,9 +1109,12 @@ $('#btRemImg').click(function() { // remove Imagem
   //   //alert(array_codigo);
   // }
 
+
   export function cod(){
     
     // concatenaraux();
+    db.login();
+
     var i=1;
     document.getElementById('codee').innerHTML=array_codigo;
     while(i<array_codigo.length){

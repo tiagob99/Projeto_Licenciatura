@@ -127,7 +127,7 @@ $(function clock(){
       var h = 30 * ((fulld.getHours() % 12) + fulld.getMinutes() / 60);
       var m = 6 * fulld.getMinutes();
       var s = 6 * fulld.getSeconds();
-      if(window.location.pathname === '/Mikros'){
+      if(window.location.pathname == '/Mikros'){
         document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
         document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
         document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
