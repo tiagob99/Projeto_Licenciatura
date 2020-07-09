@@ -116,7 +116,7 @@ function updatewhatch() {
 
 /*Cores*/
 export function backgroundcolor() {
-    alert(document.getElementsByClassName('child elementos')[1].id)
+    //alert(document.getElementsByClassName('child elementos')[1].id)
     var x = document.getElementById("myColor");
     var currentVal = x.value;
     x.value = currentVal;
@@ -946,7 +946,7 @@ function changeImage(input) {
   function pickerCallback(data) {
     if (data.action == google.picker.Action.PICKED) {
       var fileId = data.docs[0].id;
-      alert('The user selected: ' + fileId);
+      // alert('The user selected: ' + fileId);
     }
   }
   export function showPickerDialog(){
@@ -1553,7 +1553,7 @@ export function barstar (){
           document.getElementById('bardraw'+barnumber).style.left = "46.3%";
           document.getElementById('bardraw'+barnumber).style.top = "74.3%";
   
-          previous="v"
+          previous="full"
          }
           document.getElementById('bar'+barnumber).style.strokeDasharray  = "300%,300%";
           matrix[barnumber][5]="full";
@@ -1604,10 +1604,9 @@ export function barstar (){
         matrix[barnumber][5]="tophalf";
         matrix[barnumber][3]=-180;
         barradius();
-        previous = "velho";
+        previous = "tophalf";
       }
       else {
-        alert('aqui')
         // document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-5)";
         // //document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-1)";
                 
@@ -1647,7 +1646,7 @@ export function barstar (){
         matrix[barnumber][5]="bottomhalf";
         matrix[barnumber][3]=0;
         barradius();
-        previous = "novo";
+        previous = "bottomhalf";
       }
     }
      
