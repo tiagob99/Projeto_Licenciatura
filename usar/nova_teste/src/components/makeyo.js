@@ -224,22 +224,23 @@ for(var i=0; i<7; i++) {
 /*Matriz texto inicial*/
 var matrixtext = [];
 for(var i=0; i<8; i++) {
-    matrixtext[i] =  new Array(7);
+    matrixtext[i] =  new Array(8);
 }
 for(var i=0; i<8; i++) {
   matrixtext[i][0]="none";
   matrixtext[i][1]="";
-  // matrixtext[i][2]="none";
-  // matrixtext[i][3]="dasdsa";
+  matrixtext[i][2]="none";
+  matrixtext[i][3]="";
   matrixtext[i][4]="none";
   matrixtext[i][5]="fixa";
   matrixtext[i][6]="";
   matrixtext[i][7]="";
+  matrixtext[i][8]="";
 }
 var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto",  "setimo", "oitavo"]; //posiçoes
-var posiçoesocupadas = [0,0,0,0,0,0,0,0];
-for (var i=0; i<8; i++){
-  matrixtext[i][8]=id[i];
+var posiçoesocupadas = [0,0,0,0,0,0,0];
+for (var i=0; i<7; i++){
+  matrixtext[i][7]=id[i];
 }
 /*Matriz texto inicial*/
 
@@ -989,13 +990,13 @@ $(document).ready(function() {
   $('#btAddText').click(function() { //Adiciona uma caixa de texto
     var ha_posiçao_livre = false;
     var novo = 0;
-    while (posiçoesocupadas[novo]==1 && novo<8) {
+    while (posiçoesocupadas[novo]==1 && novo<7) {
       novo = novo + 1;
     }
     if(posiçoesocupadas[novo]==0){
       ha_posiçao_livre=true;
     }
-    if (Texto<8){
+    if (Texto<7){
       console.log(Texto)
       if(Texto ==3){
         elemento = true;
@@ -1011,19 +1012,22 @@ $(document).ready(function() {
       var tipo_mensagem2;
       if (tipo_mensagem == "temporaria"){ //caso seja fixa a posiçao 6 e 7 da matriz ficam em ""
         if (tipo_mensagem1=="timeframe"){
-          verifica('MESSAGET',tipo_mensagem1)
-          verifica('MESSAGEVALUE',$('#timeframe').val())
+          verifica('MT',tipo_mensagem1)
+          verifica('TT',$('#timeframe').val())
           tipo_mensagem2 = $('#timeframe').val();
         }
         else{
-          verifica('MESSAGET',tipo_mensagem1)
-          verifica('MESSAGEVALUE',$('#percentagem').val())
+          verifica('MT',tipo_mensagem1)
+          verifica('TP',$('#percentagem').val())
           tipo_mensagem2 = $('#percentagem').val();
         }
         matrixtext[Texto][6]=tipo_mensagem1;
         matrixtext[Texto][7]=tipo_mensagem2;
       }
-      //verifica('MT','fixa')
+      
+      else{
+        verifica('MT','fixa')
+      }
       matrixtext[Texto][0]=variable_text;
       matrixtext[Texto][1]=text;
       matrixtext[Texto][2]=variable_text1;
@@ -1050,16 +1054,17 @@ $(document).ready(function() {
       }
       posiçoesocupadas[novo]=1;
       $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
-      matrixtext[Texto][8]=id[novo];
+      matrixtext[Texto][7]=id[novo];
       Texto = Texto + 1;
     }
     console.log(posiçoesocupadas);
     console.log(matrixtext);
 
-    // if(document.getElementById('oitavo').innerHTML!=""){
-    //   verifica('PO',document.getElementById('oitavo').innerHTML);}
+    if(document.getElementById('oitavo').innerHTML!=""){
+      verifica('PO',document.getElementById('oitavo').innerHTML);}
+      
 
-      if(document.getElementById('setimo').innerHTML!=""){
+    else if(document.getElementById('setimo').innerHTML!=""){
       verifica('PSE',document.getElementById('setimo').innerHTML);}
 
      else if(document.getElementById('quinto').innerHTML!=""){
@@ -1081,7 +1086,28 @@ $(document).ready(function() {
   
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
-    
+    if(document.getElementById('oitavo').innerHTML!=""){
+      verifica_apaga('PO')}
+
+     else if(document.getElementById('setimo').innerHTML!=""){
+      verifica_apaga('PSE')}
+
+     else if(document.getElementById('quinto').innerHTML!=""){
+     verifica_apaga('PQI')}
+
+     else if(document.getElementById('quarto').innerHTML!=""){
+      verifica_apaga('PQ')}
+
+     else if(document.getElementById('terceiro').innerHTML!=""){
+      verifica_apaga('PT')}
+
+     else if(document.getElementById('segundo').innerHTML!=""){
+      verifica_apaga('PS')}
+
+     else if(document.getElementById('primeiro').innerHTML!=""){
+      verifica_apaga('PP')}
+
+
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
@@ -1090,7 +1116,7 @@ $(document).ready(function() {
       console.log("22aaa")
       Texto = Texto - 1;
       var aux1 = 0;
-      while(id[aux1]!=matrixtext[Texto][8]){
+      while(id[aux1]!=matrixtext[Texto][7]){
         aux1 = aux1+ 1;
       }
       posiçoesocupadas[aux1]=0;
@@ -1100,9 +1126,9 @@ $(document).ready(function() {
       matrixtext[aux1][3]="";
       matrixtext[aux1][4]="none";
       matrixtext[aux1][5]="fixa";
-      matrixtext[aux1][6]="";
-      matrixtext[aux1][7]="";
-      $('#'+  matrixtext[Texto][8]).text("");
+      matrixtext[aux1][6]="fixa";
+      // matrixtext[aux1][7]="";
+      $('#'+  matrixtext[Texto][7]).text("");
     }
     else if (image==true){
       matrixtext[4][0]="none";
@@ -1113,11 +1139,12 @@ $(document).ready(function() {
       matrixtext[4][5]="fixa";
       matrixtext[4][6]="";
       matrixtext[4][7]="";
-      posiçoesocupadas= [1,1,1,0,1,1,1,1];
+      posiçoesocupadas= [1,1,1,0,1,1,1];
       $('#quarto').text("");
       elemento = false;
       console.log("aa33a")
     }
+
   });
   
   $('#btAddImg').click(function() { // Adiciona Imagem e remove posiçoes de colocação de texto
@@ -1189,7 +1216,7 @@ $(document).ready(function() {
       document.getElementById('segundo').style.opacity=1;
       document.getElementById('terceiro').style.opacity=1;
       document.getElementById('quinto').style.opacity=1;
-      document.getElementById('sexto').style.opacity=1;
+      // document.getElementById('sexto').style.opacity=1;
       document.getElementById('setimo').style.opacity=1;
       document.getElementById('oitavo').style.opacity=1;
       image = false;
@@ -1747,31 +1774,7 @@ export function cod(){
   // concatenaraux();
   var i=1;
   document.getElementById('codee').innerHTML=array_codigo;
-  if(document.getElementById('oitavo').innerHTML!=""){
-    verifica_apaga('PO')}
-
-  else if(document.getElementById('setimo').innerHTML!=""){
-    verifica_apaga('PSE')}
-
-  else if(document.getElementById('quinto').innerHTML!=""){
-   verifica_apaga('PQI')}
-
-  else if(document.getElementById('quarto').innerHTML!=""){
-    verifica_apaga('PQ')}
-
-  else if(document.getElementById('terceiro').innerHTML!=""){
-    verifica_apaga('PT')}
-
-  else if(document.getElementById('segundo').innerHTML!=""){
-    verifica_apaga('PS')}
-
-  else if(document.getElementById('primeiro').innerHTML!=""){
-    verifica_apaga('PS')
-    verifica_apaga('PP')
-    verifica_apaga('MT')
-    verifica_apaga('MESSAGET')
-    verifica_apaga('MESSAGEVALUE')
-   }
+ 
   while(i<array_codigo.length){
     db.database_new('MAKEYOUROWN',array_codigo[i], array_codigo[i+1]);
     i=i+2;
@@ -1779,8 +1782,8 @@ export function cod(){
   }
 
 }
-var codigo="MiKros";
-var array_codigo=["MIKROS"];
+var codigo="Make";
+var array_codigo=["MAKE"];
 
 export function concatenar(id,valor){
   array_codigo.push(id,valor);
@@ -1803,9 +1806,8 @@ function verifica(id, valor){
 }
 function verifica_apaga(id){
   var i = 0;
-  while(i<=array_codigo.length-1){
+  while(i<array_codigo.length-1){
     if(id==array_codigo[i]){
-      
       array_codigo[i] = id
       array_codigo[i+1] = '';
       i++;
