@@ -251,8 +251,10 @@ $(function clock(){setInterval(() => {
        var novo = document.getElementById('bar_radius').value;
        novo = (novo/100)*15+1;
        raio = novo;
-       document.getElementById('bar').style.r =  novo;
-       document.getElementById('bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra/100)+",100";
+      //  document.getElementById('bar').style.r =  novo;
+      var circle = document.getElementById('bar');
+      circle.setAttribute("r", novo); 
+      document.getElementById('bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra/100)+",100";
        verifica('BR1',raio);
       }
    

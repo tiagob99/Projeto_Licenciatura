@@ -320,8 +320,10 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_radius_today').value;
        novo = (novo/100)*15+1;
           verifica('BR1',novo);
-       document.getElementById('today_bar').style.r =  novo;
-       document.getElementById('today_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_today/100)+",100";
+      var circle = document.getElementById('today_bar');
+      circle.setAttribute("r", novo);
+      //  document.getElementById('today_bar').style.r =  novo;
+        document.getElementById('today_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_today/100)+",100";
    }
    
    
@@ -329,7 +331,9 @@ export function togglemenu4(){
        var novo = document.getElementById('bar_radius_yesterday').value;
        novo = (novo/100)*15+1;
           verifica('BR2',novo);
-       document.getElementById('yesterday_bar').style.r =  novo;
+      var circle = document.getElementById('yesterday_bar');
+      circle.setAttribute("r", novo);
+      //  document.getElementById('yesterday_bar').style.r =  novo;
        document.getElementById('yesterday_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_yesterday/100)+",100";
    }
    

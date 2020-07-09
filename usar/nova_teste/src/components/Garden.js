@@ -1113,7 +1113,7 @@ $('#btRemImg').click(function() { // remove Imagem
   export function cod(){
     
     // concatenaraux();
-    db.login();
+    //db.login();
 
     var i=1;
     document.getElementById('codee').innerHTML=array_codigo;
@@ -1164,7 +1164,7 @@ var dados_f=[];
 function bd (){
   console.log('--------------------------------'); 
   axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
-  console.log(dados_f.data);
+  console.log(dados_f);
   
 };
 

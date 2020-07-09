@@ -60,7 +60,7 @@ const Simple_goals = () => {
                       <option value="counterclockwise">Counterclockwise</option>
                     </select>
                     <br /><br />
-                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={simple.bar_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
+                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius" onChange={simple.bar_radius} type="range" name="b_radius" defaultValue={100} min="25" /><br /><br />
                     
                   </div>
                   </div>

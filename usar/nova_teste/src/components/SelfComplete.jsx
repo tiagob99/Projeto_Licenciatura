@@ -47,7 +47,7 @@ const SelfComplete =() =>{
                     <div id="third_menu_hidden">
                     <p>Your Circle Bar </p> <br /> <input type="color" id="myColor6" defaultValue="#00FFFF" onChange={selfcomplete.line_color_today}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_today" onChange={selfcomplete.bar_thickness_today} type="range" max={90} name="b_size" /><br /><br />
-                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius_today" onChange={selfcomplete.bar_radius_today} type="range" name="b_radius" defaultValue={100} /><br /><br />
+                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius_today" onChange={selfcomplete.bar_radius_today} type="range" name="b_radius" defaultValue={100} min="25" /><br /><br />
                     <p>Second Circle Bar</p><br />
                     <select name="second_bar_value" id='second_bar_value' onChange={selfcomplete.second_bar_value}>
                         <option value="yesterday">Yesterday</option>
@@ -56,7 +56,7 @@ const SelfComplete =() =>{
                     <br /><br />
                     <p>Second Circle Color </p> <br /> <input type="color" id="myColor7" defaultValue="#FF0000" onChange={selfcomplete.line_color_yesterday}/><br /><br />
                     <p>Circle Bar Size </p> <br /> <input id="bar_thickness_yesterday" onChange={selfcomplete.bar_thickness_yesterday} type="range" max={90} name="b_size" /><br /><br />
-                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius_yesterday" onChange={selfcomplete.bar_radius_yesterday} type="range" name="b_radius" defaultValue={100} /><br /><br />
+                    <p>Circle Bar Radius </p> <br /> <input id="bar_radius_yesterday" onChange={selfcomplete.bar_radius_yesterday} type="range" name="b_radius" defaultValue={100} min="25"/><br /><br />
                     <p>Circle Bar Start </p> <br />
                     <select name="bar_star" id="bar_type" onChange={selfcomplete.bar_type}>
                         <option value="full">Full</option>

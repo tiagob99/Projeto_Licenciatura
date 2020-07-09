@@ -20,8 +20,8 @@ var firebaseApp = firebase.initializeApp(firebaseConfig)
 var database = firebase.database();
 export function database_new(pagina,key,value){
     var uti = firebase.auth().currentUser;
-      email = uti.displayName;
-        firebase.database().ref(email+'/'+pagina + '/' + key).set(
+      email = uti.uid;
+        firebase.database().ref(email + '/' + pagina + '/' + key).set(
             {
                 value: value
 
@@ -65,7 +65,7 @@ function errData(err){
 
 //login
 var provider = new firebase.auth.GoogleAuthProvider();
-var email;
+var email; // username
 export function login(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.

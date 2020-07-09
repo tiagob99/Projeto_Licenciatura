@@ -1546,10 +1546,13 @@ export function barstar (){
          
          if (previous == "novo"){
            
-          document.getElementById('bardraw'+barnumber).style.width = "30%";
+          // document.getElementById('bardraw'+barnumber).style.width = "30%";
           //document.getElementById('bardraw'+barnumber).style.height = "530px";
-          document.getElementById('bardraw'+barnumber).style.marginTop = "-15%";
-          document.getElementById('bardraw'+barnumber).style.marginLeft = "-26%";
+          document.getElementById('bardraw'+barnumber).style.marginTop = "-13%";
+          document.getElementById('bardraw'+barnumber).style.marginLeft = "-11%";
+          document.getElementById('bardraw'+barnumber).style.left = "46.3%";
+          document.getElementById('bardraw'+barnumber).style.top = "74.3%";
+  
           previous="v"
          }
           document.getElementById('bar'+barnumber).style.strokeDasharray  = "300%,300%";
@@ -1558,6 +1561,16 @@ export function barstar (){
         }
       
       else if (novo == "tophalf") {
+        // alert(document.getElementById('bar_star_1').value)
+        if(document.getElementById('bar_star').value != 'tophalf'){
+          var novo = matrix[barnumber][3]
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+          
+          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+        }
+        // if(ultima == 'counterclockwise'){
+      //document.getElementById('bar_star_1').value = 'clockwise'
+        // }
         if(barnumber == 0){
           star0="tophalf" ;
         }
@@ -1580,10 +1593,12 @@ export function barstar (){
           star6="tophalf" ;
         }
          
-        document.getElementById('bardraw'+barnumber).style.marginTop = "-203px";
-        document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
+        document.getElementById('bardraw'+barnumber).style.marginTop = "-13.2%";
+        document.getElementById('bardraw'+barnumber).style.marginLeft = "-13.4%";
         document.getElementById('bardraw'+barnumber).style.width = "30%";
-       //document.getElementById('bardraw'+barnumber).style.height = "530px";
+        document.getElementById('bardraw'+barnumber).style.top = "70%";
+        document.getElementById('bardraw'+barnumber).style.left = "48%";
+        document.getElementById('bardraw'+barnumber).style.height = "458px";
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg)";
         document.getElementById('bar'+barnumber).style.strokeDasharray  = matrix[barnumber][2] +",200%";
         matrix[barnumber][5]="tophalf";
@@ -1592,7 +1607,15 @@ export function barstar (){
         previous = "velho";
       }
       else {
-        
+        alert('aqui')
+        // document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-5)";
+        // //document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-1)";
+                
+        // if(ultima == 'counterclockwise'){
+      //document.getElementById('bar_star_1').value = 'clockwise'
+        // if(ultima == 'counterclockwise'){
+        //   document.getElementById('bar_star_1').value = 'clockwise'
+        // }
         if(barnumber == 0){
           star0="bottomhalf" ;
          }
@@ -1615,11 +1638,11 @@ export function barstar (){
           star6="bottomhalf" ;
          }  
         
-        document.getElementById('bardraw'+barnumber).style.marginTop = "-203px";
-        document.getElementById('bardraw'+barnumber).style.marginLeft = "-260px";
+        document.getElementById('bardraw'+barnumber).style.marginTop = "-165px";
+        document.getElementById('bardraw'+barnumber).style.marginLeft = "-198px";
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + 0 + "deg)";
         document.getElementById('bardraw'+barnumber).style.width = "30%";
-        document.getElementById('bardraw'+barnumber).style.height = "35%";
+        document.getElementById('bardraw'+barnumber).style.height = "458px";
         document.getElementById('bar'+barnumber).style.strokeDasharray  =  matrix[barnumber][2] +",100";
         matrix[barnumber][5]="bottomhalf";
         matrix[barnumber][3]=0;
@@ -1632,12 +1655,13 @@ export function barstar (){
 }
 
 
-
+var ultima;
 export function updaterotation(){
 
-  antes = document.getElementById('bar_star_1').value;
+  //ultima = document.getElementById('bar_star_1').value;
   
   var barnumber = document.getElementById('bar_color_change').value;
+  
     if(matrix[barnumber][7]!="pasthouractivaty"){
       if (matrix[barnumber][4]){
         if(barnumber==0){
@@ -1663,7 +1687,7 @@ export function updaterotation(){
         }
         
         if(matrix[barnumber][5] == "full"){
-          document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
+          // document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
         //   var novo = matrix[barnumber][3] -180;
         //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
         //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
@@ -1672,9 +1696,13 @@ export function updaterotation(){
         else {
           if(matrix[barnumber][5] == "bottomhalf"){
             document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
+            document.getElementById('bardraw'+barnumber).style.left = "52.5%";
+
           }
           if(matrix[barnumber][5] == "tophalf"){
             document.getElementById('bardraw'+barnumber).style.marginLeft = "-258px";
+            document.getElementById('bardraw'+barnumber).style.left = "52.1%";
+
           }
           var novo = matrix[barnumber][3]
           document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
@@ -1716,11 +1744,40 @@ export function updaterotation(){
         matrix[barnumber][4] = true;
         
       }
-      alert(barr_0);
+      
     }
  
 }
+// var right = true;
+// var degrees= 135;
 
+// export function updaterotation(){
+//   var position = document.getElementById('bar_star').value;
+//   var barnumber = document.getElementById('bar_color_change').value;
+  
+//   if (right){
+//     verifica('BROT','COUNTERCLOCKWISE');
+//     // if(position == "full"){
+//     //   var novo = degrees -180
+//     //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)"
+      
+//     //   right = false;
+//     // }
+//       if(position != "full"){
+//       var novo = degrees
+//       document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)"
+      
+//       right = false;
+//       }
+//   }
+//   else {
+//     if(position != "full"){
+//     verifica('BROT','CLOCKWISE');
+//     document.getElementById('bar'+barnumber).style.transform = "rotate(" + degrees  + "deg) "
+//     right = true;
+//     }
+//   }
+// }
 
 
 /*Personalização dos elementos*/

@@ -123,20 +123,17 @@ $(function clock(){
 /*Relogio analogico*/
   $(function timerTick() {
     
-      const fulld = new Date();
-      var h = 30 * ((fulld.getHours() % 12) + fulld.getMinutes() / 60);
-      var m = 6 * fulld.getMinutes();
-      var s = 6 * fulld.getSeconds();
-      if(window.location.pathname == '/Mikros'){
-        document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-        document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-        document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    const aqui =new Date();
+    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+    var m = 6 * aqui.getMinutes();
+    var s = 6 * aqui.getSeconds();
+    if(window.location.pathname === '/Mikros'){
+      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
     }
-      setTimeout(timerTick, 100);
-
-
-    }
-    ) 
+    setTimeout(timerTick, 100);
+  })
     
   
 /*Relogio analogico*/
