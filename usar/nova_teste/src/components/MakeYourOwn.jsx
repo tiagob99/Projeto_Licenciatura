@@ -212,7 +212,7 @@ const MakeYourOwn = () => {
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <select id="third_variable">
+                    <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
                       <option value="today">Today</option>
@@ -226,7 +226,9 @@ const MakeYourOwn = () => {
                       <option value="today">Today</option>
                       <option value="goal">Daily Goal</option>
                       <option value="other_user">Other User</option>
-                    </select> <br /><br /> */}
+                    </select>
+                    <br /><br />
+                    <div>Tipo de Mensagem</div>
                     <select id="mesage_type">
                       <option value="fixa">Fixa</option>
                       <option value="temporaria">Temporaria</option>
@@ -289,13 +291,15 @@ const MakeYourOwn = () => {
                 <li id="terceiro" />
                 <li id="quarto" />
                 <li id="quinto" />
-                <li id="sexto" />
+                {/* <li id="sexto" /> */}
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>
               <ul id="Ul1">
                 <li id="setimo" />
+                <div id="oitavo1-1">
                 <li id="oitavo" />
+                </div>
               </ul>
             
             <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="150%" height="150%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-11%', marginTop: '-13%'}}>
