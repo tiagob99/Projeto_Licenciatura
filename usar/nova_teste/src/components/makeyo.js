@@ -244,7 +244,7 @@ for(var i=0; i<8; i++) {
   matrixtext[i][6]="";
   matrixtext[i][7]="";
 }
-var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto",  "setimo", "oitavo"]; //posiçoes
+var id = ["primeiro", "segundo", "terceiro", "quarto", "quinto",  "setimo", "oitavo"]; //posiçoes
 var posiçoesocupadas = [0,0,0,0,0,0,0,0];
 for (var i=0; i<8; i++){
   matrixtext[i][8]=id[i];
