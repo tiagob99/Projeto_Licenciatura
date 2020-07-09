@@ -1,7 +1,6 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
 import './jscolor';
-import { func } from 'prop-types';
 import * as db from './database';
 
 
@@ -333,16 +332,10 @@ export function togglemenu4(){
           verifica('BR2',novo);
       var circle = document.getElementById('yesterday_bar');
       circle.setAttribute("r", novo);
-      //  document.getElementById('yesterday_bar').style.r =  novo;
        document.getElementById('yesterday_bar').style.strokeDasharray = (2*3.1415*novo)*(tamanho_barra_yesterday/100)+",100";
    }
    
    
-  //  export function text_size() {
-  //      var novo = document.getElementById('text_size').value;
-  //      document.getElementById('texto').style.fontSize = novo + "px";
-  //         verifica('TEXT_S',novo);
-  //  }
    /*personalização*/
    
 
@@ -603,28 +596,6 @@ export function barsize (barnumber){
 
 
 
-function barradius(barnumber) {
-  if(matrix[barnumber][5]=="full"){
-    var tamanho = document.getElementById('barradius'+barnumber).value;
-    tamanho = (tamanho/100)*15+1;
-    matrix[barnumber][1]=tamanho;
-    document.getElementById('bar'+barnumber).style.r =  tamanho;
-    document.getElementById('bar'+barnumber).style.strokeDasharray = 101+",100";
-  }
-  else if(matrix[barnumber][7]!="pasthouractivaty"){
-    var tamanho = document.getElementById('barradius'+barnumber).value;
-    tamanho = (tamanho/100)*15+1;
-    matrix[barnumber][1]=tamanho;
-    document.getElementById('bar'+barnumber).style.r =  tamanho;
-    document.getElementById('bar'+barnumber).style.strokeDasharray = (2*3.1415*tamanho)*(matrix[barnumber][2]/100)+",100"; //20 é o tamanho da barra
-  }
-  else {
-    var tamanho = document.getElementById('barradius'+barnumber).value;
-    tamanho = (tamanho/100)*15+1;
-    matrix[barnumber][1]=tamanho;
-    document.getElementById('bar'+barnumber).style.r =  tamanho;
-  }
-}
 
 /*Personalização dos elementos*/
 

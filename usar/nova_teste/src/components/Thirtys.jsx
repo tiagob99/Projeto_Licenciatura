@@ -1,8 +1,6 @@
 import React from 'react';
-import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as terceiro from './Thirtyy';
-import * as colors from './jscolor';
 
 
 
@@ -62,7 +60,6 @@ const Thirtys = () => {
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={terceiro.text_color}/> */}
                     <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -121,8 +118,6 @@ const Thirtys = () => {
                     </div>
                     <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={terceiro.abrir} />
                     <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={terceiro.fechar}/>
-                      {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
-                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>
                   </div>
                 </div>
@@ -149,10 +144,6 @@ const Thirtys = () => {
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>
                <ul id="Ul1">
-                {/* <li id="setimo" />
-                <div id="oitavo1-1">
-                <li id="oitavo" /> */}
-                {/* </div> */}
               </ul> 
             </div>
                 <div id="dropdiv">

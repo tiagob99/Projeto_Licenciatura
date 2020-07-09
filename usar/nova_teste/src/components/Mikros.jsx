@@ -1,9 +1,7 @@
 import React from 'react';
-import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
-import * as micro from './mikrosjs';
-import * as color from'./jscolor';
 import './mikrosjs';
+import * as micro from './mikrosjs';
 
 const Mikros = () => {
        
@@ -85,8 +83,7 @@ const Mikros = () => {
                     <input id="text_size" onChange={() => micro.text_size()} type="range" min="15" max="25" name="text_si" defaultValue="16"/>
                     <input type="color" id="myColor8" defaultValue="#FFF8DC" onChange={micro.text_color}/>
                     </div>
-                    {/* <input type="button" id="btAddTextmicro" defaultValue="Add Text" className="bt" />
-                    <input type="button" id="btRemoveTextmicro" defaultValue="Remove Text" className="bt" /><br /><br /> */}
+                   
                     </div>
                     <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={micro.abrir} />
                     <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={micro.fechar}/>

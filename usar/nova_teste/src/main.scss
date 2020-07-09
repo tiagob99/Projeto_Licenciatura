@@ -440,155 +440,10 @@ input[type=text], select {
         width: 50%;
     }
 
-    &--album {
-        >div {
-            filter: brightness(5);
-        }
-    }
+    
 }
 
-.album {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
 
-    @media #{$medium} {
-        justify-content: center;
-    }
-
-    &__caption {
-        flex-grow: 1;
-        flex-basis: 100%;
-        display: flex;
-
-        h1 {
-            width: 400px;
-            white-space: nowrap;
-
-            @media #{$medium} {
-                white-space: normal;
-                width: auto;
-                font-size: $second-header-size;
-            }
-        }
-    }
-
-    &__year {
-        font-size: $caption-size;
-        opacity: .8;
-        width: 100px;
-        text-align: right;
-
-        @media #{$medium} {
-            font-size: $second-header-size;
-        }
-    }
-
-    &__cover {
-        width: 100%;
-        max-width: 500px;
-        background-position: center;
-        box-sizing: border-box;
-        border: 10px solid #fff;
-        margin-right: 50px;
-        align-self: flex-start;
-
-        @media #{$medium} {
-            margin-right: 0;
-            margin-bottom: 20px;
-        }
-    }
-
-    &__pricing {
-        display: flex;
-        font-size: 27px;
-        margin-bottom: 20px;
-    }
-
-    &__pricing-item {
-        border-right: 1px solid #fff;
-        padding: 0 20px;
-
-        &:first-of-type {
-            padding-left: 0;
-        }
-
-        &:last-of-type {
-            padding-right: 0;
-            border-right: none;
-        }
-
-        span {
-            opacity: .8;
-        }
-    }
-
-    &__pre-order {
-        font-size: 27px;
-    }
-
-    &__playlist {
-        background: #fff;
-        max-height: 260px;
-        overflow: auto;
-    }
-
-    &__track {
-        font-size: 13px;
-        border-bottom: 1px solid #DFDFDF;
-        font-family: $arial;
-        color: #000;
-        list-style-type: none;
-        padding: 20px;
-        box-sizing: border-box;
-
-        i {
-            display: inline-block;
-            background: url('/img/play.svg') center bottom no-repeat;
-            width: 13px;
-            height: 13px;
-            margin-right: 15px;
-        }
-    }
-
-    &__player {
-        background: #f8f8f8;
-        margin-bottom: 20px;
-        color:#747474;
-        padding: 20px 18px;
-    }
-
-    &__trackline-container{
-        display: flex;
-        margin-bottom: 10px;
-    }
-
-    &__trackline {
-        flex-grow: 1;
-        background: #c2c2c2;
-        height: 4px;
-        border-radius: 50%;
-        margin: 10px 10px 0;
-    }
-
-    &__play-buttons {
-        display: flex;
-    }
-
-    &__prev, &__next {
-        width: 21px;
-        height: 13px;
-        margin-right: 15px;
-    }
-
-    &__prev {
-        background: url('/img/prev-track.svg') no-repeat;
-    }
-
-    &__next {
-        background: url('/img/next-track.svg') no-repeat;
-    }
-}
 
 .header {
     background: $header-back;
@@ -652,58 +507,7 @@ input[type=text], select {
     }
 }
 
-// .about {
-//     max-width: 1088px;
 
-//     &__year {
-//         text-align: center;
-//         font-size: $caption-size;
-//         position: relative;
-//         margin-bottom: 100px;
-//         margin-top: 100px;
-
-//         &::before, &::after {
-//             content: '';
-//             display: block;
-//             position: absolute;
-//             height: 50px;
-//             width: 1px;
-//             left: 50%;
-//             border-left: 1px dotted #fff;
-//         }
-
-//         &::before {
-//             top: -70px;
-//         }
-//         &::after {
-//             bottom: -70px;
-//         }
-//     }
-
-//     &__item:first-of-type {
-//         .about__year {
-//             margin-top: 0;
-//             &::before {
-//                 display: none;
-//             }
-//         }
-//     }
-
-//     &__img {
-//         margin-bottom: 20px;
-//         width: 100%;
-//     }
-
-//     &__title {
-//         font-size: $second-header-size;
-//         margin-bottom: 13px;
-//     }
-
-//     &__text {
-//         font-family: $arial;
-//         font-size: 17px;
-//     }
-// }
 
 .tour {
     display: flex;
@@ -881,8 +685,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
-    // background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -891,8 +693,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
-    // background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -901,8 +701,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
-    // background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -911,8 +709,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
-    // background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -921,8 +717,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
-    // background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -931,7 +725,6 @@ input[type=text], select {
     width: 250px;
     display: inline-block;
     margin:50px;
-    // background-image: url(img/smartwatch_predifine_template1.jpg);
     background: url('/image/smartwatch_predifine_template1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -952,14 +745,6 @@ input[type=text], select {
 #tipo_timeframe{
   margin-left:-115%;
 }
-// *{
-//     margin:0;
-//     padding: 0;
-//   }
-//   body, html {
-//     height: 100%;
-//     width: 100%;
-//   }
   .big_div{
     position: absolute;
     width: 100%;
@@ -1234,32 +1019,7 @@ input[type=text], select {
   }
   /*watvh background*/
 
-  /*circle*/
-  // .center_circule{
-  //   top: 50%;
-  //   left: 50%;
-  //   margin-left: -265px;
-  //   margin-top: -265px;
-  //   width: 330px;
-  //   height: 330px;
-  //   border-radius: 50%;
-  //   background-color: #000;
-  //   // position:absolute;
-  // }
-  // #rect{
-  //   width: 50%;
-  //   height: 50%;
-  // }
-  /*circle*/
-
-
-  /*Relogio Digital*/
-  // #hour,#minute,#second{
-  //   size: 9;
-  //   height: 50%;
-  // }
-  /*Relogio Digital*/
-
+  
   /*Relogio analogico*/
   #clock {
     stroke-linecap: round;
@@ -1334,22 +1094,7 @@ input[type=text], select {
   @keyframes circle-chart-fill {
     to { stroke-dasharray: 0 100; }
   }
-  /*transform: scaleX(-1);
-  animation:  dash 3s linear;
-  @keyframes dash {
-    to {
-      stroke-dashoffset: 50;
-    }
-  }*/
-  /*barra*/
-
-  // .text{
-  //   padding-left: 24%;
-  //   // padding-top: 370px;
-  //   color: white;
-  //   position: absolute;
-  //   z-index: 1;
-  // }
+  
   #texto{
     font-size: 10px;
   }
@@ -1366,11 +1111,6 @@ input[type=text], select {
 
 //mikros---------------------------------------------------------------------
 
-// .big_div{
-//   width: 100%;
-//   height: 100%;
-//   background: url('/image/backgroundwatch.jpg');
-// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -1490,47 +1230,7 @@ input[type=text], select {
   margin-left: -45%;
   margin-top:-45%;
 }
-// .center_circule{
-//   top: 50%;
-//   left: 50%;
-//   margin-left: -265px;
-//   margin-top: -265px;
-//   width: 530px;
-//   height: 530px;
-//   border-radius: 100%;
-//   background-color: #000;
-//   position:absolute;
-// }
-// #rect{
-//   width: 100%;
-//   height: 100%;
-// }
-/*circle*/
 
-
-/*Relogio Digital*/
-// #hour,#minute,#second{
-//   size: 20px;
-// }
-/*Relogio Digital*/
-
-/*Relogio analogico*/
-// #clock {
-//   stroke-linecap: round;
-// }
-// #hour_pointer {
-//   stroke-width: 2px;
-//   stroke: white;
-// }
-// #second_pointer {
-//   stroke-width: 1px;
-//   stroke: #FF0000;
-// }
-// #minute_pointer {
-//   stroke-width: 1px;
-//   stroke: white;
-// }
-/*Relogio analogico*/
 
 
 /*drag and drop */
@@ -1663,20 +1363,6 @@ input[type=text], select {
 
 //SELFCOMPLETE----------------------------------------------------
 
-// *{
-//   margin:0;
-//   padding: 0;
-// }
-// body, html {
-//   height: 100%;
-//   width: 100%;
-// }
-
-// .big_div{
-//   width: 100%;
-//   height: 100%;
-//   background-image: url('/image/backgroundwatch.jpg');
-// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -1776,53 +1462,6 @@ input[type=text], select {
 }
 /*sidebar interior menus*/
 
-/*watvh background*/
-
-/*watvh background*/
-
-/*circle*/
-// .center_circule{
-//   top: 50%;
-//   left: 50%;
-//   margin-left: -265px;
-//   margin-top: -265px;
-//   width: 530px;
-//   height: 530px;
-//   border-radius: 100%;
-//   background-color: #000;
-//   position:absolute;
-// }
-// #rect{
-//   width: 100%;
-//   height: 100%;
-// }
-/*circle*/
-
-
-/*Relogio Digital*/
-// #hour,#minute,#second{
-//   size: 20px;
-// }
-/*Relogio Digital*/
-
-/*Relogio analogico*/
-// #clock {
-//   stroke-linecap: round;
-// }
-// #hour_pointer {
-//   stroke-width: 2px;
-//   stroke: white;
-// }
-// #second_pointer {
-//   stroke-width: 1px;
-//   stroke: #ff0000;
-// }
-// #minute_pointer {
-//   stroke-width: 1px;
-//   stroke: white;
-// }
-/*Relogio analogico*/
-
 
 /*drag and drop */
 .ui-drop-hover{
@@ -1872,35 +1511,14 @@ animation:  dash 3s linear;*/
 }
 /*barra*/
 
-// .text{
-//   padding-left: 24%;
-//   // padding-top: 370px;
-//   color: white;
-//   position: absolute;
-//   z-index: 1;
-// }
-// #texto{
-//   font-size: 10px;
-// }
+
 
 
 
 //SELFCOMPLETE---------------------------------------------------------------
 
 //SIMPLE---------------------------------------------------------------------
-// *{
-//   margin:0;
-//   padding: 0;
-// }
-// body, html {
-//   height: 100%;
-//   width: 100%;
-// }
-// .big_div{
-//   width: 100%;
-//   height: 100%;
-//   background-image: url('/image/backgroundwatch.jpg');
-// }
+
 
 /*toggle btn*/
 #toggle-btn{
@@ -1999,16 +1617,7 @@ animation:  dash 3s linear;*/
 }
 /*sidebar interior menus*/
 
-/*watvh background*/
-// .watch{
-//   width: 50%;
-//   height: 100%;
-//   margin: 0 auto;
-//   background-image: url('/image/motorola.png');
-//   background-repeat:no-repeat;
-//   background-position: center;
-// }
-/*watvh background*/
+
 
 /*circle*/
 .center_circule{
@@ -2032,7 +1641,6 @@ animation:  dash 3s linear;*/
   position: absolute;
   margin-top: -49.4%;
   margin-left: -47.4%;
-  // border-radius: 0%;
 }
 #background {
     width: 100%;
@@ -2057,29 +1665,7 @@ animation:  dash 3s linear;*/
 /*circle*/
 
 
-/*Relogio Digital*/
-// #hour,#minute,#second{
-//   size: 20px;
-// }
-/*Relogio Digital*/
 
-/*Relogio analogico*/
-// #clock {
-//   stroke-linecap: round;
-// }
-// #hour_pointer {
-//   stroke-width: 2px;
-//   stroke: white;
-// }
-// #second_pointer {
-//   stroke-width: 1px;
-//   stroke: #ff0000;
-// }
-// #minute_pointer {
-//   stroke-width: 1px;
-//   stroke: white;
-// }
-/*Relogio analogico*/
 
 
 /*drag and drop */
@@ -2107,10 +1693,7 @@ animation:  dash 3s linear;*/
   width: 200px;
   text-align: center;
 }
-// #node1{
-//   font-size: 40px;
-// }
-/*drag and drop */
+
 
 /*barra*/
 .circle-chart{
@@ -2129,25 +1712,7 @@ animation:  dash 3s linear;*/
 @keyframes circle-chart-fill {
   to { stroke-dasharray: 0 100; }
 }
-/*transform: scaleX(-1);
-animation:  dash 3s linear;
-@keyframes dash {
-  to {
-    stroke-dashoffset: 50;
-  }
-}*/
-/*barra*/
 
-// .text{
-//   padding-left: 24%;
-//   // padding-top: 370px;
-//   color: white;
-//   position: absolute;
-//   z-index: 1;
-// }
-// #texto{
-//   font-size: 10px;
-// }
 
 //SIMPLE---------------------------------------------------------------------
 
@@ -2219,21 +1784,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 
-/*
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  transition: 0.4s;
-}
-*/
+
 //CARDS-----------------------------
 
 
@@ -2298,30 +1849,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 /*toggle btn*/
 
-// /*sidebar*/
-// #sidebar{
-//   position: absolute;
-//   width: 25%;
-//   height: 100%;
-//   background-color: #191919;
-//   color: white;
-//   left: -25%;
-// }
-// #sidebar.active{
-//   left:0;
-//   overflow: auto;
-//   transition: linear all 0.3s;
-// }
-// .elementos_menu_direito{
-//   list-style: none;
-//   text-align: center;
-//   line-height: 50px;
-//   margin: 5px;
-//   font-size: 20px;
-// }
-// .elementos_menu_direito:hover{
-//   background-color: #70D7FF;
-// }
+
 #lastelemente{
   margin-top: 0;
 }
@@ -2380,49 +1908,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 /*sidebar interior menus*/
 
 
-// /*circle*/
-// .center_circule{
-//   top: 50%;
-//   left: 50%;
-//   margin-left: -265px;
-//   margin-top: -265px;
-//   width: 530px;
-//   height: 530px;
-//   border-radius: 100%;
-//   background-color: #000;
-//   position:absolute;
-// }
-// #rect{
-//   width: 100%;
-//   height: 100%;
-// }
-// /*circle*/
 
-
-// /*Relogio Digital*/
-// #hour,#minute,#second{
-//   size: 20px;
-// }
-// /*Relogio Digital*/
-
-// /*Relogio analogico*/
-// #clock {
-//   stroke-linecap: round;
-// }
-// #hour_pointer {
-//   stroke-width: 2px;
-//   width: 0%;
-//   stroke: white;
-// }
-// #second_pointer {
-//   stroke-width: 1px;
-//   stroke: #ff0000;
-// }
-// #minute_pointer {
-//   stroke-width: 1px;
-//   stroke: white;
-// }
-/*Relogio analogico*/
 /*Relogio Digital*/
 #hour_1,#minute_1,#second_1{
   font-size: 40px;
@@ -2568,8 +2054,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 #oitavo{
-  // margin-bottom: 80px;
-  // margin-top: -50px; //nao consigo colocar a oitava posiçao mais para cima??????
+ 
   margin-right: 90px;
  
 
@@ -2597,10 +2082,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 // Thirty------------------------------------------------------------
 
-// .big_div{
 
-//   background-image: url('/image/backgroundwatch.jpg');
-// }
 
 /*toggle btn*/
 #toggle-btn{
@@ -2692,52 +2174,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 /*sidebar interior menus*/
 
-/*watvh background*/
 
-/*watvh background*/
-
-/*circle*/
-// .center_circule{
-//   top: 50%;
-//   left: 50%;
-//   margin-left: -265px;
-//   margin-top: -265px;
-//   width: 530px;
-//   height: 530px;
-//   border-radius: 100%;
-//   background-color: #000;
-//   position:absolute;
-// }
-// #rect{
-//   width: 100%;
-//   height: 100%;
-// }
-/*circle*/
-
-/*Relogio Digital*/
-// #hour,#minute,#second{
-//   size: 20px;
-// }
-/*Relogio Digital*/
-
-/*Relogio analogico*/
-
-// #clock {
-//   stroke-linecap: round;
-// }
-// #hour_pointer {
-//   stroke-width: 2px;
-//   stroke: white;
-// }
-// #second_pointer {
-//   stroke-width: 1px;
-//   stroke: #FF0000;
-// }
-// #minute_pointer {
-//   stroke-width: 1px;
-//   stroke: white;
-// }
-/*Relogio analogico*/
 
 
 /*drag and drop */
@@ -2795,36 +2232,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 
 
-
-/*drag and drop
-.ui-drop-hover{
-  border:2px solid #bbb;
-}
-#dragdiv,#dropdiv{
-  width:100%;
-  height:100%;
-}
-#dropdiv{
-  left:50%;
-  top: 50%;
-  height:200px;
-  width: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
-  position: absolute;
-  z-index: 10;
-}
-.ui-draggable{
-  color: white;
-}
-.elementos{
-  height: 200px;
-  width: 200px;
-  text-align: center;
-}
-#node1{
-  font-size: 40px;
-}
 /*drag and drop */
 
 /*Center whatch*/
@@ -2876,11 +2283,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 //Botao codigo
 #alerta{
-  // color:black;
-  // background-color: red;
-  // text-align: justify;
-  // padding:1%;
-  // box-shadow: blue;
+ 
   background-color: red;
   border: none;
   color: white;

@@ -1,7 +1,5 @@
 import $ from'jquery';
 import 'jquery-ui-dist/jquery-ui';
-import google from "react-google-picker";
-import gapi from 'gapi-client';
 import * as db from './database';
 /*Menu*/
 
@@ -92,21 +90,16 @@ $(function timerTick() {
 
 
 /* Change center watch type*/
-//var watchtype = "digital"
+
 
 function updatewhatch() {
   
   if ( document.getElementsByClassName('child elementos')[1].id === "node2"){
-    // document.getElementById('node2_1').style.display = "initial";
-    // document.getElementById('node1_1').style.display = "none";
     verifica('WT','Analogico');
-    //watchtype = "analog";
+    
     
   }
   else{
-    // document.getElementById('node1_1').style.display = "initial";
-    // document.getElementById('node2_1').style.display = "none";
-   // watchtype = "digital";
     verifica('WT','Digital');
   }
 }
@@ -116,7 +109,6 @@ function updatewhatch() {
 
 /*Cores*/
 export function backgroundcolor() {
-    //alert(document.getElementsByClassName('child elementos')[1].id)
     var x = document.getElementById("myColor");
     var currentVal = x.value;
     x.value = currentVal;
@@ -254,7 +246,7 @@ for (var i=0; i<8; i++){
 /*adicionar elementos*/
 var Linha = 0;
 var Texto = 0;
-var url = false //ainda nai foi adicionado
+var url = false 
 var image = false;
 var posiçoesocupadas_antigo;
 var elemento = false;
@@ -851,134 +843,17 @@ function changeImage(input) {
   }
     
 
+  }
+
+  }
 }
-
-  }
-  if(document.getElementById('load_type').value == 'drive'){
-    document.getElementById('load_type').insertAdjacentHTML('beforebegin', '<div id="result" onload="showPickerDialog()"></div><a href="teste"  onclick="showPickerDialog()">Show Picker Dialog</button>')
-
-    
-    
-    
-    }
-   
-    
-  
-
-  }
-// TESTE DA API
-
-  
-
- // The Browser API key obtained from the Google API Console.
-    // Replace with your own Browser API key, or your own key.
-  var developerKey = 'AIzaSyCXXXfI5Kx8-9lQvpFjglJOOiag8naMWjI';
-
-  // The Client ID obtained from the Google API Console. Replace with your own Client ID.
-  var clientId = "465234973180-endijv8herlk2sgucru2r0sis78t8auu.apps.googleusercontent.com"
-
-  // Replace with your own project number from console.developers.google.com.
-  // See "Project number" under "IAM & Admin" > "Settings"
-  var appId = "novo-269521";
-
-  // Scope to use to access user's Drive items.
-  var scope = ['https://www.googleapis.com/auth/drive.file'];
-
-  var pickerApiLoaded = false;
-  var oauthToken;
-
-  // Use the Google API Loader script to load the google.picker script.
-  function loadPicker() {
-    
-    gapi.load('auth', {'callback': onAuthApiLoad});
-    gapi.load('picker', {'callback': onPickerApiLoad});
-  }
-
-  function onAuthApiLoad() {
-
-    window.gapi.auth.authorize(
-      
-        {
-          'client_id': clientId,
-          'scope': scope,
-          'immediate': false
-        },
-        handleAuthResult);
-        
-  }
-
-  function onPickerApiLoad() {
-    pickerApiLoaded = true;
-    createPicker();
-
-  }
-
-  function handleAuthResult(authResult) {
-    
-    if (authResult && !authResult.error) {
-      oauthToken = authResult.access_token;
-      createPicker();
-
-      
-    }
-  }
-
-  // Create and render a Picker object for searching images.
-  function createPicker() {
-    if (pickerApiLoaded && oauthToken) {
-      var view = new google.picker.View(google.picker.ViewId.DOCS);
-      view.setMimeTypes("image/png,image/jpeg,image/jpg");
-      var picker = new google.picker.PickerBuilder()
-          .enableFeature(google.picker.Feature.NAV_HIDDEN)
-          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-          .setAppId(appId)
-          .setOAuthToken(oauthToken)
-          .addView(view)
-          .addView(new google.picker.DocsUploadView())
-          .setDeveloperKey(developerKey)
-          .setCallback(pickerCallback)
-          .build();
-       picker.setVisible(true);
-    }
-  }
-
-  // A simple callback implementation.
-  function pickerCallback(data) {
-    if (data.action == google.picker.Action.PICKED) {
-      var fileId = data.docs[0].id;
-      // alert('The user selected: ' + fileId);
-    }
-  }
-  export function showPickerDialog(){
-    
-    loadPicker()
-  }
+// 
 
 $(document).ready(function() {
 
   var container = $(document.createElement('div')).css({ padding: '2px', margin: '2px', width: '370px', height: '450px'});
   var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
-  // if(Linha == 0){
-  //   document.getElementById("myColor6").defaultValue = "#FF0000";
-  // }
-  // else if(Linha == 1){
-  //   document.getElementById("myColor6").defaultValue = "#FFFFFF";
-  // }
-  // else if(Linha == 2){
-  //      document.getElementById("myColor6").defaultValue = "#00FF00";
-  // }
-  // else if(Linha == 3){
-  //      document.getElementById("myColor6").defaultValue = "#0000FF";
-  // }
-  // else if(Linha == 4){
-  //      document.getElementById("myColor6").defaultValue = "#FF4AD7";
-  // }
-  // else if(Linha == 5){
-  //      document.getElementById("myColor6").defaultValue = "#FF8400";
-  // }
-  // else if(Linha == 6){
-  //      document.getElementById("myColor6").defaultValue = "#FFFFD7";
-  // }
+  
 
   $('#btAdd').click(function() { //Adiciona uma linha
     if(Linha == 0){
@@ -1005,17 +880,7 @@ $(document).ready(function() {
     if (Linha <= 6) {
       $('#bar_type').prop('selectedIndex',0);
       $('#bar_color_change').prop('selectedIndex',Linha);
-      // document.getElementById("myColor6").value = ;
-
-      
-      
-      // $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-      // '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
-      // '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-      // '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-      // '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-      // '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-      
+            
       document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
       
@@ -1023,7 +888,7 @@ $(document).ready(function() {
       $("body").append(document.getElementById('third_menu_hidden_1').classList.add('active') + 
          '<svg id=bardraw' + Linha + ' ' +
       ' style=" width:30%;  top:70%; left: 48%; border-radius: 100%; position:absolute;  margin-top: -13.2%;  margin-left: -13.4%; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
+      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="20,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
         
@@ -1107,19 +972,6 @@ $(document).ready(function() {
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
-
-      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-      //   '<option value="timeframe">Timeframe</option>'+
-      //   '<option value="percentagem">Percentagem</option>'+
-      // '</select>'+
-      // '<select id="timeframe" style="margin-left:10px;">'+
-      // '<option value="10">10 Minutos</option>'+
-      // '<option value="20">20 Minutos</option>'+
-      // '<option value="30">30 Minutos</option>'+
-      // '<option value="40">40 Minutos</option>'+
-      // '<option value="50">50 Minutos</option>'+
-      // '<option value="60">60 Minutos</option>'+
-      // '</select>').insertAfter('#mesage_type')
     }
     else{
       $("body").append(document.getElementById('mesage_time').classList.remove('active'));
@@ -1229,31 +1081,7 @@ $(document).ready(function() {
   
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
-    // if(document.getElementById('oitavo').innerHTML!=""){
-    //   verifica_apaga('PO')}
-
-    //  if(document.getElementById('setimo').innerHTML!=""){
-    //   verifica_apaga('PSE')}
-
-    //  if(document.getElementById('quinto').innerHTML!=""){
-    //  verifica_apaga('PQI')}
-
-    //  if(document.getElementById('quarto').innerHTML!=""){
-    //   verifica_apaga('PQ')}
-
-    //  if(document.getElementById('terceiro').innerHTML!=""){
-    //   verifica_apaga('PT')}
-
-    //  if(document.getElementById('segundo').innerHTML!=""){
-    //   verifica_apaga('PS')}
-
-    //  if(document.getElementById('primeiro').innerHTML!=""){
-    //   verifica_apaga('PP')
-    //   verifica_apaga('MT')
-    //   verifica_apaga('MESSAGET')
-    //   verifica_apaga('MESSAGEVALUE')
-
-    // }
+    
     if(posiçoesocupadas[Texto-1]==0){  //erro
       Texto = Texto - 1;
       console.log("a11aa")
@@ -1308,7 +1136,6 @@ $(document).ready(function() {
     }
     if(document.getElementById('load_type').value == 'pc'){
 
-      // novo = document.getElementById("url").value;
     }
     var imagem_position = document.getElementById("image_type").value;
     console.log(imagem_position);
@@ -1501,19 +1328,8 @@ export function barradius() {
 var previous;
 
 
-// $("#dropdownId").on('focus', function () {
-//   var ddl = $(this);
-//   ddl.data('previous', ddl.val());
-// }).on('change', function () {
-//   var ddl = $(this);
-//   previous = ddl.data('previous');
-//   ddl.data('previous', ddl.val());
-// });
-
-var t;
-var antes;
-
 export function barstar (){
+  
     var barnumber = document.getElementById('bar_color_change').value;
     
     if(matrix[barnumber][7]!="pasthouractivaty"){
@@ -1546,8 +1362,7 @@ export function barstar (){
          
          if (previous == "novo"){
            
-          // document.getElementById('bardraw'+barnumber).style.width = "30%";
-          //document.getElementById('bardraw'+barnumber).style.height = "530px";
+          
           document.getElementById('bardraw'+barnumber).style.marginTop = "-13%";
           document.getElementById('bardraw'+barnumber).style.marginLeft = "-11%";
           document.getElementById('bardraw'+barnumber).style.left = "46.3%";
@@ -1561,16 +1376,18 @@ export function barstar (){
         }
       
       else if (novo == "tophalf") {
-        // alert(document.getElementById('bar_star_1').value)
-        if(document.getElementById('bar_star').value != 'tophalf'){
-          var novo = matrix[barnumber][3]
-          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-          
-          document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
+        if(previous == "bottomhalf"){
+          document.getElementById('bar_star_1').value = 'clockwise'
+          document.getElementById('bardraw'+barnumber).style.width = "30%";
+          document.getElementById('bardraw'+barnumber).style.top = "70%";
+          document.getElementById('bardraw'+barnumber).style.left = "48%";
+          document.getElementById('bardraw'+barnumber).style.position = "absolute";
+          document.getElementById('bardraw'+barnumber).style.marginTop = "-13.2%";
+          document.getElementById('bardraw'+barnumber).style.marginLeft = "-13.4%";
+          document.getElementById('bardraw'+barnumber).style.height = "458px";
+
+
         }
-        // if(ultima == 'counterclockwise'){
-      //document.getElementById('bar_star_1').value = 'clockwise'
-        // }
         if(barnumber == 0){
           star0="tophalf" ;
         }
@@ -1607,14 +1424,16 @@ export function barstar (){
         previous = "tophalf";
       }
       else {
-        // document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-5)";
-        // //document.getElementById('bar'+barnumber).style.transform = "rotate(" + 180 + "deg) scaleX(-1)";
-                
-        // if(ultima == 'counterclockwise'){
-      //document.getElementById('bar_star_1').value = 'clockwise'
-        // if(ultima == 'counterclockwise'){
-        //   document.getElementById('bar_star_1').value = 'clockwise'
-        // }
+        if(previous == "tophalf"){
+          document.getElementById('bar_star_1').value = 'clockwise'
+          document.getElementById('bardraw'+barnumber).style.top = "70%";
+          document.getElementById('bardraw'+barnumber).style.left = "48%";
+          document.getElementById('bardraw'+barnumber).style.position = "absolute";
+          document.getElementById('bardraw'+barnumber).style.marginTop = "-13%";
+          document.getElementById('bardraw'+barnumber).style.marginLeft = "-11%";
+          document.getElementById('bardraw'+barnumber).style.height = "458px";
+        }
+        
         if(barnumber == 0){
           star0="bottomhalf" ;
          }
@@ -1657,7 +1476,6 @@ export function barstar (){
 var ultima;
 export function updaterotation(){
 
-  //ultima = document.getElementById('bar_star_1').value;
   
   var barnumber = document.getElementById('bar_color_change').value;
   
@@ -1686,11 +1504,6 @@ export function updaterotation(){
         }
         
         if(matrix[barnumber][5] == "full"){
-          // document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
-        //   var novo = matrix[barnumber][3] -180;
-        //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)";
-        //   matrix[barnumber][4] = false;
         }
         else {
           if(matrix[barnumber][5] == "bottomhalf"){
@@ -1737,7 +1550,6 @@ export function updaterotation(){
         if(matrix[barnumber][5] == "full"){
           document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
         }
-        document.getElementById('bardraw'+barnumber).style.marginLeft = "-270px";
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
         document.getElementById('bar'+barnumber).style.transform = "rotate(" + matrix[barnumber][3]  + "deg) "
         matrix[barnumber][4] = true;
@@ -1747,37 +1559,6 @@ export function updaterotation(){
     }
  
 }
-// var right = true;
-// var degrees= 135;
-
-// export function updaterotation(){
-//   var position = document.getElementById('bar_star').value;
-//   var barnumber = document.getElementById('bar_color_change').value;
-  
-//   if (right){
-//     verifica('BROT','COUNTERCLOCKWISE');
-//     // if(position == "full"){
-//     //   var novo = degrees -180
-//     //   document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)"
-      
-//     //   right = false;
-//     // }
-//       if(position != "full"){
-//       var novo = degrees
-//       document.getElementById('bar'+barnumber).style.transform = "rotate(" + novo + "deg) scaleX(-1)"
-      
-//       right = false;
-//       }
-//   }
-//   else {
-//     if(position != "full"){
-//     verifica('BROT','CLOCKWISE');
-//     document.getElementById('bar'+barnumber).style.transform = "rotate(" + degrees  + "deg) "
-//     right = true;
-//     }
-//   }
-// }
-
 
 /*Personalização dos elementos*/
 
@@ -2002,7 +1783,6 @@ var codigo="MiKros";
 var array_codigo=["MIKROS"];
 
 export function concatenar(id,valor){
-  // codigo= codigo + '|' + id + '|' + valor;
   array_codigo.push(id,valor);
 }
 function verifica(id, valor){

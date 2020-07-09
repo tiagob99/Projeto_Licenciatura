@@ -271,10 +271,7 @@ $(function clock(){setInterval(() => {
    }
    
    
-  // export function text_size() {
-  //      var novo = document.getElementById('text_size').value;
-  //      document.getElementById('texto').style.fontSize = novo + "px";
-  //  }
+  
    /*personalização*/
 
 
@@ -353,18 +350,7 @@ $(document).ready(function() {
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
-      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-      //   '<option value="timeframe">Timeframe</option>'+
-      //   '<option value="percentagem">Percentagem</option>'+
-      // '</select>'+
-      // '<select id="timeframe" style="margin-left:10px;">'+
-      // '<option value="10">10 Minutos</option>'+
-      // '<option value="20">20 Minutos</option>'+
-      // '<option value="30">30 Minutos</option>'+
-      // '<option value="40">40 Minutos</option>'+
-      // '<option value="50">50 Minutos</option>'+
-      // '<option value="60">60 Minutos</option>'+
-      // '</select>').insertAfter('#mesage_type')
+    
     }
     else{
       $("body").append(document.getElementById('mesage_time').classList.remove('active'));
@@ -695,7 +681,6 @@ var codigo="SimpleC";
 var array_codigo=["SIMPLE"];
 
 export function concatenar(id,valor){
-  // codigo=codigo + '|' + id + '|' + valor;
   array_codigo.push(id,valor);
 }
 

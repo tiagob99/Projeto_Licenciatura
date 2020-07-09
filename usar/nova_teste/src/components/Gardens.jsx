@@ -1,11 +1,7 @@
 import React from 'react';
 import  'react-hook-form';
-import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
-import * as colors from './jscolor';
-import ReactDOM from "react-dom";
-import { useForm } from "react-hook-form";
 
 
 const Gardens = () => {
@@ -128,30 +124,7 @@ const Gardens = () => {
                     </div>
                     <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={garden.abrir} />
                     <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={garden.fechar}/>
-                    {/* <div id="result"></div> */}
-                    {/* <a href = "/g">aqui</a> */}
-                    {/* <div dangerouslySetInnerHTML={ {__html: htmlContent} } /> */}
-                   {/* <button onClick={showPickerDialog}>Show Picker Dialog</button> */}
-                
-                    
-                    
-
-                    
-
-                    {/* <input type="text" id="url" placeholder="Url" style={{marginRight: "10px"}} />
-                    
-                    <select id="load_type" style={{marginRight: '10px'}} onChange = {garden.escolha} >
-                      <option value="url_load" selected="selected">URL</option>
-                      <option value="pc">Your Computer</option>
-                      <option value="drive">Drive</option>
-                    </select>
-                    
-                    <select id="image_type" style={{marginRight: '10px'}}>
-                      <option value="top">Top</option>
-                      <option value="bakground">Background</option>
-                    </select>
-                    <input type="button" id="btAddImg" onClick = {garden.clica} defaultValue="Add Image" style={{marginRight: '10px'}} className="bt" />
-                    <input type="button" style={{marginTop: '10px'}} className="bt" defaultValue="Remove Image" id="btRemImg" /> */}
+                   
                     <input type="button" id="addImage" defaultValue=" Add Image" className="bt" onClick={garden.add_image}/>
                     <div id = "imagens">
                       <h3>Imagens</h3>
@@ -162,10 +135,7 @@ const Gardens = () => {
                       <option value="pc">Your Computer</option>
                     </select>
                     
-                    {/* <select id="image_type" style={{marginRight: '10px'}}>
-                      <option value="top">Top</option>
-                      <option value="bakground">Background</option>
-                    </select> */}
+                   
                     <input type="button" onClick = {garden.clica} id="btAddImg" defaultValue="Add Image" style={{marginRight: '10px'}} className="bt" />
                     <input type="button" style={{marginTop: '10px'}} onClick={garden.tira} className="bt" defaultValue="Remove Image" id="btRemImg" /><br/>
                     <h4 id = "h3_"> </h4>
@@ -177,8 +147,6 @@ const Gardens = () => {
 
                     
                     </div>
-                      {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
-                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>
               </div>
 
@@ -202,10 +170,8 @@ const Gardens = () => {
                 <li id="terceiro" />
                 <li id="quarto" />
                 <li id="quinto" />
-                {/* <li id="sexto" /> */}
               </ul>
             </div>
-            {/* talvez nao consigo colocar mais para cima por ter o mesmo id..*/}
             <div id="dropdiv" style={{zIndex: 2}}> 
               <ul id="Ul1">
                 <li id="setimo" />

@@ -1,6 +1,4 @@
 import React from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
-import Login from '../ui/Nav';
 import Landing from './Landing';
 import {Element, scroller} from 'react-scroll';
 import { Fade } from 'react-reveal';
@@ -20,9 +18,7 @@ const Home = () => {
         <div className="home">
             <Fade>
                 <div className="home__header">
-                    <div className="wrapper">                    
-                        {/* <div className="logo"></div>                     */}
-                        {/* <Nav context="home"/> */}
+                    <div className="wrapper">         
                         <div className = "login_btn" >
                         <a onClick={db.login} >Login</a>
                         <span id = 'login_img'></span>    

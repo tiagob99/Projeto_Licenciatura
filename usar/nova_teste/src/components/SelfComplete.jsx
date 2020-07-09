@@ -1,8 +1,6 @@
 import React from 'react';
-import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as selfcomplete from './SelfCompletes';
-import * as colors from './jscolor';
 
 
 const SelfComplete =() =>{
@@ -85,7 +83,6 @@ const SelfComplete =() =>{
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> */}
                      <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -141,9 +138,6 @@ const SelfComplete =() =>{
                     <br />
                     <input type="button" id="btAddText" defaultValue="Add Fixed Text" className="bt" />
                     <input type="button" id="btRemoveText" defaultValue="Remove Fixed Text" className="bt" /><br /><br />
-                        {/* <p>Text Color <input type="color" id="myColor8" defaultValue="#ff0080" onChange={selfcomplete.text_color}/> </p>  <br /><br /> */}
-                        {/* <p>Text Size </p> <br /> <input id="text_size" onChange={selfcomplete.text_size} type="range" min={0} max={30} name="text_si" defaultValue={16} /><br /><br /> */}
-                        {/* <button type="button" onclick="readropzone()" name="button">Le Relogio</button> */}
                         </div>
                         <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={selfcomplete.abrir} />
                         <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={selfcomplete.fechar}/>
@@ -153,9 +147,6 @@ const SelfComplete =() =>{
             </ul>
             </div>
             <div className="watch">
-            {/* <div className="text">
-                <p id="texto">teste</p>
-            </div> */}
             <div className="center_circule">
                 <p id="rect" className="center_circule" />
                 <div className="circule">
@@ -171,7 +162,6 @@ const SelfComplete =() =>{
                 <li id="terceiro" />
                 <li id="quarto" />
                 <li id="quinto" />
-                {/* <li id="sexto" /> */}
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>

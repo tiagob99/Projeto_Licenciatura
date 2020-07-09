@@ -1,17 +1,11 @@
-// import React from 'react';
+
 import React, {Suspense,lazy} from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-// import Home from './components/home/Home';
 import './main.scss';
-// import makeYourOwn from './components/MakeYourOwn';
-// import predefine from './components/Predefine';
-// import Gardens from './components/Gardens';    
-// import Mikros from './components/Mikros';
 import Data from './components/Login/Data';
 import Footer from './components/header-footer/Footer';
 import Header from './components/header-footer/Header';
-// import SelfComplete from './components/SelfComplete';
 import './components/database';
 
    
@@ -25,7 +19,6 @@ const terceiro =lazy(() => import ('./components/Thirtys'));
 const home = lazy(() => import ('./components/home/Home')); 
 const myo = lazy(() => import ('./components/MakeYourOwn')); 
 const predefine = lazy(() => import ('./components/Predefine')); 
-const g = lazy(() => import ('./components/g')); 
 
 
 
@@ -44,7 +37,6 @@ const Routes = () => (
             <Route exact path="/SelfComplete" component ={self}/>
             <Route exact path="/Simple_goals" component={simple}/>  
             <Route exact path="/Thirtys" component={terceiro}/>
-            <Route exact path="/g" component={g}/>
            
             <Footer/>
             </Suspense>  

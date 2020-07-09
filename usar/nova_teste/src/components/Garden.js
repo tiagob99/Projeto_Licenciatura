@@ -32,10 +32,7 @@ export function togglemenu2(){
  document.getElementById('remaining_222').classList.toggle('active');
 }
 
-// export function togglemenu3(){
-//   document.getElementById('third_menu_hidden').classList.toggle('active');
-//   document.getElementById('remaining_03').classList.toggle('active');
-//  }
+
 export function togglemenu4(){
   document.getElementById('fourth_menu_hidden').classList.toggle('active');
   
@@ -151,20 +148,16 @@ $(function timerTick() {
 export function funct(){ // Adiciona Imagem e remove posiçoes de colocação de texto
   
   var novo = document.getElementById("mesage_time").value;
-  // var total;
+  
 
   if(novo=="percentagem"){
 
-    // total= document.getElementById('percentagem').value;
-    // concatenar('TP',total);
 
   document.getElementById('tipo_timeframe').classList.remove('active');
    $("body").append(document.getElementById('tipo_percentagem').classList.add('active'));
  }
  else{
 
-  //  total= document.getElementById('timeframe').value;
-  //  concatenar('TT',total);
 
   document.getElementById('tipo_percentagem').classList.remove('active');
    $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
@@ -396,10 +389,8 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
   }
   if(document.getElementById('load_type').value == 'pc'){
 
-    // novo = document.getElementById("url").value;
+    
   }
-  // var imagem_position = document.getElementById("image_type").value;
-  // console.log(imagem_position);
   posiçoesocupadas_antigo = posiçoesocupadas;
   posiçoesocupadas = [1,1,1,0,1,1,1,1];
   image = true;
@@ -437,21 +428,7 @@ export function tira(){
         }
       }
 }
-// $('#image_type').change(function() { // Altera o tipo de imagem
-//   if(url ==true){
-//     var novo = document.getElementById("image_type").value;
-//     if(novo=="bakground"){
-//       document.getElementById('img_backgroud').style.display = "initial";
-//       document.getElementById('img').style.display = "none";
-//       document.getElementById('rect').style.display = "none";
-//     }
-//     else{
-//       document.getElementById('img_backgroud').style.display = "none";
-//       document.getElementById('img').style.display = "initial";
-//       document.getElementById('rect').style.display = "initial";
-//     }
-//   }
-// });
+
 $('#btRemImg').click(function() { // remove Imagem
   document.getElementById('img_div').style.display = "none";
   document.getElementById('img').style.display = "none";
@@ -480,40 +457,12 @@ $('#btRemImg').click(function() { // remove Imagem
 /*Cores*/
 
 
-/*POP-UP-------------antigo---*/
-// export function inicia(){
-//   const popup= document.getElementById("pop-up-prom");
-//   console.log(popup);
-  // popup.classList.add('mostrar');
-// }
-
-// inicia('pop-up-prom');
-
-// const popup=document.querySelector('.aqui');
-// popup.addEventListener('click', () => inicia('pop-up-prom'));
-/*POP-UP--------------antigo--*/  
-
  //  Texto------------------------------------------
   /*vetores cores iniciais*/
   var cores = ["#FF0000", "#FFFFFF", "#00FF00", "#0000FF", "#FF4AD7", "#FF8400",  "#FFFFD7"];
   /*vetores cores iniciais*/
   
-  // /*Matriz barras iniciais*/
-  // var matrix = [];
-  // for(var i=0; i<7; i++) {
-  //     matrix[i] =  new Array(7);
-  // }
-  // for(var i=0; i<7; i++) {
-  //   matrix[i][0]=i;
-  //   matrix[i][1]=16;
-  //   matrix[i][2]=20;
-  //   matrix[i][3]=-180;
-  //   matrix[i][4]=true;
-  //   matrix[i][5]="tophalf";
-  //   matrix[i][6]=2;
-  //   matrix[i][7]="csteps";
-  // }
-  // /*Matriz barras iniciais*/
+  
   
   /*Matriz texto inicial*/
   var matrixtext = [];
@@ -545,13 +494,7 @@ $('#btRemImg').click(function() { // remove Imagem
   var image = false;
   var posiçoesocupadas_antigo;
   var elemento = false;
-  // function bartype(barnumber){
-  //   alert('bar_type'+barnumber)
-  //   var novo = document.getElementById('bar_type'+barnumber).value;
-  //   alert('bar_type'+barnumber);
-  //   matrix[barnumber][7] = novo;
-    
-  //   }
+ 
   
   
   $(document).ready(function() {
@@ -560,40 +503,6 @@ $('#btRemImg').click(function() { // remove Imagem
     var containertext = $(document.createElement('div')).css({padding: '2px', margin: '2px', width: '170px', height: '200px'});
   
   
-    // $('#btAdd1').click(function() { //Adiciona uma linha
-    //   if (Linha <= 6) {
-    //     $(container).append('<div style="height:5550px; margin-top:15px;"  id=baroptions' + Linha + ' ' +
-    //     '<p>Bar ' + (Linha+1) + ' Type <br><br> <select id="bar_type'+ (Linha) +' " onChange= ' +bartype(+(Linha-1))+
-    //     '><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option></select>' +
-    //     '</p><br><p>Circle Bar ' + (Linha+1)+ ' Radius </p><br><input id=barradius' + Linha + '  value="100" max="89" onchange=barradius(' + Linha + ') type="range" name="b_size">'+
-    //     '<p>Bar ' + (Linha+1) + ' Start </p> <br><select id=bar_star' + Linha + '  onChange={barstar(' + Linha + ')} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select>'+
-    //     '<br><br><p>Bar ' + (Linha+1) + ' Rotation </p> <br><select name="bar_rotation" id="bar_star" onChange={updaterotation(' + Linha + ')} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select>');
-        
-    //     document.getElementById('lastelemente').style.marginTop = tamanho_que_o_menu_desceu + 450 + "px";
-    //     tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu + 450;
-  
-    //     $('#main').after(container);
-    //     $("body").append('<svg id=bardraw' + Linha + ' ' +
-    //     ' style=" width:530px; height: 530px;  top:50%; left: 50%; border-radius: 100%; position:absolute;  margin-top: -203px;  margin-left: -270px; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-    //     '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="30,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
-    //     '</svg>')
-    //     Linha = Linha + 1;
-    //     }
-    // });
-  
-  
-    // $('#btRemove1').click(function() { // Remove uma linha
-    //   if (Linha != 0) {
-    //     Linha = Linha - 1;
-    //     $('#baroptions' + Linha).remove();
-    //     $('#bardraw' + Linha).remove();
-    //     var novo = tamanho_que_o_menu_desceu - 450;
-    //     document.getElementById('lastelemente').style.marginTop = novo + "px";
-    //     if (Linha >= 0) {
-    //       tamanho_que_o_menu_desceu = tamanho_que_o_menu_desceu - 450;
-    //     }
-    //   }
-    // });
   
   
     $('#mesage_type').change(function() { // Adiciona se é de percentangem ou timeframe
@@ -603,20 +512,6 @@ $('#btRemImg').click(function() { // remove Imagem
         $("body").append(document.getElementById('mesage_time').classList.add('active'));
         $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
 
-        // var total=document.getElementById('percentagem').value;
-        // concatenar('TP', total);
-        // $('<select id="mesage_time" onChange={funct} style="margin-left:10px;">'+
-        //   '<option value="timeframe">Timeframe</option>'+
-        //   '<option value="percentagem">Percentagem</option>'+
-        // '</select>'+
-        // '<select id="timeframe" style="margin-left:10px;">'+
-        // '<option value="10">10 Minutos</option>'+
-        // '<option value="20">20 Minutos</option>'+
-        // '<option value="30">30 Minutos</option>'+
-        // '<option value="40">40 Minutos</option>'+
-        // '<option value="50">50 Minutos</option>'+
-        // '<option value="60">60 Minutos</option>'+
-        // '</select>').insertAfter('#mesage_type')
       }
       else{
         $("body").append(document.getElementById('mesage_time').classList.remove('active'));
@@ -634,7 +529,7 @@ $('#btRemImg').click(function() { // remove Imagem
     
 
     
-    //aqui**************************************************************************************************
+    
     
     /*adicionar elementos*/
     
@@ -788,26 +683,7 @@ $('#btRemImg').click(function() { // remove Imagem
         elemento = false;
         console.log("aa33a")
       }
-      // if(document.getElementById('primeiro').innerHTML!=""){
-      //   concatenar('PP',document.getElementById('primeiro').innerHTML)}
-  
-      //   if(document.getElementById('segundo').innerHTML!=""){
-      //   concatenar('PS',document.getElementById('segundo').innerHTML);}
-  
-      //   if(document.getElementById('terceiro').innerHTML!=""){
-      //   concatenar('PT',document.getElementById('terceiro').innerHTML);}
-  
-      //   if(document.getElementById('quarto').innerHTML!=""){
-      //   concatenar('PQ',document.getElementById('quarto').innerHTML);}
-  
-      //   if(document.getElementById('quinto').innerHTML!=""){
-      //   concatenar('PQI',document.getElementById('quinto').innerHTML);}
-  
-      //   if(document.getElementById('setimo').innerHTML!=""){
-      //   concatenar('PSE',document.getElementById('setimo').innerHTML);}
-  
-      //   if(document.getElementById('oitavo').innerHTML!=""){
-      //   concatenar('PO',document.getElementById('oitavo').innerHTML);}
+     
     });
   
   });
@@ -963,7 +839,6 @@ $('#btRemImg').click(function() { // remove Imagem
 
   export function escolha(){
     if(document.getElementById('load_type').value == 'url_load'){
-      // concatenar('TIM','URL');
       document.getElementById('images_2').style.top = '290%';
       document.getElementById('images_3').style.top = '390%';
       $('#filetag').remove();
@@ -975,12 +850,10 @@ $('#btRemImg').click(function() { // remove Imagem
     if(document.getElementById('load_type').value == 'pc'){
       document.getElementById('images_2').style.top = '400%';
       document.getElementById('images_3').style.top = '490%';
-      // concatenar('TIM','PC')
       $('#url').remove();
       document.getElementById('load_type').insertAdjacentHTML('beforebegin',
       '<input type="file" id="filetag"> <img src="" id="preview">')
 
-      //document.getElementById('preview').style.top='150%';
       var fileTag = document.getElementById("filetag"),
       preview = document.getElementById("preview");
       
@@ -1007,17 +880,13 @@ $('#btRemImg').click(function() { // remove Imagem
     }
   
     }
-  //fechar e abrir menu-----------------
 
 
   //CODIGO
   var codigo="Gardens";
    var array_codigo=["GARDENS"];
-  // var array_codigo= [];
   
   export function concatenar(id,valor){
-    //codigo=codigo + '|' + id + '|' + valor;
-    //
 
    array_codigo.push(id,valor);
     
@@ -1058,56 +927,6 @@ $('#btRemImg').click(function() { // remove Imagem
   var aux_array_codigo=[];
 
  
-  // export function concatenaraux(){
-  //   alert(aux_array_codigo)
-  //   var i = array_codigo.length-1;
-  //   var j = 0;
-  //   // for(var i=0; i>2; i++){
-  //   //   alert('aqui');
-  //     while(i>0){
-  //       if(aux_array_codigo.length == 0){
-  //         aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
-  //       }
-  //       else{
-  //         //alert(aux_array_codigo.length);
-  //         while(j<aux_array_codigo.length){
-            
-  //           j++;
-  //          alert(array_codigo[i-1])
-  //           alert(aux_array_codigo[j-1])
-  //           if(array_codigo[i-1] == aux_array_codigo[j-1]){
-  //             alert('aqui');
-
-  //             aux_array_codigo.splice(1,2,array_codigo[i]);
-  //             //aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
-  //             j=aux_array_codigo.length;
-              
-  //           }
-  //           else if(array_codigo[i-1] != aux_array_codigo[j-1]){
-              
-  //           }
-  //           else{
-  //             alert('aui')
-  //             aux_array_codigo.push(array_codigo[i-1],array_codigo[i]);
-  //           }
-            
-              
-          
-            
-            
-  //         }
-          
-          
-  //       }
-  //     i=i-2;
-  //   }
-      
-      
-  //   // }
-  //   //alert(array_codigo);
-  //   //array_codigo = aux_array_codigo;
-  //   //alert(array_codigo);
-  // }
 
 
   export function cod(){
@@ -1122,16 +941,6 @@ $('#btRemImg').click(function() { // remove Imagem
       i=i+2;
 
     }
-//    data.definicao = data.definicao;
-    //alert(data.definicao);
-    // document.getElementById('codee').innerHTML=codigo;
-    // <?php
-    // $conn = new mysqli('localhost','root','','test');
-    // if($conn->connect_error){
-    //   echo "$conn->connect_error";
-    //   die("Connection Failed : ". $conn->connect_error);
-    // }
-    // />
     
     
     

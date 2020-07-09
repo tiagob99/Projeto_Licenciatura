@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flip } from 'react-reveal';
 import 'jquery-ui-dist/jquery-ui';
 import * as simple from './Simple';
 
@@ -76,7 +75,6 @@ const Simple_goals = () => {
                       <option value="other_user">Other User</option>
                     </select>
                     <textarea style={{backgroundColor: 'rgb(225,225,225,0)', zIndex: 8, resize: 'none', textAlign: 'justify', color: 'white'}} id="second_variable" name="field5" className="tex_box" placeholder="Insert your text" rows={1} cols={18} defaultValue={""} />
-                    {/* <input type="color" id="myColor9" defaultValue="#ff0080" onChange={simple.text_color}/> */}
                     <select id="third_variable">
                       <option value="none">None</option>
                       <option value="yesterday">Yesterday</option>
@@ -135,8 +133,6 @@ const Simple_goals = () => {
                       </div>
                       <input type="button" id="adicionaText" defaultValue=" Open Text" className="bt" onClick={simple.abrir} />
                       <input type="button" id="removeText" defaultValue=" Close Text" className="bt" onClick={simple.fechar}/>
-                      {/* <p>Text Color <input type="color" id="myColor7" defaultValue="#ff0080" onChange={simple.text_color}/> </p>  <br /><br />
-                      <p>Text Size </p> <br /> <input id="text_size" onChange={simple.text_size}  type="range" min={10} max={50} name="text_si" defaultValue={15} /><br /><br /> */}
                     </div>
                   </div>
               </div>
@@ -144,9 +140,6 @@ const Simple_goals = () => {
           </div>
           
           <div className="watch">
-            {/* <div className="text">
-              <p id="texto">teste</p>
-            </div> */}
             <div className="center_circule">
               <p id="rect" className="center_circule" />
               <div className="circule">
@@ -161,7 +154,6 @@ const Simple_goals = () => {
                 <li id="terceiro" />
                 <li id="quarto" />
                 <li id="quinto" />
-                {/* <li id="sexto" /> */}
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}>

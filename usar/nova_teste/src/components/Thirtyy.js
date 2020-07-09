@@ -247,8 +247,6 @@ var tamanho_que_o_menu_desceu = 0;
        circle2.setAttribute("r", novo);
        verifica('BR1',novo);
        verifica('BR2',novo);
-      //  document.getElementById('cor_da_barra').style.r =  novo;
-      //  document.getElementById('cor_da_barra2').style.r =  novo;
    }
    
    /*personalização*/
@@ -362,18 +360,6 @@ $(document).ready(function() {
     if(novo=="temporaria"){
       $("body").append(document.getElementById('mesage_time').classList.add('active'));
       $("body").append(document.getElementById('tipo_timeframe').classList.add('active'));
-      // $('<select id="mesage_time" onChange={funct}" style="margin-left:10px;">'+
-      //   '<option value="timeframe">Timeframe</option>'+
-      //   '<option value="percentagem">Percentagem</option>'+
-      // '</select>'+
-      // '<select id="timeframe" style="margin-left:10px;">'+
-      // '<option value="10">10 Minutos</option>'+
-      // '<option value="20">20 Minutos</option>'+
-      // '<option value="30">30 Minutos</option>'+
-      // '<option value="40">40 Minutos</option>'+
-      // '<option value="50">50 Minutos</option>'+
-      // '<option value="60">60 Minutos</option>'+
-      // '</select>').insertAfter('#mesage_type')
     }
     else{
       $("body").append(document.getElementById('mesage_time').classList.remove('active'));
@@ -452,27 +438,12 @@ $(document).ready(function() {
     console.log(posiçoesocupadas);
     console.log(matrixtext);
 
-    // if(document.getElementById('oitavo').innerHTML!=""){
-    //   verifica('PO',document.getElementById('oitavo').innerHTML);}
-
-    //  else if(document.getElementById('setimo').innerHTML!=""){
-    //   concatenar('PSE',document.getElementById('setimo').innerHTML);}
-
-    //  else if(document.getElementById('quinto').innerHTML!=""){
-    //  concatenar('PQI',document.getElementById('quinto').innerHTML);}
+    
 
     if(document.getElementById('quarto').innerHTML!=""){
       verifica('PQ',document.getElementById('quarto').innerHTML);}
 
-    //  else if(document.getElementById('terceiro').innerHTML!=""){
-    //   concatenar('PT',document.getElementById('terceiro').innerHTML);}
-
-    //  else if(document.getElementById('segundo').innerHTML!=""){
-    //  concatenar('PS',document.getElementById('segundo').innerHTML);}
-
-    //  else if(document.getElementById('primeiro').innerHTML!=""){
-    //    concatenar('PP',document.getElementById('primeiro').innerHTML);}
-
+   
   });
 
 
@@ -688,7 +659,6 @@ var codigo="Thistys";
 var array_codigo=["THIRTYS"];
 
 export function concatenar(id,valor){
-  // codigo=codigo + '|' + id + '|' + valor;
   array_codigo.push(id,valor);
 }
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import GoogleLogin from "react-google-login";
 import * as db from '../database';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -9,8 +8,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import * as data from './dados';
-import * as dados from '../database';
 import axios from 'axios';
 
 export var definicao;
