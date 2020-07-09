@@ -82,11 +82,11 @@ $(function() {
 
 $(function readropzone() {
   if (drop == "node1") {
-    verifica('WT','Analogico');
+    // verifica('WT','Analogico');
     console.log("Digital");
   }
   else {
-    verifica('WT','Digital');
+    // verifica('WT','Digital');
     console.log("Analogico");
   }
 })
@@ -121,20 +121,17 @@ $(function clock(){
 
 /*Relogio analogico*/
 $(function timerTick() {
-  const fullDate = new Date();
-    var h = 30 * ((fullDate.getHours() % 12) + fullDate.getMinutes() / 60);
-    var m = 6 * fullDate.getMinutes();
-    var s = 6 * fullDate.getSeconds();
-    if(window.location.pathname === '/Mikros'){
+  const aqui =new Date();
+    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+    var m = 6 * aqui.getMinutes();
+    var s = 6 * aqui.getSeconds();
+    if(window.location.pathname == '/Mikros'){
       document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
       document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-      
     }
     setTimeout(timerTick, 100);
-  }
-
-)
+  })
     
   
 /*Relogio analogico*/
