@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import { Script } from 'vm';
 
+import PersonList from './PersonList';
+
+
+
 function App() {
   
   return (
@@ -22,6 +26,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <PersonList/> 
+      {/* aqui */}
+     
     </div>
   );
 }

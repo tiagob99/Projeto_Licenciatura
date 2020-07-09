@@ -10,7 +10,9 @@ import * as data from './Login/Data';
 import * as database from './database';
 
 
+import React from 'react';
 import axios from 'axios';
+
 
 
 /*Menu*/
@@ -38,7 +40,6 @@ export function togglemenu4(){
   
  }
 /*Menu*/
-
 
 /*drag and drop*/
 var drop = "node2"
@@ -971,6 +972,7 @@ export function troca2(){
 var dados_f=[];
 
 function bd (){
+
   console.log('--------------------------------'); 
   axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
   console.log(dados_f);
@@ -986,3 +988,5 @@ bd();
 //   console.log('____________________________');
 //   console.log(data);
 // }
+
+
