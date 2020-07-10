@@ -9,6 +9,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+import firebase from 'firebase';
+
 
 export var definicao;
 const useStyles = makeStyles({
@@ -21,16 +23,23 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
   
 }
-
+var teste;
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Mikros', fetch(), 6.0, 24, 4.0),
   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('teste', 356, 16.0, 49, 3.9),
-
-];
-
+  createData('teste', 356, 16.0, 49, 3.9),];
+function fetch(){
+  
+  var database = firebase.database();
+  var starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
+  starCountRef.on('value', function(snapshot) {
+  teste = snapshot.child('value').val();
+  
+  });
+ 
+}
 // var dados_f=[];
 
 // function bd (){
@@ -43,7 +52,6 @@ const rows = [
 export default function Data() {
   const classes = useStyles();
   
-
     
   
   return (
@@ -54,7 +62,7 @@ export default function Data() {
         <TableHead>
           <TableRow>
             <TableCell>Page</TableCell>
-            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">BC</TableCell>
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
             <TableCell align="right">Carbs&nbsp;(g)</TableCell>
             <TableCell align="right">Protein&nbsp;(g)</TableCell>

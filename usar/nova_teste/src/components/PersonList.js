@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 
 
-export default class PersonList extends React.component{
+
+export default class PersonList extends React.Component{
     state={
       persons:[],
     };
@@ -13,13 +14,17 @@ export default class PersonList extends React.component{
       then(res=> {
       console.log(res);  
       this.setState({persons:res.data});
+
+      
+      // console.log(this.state.persons.map(person=><li key={person.uid}>{person.name}</li>));
+
       });
     }
     render(){
         return(
             <ul>
-                {this.state.persons.map(person=><li key={person.id}>{person.name}</li>)}
-                </ul>
+                {/* { this.state.persons.map(person=><li key={person.uid}>{person.name}</li>)} */}
+            </ul>
         )
     }
   }

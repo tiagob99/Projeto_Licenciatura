@@ -4,6 +4,8 @@ import {Element, scroller} from 'react-scroll';
 import { Fade } from 'react-reveal';
 import * as db from '../database';
 
+import '../fetch';
+
 const Home = () => {
 
     const scrollToLanding = elem => { // quando clicar no explore new album a velocidade que aparece a info
@@ -32,7 +34,7 @@ const Home = () => {
             </Fade>
             <Element name="landing">
                 <Landing/>
-            </Element>            
+            </Element>     
         </div>
     );
 };

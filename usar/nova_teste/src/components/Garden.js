@@ -886,13 +886,19 @@ $('#btRemImg').click(function() { // remove Imagem
   //CODIGO
   var codigo="Gardens";
    var array_codigo=["GARDENS"];
-  
+
   export function concatenar(id,valor){
 
    array_codigo.push(id,valor);
     
     
   }
+  export function concatenar1(id,valor){
+
+    array.push(id,valor);
+     
+     
+   }
   function verifica(id, valor){
     var i = 0;
     while(i<array_codigo.length-1){
@@ -990,3 +996,16 @@ bd();
 // }
 
 
+
+export var array = [];
+export function fetch(){
+  
+//   var database = firebase.database();
+//   var starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
+//   starCountRef.on('value', function(snapshot) {
+//   const teste = snapshot.child('value').val();
+//   alert(teste);
+  
+//   });
+ 
+}
