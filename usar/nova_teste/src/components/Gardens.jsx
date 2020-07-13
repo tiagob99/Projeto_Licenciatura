@@ -6,7 +6,6 @@ import * as garden from './Garden';
 
 const Gardens = () => {
 
- 
 
     return (
 

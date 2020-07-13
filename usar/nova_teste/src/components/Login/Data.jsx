@@ -10,9 +10,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import firebase from 'firebase';
-
+import * as garden from '../Garden'
 
 export var definicao;
+var resultado;
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -20,26 +21,37 @@ const useStyles = makeStyles({
 });
 
 function createData(name, calories, fat, carbs, protein) {
+  
   return { name, calories, fat, carbs, protein };
   
 }
 var teste;
+
+
 const rows = [
-  createData('Mikros', fetch(), 6.0, 24, 4.0),
+  createData('Mikros', resultado, 6.0, 24, 4.0),
   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('teste', 356, 16.0, 49, 3.9),];
-function fetch(){
+// export function fetch(t){
+//   let array = [];
   
-  var database = firebase.database();
-  var starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
-  starCountRef.on('value', function(snapshot) {
-  teste = snapshot.child('value').val();
+//   const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
+//   starCountRef.once('value', function(snapshot) {
+//   array.push(snapshot.child('value').val());
+//   var l = snapshot.child('value').val();
+//   t=l;
   
-  });
+//   });
+  
  
-}
+// }
+// export function exp(){
+//   var t;
+//   fetch();
+//   alert(t);
+// }
 // var dados_f=[];
 
 // function bd (){
@@ -50,16 +62,18 @@ function fetch(){
 
 
 export default function Data() {
-  const classes = useStyles();
   
-    
+  garden.fetch();
+  const classes = useStyles();
   
   return (
     
-      
-    <TableContainer component={Paper}>
+    <body>
+      <h1 onClick={alert('alert ')}>this.resultado</h1>
+    {/* <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
+          
           <TableRow>
             <TableCell>Page</TableCell>
             <TableCell align="right">BC</TableCell>
@@ -82,8 +96,9 @@ export default function Data() {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
-
+    </TableContainer> */}
+    
+    </body>
   )
 }
 

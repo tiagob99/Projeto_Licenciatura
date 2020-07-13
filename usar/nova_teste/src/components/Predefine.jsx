@@ -4,7 +4,6 @@ import PersonList from './PersonList';
 import * as db from './database';
 import ResultFetch from './teste';
 const predefine = () => {
-    //alert(garden.fetch());
     return (
        
 
@@ -14,7 +13,8 @@ const predefine = () => {
     
       <div class="margem">
       
-        <a href="./Gardens">
+
+        <a href="./Gardens" >
           <div class="first">
             <div className="cards-list">
               <div className="card 4">
