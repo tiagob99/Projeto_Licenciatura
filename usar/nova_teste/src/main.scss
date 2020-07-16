@@ -2332,4 +2332,20 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   min-width: 100%;
   font-size: small;
   text-align: center;
+  
+ 
+}
+
+#BT{
+  border-radius: 12px;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+}
+
+#BT:hover {
+  background-color: rgb(40, 124, 194); 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
+  
 }
