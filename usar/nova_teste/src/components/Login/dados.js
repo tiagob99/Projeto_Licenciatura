@@ -7,53 +7,8 @@ import * as garden from '../Garden';
 
 var mik= false;
 var gar= false;
-// export const mikro = [];
 
-// // export const garden = [];
-
-// export var make = [];
-
-// export var thirty = [];
-
-// export default axios.create({
-//     baseURL: 'https://projeto-licenciatura.firebaseio.com/'
-// })
-// export var res;
-
-// firebase.database().ref('/Gardens/' + 'DC').on('value').then(function(snapshot){
-//     res = (snapshot.val() && snapshot.val().value)
-    
-// }) 
-// alert (res)
-// var leadsRef = firebase.database().ref('leads');
-// leadsRef.on('value', function(snapshot) {
-//     snapshot.forEach(function(childSnapshot) {
-//       var childData = childSnapshot.val();
-     
-//     });
-// });
-// export function teste(){
-//    if(garden.mikro.length >1){
-//        n=n+1
-//    }
-//    if(garden.garden.length >1){
-//     n=n+1
-//     }
-//     if(garden.self.length >1){
-//         n=n+1
-//     }
-//     if(garden.simple.length >1){
-//         n=n+1
-//     }
-//     if(garden.thirty.length >1){
-//         n=n+1
-//     }
-//     if(garden.make.length >1){
-//         n=n+1
-//     }
-// }
 function ver_mikro(valor,m,i){
-            
             if(garden.mikro[i]==valor){
                 m.innerHTML = garden.mikro[i+1];
             }
@@ -89,8 +44,39 @@ function ver_thirty(valor,m,i){
 function ver_make(valor,m,i){
     if(garden.make[i]==valor){
         m.innerHTML = garden.make[i+1];
+        
     }
 
+}
+function SRC_g(m,i){
+    if(garden.garden[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.garden[i+1] + '">Link<a/>'
+    }
+}
+function SRC_mik(m,i){
+    if(garden.mikro[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.mikro[i+1] + '">Link<a/>'
+    }
+}
+function SRC_s(m,i){
+    if(garden.self[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.self[i+1] + '">Link<a/>'
+    }
+}
+function SRC_si(m,i){
+    if(garden.simple[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.simple[i+1] + '">Link<a/>'
+    }
+}
+function SRC_t(m,i){
+    if(garden.thirty[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.thirty[i+1] + '">Link<a/>'
+    }
+}
+function SRC_m(m,i){
+    if(garden.make[i]=='SRC'){
+        m.innerHTML='<a href = "'+ garden.make[i+1] + '">Link<a/>'
+    }
 }
 
 export function funcao(){
@@ -331,7 +317,7 @@ export function funcao(){
         ver_mikro('TBC', mikros_cell12,i);
         ver_mikro('YBC', mikros_cell13,i);
         ver_mikro('TIM', mikros_cell14,i);
-        // ver_mikro('SRC', mikros_cell15,i);
+        SRC_mik('SRC', mikros_cell15,i);
         ver_mikro('MT', mikros_cell16,i);
         ver_mikro('PP', mikros_cell17,i);
         ver_mikro('PS', mikros_cell18,i);
@@ -370,7 +356,7 @@ export function funcao(){
         ver_garden('TBC', garden_cell12,i);
         ver_garden('YBC', garden_cell13,i);
         ver_garden('TIM', garden_cell14,i);
-        // ver_garden('SRC', garden_cell15,i);
+        SRC_g('SRC', garden_cell15,i);
         ver_garden('MT', garden_cell16,i);
         ver_garden('PP', garden_cell17,i);
         ver_garden('PS', garden_cell18,i);
@@ -408,7 +394,7 @@ export function funcao(){
         ver_self('TBC', self_cell12,i);
         ver_self('YBC', self_cell13,i);
         ver_self('TIM', self_cell14,i);
-        // ver_self('SRC', self_cell15,i);
+        SRC_s('SRC', self_cell15,i);
         ver_self('MT', self_cell16,i);
         ver_self('PP', self_cell17,i);
         ver_self('PS', self_cell18,i);
@@ -446,7 +432,7 @@ export function funcao(){
         ver_simple('TBC', simple_cell12,i);
         ver_simple('YBC', simple_cell13,i);
         ver_simple('TIM', simple_cell14,i);
-        // ver_simple('SRC', simple_cell15,i);
+        SRC_si('SRC', simple_cell15,i);
         ver_simple('MT', simple_cell16,i);
         ver_simple('PP', simple_cell17,i);
         ver_simple('PS', simple_cell18,i);
@@ -485,7 +471,7 @@ export function funcao(){
         ver_thirty('TBC', thirty_cell12,i);
         ver_thirty('YBC', thirty_cell13,i);
         ver_thirty('TIM', thirty_cell14,i);
-        // ver_thirty('SRC', thirty_cell15,i);
+        SRC_t('SRC', thirty_cell15,i);
         ver_thirty('MT', thirty_cell16,i);
         ver_thirty('PP', thirty_cell17,i);
         ver_thirty('PS', thirty_cell18,i);
@@ -524,7 +510,7 @@ export function funcao(){
         ver_make('TBC', make_cell12,i);
         ver_make('YBC', make_cell13,i);
         ver_make('TIM', make_cell14,i);
-        // ver_make('SRC', make_cell15,i);
+        SRC_m(make_cell15,i);
         ver_make('MT', make_cell16,i);
         ver_make('PP', make_cell17,i);
         ver_make('PS', make_cell18,i);
