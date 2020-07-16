@@ -161,7 +161,7 @@ const Thirtys = () => {
               </div>
             </div>
             <input type="button" onClick={terceiro.cod} id="alerta" value="codigo" className="cod" />
-            <p id= "codee"></p>
+            {/* <p id= "codee"></p> */}
         </div>
       </div>
 

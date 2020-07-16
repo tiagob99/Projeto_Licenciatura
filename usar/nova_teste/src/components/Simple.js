@@ -702,7 +702,7 @@ function verifica(id, valor){
 }
 
 export function cod(){
-  document.getElementById('codee').innerHTML=array_codigo;
+  // document.getElementById('codee').innerHTML=array_codigo;
   var i=1;
 
   while(i<array_codigo.length){

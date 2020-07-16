@@ -952,7 +952,7 @@ $('#btRemImg').click(function() { // remove Imagem
     //db.login();
 
     var i=1;
-    document.getElementById('codee').innerHTML=array_codigo;
+    // document.getElementById('codee').innerHTML=array_codigo;
     while(i<array_codigo.length){
       db.database_new('Gardens',array_codigo[i], array_codigo[i+1]);
       i=i+2;
@@ -1034,21 +1034,24 @@ export var array = [];
   
  
 // }
-export function fetch(arr,page){
-  const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page );
-  starCountRef.on('value', function(snapshot) {
-  var l = snapshot.child('value').val();
-  resultado=l;
-  // alert('inserido')
-  snapshot.forEach(function(childSnapshot) {
-    var childKey = childSnapshot.key;
-    const s = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page + '/' + childKey );
-      s.on('value', function(snapshot) {
-      var k = snapshot.child('value').val();
-      arr.push(childKey, k);
-    })
-    // alert (childKey)
-  });
-  // alert(arr)
-  });
-}
+// export function fetch(arr,page){
+//   var uti = firebase.auth().currentUser;
+//   var t = uti.uid;
+//   alert(t)
+//   const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page );
+//   starCountRef.on('value', function(snapshot) {
+//   var l = snapshot.child('value').val();
+//   resultado=l;
+//   // alert('inserido')
+//   snapshot.forEach(function(childSnapshot) {
+//     var childKey = childSnapshot.key;
+//     const s = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page + '/' + childKey );
+//       s.on('value', function(snapshot) {
+//       var k = snapshot.child('value').val();
+//       arr.push(childKey, k);
+//     })
+//     // alert (childKey)
+//   });
+//   // alert(arr)
+//   });
+// }

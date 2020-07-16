@@ -1773,7 +1773,7 @@ export function cod(){
   
   // concatenaraux();
   var i=1;
-  document.getElementById('codee').innerHTML=array_codigo;
+  // document.getElementById('codee').innerHTML=array_codigo;
  
   while(i<array_codigo.length){
     db.database_new('MAKEYOUROWN',array_codigo[i], array_codigo[i+1]);

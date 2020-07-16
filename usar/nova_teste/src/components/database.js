@@ -65,7 +65,7 @@ function errData(err){
 
 //login
 var provider = new firebase.auth.GoogleAuthProvider();
-var email; // username
+export var email; // username
 export function login(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -132,3 +132,23 @@ export function logout(){
 // });
 
 // }
+export function fetch(arr,page){
+ 
+  alert(email);
+  const starCountRef = firebase.database().ref(email + '/' + page );
+  starCountRef.on('value', function(snapshot) {
+  var l = snapshot.child('value').val();
+  // resultado=l;
+  // alert('inserido')
+  snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    const s = firebase.database().ref(email + '/' + page + '/' + childKey );
+      s.on('value', function(snapshot) {
+      var k = snapshot.child('value').val();
+      arr.push(childKey, k);
+    })
+    // alert (childKey)
+  });
+  // alert(arr)
+  });
+}

@@ -5,8 +5,6 @@ import * as garden from '../Garden';
 
 
 
-var mik= false;
-var gar= false;
 
 function ver_mikro(valor,m,i){
             if(garden.mikro[i]==valor){
@@ -81,7 +79,7 @@ function SRC_m(m,i){
 
 export function funcao(){
     
-    
+    document.getElementById('BT').classList.toggle('active');
 
     var table = document.getElementById("myTable");
         var row = table.insertRow();

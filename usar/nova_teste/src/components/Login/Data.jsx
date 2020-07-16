@@ -117,21 +117,24 @@ import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from '../Garden';
 import * as data from './dados';
+import { background_color } from '../mikrosjs';
+import * as db from '../database';
 
 const Data = () => {
-    garden.fetch(garden.mikro,'Mikros');
-    garden.fetch(garden.garden,'Gardens');
-    garden.fetch(garden.self,'SelfComplete');
-    garden.fetch(garden.simple,'Simple');
-    garden.fetch(garden.thirty,'Thirty');
-    garden.fetch(garden.make,'MAKEYOUROWN');
+    db.fetch(garden.mikro,'Mikros');
+    db.fetch(garden.garden,'Gardens');
+    db.fetch(garden.self,'SelfComplete');
+    db.fetch(garden.simple,'Simple');
+    db.fetch(garden.thirty,'Thirty');
+    db.fetch(garden.make,'MAKEYOUROWN');
     
     
     return (
 
     <body>
     <table id="myTable" border="1px">
-      <tr>
+      <tr className = "topo" style = {{background :"#448E9D"}}>
+        
         <td>Página</td>
         <td>Watch Type</td>
         <td>Background Color</td>

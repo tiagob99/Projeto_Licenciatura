@@ -683,7 +683,7 @@ function verifica(id, valor){
 export function cod(){
   var i=1;
 
-  document.getElementById('codee').innerHTML=array_codigo;
+  // document.getElementById('codee').innerHTML=array_codigo;
   while(i<array_codigo.length){
     db.database_new('Thirty',array_codigo[i], array_codigo[i+1]);
     i=i+2;

@@ -3,9 +3,10 @@ import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
 import PersonList from './PersonList';
+import * as db from './database';
 
 const Gardens = () => {
-    garden.fetch();
+    db.fetch();
 
     return (
 
@@ -193,7 +194,7 @@ const Gardens = () => {
       </div>
     </div>
     <input type="button" onClick={garden.cod} id="alerta" value="codigo" className="cod" />
-    <p id= "codee"></p>
+    {/* <p id= "codee"></p> */}
   </div>
 
 </div>
