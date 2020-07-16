@@ -93,6 +93,22 @@ $(function readropzone() {
 /*drag and drop*/
 
 
+/*Relogio analogico*/
+$(function timerTick() {
+  const aqui =new Date();
+    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+    var m = 6 * aqui.getMinutes();
+    var s = 6 * aqui.getSeconds();
+    if(window.location.pathname == '/Mikros'){
+      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+    }
+    setTimeout(timerTick, 100);
+  })
+    
+  
+/*Relogio analogico*/
 
 /*Relogio Digital*/
 $(function clock(){
@@ -119,22 +135,6 @@ $(function clock(){
 
 
 
-/*Relogio analogico*/
-$(function timerTick() {
-  const aqui =new Date();
-    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
-    var m = 6 * aqui.getMinutes();
-    var s = 6 * aqui.getSeconds();
-    if(window.location.pathname == '/Mikros'){
-      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-    }
-    setTimeout(timerTick, 100);
-  })
-    
-  
-/*Relogio analogico*/
 
 
 /*Cores*/
@@ -402,7 +402,7 @@ export function text_size() {
 //TEXTO
 
 //CODIGO
-var codigo="MiKros";
+// var codigo="MiKros";
 var array_codigo=["MIKROS"];
 
 export function concatenar(id,valor){

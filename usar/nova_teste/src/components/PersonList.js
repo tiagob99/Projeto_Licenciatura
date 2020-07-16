@@ -16,14 +16,14 @@ export default class PersonList extends React.Component{
       this.setState({persons:res.data});
 
       
-      // console.log(this.state.persons.map(person=><li key={person.uid}>{person.name}</li>));
-
+      console.log(this.state.persons.map(person=><li key={person.uid}>{person.name}</li>));
+      alert(this.state.persons.map(person=><li key={person.uid}>{person.name}</li>));
       });
     }
     render(){
         return(
             <ul>
-                {/* { this.state.persons.map(person=><li key={person.uid}>{person.name}</li>)} */}
+                {this.state.persons.map(person=><li key={person.uid}>{person.name}</li>)}
             </ul>
         )
     }

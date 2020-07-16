@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Script } from 'vm';
+import PersonList from './components/PersonList';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        <PersonList/>
       </header> 
       {/* aqui */}
      

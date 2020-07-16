@@ -21,7 +21,7 @@ var open = false;
 var tamanho_que_o_menu_desceu = 0;
 var url = false //ainda nai foi adicionado
 var image = false;
-var resultado;
+export var resultado;
 
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -1029,8 +1029,7 @@ export var array = [];
 // }
 export function fetch(){
   // let array = [];
-  
-  const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/DC' );
+  const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
   starCountRef.once('value', function(snapshot) {
   // array.push(snapshot.child('value').val());
   var l = snapshot.child('value').val();

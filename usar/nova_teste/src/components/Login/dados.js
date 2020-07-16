@@ -1,6 +1,8 @@
 import firebase from 'firebase';
 import { Component } from 'react';
 import axios from 'axios';
+import * as garden from '../Garden';
+
 
 
 // export default axios.create({
@@ -20,7 +22,9 @@ import axios from 'axios';
      
 //     });
 // });
-
+export function teste(){
+    alert(garden.resultado)
+}
 
 
 

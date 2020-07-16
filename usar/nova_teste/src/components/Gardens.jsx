@@ -2,10 +2,10 @@ import React from 'react';
 import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
-
+import PersonList from './PersonList';
 
 const Gardens = () => {
-
+    garden.fetch();
 
     return (
 
