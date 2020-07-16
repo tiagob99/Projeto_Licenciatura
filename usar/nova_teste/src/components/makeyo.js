@@ -1688,7 +1688,7 @@ function limpa() {
   document.getElementById('segundo').style.opacity=0;
   document.getElementById('terceiro').style.opacity=0;
   document.getElementById('quinto').style.opacity=0;
-  document.getElementById('sexto').style.opacity=0;
+//  document.getElementById('sexto').style.opacity=0;
   document.getElementById('setimo').style.opacity=0;
  // document.getElementById('oitavo').style.opacity=0;
 }

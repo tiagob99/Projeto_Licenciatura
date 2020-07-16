@@ -51,7 +51,7 @@ const Mikros = () => {
                   <p>Circle Bar 2</p> <br /> <input type="color" id="myColor7" defaultValue="#00FFFF" onChange={micro.bar_color2}/> <br /><br />
                   <p>Circle Bar 1 Size </p><br /> <input id="bar_size1" defaultValue={100} max={89} onChange={micro.bar_thickness_1} type="range" name="b_size" /><br /><br />
                   <p>Circle Bar 2 Size </p> <br /> <input id="bar_size2" defaultValue={100} max={89} onChange={micro.bar_thickness_2} type="range" name="b_size" /><br /><br />
-                  {/* <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onChange={micro.bars_radius} type="range" name="b_radius" defaultValue={100} /><br /><br /> */}
+                  <p>Circle Bar Radius </p> <br /> <input id="bar_radius" min={59} onChange={micro.bars_radius} type="range" name="b_radius" defaultValue={100} /><br /><br />
                   <p>Circle Bar Start </p> <br />
                   <select name="bar_star" id="bar_type" onChange={micro.bar_type}>
                     <option value="full">Full</option>

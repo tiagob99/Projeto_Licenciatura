@@ -118,20 +118,103 @@ import 'jquery-ui-dist/jquery-ui';
 import * as garden from '../Garden';
 import * as data from './dados';
 
-
 const Data = () => {
-    garden.fetch();
-
+    garden.fetch(garden.mikro,'Mikros');
+    garden.fetch(garden.garden,'Gardens');
+    garden.fetch(garden.self,'SelfComplete');
+    garden.fetch(garden.simple,'Simple');
+    garden.fetch(garden.thirty,'Thirty');
+    garden.fetch(garden.make,'MAKEYOUROWN');
+    
+    
     return (
 
-      <div>
-        <meta charSet="utf-8" />
-        <title>Garden</title>
-        <button onClick={data.teste}>teste</button>
-      </div>
+    <body>
+    <table id="myTable" border="1px">
+      <tr>
+        <td>Página</td>
+        <td>Watch Type</td>
+        <td>Background Color</td>
+        <td>Digital Color</td>
+        <td>Hour Color</td>
+        <td>Minute Color</td>
+        <td>Second Color</td>
+        <td>Center Circle Color</td>
+        <td>Text Color</td>
+        <td>Bar 1 Color</td>
+        <td>Bar 2 Color</td>
+        <td>Today Bar Color</td>
+        <td>Yesyerday Bar Color</td>
+        <td>Type of Image</td>
+        <td>Source</td>
+        <td>Message Type</td>
+        <td>Primeira Posição</td>
+        <td>Segunda Posição</td>
+        <td>Terceira Posição</td>
+        <td>Quarta Posição</td>
+        <td>Quinta Posição</td>
+        <td>Sexta Posição</td>
+        <td>Sétima Posição</td>
+        <td>Tipo Percentagem</td>
+        <td>Tipo Timeframe</td>
+        <td>Bar Radius 1</td>
+        <td>Bar Radius 2</td>
+        <td>Bar Thickness 1</td>
+        <td>Bar Thickness 2</td>
+        <td>Bar Type</td>
+        <td>Bar Rotation</td>
+        <td>Text</td>
+        <td>Text Size</td>
+        <td>Second Bar value</td>
+      </tr>
+    </table>
 
+<button type="button" onClick={data.funcao}>Abrir Definições das suas Páginas</button>
+</body>
 
 
   ); 
 }
 export default Data;
+
+// pagina varchar(45) 
+// WT varchar(45) 
+// BC varchar(45) 
+// DC varchar(45) 
+// HC varchar(45) 
+// MC varchar(45) 
+// SC varchar(45) 
+// CC varchar(45) 
+// TC varchar(45) 
+// TIM varchar(45) 
+// SRC varchar(45) 
+// MT varchar(45) 
+// PP varchar(45) 
+// PS varchar(45) 
+// PT varchar(45) 
+// PQ varchar(45) 
+// PQI varchar(45) 
+// PSE varchar(45) 
+// PO varchar(45) 
+// TT int(11) 
+// TP int(11) 
+// B1C varchar(45) 
+// B2C varchar(45) 
+// BR1 int(11) 
+// BR2 int(11) 
+// BT1 int(11) 
+// BT2 int(11) 
+// // BTYPE varchar(45) 
+// // BROT varchar(45) 
+// // TEXT varchar(45) 
+// // TEXT_S varchar(45) 
+// TBC varchar(45) 
+// YBC varchar(45) 
+// // SBV
+
+// if(garden.mikro[i]=='WT'){
+//   mikros_cell2.innerHTML = garden.mikro[i+1];
+// }
+// if(garden.mikro[i]=='BC'){
+//   mikros_cell3.innerHTML = garden.mikro[i+1];
+// }

@@ -30,7 +30,6 @@ const Gardens = () => {
               </svg>
               <span id="hour" />
               <span id="minute" />
-              <span id="second" />
             </div>
           </div>
         </div>

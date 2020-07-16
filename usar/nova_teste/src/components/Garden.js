@@ -22,6 +22,13 @@ var tamanho_que_o_menu_desceu = 0;
 var url = false //ainda nai foi adicionado
 var image = false;
 export var resultado;
+export var mikro = [];
+export var garden = [];
+export var self = [];
+export var simple = [];
+export var thirty = [];
+export var make = [];
+
 
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
@@ -1027,14 +1034,21 @@ export var array = [];
   
  
 // }
-export function fetch(){
-  // let array = [];
-  const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + 'Mikros' + '/BC' );
-  starCountRef.once('value', function(snapshot) {
-  // array.push(snapshot.child('value').val());
+export function fetch(arr,page){
+  const starCountRef = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page );
+  starCountRef.on('value', function(snapshot) {
   var l = snapshot.child('value').val();
   resultado=l;
-  alert('inserido')
-  
+  // alert('inserido')
+  snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    const s = firebase.database().ref('z1FVkRNAO2cLgrNOTPjHOxsV4Bj1/' + page + '/' + childKey );
+      s.on('value', function(snapshot) {
+      var k = snapshot.child('value').val();
+      arr.push(childKey, k);
+    })
+    // alert (childKey)
+  });
+  // alert(arr)
   });
 }
