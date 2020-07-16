@@ -169,7 +169,7 @@ const Data = () => {
       </tr>
     </table>
 
-<button type="button" onClick={data.funcao}>Abrir Definições das suas Páginas</button>
+<button type="button" id="BT"onClick={data.funcao}>Abrir Definições das suas Páginas</button>
 </body>
 
 
