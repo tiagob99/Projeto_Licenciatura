@@ -428,7 +428,9 @@ function verifica(id, valor){
 export function cod(){
   // document.getElementById('codee').innerHTML=array_codigo;
   var i=1;
-
+  if(array_codigo.length<4){
+    alert('Não foi introduzida nenhuma configuração');
+  }
   while(i<array_codigo.length){
     db.database_new('Mikros',array_codigo[i], array_codigo[i+1]);
     i=i+2;

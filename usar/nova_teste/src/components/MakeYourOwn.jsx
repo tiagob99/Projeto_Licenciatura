@@ -58,8 +58,8 @@ const MakeYourOwn = () => {
                 <li className="elementos_menu_direito" onClick={make.togglemenu3}>Line</li>
                 <div id="third_menu_hidden_mko">
                   <div id="main" style={{height: '70px', width: '100%'}}>
-                    <input type="button" id="btAdd" defaultValue="Add Line" className="bt" onClick={make.conta}/>
-                    <input type="button" id="btRemove" defaultValue="Remove Line" className="bt" /><br /><br />
+                    <input type="button" id="btAdd" defaultValue="Add Bar" className="bt" onClick={make.conta}/>
+                    <input type="button" id="btRemove" defaultValue="Remove Bar" className="bt" /><br /><br />
                     
                       <div id="third_menu_hidden_1" > 
                       <p>Bar <select id="bar_color_change" onChange = {make.valores}>
@@ -71,11 +71,13 @@ const MakeYourOwn = () => {
                         <option value={5}>6</option>
                         <option value={6}>7</option>
                       </select> Color <input type="color" id="myColor6"  onChange={make.barcolor}/></p>
+                      <div id = "esconde">
                         <p>Bar Type <select id="bar_type"  onChange= {() => make.bartype()}><option value="currentsteps">Current Steps </option><option value="yesterdaysteps">Yesterday Steps </option><option value="companionsteps">Companion Steps </option><option value="pasthouractivaty">Past Hour Activaty </option><option value="goalactivaty">Goal Activaty </option> </select></p><br /><br />
                         <p>Circle Bar Size </p> <input id= "barsize" defaultValue="100" max="89" onChange={() => make.barsize()} type="range" name="b_size"/><br/>
                         <p>Circle Bar Radius </p><input id="barradius"  defaultValue="100" max="87" min="50" onChange={() => make.barradius() }type="range" name="b_size"/><br />
                         <p>Bar Star </p> <select id="bar_star" onChange={() => make.barstar()} ><option value="tophalf">Top Half</option><option value="full">Full</option><option value="bottomhalf">Bottom Half</option></select><br/><br/>
                         <p>Bar Rotation </p> <select name="bar_rotation" id="bar_star_1" onChange={() => make.updaterotation()} ><option value="clockwise">Clockwise</option><option value="counterclockwise">Counterclockwise</option></select><br />
+                        </div>
                       </div>
                   
                   </div>

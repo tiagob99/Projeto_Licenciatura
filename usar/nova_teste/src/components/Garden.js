@@ -947,7 +947,9 @@ $('#btRemImg').click(function() { // remove Imagem
 
   export function cod(){
 
-
+    if(array_codigo.length<2){
+      alert('Não foi introduzida nenhuma configuração');
+    }
     var i=1;
     // document.getElementById('codee').innerHTML=array_codigo;
     while(i<array_codigo.length){

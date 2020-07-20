@@ -155,10 +155,12 @@ export function centercricule() {
     verifica('CC',currentVal);
   }
 export function barcolor() {
-    var x = document.getElementById("myColor6");
+    
+      var x = document.getElementById("myColor6");
     var currentVal = x.value;
     x.value = currentVal;
     var novo = document.getElementById('bar_color_change').value;
+    if(document.getElementById("bar"+novo)){
     document.getElementById("bar"+novo).style.stroke = currentVal;
     if(novo == 0){
       cor_b0 = currentVal;
@@ -188,6 +190,8 @@ export function barcolor() {
       cor_b6 = currentVal;
 
     }
+    }
+    
 }
 /*Cores*/
 
@@ -286,10 +290,24 @@ var barr_3 = "clockwise";
 var barr_4 = "clockwise";
 var barr_5 = "clockwise";
 var barr_6 = "clockwise"; 
-
+var barra_ativa=0;
+var barra;
 export function valores(){
  
-  var barra = document.getElementById('bar_color_change').value;
+  barra = document.getElementById('bar_color_change').value;
+  
+  if(barra_ativa<=barra){
+   
+    document.getElementById("esconde").style.display='none';
+    alert('Barra não existente, adicione uma nova barra')
+ 
+  }
+  else{
+    document.getElementById("esconde").style.display='block';
+
+  }
+
+  
   var temp0;
   var temp1;
   var temp2;
@@ -587,7 +605,7 @@ export function valores(){
     rot7 = 1;
   }
   
- 
+  
   switch (barra) {
     case "0":
       
@@ -654,6 +672,8 @@ export function valores(){
         document.getElementById("myColor6").value=cor_b6;
         break;               
   }
+  
+
   
 }
 export function bartype(){
@@ -806,6 +826,10 @@ export function bartype(){
   
 }
 export function conta(){
+  if(barra_ativa<=barra){
+  document.getElementById('esconde').style.display="block";
+  }
+  barra_ativa++;
   var x = Linha;
   document.getElementById('linha').value = x;
 }
@@ -1347,7 +1371,12 @@ export function barradius() {
     tamanho = (tamanho/100)*15+1;
     matrix[barnumber][1]=tamanho;
     circle.setAttribute("r", tamanho);
-    document.getElementById('bar'+barnumber).style.strokeDasharray = (2*3.1415*tamanho)*(matrix[barnumber][2]/100)+",100"; //20 é o tamanho da barra
+    if(document.getElementById('bar'+barnumber)){
+      document.getElementById('bar'+barnumber).style.strokeDasharray = (2*3.1415*tamanho)*(matrix[barnumber][2]/100)+",100"; //20 é o tamanho da barra
+    }
+    else{
+      alert('Barra não criada, adicione uma nova barra');
+    }
   }
   else {
     
@@ -1718,6 +1747,7 @@ export function fechar(){
 //fechar e abrir menu-----------------
 
 export function cod(){
+
   updatewhatch();
   if(Linha==1){
     verifica('B1T',tipob_0);
@@ -1779,7 +1809,10 @@ export function cod(){
   // concatenaraux();
   var i=1;
   // document.getElementById('codee').innerHTML=array_codigo;
- 
+  
+  if(array_codigo.length<4){
+    alert('Não foi introduzida nenhuma configuração');
+  }
   while(i<array_codigo.length){
     db.database_new('MAKEYOUROWN',array_codigo[i], array_codigo[i+1]);
     i=i+2;

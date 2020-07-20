@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../ui/Nav';
 import { Fade } from 'react-reveal';
 import SideBar from './SideBar';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -21,10 +22,10 @@ class Header extends Component {
             <Fade top delay={500}>
                 <header className="header">
                     <div className="wrapper wrapper--header" >
-                    <div className="logo"></div>    
-                        {/* <Link className="header__logo-link" onClick={this.forceUpdate} to="/">
+                    {/* <div className="logo"></div>     */}
+                        <Link className="header__logo-link" onClick={this.forceUpdate} to="/">
                             <div className="logo"></div>
-                        </Link>   */}
+                        </Link>  
                                 
                            
                         <Nav context="header"/>
