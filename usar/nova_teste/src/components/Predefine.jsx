@@ -8,22 +8,22 @@ function tira(){
     document.getElementById('bardraw0').style.display = "none"
   }
   if(document.getElementById('bardraw1')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw1').style.display = "none"
   }
   if(document.getElementById('bardraw2')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw2').style.display = "none"
   }
   if(document.getElementById('bardraw3')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw3').style.display = "none"
   }
   if(document.getElementById('bardraw4')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw4').style.display = "none"
   }
   if(document.getElementById('bardraw5')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw5').style.display = "none"
   }
   if(document.getElementById('bardraw6')){
-    document.getElementById('bardraw0').style.display = "none"
+    document.getElementById('bardraw6').style.display = "none"
   }
 }
 tira()
