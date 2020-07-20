@@ -497,10 +497,10 @@ $(document).ready(function() {
     console.log(posiçoesocupadas);
     console.log(matrixtext);
 
-    if(document.getElementById('oitavo').innerHTML!=""){
-          verifica('PO',document.getElementById('oitavo').innerHTML);}
+    // if(document.getElementById('oitavo').innerHTML!=""){
+    //       verifica('PO',document.getElementById('oitavo').innerHTML);}
 
-      else if(document.getElementById('setimo').innerHTML!=""){
+       if(document.getElementById('setimo').innerHTML!=""){
           verifica('PSE',document.getElementById('setimo').innerHTML);}
 
       else if(document.getElementById('quinto').innerHTML!=""){
@@ -522,10 +522,10 @@ $(document).ready(function() {
 
 
   $('#btRemoveText').click(function() { // Remove uma caixa de texto
-    if(document.getElementById('oitavo').innerHTML!=""){
-      verifica_apaga('PO')}
+    // if(document.getElementById('oitavo').innerHTML!=""){
+    //   verifica_apaga('PO')}
 
-     else if(document.getElementById('setimo').innerHTML!=""){
+      if(document.getElementById('setimo').innerHTML!=""){
       verifica_apaga('PSE')}
 
      else if(document.getElementById('quinto').innerHTML!=""){

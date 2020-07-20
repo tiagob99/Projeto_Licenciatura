@@ -160,7 +160,7 @@ const Simple_goals = () => {
               <ul id="Ul1">
                 <li id="setimo" />
                 <div id="oitavo1-1">
-                <li id="oitavo" />
+                {/* <li id="oitavo" /> */}
                 </div>
               </ul>
             </div>
