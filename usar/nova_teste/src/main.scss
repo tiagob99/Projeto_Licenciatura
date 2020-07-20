@@ -83,6 +83,9 @@ a {
 }
 #logout {
   text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 html, body {
@@ -1908,7 +1911,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   width: 95%;
   height: 800px;
   position: absolute;
-  left:-100%;
+  left:-150%;
 }
 #fourth_menu_hidden_mko.active{
   left:0;
