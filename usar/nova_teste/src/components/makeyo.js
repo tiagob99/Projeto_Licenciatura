@@ -686,6 +686,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "currentsteps";
         }
+        verifica('BTYPE', 'cu_steps')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
         barradius();
@@ -712,7 +713,8 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "yesterdaysteps";
         }
-        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "40,100";
+        verifica('BTYPE', 'y_steps')
+        //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "40,100";
         //matrix[barnumber][2]=40;
         barradius();
         break;
@@ -738,7 +740,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "companionsteps";
         }
-        verifica('BTYPE', 'companionsteps')
+        verifica('BTYPE', 'co_steps')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50,100";
         //matrix[barnumber][2]=50;
         barradius();
@@ -765,6 +767,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "pasthouractivaty";
         }
+        verifica('BTYPE', 'ph_activity')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "1.35,0.3";
         //matrix[barnumber][2]="1.35,0.3";
         break;
@@ -790,6 +793,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "goalactivaty";
         }
+        verifica('BTYPE', 'g_activity')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50.05,100";
        // matrix[barnumber][2]=50;
        barradius();

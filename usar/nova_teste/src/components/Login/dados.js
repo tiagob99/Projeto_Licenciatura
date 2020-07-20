@@ -49,32 +49,32 @@ function ver_make(valor,m,i){
 }
 function SRC_g(m,i){
     if(db.garden[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.garden[i+1] + '")}>Link<a/>'
+        m.innerHTML='<a href ="'+ db.garden[i+1] + '"target="_blank">Link<a/>'
     }
 }
 function SRC_mik(m,i){
     if(db.mikro[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.mikro[i+1] + ')}">Link<a/>'
+        m.innerHTML='<a href ="'+ db.mikro[i+1] + 'target="_blank"">Link<a/>'
     }
 }
 function SRC_s(m,i){
     if(db.self[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.self[i+1] + '")}>Link<a/>'
+        m.innerHTML='<a href ="'+ db.self[i+1] + '"target="_blank">Link<a/>'
     }
 }
 function SRC_si(m,i){
     if(db.simple[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.simple[i+1] + '")}>Link<a/>'
+        m.innerHTML='<a href ="'+ db.simple[i+1] + '"target="_blank">Link<a/>'
     }
 }
 function SRC_t(m,i){
     if(db.thirty[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.thirty[i+1] + '")}>Link<a/>'
+        m.innerHTML='<a href ="'+ db.thirty[i+1] + '"target="_blank">Link<a/>'
     }
 }
 function SRC_m(m,i){
     if(db.make[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ db.make[i+1] + '")}>Link<a/>'
+        m.innerHTML='<a href = "'+ db.make[i+1] + '"target="_blank">Link<a/>'
     }
 }
 

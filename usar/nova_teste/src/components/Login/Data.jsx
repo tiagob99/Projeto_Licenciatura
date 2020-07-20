@@ -19,7 +19,30 @@ const Data = () => {
     db.fetch(db.simple,'Simple');
     db.fetch(db.thirty,'Thirty');
     db.fetch(db.make,'MAKEYOUROWN');
-    
+    function tira(){
+      if(document.getElementById('bardraw0')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw1')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw2')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw3')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw4')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw5')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+      if(document.getElementById('bardraw6')){
+        document.getElementById('bardraw0').style.display = "none"
+      }
+    }
+    tira()
     
     return (
 
@@ -36,22 +59,22 @@ const Data = () => {
         <td>Second Color</td>
         <td>Center Circle Color</td>
         <td>Text Color</td>
-        <td>Bar 1 Color</td>
-        <td>Bar 2 Color</td>
+        <td>Bar1 Color</td>
+        <td>Bar2 Color</td>
         <td>Today Bar Color</td>
         <td>Yesyerday Bar Color</td>
-        <td>Type of Image</td>
+        <td>Image Type</td>
         <td>Source</td>
         <td>Message Type</td>
-        <td>Primeira Posição</td>
-        <td>Segunda Posição</td>
-        <td>Terceira Posição</td>
-        <td>Quarta Posição</td>
-        <td>Quinta Posição</td>
-        <td>Sexta Posição</td>
-        <td>Sétima Posição</td>
-        <td>Tipo Percentagem</td>
-        <td>Tipo Timeframe</td>
+        <td>1ª Posição</td>
+        <td>2ª Posição</td>
+        <td>3ª Posição</td>
+        <td>4ª Posição</td>
+        <td>5ª Posição</td>
+        <td>6ª Posição</td>
+        <td>7ª Posição</td>
+        <td>Tipo %</td>
+        <td>Tipo Tframe</td>
         <td>Bar Radius 1</td>
         <td>Bar Radius 2</td>
         <td>Bar Thickness 1</td>

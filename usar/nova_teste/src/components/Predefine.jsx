@@ -3,6 +3,30 @@ import * as garden from './Garden'
 import PersonList from './PersonList';
 import * as db from './database';
 import ResultFetch from './teste';
+function tira(){
+  if(document.getElementById('bardraw0')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw1')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw2')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw3')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw4')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw5')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+  if(document.getElementById('bardraw6')){
+    document.getElementById('bardraw0').style.display = "none"
+  }
+}
+tira()
 const predefine = () => {
     return (
        
