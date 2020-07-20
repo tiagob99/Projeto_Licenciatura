@@ -61,6 +61,7 @@ const Data = () => {
         <td>Text</td>
         <td>Text Size</td>
         <td>Second Bar value</td>
+        <td>Bar Start</td>
       </tr>
     </table>
 

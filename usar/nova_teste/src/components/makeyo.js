@@ -686,7 +686,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "currentsteps";
         }
-        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "20,100";
+        //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
         barradius();
         break;
@@ -713,7 +713,7 @@ export function bartype(){
           tipob_6 = "yesterdaysteps";
         }
         document.getElementById('bar'+ barnumber).style.strokeDasharray  = "40,100";
-        matrix[barnumber][2]=40;
+        //matrix[barnumber][2]=40;
         barradius();
         break;
     case "companionsteps":
@@ -738,8 +738,9 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "companionsteps";
         }
-        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50,100";
-        matrix[barnumber][2]=50;
+        verifica('BTYPE', 'companionsteps')
+        //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50,100";
+        //matrix[barnumber][2]=50;
         barradius();
         break;
     case "pasthouractivaty":
@@ -764,8 +765,8 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "pasthouractivaty";
         }
-        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "1.35,0.3";
-        matrix[barnumber][2]="1.35,0.3";
+        //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "1.35,0.3";
+        //matrix[barnumber][2]="1.35,0.3";
         break;
     case "goalactivaty":
         if(barnumber == 0){
@@ -789,8 +790,8 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "goalactivaty";
         }
-        document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50.05,100";
-        matrix[barnumber][2]=50;
+        //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50.05,100";
+       // matrix[barnumber][2]=50;
        barradius();
         break;
     default:

@@ -256,7 +256,7 @@ export function bar_thickness_2() {
 
 export function bar_type(){
   var novo = document.getElementById('bar_type').value;
-  verifica('BTYPE',novo);
+  verifica('BSTAR',novo);
   if (novo == "full"){
     document.getElementById('bar2').style.strokeDasharray  = "30,100"
     document.getElementById('bar2').style.transform = "rotate(" + 270 + "deg)"
@@ -296,7 +296,7 @@ export function bar_type(){
 export function update_rotation(){
   
   if (right){
-    verifica('BROT','COUNTERCLOCKWISE');
+    verifica('BROT','CTCWISE');
     if(position == "full"){
       var novo = degrees -180
       document.getElementById('bar2').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -311,7 +311,7 @@ export function update_rotation(){
     }
   }
   else {
-    verifica('BROT','CLOCKWISE');
+    verifica('BROT','CWISE');
     document.getElementById('bar2').style.transform = "rotate(" + degrees  + "deg) "
     document.getElementById('bar1').style.transform = "rotate(" + degrees  + "deg) "
     right = true;

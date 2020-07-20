@@ -253,7 +253,7 @@ export function togglemenu4(){
    export function bar_type(){
     
      var novo = document.getElementById('bar_type').value;
-        verifica('BTYPE',novo);
+        verifica('BSTAR',novo);
      if (novo == "full"){
        document.getElementById('today_bar').style.strokeDasharray  = "18,100"
        document.getElementById('today_bar').style.transform = "rotate(" + 270 + "deg)"
@@ -292,7 +292,7 @@ export function togglemenu4(){
    
    export function update_rotation(){
      if (right){
-        verifica('BROT','COUNTERCLOCKWISE');
+        verifica('BROT','CTCWISE');
        if(position == "full"){
          var novo = degrees -180
          document.getElementById('today_bar').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -307,7 +307,7 @@ export function togglemenu4(){
        }
      }
      else {
-        verifica('BROT','CLOCKWISE');
+        verifica('BROT','CWISE');
        document.getElementById('today_bar').style.transform = "rotate(" + degrees  + "deg) "
        document.getElementById('yesterday_bar').style.transform = "rotate(" + degrees  + "deg) "
        right = true;

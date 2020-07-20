@@ -227,7 +227,7 @@ $(function clock(){setInterval(() => {
    
    export function bar_type() {
        var novo = document.getElementById('bar_type').value;
-       verifica('BTYPE',novo);
+       verifica('BSTAR',novo);
        if (novo == "full"){
          document.getElementById('bar').style.strokeDasharray  = "101,100"
          tamanho_barra = 101;
@@ -261,11 +261,11 @@ $(function clock(){setInterval(() => {
    
   export function update_rotation (){
        if (right){
-        verifica('BROT','COUNTERCLOCKWISE');
+        verifica('BROT','CTCWISE');
          right = false;
        }
        else {
-        verifica('BROT','CLOCKWISE');
+        verifica('BROT','CWISE');
          right = true;
        }
    }

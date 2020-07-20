@@ -81,7 +81,6 @@ function SRC_m(m,i){
 export function funcao(){
     
     document.getElementById('BT').classList.toggle('active');
-    alert(db.mikro);
     var table = document.getElementById("myTable");
         var row = table.insertRow();
         var mikros_cell1 = row.insertCell();
@@ -118,6 +117,7 @@ export function funcao(){
         var mikros_cell32 = row.insertCell();
         var mikros_cell33 = row.insertCell();
         var mikros_cell34 = row.insertCell();
+        var mikros_cell35 = row.insertCell();
         var row2 = table.insertRow();
         var garden_cell1 = row2.insertCell();
         var garden_cell2 = row2.insertCell();
@@ -153,6 +153,7 @@ export function funcao(){
         var garden_cell32 = row2.insertCell();
         var garden_cell33 = row2.insertCell();
         var garden_cell34 = row2.insertCell();
+        var garden_cell35 = row2.insertCell();
 
         // Self
         var row3 = table.insertRow();
@@ -190,6 +191,8 @@ export function funcao(){
         var self_cell32 = row3.insertCell();
         var self_cell33 = row3.insertCell();
         var self_cell34 = row3.insertCell();
+        var self_cell35 = row3.insertCell();
+
 
         //Simple
         var row4 = table.insertRow();
@@ -227,6 +230,7 @@ export function funcao(){
         var simple_cell32 = row4.insertCell();
         var simple_cell33 = row4.insertCell();
         var simple_cell34 = row4.insertCell();
+        var simple_cell35 = row4.insertCell();
         //Thirty
         var row5 = table.insertRow();
         var thirty_cell1 = row5.insertCell();
@@ -263,6 +267,7 @@ export function funcao(){
         var thirty_cell32 = row5.insertCell();
         var thirty_cell33 = row5.insertCell();
         var thirty_cell34 = row5.insertCell();
+        var thirty_cell35 = row5.insertCell();
         //Make
         var row6 = table.insertRow();
         var make_cell1 = row6.insertCell();
@@ -299,6 +304,7 @@ export function funcao(){
         var make_cell32 = row6.insertCell();
         var make_cell33 = row6.insertCell();
         var make_cell34 = row6.insertCell();
+        var make_cell35 = row6.insertCell();
         //var i=0;
         
     mikros_cell1.innerHTML = 'Mikros';
@@ -337,6 +343,7 @@ export function funcao(){
         ver_mikro('TEXT', mikros_cell32,i);
         ver_mikro('TEXT_S', mikros_cell33,i);
         ver_mikro('SBV', mikros_cell34,i);
+        ver_mikro('BSTAR', mikros_cell35,i);
     }
             
     
@@ -376,6 +383,7 @@ export function funcao(){
         ver_garden('TEXT', garden_cell32,i);
         ver_garden('TEXT_S', garden_cell33,i);
         ver_garden('SBV', garden_cell34,i);
+        ver_garden('BSTAR', garden_cell35,i);
     
     }
     self_cell1.innerHTML = 'Self';
@@ -414,6 +422,7 @@ export function funcao(){
         ver_self('TEXT', self_cell32,i);
         ver_self('TEXT_S', self_cell33,i);
         ver_self('SBV', self_cell34,i);
+        ver_self('BSTAR', self_cell35,i);
     
     }
     simple_cell1.innerHTML = 'Simple';
@@ -452,6 +461,7 @@ export function funcao(){
         ver_simple('TEXT', simple_cell32,i);
         ver_simple('TEXT_S', simple_cell33,i);
         ver_simple('SBV', simple_cell34,i);
+        ver_simple('BSTAR', simple_cell35,i);
     
     }
 
@@ -491,6 +501,7 @@ export function funcao(){
         ver_thirty('TEXT', thirty_cell32,i);
         ver_thirty('TEXT_S', thirty_cell33,i);
         ver_thirty('SBV', thirty_cell34,i);
+        ver_thirty('BSTAR', thirty_cell35,i);
     
     }
 
@@ -530,6 +541,7 @@ export function funcao(){
         ver_make('TEXT', make_cell32,i);
         ver_make('TEXT_S', make_cell33,i);
         ver_make('SBV', make_cell34,i);
+        ver_make('BSTAR', make_cell35,i);
     
     }
 
