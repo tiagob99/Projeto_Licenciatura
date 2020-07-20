@@ -133,13 +133,10 @@ export function logout(){
 
 // }
 export function fetch(arr,page){
- 
-  alert(email);
+  
   const starCountRef = firebase.database().ref(email + '/' + page );
   starCountRef.on('value', function(snapshot) {
   var l = snapshot.child('value').val();
-  // resultado=l;
-  // alert('inserido')
   snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.key;
     const s = firebase.database().ref(email + '/' + page + '/' + childKey );

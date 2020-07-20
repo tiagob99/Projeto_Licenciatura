@@ -987,15 +987,15 @@ export function troca2(){
 
 var dados_f=[];
 
-function bd (){
+// function bd (){
 
-  console.log('--------------------------------'); 
-  axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
-  console.log(dados_f);
+//   console.log('--------------------------------'); 
+//   axios.get('https://projeto-licenciatura-6e421.firebaseio.com/.json').then(res=>dados_f=res.data); 
+//   console.log(dados_f);
   
-};
+// };
 
-bd();
+// bd();
 
 
 // async function axiosTest() {

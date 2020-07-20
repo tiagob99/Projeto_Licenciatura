@@ -48,32 +48,32 @@ function ver_make(valor,m,i){
 }
 function SRC_g(m,i){
     if(garden.garden[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.garden[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.garden[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_mik(m,i){
     if(garden.mikro[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.mikro[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.mikro[i+1] + ')}">Link<a/>'
     }
 }
 function SRC_s(m,i){
     if(garden.self[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.self[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.self[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_si(m,i){
     if(garden.simple[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.simple[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.simple[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_t(m,i){
     if(garden.thirty[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.thirty[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.thirty[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_m(m,i){
     if(garden.make[i]=='SRC'){
-        m.innerHTML='<a href = "'+ garden.make[i+1] + '">Link<a/>'
+        m.innerHTML='<a onClick = {alert("'+ garden.make[i+1] + '")}>Link<a/>'
     }
 }
 

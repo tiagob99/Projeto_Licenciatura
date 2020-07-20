@@ -8,7 +8,7 @@ const Landing = () => {
                     
                 <Fade bottom duration={800}>
                     <div className="landing__video-container"> 
-                    Este website foi desenvolvido como proposta de projeto de final de Licenciatura e tem como propósito facilitar a configurar o seu smartwatch de forma mais rápida e intuítiva.                  
+                    Este website foi desenvolvido como proposta de projeto de final de Licenciatura e tem como propósito facilitar a configuração do seu smartwatch tornando-a mais rápida e intuítiva.                  
                     
                     </div>
                     <br></br>
