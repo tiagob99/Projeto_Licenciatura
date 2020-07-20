@@ -2,13 +2,14 @@ import firebase from 'firebase';
 import { Component } from 'react';
 import axios from 'axios';
 import * as garden from '../Garden';
+import * as db from '../database';
 
 
 
 
 function ver_mikro(valor,m,i){
-            if(garden.mikro[i]==valor){
-                m.innerHTML = garden.mikro[i+1];
+            if(db.mikro[i]==valor){
+                m.innerHTML = db.mikro[i+1];
             }
             
         }
@@ -16,71 +17,71 @@ function ver_mikro(valor,m,i){
 
 
 function ver_garden(valor,m,i){
-    if(garden.garden[i]==valor){
-        m.innerHTML = garden.garden[i+1];
+    if(db.garden[i]==valor){
+        m.innerHTML = db.garden[i+1];
     }
 
 }
 function ver_self(valor,m,i){
-    if(garden.self[i]==valor){
-        m.innerHTML = garden.self[i+1];
+    if(db.self[i]==valor){
+        m.innerHTML = db.self[i+1];
     }
 
 }
 function ver_simple(valor,m,i){
-    if(garden.simple[i]==valor){
-        m.innerHTML = garden.simple[i+1];
+    if(db.simple[i]==valor){
+        m.innerHTML = db.simple[i+1];
     }
 
 }
 function ver_thirty(valor,m,i){
-    if(garden.thirty[i]==valor){
-        m.innerHTML = garden.thirty[i+1];
+    if(db.thirty[i]==valor){
+        m.innerHTML = db.thirty[i+1];
     }
 
 }
 function ver_make(valor,m,i){
-    if(garden.make[i]==valor){
-        m.innerHTML = garden.make[i+1];
+    if(db.make[i]==valor){
+        m.innerHTML = db.make[i+1];
         
     }
 
 }
 function SRC_g(m,i){
-    if(garden.garden[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.garden[i+1] + '")}>Link<a/>'
+    if(db.garden[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.garden[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_mik(m,i){
-    if(garden.mikro[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.mikro[i+1] + ')}">Link<a/>'
+    if(db.mikro[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.mikro[i+1] + ')}">Link<a/>'
     }
 }
 function SRC_s(m,i){
-    if(garden.self[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.self[i+1] + '")}>Link<a/>'
+    if(db.self[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.self[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_si(m,i){
-    if(garden.simple[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.simple[i+1] + '")}>Link<a/>'
+    if(db.simple[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.simple[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_t(m,i){
-    if(garden.thirty[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.thirty[i+1] + '")}>Link<a/>'
+    if(db.thirty[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.thirty[i+1] + '")}>Link<a/>'
     }
 }
 function SRC_m(m,i){
-    if(garden.make[i]=='SRC'){
-        m.innerHTML='<a onClick = {alert("'+ garden.make[i+1] + '")}>Link<a/>'
+    if(db.make[i]=='SRC'){
+        m.innerHTML='<a onClick = {alert("'+ db.make[i+1] + '")}>Link<a/>'
     }
 }
 
 export function funcao(){
     
     document.getElementById('BT').classList.toggle('active');
-
+    alert(db.mikro);
     var table = document.getElementById("myTable");
         var row = table.insertRow();
         var mikros_cell1 = row.insertCell();
@@ -301,7 +302,8 @@ export function funcao(){
         //var i=0;
         
     mikros_cell1.innerHTML = 'Mikros';
-    for(var i=0;i<garden.mikro.length;i++){
+    
+    for(var i=0;i<db.mikro.length;i++){
         ver_mikro('WT', mikros_cell2,i);
         ver_mikro('BC', mikros_cell3,i);
         ver_mikro('DC', mikros_cell4,i);
@@ -339,7 +341,7 @@ export function funcao(){
             
     
     garden_cell1.innerHTML = 'Gardens';
-    for( var i=0;i<garden.garden.length;i++){
+    for( var i=0;i<db.garden.length;i++){
         
         ver_garden('WT', garden_cell2,i);
         ver_garden('BC', garden_cell3,i);
@@ -377,7 +379,7 @@ export function funcao(){
     
     }
     self_cell1.innerHTML = 'Self';
-    for( var i=0;i<garden.self.length;i++){
+    for( var i=0;i<db.self.length;i++){
         
         ver_self('WT', self_cell2,i);
         ver_self('BC', self_cell3,i);
@@ -415,7 +417,7 @@ export function funcao(){
     
     }
     simple_cell1.innerHTML = 'Simple';
-    for( var i=0;i<garden.simple.length;i++){
+    for( var i=0;i<db.simple.length;i++){
         
         ver_simple('WT', simple_cell2,i);
         ver_simple('BC', simple_cell3,i);
@@ -454,7 +456,7 @@ export function funcao(){
     }
 
     thirty_cell1.innerHTML = 'Thirty';
-    for( var i=0;i<garden.thirty.length;i++){
+    for( var i=0;i<db.thirty.length;i++){
         
         ver_thirty('WT', thirty_cell2,i);
         ver_thirty('BC', thirty_cell3,i);
@@ -493,7 +495,7 @@ export function funcao(){
     }
 
     make_cell1.innerHTML = 'Make';
-    for( var i=0;i<garden.make.length;i++){
+    for( var i=0;i<db.make.length;i++){
         
         ver_make('WT', make_cell2,i);
         ver_make('BC', make_cell3,i);

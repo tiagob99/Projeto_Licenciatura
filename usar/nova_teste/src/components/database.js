@@ -1,7 +1,13 @@
 import firebase from 'firebase';
 import { funct } from './Garden';
 
-
+export var resultado;
+export var mikro = [];
+export var garden = [];
+export var self = [];
+export var simple = [];
+export var thirty = [];
+export var make = [];
 const firebaseConfig = {
     apiKey: "AIzaSyAmohNsHd616BhiAGZ2JVS4xgVv1kA5GbQ",
     authDomain: "projeto-licenciatura-6e421.firebaseapp.com",
@@ -133,7 +139,8 @@ export function logout(){
 
 // }
 export function fetch(arr,page){
-  
+  var uti = firebase.auth().currentUser;
+  email = uti.uid;
   const starCountRef = firebase.database().ref(email + '/' + page );
   starCountRef.on('value', function(snapshot) {
   var l = snapshot.child('value').val();

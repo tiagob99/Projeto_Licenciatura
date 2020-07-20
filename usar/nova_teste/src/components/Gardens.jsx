@@ -6,7 +6,7 @@ import PersonList from './PersonList';
 import * as db from './database';
 
 const Gardens = () => {
-    db.fetch();
+    
 
     return (
 

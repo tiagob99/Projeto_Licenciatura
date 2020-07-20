@@ -21,19 +21,18 @@ var open = false;
 var tamanho_que_o_menu_desceu = 0;
 var url = false //ainda nai foi adicionado
 var image = false;
-export var resultado;
-export var mikro = [];
-export var garden = [];
-export var self = [];
-export var simple = [];
-export var thirty = [];
-export var make = [];
+// export var resultado;
+// export var mikro = [];
+// export var garden = [];
+// export var self = [];
+// export var simple = [];
+// export var thirty = [];
+// export var make = [];
 
 
 export function togglemenu(){
  document.getElementById('sidebar').classList.toggle('active');
  document.getElementById('toggle-btn').classList.toggle('active');
- alert(resultado)
 }
 export function togglemenu1(){
  document.getElementById('first_menu_hidden1').classList.toggle('active');
@@ -947,9 +946,7 @@ $('#btRemImg').click(function() { // remove Imagem
 
 
   export function cod(){
-    
-    // concatenaraux();
-    //db.login();
+
 
     var i=1;
     // document.getElementById('codee').innerHTML=array_codigo;
@@ -958,9 +955,6 @@ $('#btRemImg').click(function() { // remove Imagem
       i=i+2;
 
     }
-    
-    
-    
   }
   
   //CODIGO

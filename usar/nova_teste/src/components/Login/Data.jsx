@@ -3,7 +3,7 @@
 import React from 'react';
 import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
-import * as garden from '../Garden';
+// import * as garden from '../Garden';
 import * as data from './dados';
 import { background_color } from '../mikrosjs';
 import * as db from '../database';
@@ -13,12 +13,12 @@ import '../database';
 const Data = () => {
     
     
-    db.fetch(garden.mikro,'Mikros');
-    db.fetch(garden.garden,'Gardens');
-    db.fetch(garden.self,'SelfComplete');
-    db.fetch(garden.simple,'Simple');
-    db.fetch(garden.thirty,'Thirty');
-    db.fetch(garden.make,'MAKEYOUROWN');
+    db.fetch(db.mikro,'Mikros');
+    db.fetch(db.garden,'Gardens');
+    db.fetch(db.self,'SelfComplete');
+    db.fetch(db.simple,'Simple');
+    db.fetch(db.thirty,'Thirty');
+    db.fetch(db.make,'MAKEYOUROWN');
     
     
     return (
