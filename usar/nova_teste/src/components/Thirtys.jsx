@@ -135,8 +135,10 @@ const Thirtys = () => {
                 <div id="dragdiv" style={{zIndex: 2}}>
               <ul id="allItems">
                 <li id="primeiro" />
+                <div id="quarta_pos">
                  <li id="segundo" />
-                <li id="terceiro" /> 
+                 </div> 
+                <li id="terceiro" />
                  <li id="quarto" />
                 <li id="quinto" /> 
                 <li id="sexto" />

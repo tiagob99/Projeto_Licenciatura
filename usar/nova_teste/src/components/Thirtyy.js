@@ -376,13 +376,13 @@ $(document).ready(function() {
   $('#btAddText1').click(function() { //Adiciona uma caixa de texto
     var ha_posiçao_livre = false;
     var novo = 0;
-    while (posiçoesocupadas[novo]==1 && novo<5) {
+    while (posiçoesocupadas[novo]==1 && novo<1) {
       novo = novo + 1;
     }
     if(posiçoesocupadas[novo]==0){
       ha_posiçao_livre=true;
     }
-    if (Texto<5){
+    if (Texto<1){
       console.log(Texto)
       if(Texto ==3){
         elemento = true;
@@ -432,7 +432,7 @@ $(document).ready(function() {
       }
       posiçoesocupadas[novo]=1;
       $('#'+id[novo]).text(variable_text+" " + text+ " " + variable_text1 + " " + text2 + " " + variable_text2);
-      matrixtext[Texto][5]=id[novo];
+      matrixtext[Texto][1]=id[novo];
       Texto = Texto + 1;
     }
     console.log(posiçoesocupadas);
@@ -460,7 +460,7 @@ $(document).ready(function() {
       console.log("22aaa")
       Texto = Texto - 1;
       var aux1 = 0;
-      while(id[aux1]!=matrixtext[Texto][5]){
+      while(id[aux1]!=matrixtext[Texto][1]){
         aux1 = aux1+ 1;
       }
       posiçoesocupadas[aux1]=0;
@@ -472,7 +472,7 @@ $(document).ready(function() {
       // matrixtext[aux1][5]="fixa";
       // matrixtext[aux1][6]="";
       // matrixtext[aux1][7]="";
-      $('#'+  matrixtext[Texto][5]).text("");
+      $('#'+  matrixtext[Texto][1]).text("");
     }
     else if (image==true){
       matrixtext[4][0]="none";

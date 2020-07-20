@@ -151,7 +151,9 @@ const Simple_goals = () => {
               <ul id="allItems">
                 <li id="primeiro" />
                 <li id="segundo" />
+                <div id="terceiro_mexe">
                 <li id="terceiro" />
+                </div>
                 <li id="quarto" />
                 <li id="quinto" />
               </ul>
