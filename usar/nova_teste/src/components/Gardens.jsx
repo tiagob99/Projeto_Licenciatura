@@ -2,12 +2,9 @@ import React from 'react';
 import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
 import * as garden from './Garden';
-import PersonList from './PersonList';
-import * as db from './database';
 
 const Gardens = () => {
     
-
     return (
 
       <div>
@@ -25,7 +22,7 @@ const Gardens = () => {
         <li className="elementos_menu_direito" onClick={garden.togglemenu1}>Watch Types</li>
         <div id="first_menu_hidden1">
           <div id="dragdiv">
-            <div className="child elementos " id="node1">
+            <div className="child elementos" id="node1">
               <svg height={70} width={200}>
                 <text x={0} y={15} />
               </svg>

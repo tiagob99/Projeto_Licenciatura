@@ -292,7 +292,7 @@ export function togglemenu4(){
    
    export function update_rotation(){
      if (right){
-        verifica('BROT','CTCWISE');
+        verifica('BROT','COUNTERCLOCKWISE');
        if(position == "full"){
          var novo = degrees -180
          document.getElementById('today_bar').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -307,7 +307,7 @@ export function togglemenu4(){
        }
      }
      else {
-        verifica('BROT','CWISE');
+        verifica('BROT','CLOCKWISE');
        document.getElementById('today_bar').style.transform = "rotate(" + degrees  + "deg) "
        document.getElementById('yesterday_bar').style.transform = "rotate(" + degrees  + "deg) "
        right = true;

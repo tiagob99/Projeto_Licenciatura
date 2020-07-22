@@ -11,7 +11,7 @@ const Landing = () => {
                     Este website foi desenvolvido como proposta de projeto de final de Licenciatura e tem como propósito facilitar a configuração do seu smartwatch tornando-a mais rápida e intuítiva                  
                     
                     </div>
-                    <br></br>
+                    
                     
                     Inicie sessão e comece já a sua experiência 
                     

@@ -123,7 +123,7 @@ const Mikros = () => {
               </ul>
             </div>
             <div id="dropdiv">
-              <div className="child elementos " id="node1">
+              <div className="child elementos" id="node1" value="node1">
                 <svg height={0} width={200}>
                   <text x={0} y={15} />
                 </svg>

@@ -72,8 +72,10 @@ $(function() {
         accept: ":not(.ui-sortable-helper)",
         over: function(event, ui) {
             var $this = $(this);
+            
         },
         drop: function(event, ui) {
+          
           var $this = $(this);
           var linew1 = $(this).after(ui.draggable.clone());
           var linew2 = $(ui.draggable).after($(this).clone());

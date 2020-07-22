@@ -27,6 +27,9 @@ function tira(){
   }
 }
 tira()
+function upd(){
+  window.location.href = "/makeYourOwn";
+}
 const predefine = () => {
     return (
        

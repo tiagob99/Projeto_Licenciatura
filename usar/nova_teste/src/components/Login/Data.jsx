@@ -3,12 +3,12 @@
 import React from 'react';
 import  'react-hook-form';
 import 'jquery-ui-dist/jquery-ui';
-// import * as garden from '../Garden';
 import * as data from './dados';
 import { background_color } from '../mikrosjs';
 import * as db from '../database';
 import firebase from 'firebase';
 import '../database';
+import {Link} from 'react-router-dom';
 
 const Data = () => {
     
@@ -46,9 +46,11 @@ const Data = () => {
     
     return (
 
-    <body>
+    <div className = "DATA">
+         <p id = "p_tag">Caso esteja a utilizar o Google Chrome e pretenda abrir o Link da Imagem clique botão direito + "abrir link num novo separador"</p> 
     <table id="myTable" border="1px">
       <tr className = "topo" style = {{background :"#448E9D"}}>
+      
         
         <td>Página</td>
         <td>Watch Type</td>
@@ -59,8 +61,8 @@ const Data = () => {
         <td>Second Color</td>
         <td>Center Circle Color</td>
         <td>Text Color</td>
-        <td>Bar1 Color</td>
-        <td>Bar2 Color</td>
+        <td>Bar 1 Color</td>
+        <td>Bar 2 Color</td>
         <td>Today Bar Color</td>
         <td>Yesyerday Bar Color</td>
         <td>Image Type</td>
@@ -73,8 +75,8 @@ const Data = () => {
         <td>5ª Posição</td>
         <td>6ª Posição</td>
         <td>7ª Posição</td>
-        <td>Tipo %</td>
-        <td>Tipo Tframe</td>
+        <td>Tipo Percentagem</td>
+        <td>Tipo Timeframe</td>
         <td>Bar Radius 1</td>
         <td>Bar Radius 2</td>
         <td>Bar Thickness 1</td>
@@ -85,11 +87,14 @@ const Data = () => {
         <td>Text Size</td>
         <td>Second Bar value</td>
         <td>Bar Start</td>
+        
       </tr>
+      
     </table>
-
+      
 <button type="button" id="BT"onClick={data.funcao}>Abrir Definições das suas Páginas</button>
-</body>
+
+</div>
 
 
   ); 

@@ -3,6 +3,8 @@ import { Component } from 'react';
 import axios from 'axios';
 import * as garden from '../Garden';
 import * as db from '../database';
+import $ from'jquery';
+import 'jquery-ui-dist/jquery-ui';
 
 
 
@@ -72,12 +74,24 @@ function SRC_t(m,i){
         m.innerHTML='<a href ="'+ db.thirty[i+1] + '"target="_blank">Link<a/>'
     }
 }
+function abre(){
+    alert('aqui')
+}
+function openInNewTab(url) {
+    var win = window.open(url, '_blank');
+    win.focus();
+  }
+
+var Link;
 function SRC_m(m,i){
     if(db.make[i]=='SRC'){
-        m.innerHTML='<a href = "'+ db.make[i+1] + '"target="_blank">Link<a/>'
+        m.innerHTML='<a href ="'+ db.make[i+1] + '"target="_blank">Link<a/>'
     }
+    
 }
-
+export function img(){
+    window.open(Link, "_blank");
+}
 export function funcao(){
     
     document.getElementById('BT').classList.toggle('active');

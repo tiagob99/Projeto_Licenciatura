@@ -261,11 +261,11 @@ $(function clock(){setInterval(() => {
    
   export function update_rotation (){
        if (right){
-        verifica('BROT','CTCWISE');
+        verifica('BROT','COUNTERCLOCKWISE');
          right = false;
        }
        else {
-        verifica('BROT','CWISE');
+        verifica('BROT','CLOCKWISE');
          right = true;
        }
    }

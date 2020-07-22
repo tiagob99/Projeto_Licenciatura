@@ -32,62 +32,66 @@ export function togglemenu4(){
 
 /*drag and drop*/
 /*drag and drop*/
-var drop = "node2"
-$(function() {
-    initSwap();
-    function initSwap() {
-    initDroppable($("#dropdiv div,#dragdiv div"));
-    initDraggable($("#dragdiv div,#dropdiv div"));
-    }
-    function initDraggable($elements) {
-    $elements.draggable({
-        appendTo: "body",
-        helper: "clone",
-        revert: "invalid"
-    });
-    }
-    function initDroppable($elements) {
-    $elements.droppable({
-        activeClass: "ui-state-default",
-        hoverClass: "ui-drop-hover",
-        accept: ":not(.ui-sortable-helper)",
-        over: function(event, ui) {
-            var $this = $(this);
-        },
-        drop: function(event, ui) {
+
+var drop = "node1";
+setTimeout(function() {
+  initSwap();
+  function initSwap() {
+  initDroppable($("#dropdiv div,#dragdiv div"));
+  initDraggable($("#dragdiv div,#dropdiv div"));
+  }
+  function initDraggable($elements) {
+  $elements.draggable({
+      appendTo: "body",
+      helper: "clone",
+      revert: "invalid"
+  });
+  }
+  function initDroppable($elements) {
+  $elements.droppable({
+      activeClass: "ui-state-default",
+      hoverClass: "ui-drop-hover",
+      accept: ":not(.ui-sortable-helper)",
+      over: function(event, ui) {
           var $this = $(this);
-          var linew1 = $(this).after(ui.draggable.clone());
-          var linew2 = $(ui.draggable).after($(this).clone());
+          
+      },
+      drop: function(event, ui) {
+        
+        var $this = $(this);
+        var linew1 = $(this).after(ui.draggable.clone());
+        var linew2 = $(ui.draggable).after($(this).clone());
 
-          var moved = ui.draggable.attr("id");// Obtem o id do elemento sendo arrastado
+        var moved = ui.draggable.attr("id");// Obtem o id do elemento sendo arrastado
 
-          if (moved==drop) {//Caso seja arrastado da direita para a esquerda
-            drop = $(this).attr("id");
-           
-          }
-          else{ //Caso seja arrastado da esquerda para a direita
-            drop = moved;
-            
-          }
-            $(ui.draggable).remove();
-            $(this).remove();
-            initSwap();
+        if (moved==drop) {//Caso seja arrastado da direita para a esquerda
+          drop = $(this).attr("id");
+          
         }
-    });
-  }
-});
+        else{ //Caso seja arrastado da esquerda para a direita
+          drop = moved;
+          if(moved=="node1"){
+            verifica('WT','Digital');}
+            else{verifica('WT','Analogico')}           
+        }
+          $(ui.draggable).remove();
+          $(this).remove();
+          initSwap();
+      }
+  });
+}
+},100);
 
-
-$(function readropzone() {
-  if (drop == "node1") {
-     verifica('WT','Digital');
-    console.log("Digital");
-  }
-  else {
-     verifica('WT','Analogico');
-    console.log("Analogico");
-  }
-})
+// $(function readropzone() {
+//   if (drop == "node1") {
+//      verifica('WT','Digital');
+//     console.log("Digital");
+//   }
+//   else {
+//      verifica('WT','Analogico');
+//     console.log("Analogico");
+//   }
+// })
 /*drag and drop*/
 
 
@@ -96,6 +100,10 @@ $(function readropzone() {
 $(function clock(){
   setInterval( () => {
   const fullDate = new Date();
+  const aqui =new Date();
+    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+    var m = 6 * aqui.getMinutes();
+    var s = 6 * aqui.getSeconds();
   var hours = fullDate.getHours();
   var minutes = fullDate.getMinutes();
   if (hours<10){
@@ -106,7 +114,12 @@ $(function clock(){
   }
   if(window.location.pathname == '/Mikros'){
    document.getElementById('hour').innerHTML = hours;
-   document.getElementById('minute').innerHTML = ": " + minutes;}
+   document.getElementById('minute').innerHTML = ": " + minutes;
+   document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+   document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+   document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+
+  }
    
 },100);}
 
@@ -118,18 +131,18 @@ $(function clock(){
 
 
 /*Relogio analogico*/
-$(function timerTick() {
-  const aqui =new Date();
-    var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
-    var m = 6 * aqui.getMinutes();
-    var s = 6 * aqui.getSeconds();
-    if(window.location.pathname == '/Mikros'){
-      document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
-      document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
-      document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
-    }
-    setTimeout(timerTick, 100);
-  })
+// $(function timerTick() {
+//   const aqui =new Date();
+//     var h = 30 * ((aqui.getHours() % 12) + aqui.getMinutes() / 60);
+//     var m = 6 * aqui.getMinutes();
+//     var s = 6 * aqui.getSeconds();
+//     if(!window.location.pathname == '/Mikros'){
+//       document.getElementById('hour_pointer').setAttribute('transform', 'rotate(' + h + ', 50, 50)');
+//       document.getElementById('minute_pointer').setAttribute('transform', 'rotate(' + m + ', 50, 50)');
+//       document.getElementById('second_pointer').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+//     }
+//     setTimeout(timerTick, 100);
+//   })
     
   
 /*Relogio analogico*/
@@ -296,7 +309,7 @@ export function bar_type(){
 export function update_rotation(){
   
   if (right){
-    verifica('BROT','CTCWISE');
+    verifica('BROT','COUNTERCLOCKWISE');
     if(position == "full"){
       var novo = degrees -180
       document.getElementById('bar2').style.transform = "rotate(" + novo + "deg) scaleX(-1)"
@@ -311,7 +324,7 @@ export function update_rotation(){
     }
   }
   else {
-    verifica('BROT','CWISE');
+    verifica('BROT','CLOCKWISE');
     document.getElementById('bar2').style.transform = "rotate(" + degrees  + "deg) "
     document.getElementById('bar1').style.transform = "rotate(" + degrees  + "deg) "
     right = true;

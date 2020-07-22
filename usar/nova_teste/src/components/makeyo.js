@@ -706,7 +706,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "currentsteps";
         }
-        verifica('BTYPE', 'cu_steps')
+        verifica('BTYPE', 'currentsteps')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "20,100";
         matrix[barnumber][2]=20;
         barradius();
@@ -733,7 +733,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "yesterdaysteps";
         }
-        verifica('BTYPE', 'y_steps')
+        verifica('BTYPE', 'yesterdaysteps')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "40,100";
         //matrix[barnumber][2]=40;
         barradius();
@@ -760,7 +760,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "companionsteps";
         }
-        verifica('BTYPE', 'co_steps')
+        verifica('BTYPE', 'companionsteps')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50,100";
         //matrix[barnumber][2]=50;
         barradius();
@@ -787,7 +787,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "pasthouractivaty";
         }
-        verifica('BTYPE', 'ph_activity')
+        verifica('BTYPE', 'pasthouractivaty')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "1.35,0.3";
         //matrix[barnumber][2]="1.35,0.3";
         break;
@@ -813,7 +813,7 @@ export function bartype(){
         if(barnumber == 6){
           tipob_6 = "goalactivaty";
         }
-        verifica('BTYPE', 'g_activity')
+        verifica('BTYPE', 'goalactivaty')
         //document.getElementById('bar'+ barnumber).style.strokeDasharray  = "50.05,100";
        // matrix[barnumber][2]=50;
        barradius();
@@ -1626,52 +1626,100 @@ export function updaterotation(){
 
 
 /*drag and drop texto*/
+var drop = "node1";
 $(function() {
-    $("#dragdiv li,#dropdiv li").draggable({
-        appendTo: "body",
-        helper: "clone",
-        revert: "invalid"
-    });
-    initDroppable($("#dropdiv li,#dragdiv li"));
-    function initDroppable($elements) {
-        $elements.droppable({
-            activeClass: "ui-state-default",
-            hoverClass: "ui-drop-hover",
-            accept: ":not(.ui-sortable-helper)",
-            over: function(event, ui) {
-                var $this = $(this);
-            },
-            drop: function(event, ui) {
-                var $this = $(this);
-                var linew1 = $(this)
-                var li1 = $('<li id="'+linew1.attr('id') +'">' + ui.draggable.text() + '</li>')
-                linew1 = $(this).after(li1);
-                var linew2 = $(ui.draggable)
-                var li2 = $('<li id="'+linew2.attr('id') +'">' + $(this).text() + '</li>')
-                linew2 = $(ui.draggable).after(li2);
+  initSwap();
+  function initSwap() {
+  initDroppable($("#dropdiv div,#dragdiv div"));
+  initDraggable($("#dragdiv div,#dropdiv div"));
+  }
+  function initDraggable($elements) {
+  $elements.draggable({
+      appendTo: "body",
+      helper: "clone",
+      revert: "invalid"
+  });
+  }
+  function initDroppable($elements) {
+  $elements.droppable({
+      activeClass: "ui-state-default",
+      hoverClass: "ui-drop-hover",
+      accept: ":not(.ui-sortable-helper)",
+      over: function(event, ui) {
+          var $this = $(this);
+          //alert('aqui')
+      },
+      drop: function(event, ui) {
+        
+        var $this = $(this);
+        var linew1 = $(this).after(ui.draggable.clone());
+        var linew2 = $(ui.draggable).after($(this).clone());
 
-                trocaposicao(linew1.attr('id'),linew2.attr('id'))
-                trocaposicaoocupada(linew1.attr('id') , linew1.text() , linew2.attr('id') ,linew2.text() )
-                console.log(linew1.text())
-                console.log(linew1.attr('id'))
-                console.log(linew2.text())
-                console.log(linew2.attr('id'))
+        var moved = ui.draggable.attr("id");// Obtem o id do elemento sendo arrastado
 
-                $(ui.draggable).remove();
-                $(this).remove();
-
-                initDroppable($("#dropdiv li,#dragdiv li"));
-                $("#dragdiv li,#dropdiv li").draggable({
-                    appendTo: "body",
-                    helper: "clone",
-                    revert: "invalid"
-                });
-            }
-        });
-        console.log(matrixtext);
-        console.log(posiçoesocupadas);
-    }
+        if (moved==drop) {//Caso seja arrastado da direita para a esquerda
+          drop = $(this).attr("id");
+          
+        }
+        else{ //Caso seja arrastado da esquerda para a direita
+          drop = moved;
+          if(moved=="node1"){
+            verifica('WT','Digital');}
+            else{verifica('WT','Analogico')}           
+        }
+          $(ui.draggable).remove();
+          $(this).remove();
+          initSwap();
+      }
+  });
+}
 });
+// $(function() {
+//     $("#dragdiv li,#dropdiv li").draggable({
+//         appendTo: "body",
+//         helper: "clone",
+//         revert: "invalid"
+//     });
+//     initDroppable($("#dropdiv li,#dragdiv li"));
+//     function initDroppable($elements) {
+//         $elements.droppable({
+//             activeClass: "ui-state-default",
+//             hoverClass: "ui-drop-hover",
+//             accept: ":not(.ui-sortable-helper)",
+//             over: function(event, ui) {
+//                 var $this = $(this);
+//             },
+//             drop: function(event, ui) {
+//                 var $this = $(this);
+//                 var linew1 = $(this)
+//                 var li1 = $('<li id="'+linew1.attr('id') +'">' + ui.draggable.text() + '</li>')
+//                 linew1 = $(this).after(li1);
+//                 var linew2 = $(ui.draggable)
+//                 var li2 = $('<li id="'+linew2.attr('id') +'">' + $(this).text() + '</li>')
+//                 linew2 = $(ui.draggable).after(li2);
+
+//                 trocaposicao(linew1.attr('id'),linew2.attr('id'))
+//                 trocaposicaoocupada(linew1.attr('id') , linew1.text() , linew2.attr('id') ,linew2.text() )
+//                 console.log(linew1.text())
+//                 console.log(linew1.attr('id'))
+//                 console.log(linew2.text())
+//                 console.log(linew2.attr('id'))
+
+//                 $(ui.draggable).remove();
+//                 $(this).remove();
+
+//                 initDroppable($("#dropdiv li,#dragdiv li"));
+//                 $("#dragdiv li,#dropdiv li").draggable({
+//                     appendTo: "body",
+//                     helper: "clone",
+//                     revert: "invalid"
+//                 });
+//             }
+//         });
+//         console.log(matrixtext);
+//         console.log(posiçoesocupadas);
+//     }
+// });
 /*drag and drop texto*/
 
 
