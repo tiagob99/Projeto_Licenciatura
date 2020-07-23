@@ -1177,6 +1177,8 @@ $(document).ready(function() {
   });
   
   $('#btAddImg').click(function() { // Adiciona Imagem e remove posiçoes de colocação de texto
+    document.getElementById('btRemImg_m').classList.add('active');
+
     var novo;
     if(document.getElementById('load_type').value == 'url_load'){
       url = true
@@ -1231,36 +1233,13 @@ $(document).ready(function() {
         verifica('BCK_IMG','topo');
         document.getElementById('img_backgroud_s').style.display = "none";
         document.getElementById('img').style.display = "initial";
-        document.getElementById('rect').style.display = "initial";
+        document.getElementById('rect').style.display = "none";
       }
     }
   });
 
 
-  $('#btRemImg').click(function() { // remove Imagem
-      document.getElementById('img_div').style.display = "none";
-      document.getElementById('img').style.display = "none";
-      document.getElementById('img_backgroud_s').style.display = "none";
-      document.getElementById('primeiro').style.opacity=1;
-      document.getElementById('segundo').style.opacity=1;
-      document.getElementById('terceiro').style.opacity=1;
-      document.getElementById('quinto').style.opacity=1;
-      // document.getElementById('sexto').style.opacity=1;
-      document.getElementById('setimo').style.opacity=1;
-      document.getElementById('oitavo').style.opacity=1;
-      image = false;
-      for (var i = 0; i < 8; i++) {
-        if (i==3){
-          if(elemento == true){
-            posiçoesocupadas[3]=1;
-            console.log("true")
-          }
-        }
-        else{
-          posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
-        }
-      }
-  });
+ 
 
 });
 
@@ -1905,4 +1884,33 @@ function verifica_apaga(id){
    
   }
 
+}
+
+export function tira(){
+  document.getElementById('btRemImg_m').classList.remove('active');
+  document.getElementById('img_div').style.display = "none";
+      document.getElementById('img').style.display = "none";
+      document.getElementById('img_backgroud_s').style.display = "none";
+      document.getElementById('primeiro').style.opacity=1;
+      document.getElementById('segundo').style.opacity=1;
+      document.getElementById('terceiro').style.opacity=1;
+      document.getElementById('quinto').style.opacity=1;
+      document.getElementById('setimo').style.opacity=1;
+//      document.getElementById('oitavo').style.opacity=1;
+      image = false;
+      for (var i = 0; i < 7; i++) {
+        if (i==3){
+
+          if(elemento == true){
+            posiçoesocupadas[3]=1;
+            console.log("true")
+          }
+        }
+        
+        else{
+          
+          posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+          
+        }
+      }
 }

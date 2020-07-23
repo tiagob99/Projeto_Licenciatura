@@ -387,6 +387,7 @@ export function text_color() {
 }
 export function clica() { // Adiciona Imagem e remove posiçoes de colocação de texto
   var novo;
+  document.getElementById('btRemImg').classList.add('active');
   if(document.getElementById('load_type').value == 'url_load'){
     url = true
     novo = document.getElementById("url").value;
@@ -404,7 +405,7 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
     
   }
   posiçoesocupadas_antigo = posiçoesocupadas;
-  posiçoesocupadas = [1,1,1,0,1,1,1,1];
+  posiçoesocupadas = [1,1,1,0,1,1,1];
   image = true;
   
     document.getElementById("img").src = novo;
@@ -415,9 +416,10 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
       document.getElementById('rect').style.display = "none";
     limpa();
     
-
+    
 };
 export function tira(){
+  document.getElementById('btRemImg').classList.remove('active');
   document.getElementById('img_div').style.display = "none";
       document.getElementById('img').style.display = "none";
       document.getElementById('img_backgroud').style.display = "none";
@@ -426,45 +428,78 @@ export function tira(){
       document.getElementById('terceiro').style.opacity=1;
       document.getElementById('quinto').style.opacity=1;
       document.getElementById('setimo').style.opacity=1;
-      document.getElementById('oitavo').style.opacity=1;
+//      document.getElementById('oitavo').style.opacity=1;
       image = false;
       for (var i = 0; i < 7; i++) {
         if (i==3){
+
           if(elemento == true){
             posiçoesocupadas[3]=1;
             console.log("true")
           }
         }
+        
         else{
+          
           posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+          
         }
       }
 }
 
-$('#btRemImg').click(function() { // remove Imagem
-  document.getElementById('img_div').style.display = "none";
-  document.getElementById('img').style.display = "none";
-  document.getElementById('img_backgroud').style.display = "none";
-  document.getElementById('primeiro').style.opacity=1;
-  document.getElementById('segundo').style.opacity=1;
-  document.getElementById('terceiro').style.opacity=1;
-  document.getElementById('quinto').style.opacity=1;
-  document.getElementById('sexto').style.opacity=1;
-  document.getElementById('setimo').style.opacity=1;
-  document.getElementById('oitavo').style.opacity=1;
-  image = false;
-  for (var i = 0; i < 8; i++) {
-    if (i==3){
-      if(elemento == true){
-        posiçoesocupadas[3]=1;
-        console.log("true")
-      }
-    }
-    else{
-      posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
-    }
-  }
-});
+// $('#btRemImg').click(function() { // remove Imagem
+//   // document.getElementById('img_div').style.display = "none";
+//   // document.getElementById('img').style.display = "none";
+//   // document.getElementById('img_backgroud').style.display = "none";
+//   // document.getElementById('primeiro').style.opacity=1;
+//   // document.getElementById('segundo').style.opacity=1;
+//   // document.getElementById('terceiro').style.opacity=1;
+//   // document.getElementById('quinto').style.opacity=1;
+//   // document.getElementById('sexto').style.opacity=1;
+//   // document.getElementById('setimo').style.opacity=1;
+//   // document.getElementById('oitavo').style.opacity=1;
+//   // image = false;
+//   // for (var i = 0; i < 8; i++) {
+//   //   if(i==0){
+//   //     alert('aqui')
+//   //   }
+//   //   if (i==3){
+//   //     if(elemento == true){
+//   //       posiçoesocupadas[3]=1;
+//   //       console.log("true")
+//   //     }
+//   //   }
+
+//   //   else{
+//   //     posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+//   //   }
+//   // }
+//   alert('aqui')
+//   document.getElementById('img_div').style.display = "none";
+//         document.getElementById('img').style.display = "none";
+//         document.getElementById('img_backgroud').style.display = "none";
+//         document.getElementById('primeiro').style.opacity=1;
+//         document.getElementById('segundo').style.opacity=1;
+//         document.getElementById('terceiro').style.opacity=1;
+//         document.getElementById('quinto').style.opacity=1;
+//         document.getElementById('setimo').style.opacity=1;
+//   //      document.getElementById('oitavo').style.opacity=1;
+//         image = false;
+//         for (var i = 0; i < 7; i++) {
+//           if (i==3){
+  
+//             if(elemento == true){
+//               posiçoesocupadas[3]=1;
+//               console.log("true")
+//             }
+//           }
+          
+//           else{
+            
+//             posiçoesocupadas[i]=posiçoesocupadas_antigo[i];
+//           }
+//         }
+// });
 
 /*Cores*/
 
@@ -802,7 +837,7 @@ $('#btRemImg').click(function() { // remove Imagem
     document.getElementById('quinto').style.opacity=0;
  //   document.getElementById('sexto').style.opacity=0;
     document.getElementById('setimo').style.opacity=0;
-    document.getElementById('oitavo').style.opacity=0;
+//    document.getElementById('oitavo').style.opacity=0;
   }
   /*posiçoes do texto*/
   
