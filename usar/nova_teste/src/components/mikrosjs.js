@@ -441,7 +441,8 @@ function verifica(id, valor){
 export function cod(){
   // document.getElementById('codee').innerHTML=array_codigo;
   var i=1;
-  if(array_codigo.length<4){
+  
+  if(array_codigo.length<2){
     alert('Não foi introduzida nenhuma configuração');
   }
   while(i<array_codigo.length){

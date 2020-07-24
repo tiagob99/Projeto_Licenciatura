@@ -94,7 +94,8 @@ $(function timerTick() {
 
 function updatewhatch() {
   
-  if ( document.getElementsByClassName('child elementos')[1].id === "node2"){
+
+  if ( document.getElementsByClassName('child elementos')[1].id === "node2" ){
     verifica('WT','Analogico');
     
     
@@ -102,6 +103,7 @@ function updatewhatch() {
   else{
     verifica('WT','Digital');
   }
+
 }
 /* Change center watch type*/
 
@@ -1606,7 +1608,9 @@ export function updaterotation(){
 
 /*drag and drop texto*/
 var drop = "node1";
+
 $(function() {
+ 
   initSwap();
   function initSwap() {
   initDroppable($("#dropdiv div,#dragdiv div"));
@@ -1629,6 +1633,8 @@ $(function() {
           //alert('aqui')
       },
       drop: function(event, ui) {
+       
+        
         
         var $this = $(this);
         var linew1 = $(this).after(ui.draggable.clone());
@@ -1642,6 +1648,7 @@ $(function() {
         }
         else{ //Caso seja arrastado da esquerda para a direita
           drop = moved;
+        
           if(moved=="node1"){
             verifica('WT','Digital');}
             else{verifica('WT','Analogico')}           
