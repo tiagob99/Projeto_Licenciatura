@@ -18,6 +18,7 @@ export function togglemenu1(){
   document.getElementById('remaining_01_mko').classList.toggle('active');}
 
 export function togglemenu2(){
+  
   document.getElementById('second_menu_hidden_mko').classList.toggle('active');
   document.getElementById('remaining_02_mko').classList.toggle('active');
 
