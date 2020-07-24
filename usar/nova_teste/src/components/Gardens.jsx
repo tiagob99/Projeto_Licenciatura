@@ -164,15 +164,21 @@ const Gardens = () => {
                 <li id="primeiro" />
                 <li id="segundo" />
                 <div id="terceiro_mexe">
-                <li id="terceiro" />
+                  <li id="terceiro" />
                 </div>
-                <li id="quarto" />
-                <li id="quinto" />
+                <div id="quarto_mexe">
+                 <li id="quarto" />
+                </div>
+                <div id="quinto_mexe">
+                  <li id="quinto" />
+                  </div>
               </ul>
             </div>
             <div id="dropdiv" style={{zIndex: 2}}> 
               <ul id="Ul1">
-                <li id="setimo" />
+              <div id="setimo_mexe">
+                  <li id="setimo" />
+                  </div>
                 <div id="oitavo1-1">
                 {/* <li id="oitavo" /> */}
                 </div>
