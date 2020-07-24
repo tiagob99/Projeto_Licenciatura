@@ -117,7 +117,8 @@ const MakeYourOwn = () => {
                       <option value="bakground">Background</option>
                     </select>
                     <input type="button" id="btAddImg" defaultValue="Add Image" style={{marginRight: '10px'}} className="bt" />
-                    <input type="button" style={{marginTop: '10px'}} className="bt" defaultValue="Remove Image" id="btRemImg" />
+                    {/* <input type="button" style={{marginTop: '12.5px'}} onClick={garden.tira} className="bt" defaultValue="Remove Image" id="btRemImg" /><br/> */}
+                    <input type="button" style={{marginTop: '10px'}} className="bt" defaultValue="Remove Image" onClick = {make.tira} id="btRemImg_m" />
                     <div id="testes">
                     <select id="first_variable">
                       <option value="none">None</option>
@@ -233,7 +234,7 @@ const MakeYourOwn = () => {
             </div>
           </div>
         </div>
-      <input type="button" onClick={make.cod} id="alerta" value="codigo" className="cod" />
+      <input type="button" onClick={make.cod} id="alerta" value="Guardar Definições" className="cod" />
             {/* <p id= "codee"></p> */}
       </div>
     </div>

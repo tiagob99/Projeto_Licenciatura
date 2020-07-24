@@ -186,7 +186,7 @@ const Simple_goals = () => {
               </div>
             </div>
           </div>
-          <input type="button" onClick={simple.cod} id="alerta" value="codigo" className="cod" />
+          <input type="button" onClick={simple.cod} id="alerta" value="Guardar Definições" className="cod" />
           {/* <p id= "codee"></p> */}
         </div>
       </div>
