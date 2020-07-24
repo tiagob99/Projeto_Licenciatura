@@ -204,9 +204,9 @@ const MakeYourOwn = () => {
               <ul id="allItems">
                 <li id="primeiro" />
                 <li id="segundo" />
-                <div id="terceiro_mexe">
+                {/* <div id="terceiro_mexe"> */}
                 <li id="terceiro" />
-                </div>
+                {/* </div> */}
                 <li id="quarto" />
                 <li id="quinto" />
               </ul>

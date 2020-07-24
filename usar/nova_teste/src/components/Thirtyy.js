@@ -679,11 +679,30 @@ function verifica(id, valor){
   concatenar(id, valor);
 
 }
+var j=0;
+function updatewhatch() {
+  
+
+  if ( document.getElementsByClassName('child elementos')[1].id === "node2" ){
+    
+    verifica('WT','Analogico');
+    
+    
+  }
+  else{
+    j++;
+    verifica('WT','Digital');
+  }
+
+}
 
 export function cod(){
+  updatewhatch()
   var i=1;
-  if(array_codigo.length<2){
-    alert('Não foi introduzida nenhuma configuração');
+  if(j<1){
+    if(array_codigo.length<4){
+      alert('Não foi introduzida nenhuma configuração');
+    }
   }
   // document.getElementById('codee').innerHTML=array_codigo;
   while(i<array_codigo.length){

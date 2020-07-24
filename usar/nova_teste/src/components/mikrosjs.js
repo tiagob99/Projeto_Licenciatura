@@ -444,6 +444,8 @@ export function cod(){
   
   if(array_codigo.length<2){
     alert('Não foi introduzida nenhuma configuração');
+    
+    
   }
   while(i<array_codigo.length){
     db.database_new('Mikros',array_codigo[i], array_codigo[i+1]);

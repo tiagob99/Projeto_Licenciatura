@@ -980,12 +980,30 @@ export function tira(){
   var aux_array_codigo=[];
 
  
-
+  var j=0;
+  function updatewhatch() {
+    
+  
+    if ( document.getElementsByClassName('child elementos')[1].id === "node2" ){
+      verifica('WT','Analogico');
+      
+      
+    }
+    else{
+      j++;
+      verifica('WT','Digital');
+    }
+  
+  }
 
   export function cod(){
+    updatewhatch();
 
-    if(array_codigo.length<2){
-      alert('Não foi introduzida nenhuma configuração');
+    if(j<1){
+      if(array_codigo.length<4){
+        alert('Não foi introduzida nenhuma configuração');
+        
+      }
     }
     var i=1;
     // document.getElementById('codee').innerHTML=array_codigo;

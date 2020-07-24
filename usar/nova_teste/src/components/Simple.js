@@ -700,13 +700,33 @@ function verifica(id, valor){
   concatenar(id, valor);
 
 }
+var j=0;
+function updatewhatch() {
+  
+
+  if ( document.getElementsByClassName('child elementos')[1].id === "node2" ){
+    
+    verifica('WT','Analogico');
+    
+    
+  }
+  else{
+    j++;
+    verifica('WT','Digital');
+  }
+
+}
 
 export function cod(){
   // document.getElementById('codee').innerHTML=array_codigo;
+  updatewhatch()
   var i=1;
-  if(array_codigo.length<2){
-    alert('Não foi introduzida nenhuma configuração');
+  if(j<1){
+    if(array_codigo.length<4){
+      alert('Não foi introduzida nenhuma configuração');
+    }
   }
+
   while(i<array_codigo.length){
     db.database_new('Simple',array_codigo[i], array_codigo[i+1]);
     i=i+2;

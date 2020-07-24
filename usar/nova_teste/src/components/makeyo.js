@@ -91,11 +91,12 @@ $(function timerTick() {
 
 /* Change center watch type*/
 
-
+var j=0;
 function updatewhatch() {
   
 
   if ( document.getElementsByClassName('child elementos')[1].id === "node2" ){
+    j++;
     verifica('WT','Analogico');
     
     
@@ -1844,8 +1845,11 @@ export function cod(){
   var i=1;
   // document.getElementById('codee').innerHTML=array_codigo;
   
-  if(array_codigo.length<4){
-    alert('Não foi introduzida nenhuma configuração');
+  if(j<1){
+    if(array_codigo.length<4){
+      alert('Não foi introduzida nenhuma configuração');
+      verifica('WT', '')
+    }
   }
   while(i<array_codigo.length){
     db.database_new('MAKEYOUROWN',array_codigo[i], array_codigo[i+1]);
