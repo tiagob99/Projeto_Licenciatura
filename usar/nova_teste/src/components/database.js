@@ -156,3 +156,8 @@ export function fetch(arr,page){
   // alert(arr)
   });
 }
+export function username(){
+  var uti = firebase.auth().currentUser;
+  email = uti.displayName;
+  document.getElementById('nome').innerHTML = email;
+}

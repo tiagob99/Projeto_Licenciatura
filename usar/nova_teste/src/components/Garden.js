@@ -393,6 +393,7 @@ export function clica() { // Adiciona Imagem e remove posiçoes de colocação d
     novo = document.getElementById("url").value;
     verifica('TIM','URL');
     verifica('SRC',novo);
+    
   }
   if(document.getElementById('load_type').value == 'pc'){
 
@@ -945,6 +946,7 @@ export function tira(){
      
      
    }
+
   function verifica(id, valor){
     var i = 0;
     while(i<array_codigo.length-1){
