@@ -912,6 +912,8 @@ $(document).ready(function() {
     document.getElementById("myColor6").defaultValue = "#FFFFD7";
   }
     if (Linha <= 6) {
+    
+      document.getElementById('barradius').value = 100;
       $('#bar_type').prop('selectedIndex',0);
       $('#bar_color_change').prop('selectedIndex',Linha);
             
@@ -922,7 +924,7 @@ $(document).ready(function() {
       $("body").append(document.getElementById('third_menu_hidden_1').classList.add('active') + 
          '<svg id=bardraw' + Linha + ' ' +
       ' style=" width:30%;  top:70%; left: 48%; border-radius: 100%; position:absolute;  margin-top: -13.2%;  margin-left: -13.4%; class="circle-chart" viewbox="0 0 33.83098862 33.83098862">'+
-      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="20,100" style="transform: rotate(-180deg); transform-origin: center;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
+      '<circle class="circle-chart__circle" id="bar' + Linha + '"  stroke="' + cores[Linha]+'" stroke-width="2" stroke-dasharray="17.6552px, 100px" style="transform: rotate(-180deg); transform-origin: center center 0px;" fill="none"  cx="16.59" cy="15.56" r="14" />'+
       '</svg>')
       Linha = Linha + 1;
         

@@ -219,7 +219,7 @@ const MakeYourOwn = () => {
                 </div>
               </ul>
             
-            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862" width="150%" height="150%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-11%', marginTop: '-13%'}}>
+            <svg id="bardraw" className="circle-chart" viewBox="0 0 33.83098862 33.83098862"  width="150%" height="150%" style={{position: 'absolute', left: '50%', top: '50%', marginLeft: '-11%', marginTop: '-13%'}}>
             </svg>
             </div>
             <div id="dropdiv">
